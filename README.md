@@ -95,17 +95,38 @@ Desde prácticas anteriores hemos usado estos scripts por necesidades de aula y 
 
 Lanza los contenedores usando la extensión de Docker en Visual Studio. Desde la propia extensión puedes lanzar también tu navegador por defecto para conectar al servicio Odoo en su puerto expuesto.
 
+Crea tu base de datos de Odoo con la configuración que consideres oportuna.
+
+![Primera base de datos Odoo](https://user-images.githubusercontent.com/1954675/214677032-1a1958ef-8f9e-4942-9cdf-8a09673c50b5.png)
+
 Como recuerdas de anteriores prácticas, es razonable que en ocasiones tengas problemas para acceder desde la máquina anfitriona a ficheros creados desde un contenedor (o viceversa). Cuando haya importantes cambios en el contenido de los volúmenes compartidos entre host y contenedores, ejecuta ```./set-permissions.sh```. 
 
 Dicho script te orientará para que arranques los contenedores y vuelvas a invocarlo si es el único modo de recuperar el acceso completo. Esto es necesario en aquellos equipos en los que no podemos ser root ni ejecutar sudo.
 
 ## Primer _commit_
 
-Al iniciar Odoo por primera vez y configurar nuestra primera base de datos, hemos asignado una _master password_. Como recuerdas, esta contraseña queda cifrada en el fichero de configuración ```odoo.conf```. Esto hace que Git detecte que el fichero ha sido modificado respecto a su contenido en el último _commit_. 
+Al iniciar Odoo por primera vez y configurar nuestra primera base de datos, hemos asignado una _master password_. Como recuerdas, esta contraseña queda cifrada en el fichero de configuración ```odoo.conf```, que también se ha actualizado para eliminar comentarios. Todo esto hace que Git detecte que el fichero ha sido modificado respecto a su contenido previo. Puedes observar cómo el fichero queda en estado **M** (_Modified_, modificado) y comparar las diferencias producidas en la modificación. 
 
-La inicialización del servidor Odoo ha provocado muchos más cambios, pero este repositorio está configurado para sincronizar únicamente código y configuración, por lo que ningún _commit_ hará un _backup_ del estado de tu servidor Odoo ni del servidor de base de datos. Recuerda que un sistema de control de versiones no está para esas cosas y, por eso, se han configurado reglas específicas en ficheros _.gitignore_.
+![Odoo conf modificado y diff](https://user-images.githubusercontent.com/1954675/214678982-2358dff2-57ab-47ed-a57d-6371750c886d.png)
 
-Haz tu primer _commit_ (confirmar cambio de datos en el repositorio local) y push (sincronizar cambios locales hacia el repositorio remoto).
+La inicialización del servidor Odoo ha provocado muchos más cambios, pero este repositorio está configurado para sincronizar únicamente código y configuración, por lo que ningún _commit_ hará un _backup_ del estado de tu servidor Odoo ni del servidor de base de datos. Recuerda que un sistema de control de versiones no está para esas cosas y, por eso, se han configurado reglas específicas en ficheros _.gitignore_ en algunos directorios.
+
+```bash
+# Postgresql data
+postgres/
+
+# Backup
+*.tgz
+*.tar.gz
+
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+```
+
+Haz tu primer _commit_ (esto es confirmar los cambios en el repositorio local de Git) y _push_ (sincronizar cambios locales hacia el repositorio remoto, en este caso GitHub).
 
 ## Copia de seguridad completa (código, configuración y datos)
 
@@ -113,9 +134,11 @@ Si necesitas hacer una copia de seguridad de tu directorio de trabajo, sin perde
 
 ## Resetear el estado de Odoo y PostgreSQL
 
-Durante la práctica, si llegases a un punto muerto en el que tu instalación de Odoo o la base de datos PostgreSQL han quedado en un estado corrupto o irreparable, tienes la opción ```git clean -xfd``` en el script ```./menu.sh```. Esto fuerza el borrado de ficheros sin seguimiento (*untracked*, es decir, que todavía no añadidos al control de versiones) de ficheros ignorados por determinadas reglas de un fichero _.gitignore_ (en este caso el estado de Odoo y de su base de datos).
+Durante la práctica, si llegases a un punto muerto en el que tu instalación de Odoo o la base de datos PostgreSQL han quedado en un estado corrupto o irreparable, tienes la opción ```git clean -xfd``` en el script ```./menu.sh```. Esto fuerza el borrado de ficheros sin seguimiento (*untracked*, es decir, que todavía no han sido añadidos al control de versiones) y de ficheros ignorados según el fichero _.gitignore_ (en este caso el estado de Odoo y de su base de datos).
 
-Usa esto en casos excepcionales, evita lanzarlo por error o sin entender sus implicaciones. Después de esto, tendrás que volver a inicializar tu servidor Odoo.
+![git clean -xfd](https://user-images.githubusercontent.com/1954675/214683179-42151af4-9bc7-4e6a-90c4-ef113d344790.gif)
+
+Usa esto en casos excepcionales, evita lanzarlo por error o sin entender sus implicaciones. Después de esto, tendrás que volver a ejecutar ```./set-permissions.sh```, reiniciar contenedores, inicializar tu servidor Odoo y crear de nuevo la base de datos.
 
 ## Comando _odoo scaffold_
 
@@ -127,20 +150,27 @@ Dentro del contenedor, ejecuta:
 odoo scaffold prueba /mnt/extra-addons
 ```
 
-Observa el contenido de ese directorio desde el propio contenedor y desde el volumen mapeado en el anfitrión. Este comando ha generado una estructura mínima de directorios y ficheros para agilizar el desarrollo de un módulo en Odoo. Explora esta el contenido del directorio _prueba_ desde Visual Studio Code.
+![odoo scaffold](https://user-images.githubusercontent.com/1954675/214684898-0bcdea9c-887e-4224-aba1-7e842a223883.gif)
+
+Observa el contenido de ese directorio desde el propio contenedor y desde el volumen mapeado en el anfitrión. Este comando ha generado una estructura mínima de directorios y ficheros para agilizar el desarrollo de un módulo en Odoo. Explora el contenido del directorio _prueba_ desde Visual Studio Code, si tienes algún problema para modificar los ficheros, recuerda ejecutar ```./set-permissions.sh```.
 
 ## Deshacer cambios desde el último _commit_
 
 Si pulsas en el icono de Git en la barra lateral de Visual Studio Code, verás que los directorios y ficheros que ha generado el comando ```odoo scaffold``` aparecen en estado **U** de *Untracked*, es decir, todavía no estarían teniendo seguimiento por esta herramienta y no se sincronizarían. Añádelos al control de versiones, observa que ya no se marcan con estado **U** sino **A** (_Added_, añadido).
 
+![git add --all](https://user-images.githubusercontent.com/1954675/214686075-f0ce5798-161e-464c-acc2-8b713c8499e2.gif)
+
 En lugar de hacer _commit_, prueba la opción ```git reset --hard HEAD``` del script ```./menu.sh```. Observa lo que sucede y piensa en qué caso te plantearías hacer algo tan radical. Haz las pruebas que necesites para averiguar en qué se diferencia de la opción ```git clean -xfd```.
+
+![git reset --hard HEAD](https://user-images.githubusercontent.com/1954675/214687303-f6cb18c3-a810-45a5-bcca-ef19aad42376.gif)
 
 # Próximos pasos...
 
 Crea tu propio módulo de Odoo de acuerdo a los apuntes de clase y al enunciado de la práctica que se te ha proporcionado en el aula virtual.
 
-Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un export de la base de datos con ```pg_dump``` o alguna utilidad gráfica. 
+Si te animas a utilizar Git y GitHub, se valorará de manera extra. Para ello, se espera que hagas varios _commits_, _pushes_ y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
+
+Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un _export_ de la base de datos con ```pg_dump``` o alguna utilidad gráfica. 
 
 Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y los de tus compañeros/as.
-
 
