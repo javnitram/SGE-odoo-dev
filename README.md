@@ -7,7 +7,7 @@ Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, G
 
 ## _Fork_ del repositorio original
 
-Inicia sesión en tu cuenta de GitHub y haz un _fork_ de [javnitram/SGE-odoo-dev](https://github.com/javnitram/SGE-odoo-dev) y llama el tuyo SGE-odoo-dev-**XX** (el valor correspondiente a tu número de puesto, según el último byte de la dirección IP de clase.
+Inicia sesión en tu cuenta de GitHub, haz un _fork_ de [javnitram/SGE-odoo-dev](https://github.com/javnitram/SGE-odoo-dev) y llama el tuyo SGE-odoo-dev-**XX** (el valor correspondiente a tu número de puesto, según el último byte de la dirección IP de clase.
 
 ## Creación de rama de desarrollo y clonación del repositorio en local
 
@@ -69,7 +69,7 @@ _```comando tabulador # comentario```_
 
 Los cambios que introduzcas en ```menu.txt``` aparecerán como nuevas opciones en el menú interactivo.
 
-Desde prácticas anteriores hemos usado estos scripts por necesidades de aula y para facilitarte las cosas mientras aprendías, pero es el momento de prescindir de estas ayudas tanto como puedas.
+Desde prácticas anteriores hemos usado estos scripts por necesidades de aula y para facilitarte las cosas mientras aprendías, pero es el momento de prescindir de estas ayudas tanto como puedas exprimir las funciones que te proporciona un IDE.
 
 # Primeros pasos para nuestro desarrollo
 
@@ -81,21 +81,21 @@ Como recuerdas de anteriores prácticas, es razonable que en ocasiones tengas pr
 
 Dicho script te orientará para que arranques los contenedores y vuelvas a invocarlo si es el único modo de recuperar el acceso completo. Esto es necesario en aquellos equipos en los que no podemos ser root ni ejecutar sudo.
 
-## Primer commit
+## Primer _commit_
 
-Al iniciar Odoo por primera vez y configurar nuestra primera base de datos, hemos asignado una master password, como recuerdas, esta queda cifrada en el fichero de configuración ```odoo.conf```. Esto hace que Git detecte que el fichero ha sido modificado respecto a su contenido en el último _commit_. 
+Al iniciar Odoo por primera vez y configurar nuestra primera base de datos, hemos asignado una _master password_. Como recuerdas, esta contraseña queda cifrada en el fichero de configuración ```odoo.conf```. Esto hace que Git detecte que el fichero ha sido modificado respecto a su contenido en el último _commit_. 
 
-La inicialización del servidor Odoo ha provocado muchos más cambios, pero este repositorio está configurado para sincronizar únicamente código y configuración, por lo que ningún commit hará un backup del estado de tu servidor Odoo ni del servidor de base de datos. Recuerda que un sistema de control de versiones no está para esas cosas y, por eso, se han configurado reglas específicas en ficheros _.gitignore_.
+La inicialización del servidor Odoo ha provocado muchos más cambios, pero este repositorio está configurado para sincronizar únicamente código y configuración, por lo que ningún _commit_ hará un _backup_ del estado de tu servidor Odoo ni del servidor de base de datos. Recuerda que un sistema de control de versiones no está para esas cosas y, por eso, se han configurado reglas específicas en ficheros _.gitignore_.
 
-Haz tu primer commit (confirmar cambio de datos en el repositorio local) y push (confirmar cambios locales en el repositorio remoto).
+Haz tu primer _commit_ (confirmar cambio de datos en el repositorio local) y push (sincronizar cambios locales hacia el repositorio remoto).
 
 ## Copia de seguridad completa (código, configuración y datos)
 
-Si necesitas hacer una copia de seguridad de tu directorio de trabajo, sin perder datos que no se sincronizan con GitHub, tienes la opción de usar tar a través del script ```./menu.sh``` (como en prácticas anteriores).
+Si necesitas hacer una copia de seguridad de tu directorio de trabajo, sin perder los datos que no se sincronizan con GitHub, tienes la opción de usar tar a través del script ```./menu.sh``` (como en prácticas anteriores).
 
 ## Resetear el estado de Odoo y PostgreSQL
 
-Durante la práctica, si llegases a un punto muerto en el que tu instalación de Odoo o la base de datos PostgreSQL estáN en un estado corrupto o irreparable, tienes la opción ```git clean -xfd``` en el script ```./menu.sh```. Esto fuerza el borrado de ficheros sin seguimiento (*untracked*, es decir, que todavía no añadidos al control de versiones) de ficheros ignorados por determinadas reglas de un fichero _.gitignore_ (en este caso el estado de Odoo y de su base de datos).
+Durante la práctica, si llegases a un punto muerto en el que tu instalación de Odoo o la base de datos PostgreSQL han quedado en un estado corrupto o irreparable, tienes la opción ```git clean -xfd``` en el script ```./menu.sh```. Esto fuerza el borrado de ficheros sin seguimiento (*untracked*, es decir, que todavía no añadidos al control de versiones) de ficheros ignorados por determinadas reglas de un fichero _.gitignore_ (en este caso el estado de Odoo y de su base de datos).
 
 Usa esto en casos excepcionales, evita lanzarlo por error o sin entender sus implicaciones. Después de esto, tendrás que volver a inicializar tu servidor Odoo.
 
@@ -113,7 +113,7 @@ Observa el contenido de ese directorio desde el propio contenedor y desde el vol
 
 ## Deshacer cambios desde el último _commit_
 
-Si pulsas en el icono de Git en la barra lateral de Visual Studio Code, verás que los directorios y ficheros que ha generado el comando ```odoo scaffold``` aparecen en estado **U** de *Untracked*, es decir, todavía no estarían teniendo seguimiento por esta herramienta y no se sincronizarían. Añádelos al control de versiones, observa que ya no se marcan con estado **U** sino **A** (_added_, añadido).
+Si pulsas en el icono de Git en la barra lateral de Visual Studio Code, verás que los directorios y ficheros que ha generado el comando ```odoo scaffold``` aparecen en estado **U** de *Untracked*, es decir, todavía no estarían teniendo seguimiento por esta herramienta y no se sincronizarían. Añádelos al control de versiones, observa que ya no se marcan con estado **U** sino **A** (_Added_, añadido).
 
 En lugar de hacer _commit_, prueba la opción ```git reset --hard HEAD``` del script ```./menu.sh```. Observa lo que sucede y piensa en qué caso te plantearías hacer algo tan radical. Haz las pruebas que necesites para averiguar en qué se diferencia de la opción ```git clean -xfd```.
 
@@ -121,6 +121,6 @@ En lugar de hacer _commit_, prueba la opción ```git reset --hard HEAD``` del sc
 
 Crea tu propio módulo de Odoo de acuerdo a los apuntes de clase y al enunciado de la práctica que se te ha proporcionado en el aula virtual.
 
-Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo. 
+Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un export de la base de datos con ```pg_dump``` o alguna utilidad gráfica. 
 
 Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y los de tus compañeros/as.
