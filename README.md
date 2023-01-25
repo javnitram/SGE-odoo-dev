@@ -91,6 +91,8 @@ Desde prácticas anteriores hemos usado estos scripts por necesidades de aula y 
 
 ## Inicialización de Odoo y creación de la primera base de datos
 
+![Inicialización de Odoo](https://user-images.githubusercontent.com/1954675/214669540-193c94c0-81d8-451e-9cac-f8a8c3a03afd.gif)
+
 Lanza los contenedores usando la extensión de Docker en Visual Studio. Desde la propia extensión puedes lanzar también tu navegador por defecto para conectar al servicio Odoo en su puerto expuesto.
 
 Como recuerdas de anteriores prácticas, es razonable que en ocasiones tengas problemas para acceder desde la máquina anfitriona a ficheros creados desde un contenedor (o viceversa). Cuando haya importantes cambios en el contenido de los volúmenes compartidos entre host y contenedores, ejecuta ```./set-permissions.sh```. 
