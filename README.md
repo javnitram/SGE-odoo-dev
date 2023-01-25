@@ -1,8 +1,6 @@
 # Introducción
 Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, Git y GitHub.
 
-**Este README está pendiente de actualización, sincroniza tu fork cuando encuentres cambios**
-
 # Preparación del repo y del entorno
 
 ## _Fork_ del repositorio original
