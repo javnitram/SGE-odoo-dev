@@ -1,0 +1,11 @@
+# Postgresql data
+postgres/
+
+# Backup
+*.tgz
+*.tar.gz
+
+# Python byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
