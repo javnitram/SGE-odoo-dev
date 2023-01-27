@@ -9,3 +9,6 @@ postgres/
 __pycache__/
 *.py[cod]
 *$py.class
+
+# Auto created mac files
+.DS_Store
