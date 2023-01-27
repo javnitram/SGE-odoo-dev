@@ -164,9 +164,8 @@ En lugar de hacer _commit_, prueba la opción ```git reset --hard HEAD``` del sc
 
 Crea tu propio módulo de Odoo de acuerdo a los apuntes de clase y al enunciado de la práctica que se te ha proporcionado en el aula virtual.
 
-Si te animas a utilizar Git y GitHub, se valorará de manera extra. Para ello, se espera que hagas varios _commits_, _pushes_ y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
+Debes utilizar Git y GitHub. Para ello, se espera que hagas varios _commits_ y _pushes_ en tu rama de desarrollo y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
 
 Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un _export_ de la base de datos con ```pg_dump``` o alguna utilidad gráfica. 
 
-Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y los de tus compañeros/as.
-
+Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y todos los otros que hayan quedado integrados.
