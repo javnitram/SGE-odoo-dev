@@ -8,8 +8,6 @@ Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, G
 Inicia sesión en tu cuenta de GitHub, haz un _fork_ de [javnitram/SGE-odoo-dev](https://github.com/javnitram/SGE-odoo-dev) y llama el tuyo SGE-odoo-dev-**XX** (el valor correspondiente a tu número de puesto, según el último byte de la dirección IP de clase.
 
 ![Fork](https://user-images.githubusercontent.com/1954675/214649968-b21af29d-8bfc-4f95-b117-f48c7506c9cf.png)
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
-
 
 ## Creación de rama de desarrollo y clonación del repositorio en local
 
