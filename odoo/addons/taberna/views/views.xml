@@ -1,26 +1,28 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-
-    <record model="ir.ui.view" id="jm.taberna.categoria.list">
-      <field name="name">Información de la taberna</field>
-      <field name="model">jm.taberna.categoria</field>
+<!--
+    <record model="ir.ui.view" id="taberna.list">
+      <field name="name">taberna list</field>
+      <field name="model">taberna.taberna</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
         </tree>
       </field>
     </record>
-
+-->
 
     <!-- actions opening views on models -->
-
-    <record model="ir.actions.act_window" id="jb.taberna.categoria.action_window">
-      <field name="name">Información window</field>
-      <field name="res_model">jm.taberna.categoria</field>
+<!--
+    <record model="ir.actions.act_window" id="taberna.action_window">
+      <field name="name">taberna window</field>
+      <field name="res_model">taberna.taberna</field>
       <field name="view_mode">tree,form</field>
     </record>
-
+-->
 
     <!-- server action to the one above -->
 <!--

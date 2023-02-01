@@ -7,9 +7,7 @@ class TabernaCategoria(models.Model):
     _name = 'jm.taberna.categoria'
     _description = 'jm.taberna.categoria'
     nombre = fields.Char('nombre', required=True)
-    direccion = fields.Char('direccion', required=True)
-    telefono = fields.Integer('telefono')
-    e_mail = fields.Integer('e_mail')
+
 
 class TabernaBebidas(models.Model):
     _name = 'jm.taberna.bebidas'
@@ -17,11 +15,7 @@ class TabernaBebidas(models.Model):
     id_bebida = fields.Integer('id', required=True)
     nombre = fields.Char('nombre', required=True)
     alcohol = fields.Boolean('alcohol', required=True)
-    tipo = fields.Selection([
-        ('0', 'rubia')
-        ('1', 'tostada')
-        ('0', 'negra')
-    ], string='tipo')
+    tipo = fields.Char('tipo', required=True)
     pais = fields.Char('pais', required=True)
 
 class TabernaComidas(models.Model):
@@ -40,7 +34,7 @@ class TabernaEmpleados(models.Model):
     apellido2 = fields.Char('apellido2')
     edad = fields.Integer('edad')
     salario = fields.Float('salario')
-    telefono = fields.Integer('telefono')
+    telefono = fields.Integer('telefono', required=True)
     
 
 # classpaisuired
