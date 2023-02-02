@@ -1,0 +1,57 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="yf_genero_list">
+      <field name="name">categoria.disco</field>
+      <field name="model">yf.discos.genero</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nomcat"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="modulo_intento.action_window">
+      <field name="name">ModuloIntento.window</field>
+      <field name="res_model">yf.discos.genero</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="modulo_intento.action_server">
+      <field name="name">ModuloIntento server</field>
+      <field name="model_id" ref="model_modulo_intento_modulo_intento"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Discos" id="modulo_intento.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="modulo_intento.menu_1" parent="modulo_intento.menu_root"/>
+    <menuitem name="Menu 2" id="modulo_intento.menu_2" parent="modulo_intento.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="modulo_intento.menu_1_list" parent="modulo_intento.menu_1"
+              action="modulo_intento.action_window"/>
+  
+
+  </data>
+</odoo>
