@@ -1,28 +1,26 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="clubpadel.list">
+
+    <record model="ir.ui.view" id="clubpadel.marca_list">
       <field name="name">clubpadel list</field>
-      <field name="model">clubpadel.clubpadel</field>
+      <field name="model">clubpadel.marca</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="clubpadel.action_window">
       <field name="name">clubpadel window</field>
-      <field name="res_model">clubpadel.clubpadel</field>
+      <field name="res_model">clubpadel.marca</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +39,17 @@
 -->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="clubpadel" id="clubpadel.menu_root"/>
--->
+
+    <menuitem name="ClubPadel" id="clubpadel.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="clubpadel.menu_1" parent="clubpadel.menu_root"/>
-    <menuitem name="Menu 2" id="clubpadel.menu_2" parent="clubpadel.menu_root"/>
--->
+
+    <menuitem name="Marca" id="clubpadel.menu_marca" parent="clubpadel.menu_root"/>
+    
     <!-- actions -->
-<!--
-    <menuitem name="List" id="clubpadel.menu_1_list" parent="clubpadel.menu_1"
+
+    <menuitem name="List" id="clubpadel.menu_1_list" parent="clubpadel.menu_marca"
               action="clubpadel.action_window"/>
-    <menuitem name="Server to list" id="clubpadel" parent="clubpadel.menu_2"
-              action="clubpadel.action_server"/>
--->
+
   </data>
 </odoo>
