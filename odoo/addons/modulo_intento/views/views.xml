@@ -16,7 +16,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="modulo_intento.action_window">
-      <field name="name">ModuloIntento.window</field>
+      <field name="name">Genero</field>
       <field name="res_model">yf.discos.genero</field>
       <field name="view_mode">tree,form</field>
     </record>
