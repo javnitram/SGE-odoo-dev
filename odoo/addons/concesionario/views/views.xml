@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="dhm_concesionario_marca_list">
+      <field name="name">concesionario list</field>
+      <field name="model">dhm.concesionario.marcas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="nombre"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="concesionario.action_window">
+      <field name="name">Lista de marcas</field>
+      <field name="res_model">dhm.concesionario.marcas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="concesionario.action_server">
+      <field name="name">concesionario server</field>
+      <field name="model_id" ref="model_concesionario_concesionario"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="concesionario" id="concesionario.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="Menu" id="concesionario.menu" parent="concesionario.menu_root"/>
+   
+    <!-- actions -->
+    <menuitem name="Lista" id="concesionario.menu_list" parent="concesionario.menu"
+              action="concesionario.action_window"/>
+
+  </data>
+</odoo>
