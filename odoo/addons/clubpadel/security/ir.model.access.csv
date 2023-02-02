@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_clubpadel_clubpadel,clubpadel.clubpadel,model_clubpadel_clubpadel,base.group_user,1,1,1,1
+access_clubpadel_marca,Acceso clubpadel marca,model_clubpadel_marca,base.group_user,1,1,1,1
+access_clubpadel_modelo,Acceso clubpadel modelo,model_clubpadel_modelo,base.group_user,1,1,1,1
