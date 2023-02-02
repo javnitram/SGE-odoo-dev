@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-
+<!--
     <record model="ir.ui.view" id="cm_veterinaria.list">
       <field name="name">veterinaria list</field>
       <field name="model">cm.veterinaria.mascotas</field>
@@ -13,16 +13,16 @@
         </tree>
       </field>
     </record>
-
+-->
 
     <!-- actions opening views on models -->
-
+<!--
     <record model="ir.actions.act_window" id="cm_veterinaria.action_window">
       <field name="name">cm_veterinaria window</field>
       <field name="res_model">cm_veterinaria.mascotas</field>
       <field name="view_mode">tree,form</field>
     </record>
-
+-->
 
     <!-- server action to the one above -->
 <!--
@@ -41,17 +41,17 @@
 -->
 
     <!-- Top menu item -->
-
+<!--
     <menuitem name="cm_veterinaria" id="cm_veterinaria.menu_root"/>
-
+-->
     <!-- menu categories -->
-
+<!--
     <menuitem name="Menu 1" id="cm_veterinaria.menu_1" parent="cm_veterinaria.menu_root"/>
     <menuitem name="Menu 2" id="cm_veterinaria.menu_2" parent="cm_veterinaria.menu_root"/>
-
+-->
     <!-- actions -->
-
+<!--
     <menuitem name="List" id="cm_veterinaria.menu_1_list" parent="cm_veterinaria.menu_1"
               action="cm_veterinaria.action_window"/>
-    
+    -->
 </odoo>
