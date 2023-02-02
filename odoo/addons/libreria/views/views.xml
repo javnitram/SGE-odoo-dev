@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="jm.libreria.categoria.list">
+    <record model="ir.ui.view" id="libreria.categoria_list">
       <field name="name">libreria list</field>
       <field name="model">jm.libreria.categoria</field>
       <field name="arch" type="xml">
@@ -13,38 +13,23 @@
     </record>
 
     <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="jm.libreria.categoria.action_window">
-      <field name="name">libreria window</field>
+    <record model="ir.actions.act_window" id="libreria.categoria_action_window">
+      <field name="name">Listado de categorías</field>
       <field name="res_model">jm.libreria.categoria</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="libreria.action_server">
-      <field name="name">libreria server</field>
-      <field name="model_id" ref="model_libreria_libreria"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
     <!-- Top menu item -->
-    <menuitem name="Librería" id="jm.libreria.menu_root"/>
+    <menuitem name="Librería" id="libreria.menu_root"/>
 
     <!-- menu categories -->
-    <menuitem name="Categoría" id="jm.libreria.menu_categoria" parent="jm.libreria.menu_root"/>
+    <menuitem name="Categoría" id="libreria.menu_categoria" parent="libreria.menu_root"/>
+    <menuitem name="Libros" id="libreria.menu_libros" parent="libreria.menu_root"/>
+    <menuitem name="Autores" id="libreria.menu_autores" parent="libreria.menu_root"/>
 
     <!-- actions -->
-    <menuitem name="Lista" id="jm.libreria.categoria.menu_lista" parent="jm.libreria.menu_categoria"
-              action="jm.libreria.categoria.action_window"/>
+    <menuitem name="Lista" id="libreria.categoria_menu_lista" parent="libreria.menu_categoria"
+              action="libreria.categoria_action_window"/>
 
   </data>
 </odoo>
