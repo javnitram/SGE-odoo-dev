@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="jm.libreria.categoria.list">
+      <field name="name">libreria list</field>
+      <field name="model">jm.libreria.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="jm.libreria.categoria.action_window">
+      <field name="name">libreria window</field>
+      <field name="res_model">jm.libreria.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="libreria.action_server">
+      <field name="name">libreria server</field>
+      <field name="model_id" ref="model_libreria_libreria"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+    <menuitem name="Librería" id="jm.libreria.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Categoría" id="jm.libreria.menu_categoria" parent="jm.libreria.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Lista" id="jm.libreria.categoria.menu_lista" parent="jm.libreria.menu_categoria"
+              action="jm.libreria.categoria.action_window"/>
+
+  </data>
+</odoo>
