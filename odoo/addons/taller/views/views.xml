@@ -1,0 +1,54 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller.vehiculos">
+      <field name="name">taller.list</field>
+      <field name="model">ig.taller.vehiculos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="matricula"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="taller.action_window">
+      <field name="name">taller window</field>
+      <field name="res_model">ig.taller.vehiculos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="taller" id="taller.menu_root"/>
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="taller.menu_1" parent="taller.menu_root"/>
+    <menuitem name="Menu 2" id="taller.menu_2" parent="taller.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="taller.menu_1_list" parent="taller.menu_1"
+              action="taller.action_window"/>
+  </data>
+</odoo>
