@@ -1,6 +1,22 @@
 # Introducción
 Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, Git y GitHub.
 
+- [Introducción](#introducción)
+- [Preparación del repo y del entorno](#preparación-del-repo-y-del-entorno)
+  - [_Fork_ del repositorio original](#fork-del-repositorio-original)
+  - [Creación de rama de desarrollo y clonación del repositorio en local](#creación-de-rama-de-desarrollo-y-clonación-del-repositorio-en-local)
+  - [Instalación de extensiones útiles](#instalación-de-extensiones-útiles)
+  - [Menú interactivo para el terminal](#menú-interactivo-para-el-terminal)
+- [Primeros pasos para nuestro desarrollo](#primeros-pasos-para-nuestro-desarrollo)
+  - [Inicialización de Odoo y creación de la primera base de datos](#inicialización-de-odoo-y-creación-de-la-primera-base-de-datos)
+  - [Primer _commit_](#primer-commit)
+  - [Copia de seguridad completa (código, configuración y datos)](#copia-de-seguridad-completa-código-configuración-y-datos)
+  - [Resetear el estado de Odoo y PostgreSQL](#resetear-el-estado-de-odoo-y-postgresql)
+  - [Comando _odoo scaffold_](#comando-odoo-scaffold)
+  - [Deshacer cambios desde el último _commit_](#deshacer-cambios-desde-el-último-commit)
+- [Próximos pasos...](#próximos-pasos)
+
+
 # Preparación del repo y del entorno
 
 ## _Fork_ del repositorio original
@@ -8,8 +24,6 @@ Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, G
 Inicia sesión en tu cuenta de GitHub, haz un _fork_ de [javnitram/SGE-odoo-dev](https://github.com/javnitram/SGE-odoo-dev) y llama el tuyo SGE-odoo-dev-**XX** (el valor correspondiente a tu número de puesto, según el último byte de la dirección IP de clase.
 
 ![Fork](https://user-images.githubusercontent.com/1954675/214649968-b21af29d-8bfc-4f95-b117-f48c7506c9cf.png)
-![](https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png | width=100)
-
 
 ## Creación de rama de desarrollo y clonación del repositorio en local
 
@@ -166,9 +180,8 @@ En lugar de hacer _commit_, prueba la opción ```git reset --hard HEAD``` del sc
 
 Crea tu propio módulo de Odoo de acuerdo a los apuntes de clase y al enunciado de la práctica que se te ha proporcionado en el aula virtual.
 
-Si te animas a utilizar Git y GitHub, se valorará de manera extra. Para ello, se espera que hagas varios _commits_, _pushes_ y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
+Debes utilizar Git y GitHub. Para ello, se espera que hagas varios _commits_ y _pushes_ en tu rama de desarrollo y finalmente hagas un _merge_ a tu rama _main_ cuando hayas desarrollado y probado tu módulo.
 
 Si finalizas tu desarrollo con éxito y aprovechas la potencia de Git y GitHub, podrás realizar un _pull request_, es decir, una petición al propietario del repositorio original para que valore tu propuesta e integre tus cambios (_merge_). Es especialmente conveniente que tu proyecto proporcione datos de demo o hagas un _export_ de la base de datos con ```pg_dump``` o alguna utilidad gráfica. 
 
-Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y los de tus compañeros/as.
-
+Quien clone el repositorio original y despliegue el entorno podrá probar tu módulo y todos los otros que hayan quedado integrados.
