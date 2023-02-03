@@ -19,7 +19,9 @@ class LibreriaLibro(models.Model):
     fecha = fields.Date(string="Fecha de compra")
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([
-        ('0', 'Bueno'), ('1', 'Regular'), ('2', 'Malo')
+        ('0', 'Bueno'),
+        ('1', 'Regular'),
+        ('2', 'Malo')
     ], string='estado')
 
 # class librer, required=Trueia(models.Model):
