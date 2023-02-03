@@ -1,6 +1,22 @@
 # Introducción
 Proyecto final para principantes con el stack de Odoo, Docker, Docker Compose, Git y GitHub.
 
+- [Introducción](#introducción)
+- [Preparación del repo y del entorno](#preparación-del-repo-y-del-entorno)
+  - [_Fork_ del repositorio original](#fork-del-repositorio-original)
+  - [Creación de rama de desarrollo y clonación del repositorio en local](#creación-de-rama-de-desarrollo-y-clonación-del-repositorio-en-local)
+  - [Instalación de extensiones útiles](#instalación-de-extensiones-útiles)
+  - [Menú interactivo para el terminal](#menú-interactivo-para-el-terminal)
+- [Primeros pasos para nuestro desarrollo](#primeros-pasos-para-nuestro-desarrollo)
+  - [Inicialización de Odoo y creación de la primera base de datos](#inicialización-de-odoo-y-creación-de-la-primera-base-de-datos)
+  - [Primer _commit_](#primer-commit)
+  - [Copia de seguridad completa (código, configuración y datos)](#copia-de-seguridad-completa-código-configuración-y-datos)
+  - [Resetear el estado de Odoo y PostgreSQL](#resetear-el-estado-de-odoo-y-postgresql)
+  - [Comando _odoo scaffold_](#comando-odoo-scaffold)
+  - [Deshacer cambios desde el último _commit_](#deshacer-cambios-desde-el-último-commit)
+- [Próximos pasos...](#próximos-pasos)
+
+
 # Preparación del repo y del entorno
 
 ## _Fork_ del repositorio original
