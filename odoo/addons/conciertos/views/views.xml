@@ -2,59 +2,41 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="conciertos.list">
-      <field name="name">conciertos list</field>
-      <field name="model">conciertos.conciertos</field>
+    <record model="ir.ui.view" id="conciertos.concierto_list">
+      <field name="name">Lista de conciertos</field>
+      <field name="model">sa.conciertos.concierto</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="fecha"/>
+          <field name="artista_id"/>
+          <field name="recinto_id"/>
         </tree>
       </field>
     </record>
 
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="conciertos.action_window">
-      <field name="name">conciertos window</field>
-      <field name="res_model">conciertos.conciertos</field>
+
+    <record model="ir.actions.act_window" id="conciertos.concierto_action_window">
+      <field name="name">Concierto window</field>
+      <field name="res_model">sa.conciertos.concierto</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="conciertos.action_server">
-      <field name="name">conciertos server</field>
-      <field name="model_id" ref="model_conciertos_conciertos"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="conciertos" id="conciertos.menu_root"/>
--->
+
+    <menuitem name="Conciertos" id="conciertos.menu_root"/> <!-- Al no especificar elemento padre, se convierte en el elemento Top -->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="conciertos.menu_1" parent="conciertos.menu_root"/>
-    <menuitem name="Menu 2" id="conciertos.menu_2" parent="conciertos.menu_root"/>
--->
+
+    <menuitem name="Conciertos" id="conciertos.concierto" parent="conciertos.menu_root"/>
+    <menuitem name="Artistas" id="conciertos.artistas" parent="conciertos.menu_root"/>
+    <menuitem name="Recintos" id="conciertos.recintos" parent="conciertos.menu_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="conciertos.menu_1_list" parent="conciertos.menu_1"
-              action="conciertos.action_window"/>
-    <menuitem name="Server to list" id="conciertos" parent="conciertos.menu_2"
-              action="conciertos.action_server"/>
--->
+
+    <menuitem name="List" id="conciertos_menu_1_list" parent="conciertos.concierto"
+              action="conciertos.concierto_action_window"/>
+
   </data>
 </odoo>
