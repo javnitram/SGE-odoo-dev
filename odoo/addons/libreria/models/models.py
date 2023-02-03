@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class LibreriaCategoria(models.Model):
     _name = 'sa.libreria.categoria'
     _description = 'sa.libreria.categoria'
-    nombre = fields.Char('nombre', required=True)
+    nombre = fields.Char('nombre', required=True)   
     name = fields.Char(string="Nombre", required=True, help="Introduce el nombre de la categoria")
     descripcion = fields.Text(string="Descripción")
     
