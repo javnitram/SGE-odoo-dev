@@ -1,21 +1,21 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="libreria.libreria">
+
+          <record id="object0" model="ar.libreria.categoria">
             <field name="name">Object 0</field>
             <field name="value">0</field>
           </record>
 
-          <record id="object1" model="libreria.libreria">
+          <record id="object1" model="ar.libreria.libro">
             <field name="name">Object 1</field>
             <field name="value">10</field>
           </record>
 
-          <record id="object2" model="libreria.libreria">
+          <record id="object2" model="ar.libreria.autor">
             <field name="name">Object 2</field>
             <field name="value">20</field>
           </record>
-
+<!--
           <record id="object3" model="libreria.libreria">
             <field name="name">Object 3</field>
             <field name="value">30</field>
