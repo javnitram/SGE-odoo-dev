@@ -11,15 +11,12 @@ class HotelCliente(models.Model):
     apellidos = fields.Char(string='Apellidos',required=True)
     telefono = fields.Integer(string='Telefono',required=True)
     correo = fields.Char(string='Correo')
-    id_empresa = fields.Integer(string="Empresa",required=True)
 
 
     
 class HotelReserva(models.Model):
     _name = 'jf.hotel.reserva'
     _description = 'jf.hotel.reserva'
-    id_reserva = fields.Integer(string='ID Reserva', required=True)
-    id_habitacion = fields.Integer(string='Habitacion',required=True)
     dni_cliente = fields.Integer(string='dni_cliente',required=True)
     fecha_inicio = fields.Date(string='Fecha inicio',required=True)
     fecha_final = fields.Date(string='Fecha final',required=True)
@@ -29,7 +26,6 @@ class HotelReserva(models.Model):
 class HotelEmpresa(models.Model):
     _name = 'jf.hotel.empresa'
     _description = 'jf.hotel.empresa'
-    id = fields.Integer(string='ID Empresa',required=True)
     nombre = fields.Char(string='Nombre',required=True)
     telefono = fields.Integer(string='Teléfono',required=True)
     correo = fields.Char(string='Correo')
@@ -42,7 +38,6 @@ class HotelEmpresa(models.Model):
 class HotelHabitaciones(models.Model):
     _name = 'jf.hotel.habitaciones'
     _description = 'jf.hotel.habitaciones'
-    id = fields.Integer(string='ID habitacion',required=True)
     plazas = fields.Integer(string='Plazas',required=True)
     precio = fields.Float(string='Precio por noche',required=True)
     planta = fields.Integer(string='Planta',required=True)
