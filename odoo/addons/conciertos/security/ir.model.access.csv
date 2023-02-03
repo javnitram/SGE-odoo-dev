@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_conciertos_conciertos,conciertos.conciertos,model_conciertos_conciertos,base.group_user,1,1,1,1
+access_conciertos_concierto,conciertos.conciertos,model_sa_conciertos_concierto,base.group_user,1,1,1,1
