@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+     <!--explicit list view definition -->
+
+    <record model="ir.ui.view" id="reclutamiento.list">
+      <field name="name">reclutamiento list</field>
+      <field name="model">ac.reclutamiento.ejercito</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_ejercito"/>
+          <field name="nombre"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="reclutamiento.action_window">
+      <field name="name">reclutamiento window</field>
+      <field name="res_model">ac.reclutamiento.ejercito</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="reclutamiento.action_server">
+      <field name="name">reclutamiento server</field>
+      <field name="model_id" ref="model_reclutamiento_reclutamiento"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Reclutamiento" id="reclutamiento.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Ejercito" id="reclutamiento.menu_1" parent="reclutamiento.menu_root"/>
+    <menuitem name="infanteria_CaC" id="reclutamiento.menu_2" parent="reclutamiento.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List" id="reclutamiento.menu_1_list" parent="reclutamiento.menu_1"
+              action="reclutamiento.action_window"/>
+    <!-- 
+    <menuitem name="Server to list" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_2"
+              action="reclutamiento.action_window"/>
+      -->
+  </data>
+</odoo>
