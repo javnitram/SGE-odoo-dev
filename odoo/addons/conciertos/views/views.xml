@@ -29,7 +29,7 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Conciertos" id="conciertos.concierto" parent="conciertos.menu_root"/>
+    <menuitem name="Lista de conciertos" id="conciertos.concierto" parent="conciertos.menu_root"/>
     <menuitem name="Artistas" id="conciertos.artistas" parent="conciertos.menu_root"/>
     <menuitem name="Recintos" id="conciertos.recintos" parent="conciertos.menu_root"/>
 
