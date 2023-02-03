@@ -19,7 +19,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="gimnasio.action_window">
-      <field name="name">gimnasio window</field>
+      <field name="name">Clientes</field>
       <field name="res_model">ar.gimnasio.clientes</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -37,13 +37,13 @@
 
     <!-- actions -->
 
-    <menuitem name="List" id="gimnasio.menu_1_list" parent="gimnasio.clientes"
+    <menuitem name="Lista Clientes" id="gimnasio.menu_1_list" parent="gimnasio.clientes"
               action="gimnasio.action_window"/>
-    <menuitem name="List" id="gimnasio.menu_2_list" parent="gimnasio.clases"
+    <menuitem name="Clases" id="gimnasio.menu_2_list" parent="gimnasio.clases"
               action="gimnasio.action_window"/>
-    <menuitem name="List" id="gimnasio.menu_3_list" parent="gimnasio.inscripciones"
+    <menuitem name="Inscripciones" id="gimnasio.menu_3_list" parent="gimnasio.inscripciones"
               action="gimnasio.action_window"/>
-    <menuitem name="List" id="gimnasio.menu_4_list" parent="gimnasio.productos"
+    <menuitem name="Productos" id="gimnasio.menu_4_list" parent="gimnasio.productos"
               action="gimnasio.action_window"/>                              
 
   </data>
