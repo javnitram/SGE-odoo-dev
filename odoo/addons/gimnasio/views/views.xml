@@ -1,60 +1,50 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
+
     <record model="ir.ui.view" id="gimnasio.list">
-      <field name="name">gimnasio list</field>
-      <field name="model">gimnasio.gimnasio</field>
+      <field name="name">Lista Clientes gym</field>
+      <field name="model">ar.gimnasio.clientes</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="dni"/>
+          <field name="nombre"/>
+          <field name="activo"/>
+          <field name="telefono"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="gimnasio.action_window">
       <field name="name">gimnasio window</field>
-      <field name="res_model">gimnasio.gimnasio</field>
+      <field name="res_model">ar.gimnasio.clientes</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="gimnasio.action_server">
-      <field name="name">gimnasio server</field>
-      <field name="model_id" ref="model_gimnasio_gimnasio"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="gimnasio" id="gimnasio.menu_root"/>
--->
+
+    <menuitem name="Gimnasio" id="gimnasio.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="gimnasio.menu_1" parent="gimnasio.menu_root"/>
-    <menuitem name="Menu 2" id="gimnasio.menu_2" parent="gimnasio.menu_root"/>
--->
+
+    <menuitem name="Clientes" id="gimnasio.clientes" parent="gimnasio.menu_root"/>
+    <menuitem name="Clases" id="gimnasio.clases" parent="gimnasio.menu_root"/>
+    <menuitem name="Inscripciones" id="gimnasio.inscripciones" parent="gimnasio.menu_root"/>
+    <menuitem name="Productos" id="gimnasio.productos" parent="gimnasio.menu_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="gimnasio.menu_1_list" parent="gimnasio.menu_1"
+
+    <menuitem name="List" id="gimnasio.menu_1_list" parent="gimnasio.clientes"
               action="gimnasio.action_window"/>
-    <menuitem name="Server to list" id="gimnasio" parent="gimnasio.menu_2"
-              action="gimnasio.action_server"/>
--->
+    <menuitem name="List" id="gimnasio.menu_2_list" parent="gimnasio.clases"
+              action="gimnasio.action_window"/>
+    <menuitem name="List" id="gimnasio.menu_3_list" parent="gimnasio.inscripciones"
+              action="gimnasio.action_window"/>
+    <menuitem name="List" id="gimnasio.menu_4_list" parent="gimnasio.productos"
+              action="gimnasio.action_window"/>                              
+
   </data>
 </odoo>
