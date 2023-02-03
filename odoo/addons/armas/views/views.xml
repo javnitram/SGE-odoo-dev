@@ -1,60 +1,47 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
+
     <record model="ir.ui.view" id="armas.list">
-      <field name="name">armas list</field>
-      <field name="model">armas.armas</field>
+      <field name="name">Lista de armas</field>
+      <field name="model">ac.armas.categoria</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="nombre_arma"/>
+          <field name="precio"/>
+          <field name="referencia"/>
+          <field name="categoria"/>
+          <field name="disponibilidad"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="armas.action_window">
-      <field name="name">armas window</field>
-      <field name="res_model">armas.armas</field>
+      <field name="name">Lista de armas</field>
+      <field name="res_model">ac.armas.categoria</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="armas.action_server">
-      <field name="name">armas server</field>
-      <field name="model_id" ref="model_armas_armas"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="armas" id="armas.menu_root"/>
--->
+
+    <menuitem name="Armas" id="armas.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="armas.menu_1" parent="armas.menu_root"/>
-    <menuitem name="Menu 2" id="armas.menu_2" parent="armas.menu_root"/>
--->
+
+    <menuitem name="Accesorios" id="armas.accesorios" parent="armas.menu_root"/>
+    <menuitem name="Camuflajes" id="armas.camuflajes" parent="armas.menu_root"/>
+    <menuitem name="Clientes" id="armas.clientes" parent="armas.menu_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="armas.menu_1_list" parent="armas.menu_1"
+
+    <menuitem name="List" id="armas.menu_1_list" parent="armas.accesorios"
               action="armas.action_window"/>
-    <menuitem name="Server to list" id="armas" parent="armas.menu_2"
-              action="armas.action_server"/>
--->
+    <menuitem name="List" id="armas.menu_2_list" parent="armas.camuflajes"
+              action="armas.action_window"/>
+    <menuitem name="List" id="armas.menu_3_list" parent="armas.clientes"
+              action="armas.action_window"/>
   </data>
 </odoo>
