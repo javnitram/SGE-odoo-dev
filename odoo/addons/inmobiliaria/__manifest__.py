@@ -24,7 +24,8 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        #FICHERO DE SEGURIDAD PARA DAR PERMISOS A LAS VISTAS/MODULOS
+        'security/ir.model.access.csv',
         #VISTAS QUE ODOO TENDRA EN CUENTA PARA EL MODULO
         'views/views.xml',
         'views/templates.xml',

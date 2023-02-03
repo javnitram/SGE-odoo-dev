@@ -2,14 +2,15 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="il.inmobiliaria.inmueble.list">
+    <record model="ir.ui.view" id="inmobiliaria.inmueble_list">
       <field name="name">Lista de inmuebles</field>
       <field name="model">il.inmobiliaria.inmueble</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="referencia"/>
+          <field name="nombre"/>
+          <field name="tipo"/>
+          <field name="fecha_entrada"/>
         </tree>
       </field>
     </record>
@@ -17,46 +18,29 @@
 
     <!-- actions opening views on models -->
 
-    <record model="il.inmobiliaria.inmueble" id="il.inmobiliaria.inmueble.action_window">
+    <record model="ir.actions.act_window" id="inmobiliaria.inmueble_action_window">
       <field name="name">Inmueble window</field>
       <field name="res_model">il.inmobiliaria.inmueble</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="inmobiliaria.action_server">
-      <field name="name">inmobiliaria server</field>
-      <field name="model_id" ref="model_inmobiliaria_inmobiliaria"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
     <!--               -->
 
-    <menuitem name="Inmobiliaria" id="il.inmobiliaria.menu_root"/>
+    <menuitem name="Inmobiliaria" id="inmobiliaria.menu_root"/>
 
     <!-- menu categories -->
     <!--                 -->
 
-    <menuitem name="Inmueble" id="il.inmobiliaria.inmueble" parent="il.inmobiliaria.menu_root"/>
+    <menuitem name="Inmueble" id="inmobiliaria.inmueble" parent="inmobiliaria.menu_root"/>
     <!--<menuitem name="Venta" id="il.inmobiliaria.menu_2" parent="il.inmobiliaria.menu_root"/> -->
 
     <!-- actions -->
     <!--         -->
-    <menuitem name="Listar inmuebles" id="inmobiliaria.menu_1_list" parent="inmobiliaria.menu_1"
-              action="inmobiliaria.action_window"/>
-   <!-- <menuitem name="Server to list" id="inmobiliaria" parent="inmobiliaria.menu_2"
-              action="inmobiliaria.action_server"/> -->
+    <menuitem name="Listar inmuebles" id="inmobiliaria.menu_1_list" parent="inmobiliaria.inmueble"
+              action="inmobiliaria.inmueble_action_window"/>
 
   </data>
 </odoo>
