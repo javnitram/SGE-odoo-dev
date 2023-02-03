@@ -5,13 +5,13 @@ from odoo import models, fields, api
 class PruebaCategoria(models.Model):
     _name = 'jf.prueba.categoria'
     _description = 'jf.prueba.categoria'
-    nombre = fields.Char(string='Nombre',required=True,help='Introduce el nombre de la categoria')
+    name = fields.Char(string='Nombre',required=True,help='Introduce el nombre de la categoria')
     descripcion = fields.Text(string='Descripcion')
 
 
 class PruebaLibro(models.Model):
     _name = 'jf.prueba.libro'
-    nombre = fields.Char(string='Título',required=True,help='Introduce el nombre del libro')
+    name = fields.Char(string='Título',required=True,help='Introduce el nombre del libro')
     precio = fields.Float(string='Precio')
     ejemplares = fields.Integer(string='ejemplares')
     fecha = fields.Date(string='Fecha de compra')
@@ -21,6 +21,7 @@ class PruebaLibro(models.Model):
     ], string='Estado',default="0")
 
 
+    
 
 
 # class prueba(models.Model):

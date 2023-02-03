@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_prueba_prueba,prueba.prueba,model_prueba_prueba,base.group_user,1,1,1,1
+access_prueba_categoria,Reglas acceso grupo general categoria,model_jf_prueba_categoria,base.group_user,1,1,1,1
