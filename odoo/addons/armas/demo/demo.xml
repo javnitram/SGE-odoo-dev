@@ -1,30 +1,13 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="armas.armas">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+          <record id="arma1" model="ac.armas.categoria">
+            <field name="nombre_arma">MP5</field>
+            <field name="precio">385.45</field>
+            <field name="referencia">FRA4876</field>
+            <field name="categoria">2</field>
+            <field name="disponibilidad">True</field>
           </record>
 
-          <record id="object1" model="armas.armas">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
 
-          <record id="object2" model="armas.armas">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="armas.armas">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="armas.armas">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
     </data>
 </odoo>
