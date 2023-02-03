@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="re_buy.list">
+      <field name="name">reBuy list</field>
+      <field name="model">re_buy.re_buy</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="re_buy.action_window">
+      <field name="name">reBuy window</field>
+      <field name="res_model">re_buy.re_buy</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="re_buy.action_server">
+      <field name="name">reBuy server</field>
+      <field name="model_id" ref="model_re_buy_re_buy"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="reBuy" id="re_buy.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="re_buy.menu_1" parent="re_buy.menu_root"/>
+    <menuitem name="Menu 2" id="re_buy.menu_2" parent="re_buy.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="re_buy.menu_1_list" parent="re_buy.menu_1"
+              action="re_buy.action_window"/>
+    <menuitem name="Server to list" id="re_buy" parent="re_buy.menu_2"
+              action="re_buy.action_server"/>
+-->
+  </data>
+</odoo>
