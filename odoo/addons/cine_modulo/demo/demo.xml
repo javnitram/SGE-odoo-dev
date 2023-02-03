@@ -1,0 +1,91 @@
+<odoo>
+  <data>
+    <!--Empleado-->
+            <record id="e1" model="cinema.empleado"> 
+              <field name="dni">202223</field>
+              <field name="nombre">Fernando</field>
+              <field name="apellido">Hierro</field>
+              <field name="telefono">665504455</field>
+              <field name="puesto">Gerente</field>
+            </record>
+            <record id="e2" model="cinema.empleado">
+              <field name="name">9876</field>
+              <field name="dni">303132</field>
+              <field name="nombre">Hugo</field>
+              <field name="apellido">Sanchez</field>
+              <field name="telefono">665504495</field>
+              <field name="puesto">Dependiente</field>
+            </record>
+            <record id="e3" model="cinema.empleado">
+              <field name="name">4567</field>
+              <field name="dni">50565950</field>
+              <field name="nombre">Paco</field>
+              <field name="apellido">Gento</field>
+              <field name="telefono">665504455</field>
+              <field name="puesto">Dependiente</field>
+            </record>
+        <!--Cliente-->
+            <record id="c1" model="cinema.cliente">
+              <field name="name">1</field>
+              <field name="nombre">Emilio</field>
+              <field name="apellido">Butragenio</field>
+              <field name="telefono">663505253</field>
+              <field name="codigo_postal">202526</field>
+            </record>
+            <record id="c2" model="cinema.cliente">
+              <field name="name">2</field>
+              <field name="nombre">Miguel</field>
+              <field name="apellido">Pardeza</field>
+              <field name="telefono">663505252</field>
+              <field name="codigo_postal">202527</field>
+            </record>
+            <record id="c3" model="cinema.cliente">
+              <field name="name">3</field>
+              <field name="nombre">Manolo</field>
+              <field name="apellido">Sanchis</field>
+              <field name="telefono">663505251</field>
+              <field name="codigo_postal">20831</field>
+            </record>
+        <!--Distribuidoras-->
+          <record id="dis1" model="cinema.distribuidora">
+            <field name="name">W.D</field>
+            <field name="nombre">Walt Disney</field>
+            <field name="pelicula"></field>
+          </record>
+          <record id="dis2" model="cinema.distribuidora">
+            <field name="name">W.B</field>
+            <field name="nombre">Warner Bros</field>
+            <field name="pelicula"></field>
+          </record>
+        <!--Pelicula-->
+          <record id="film1" model="cinema.pelicula">
+            <field name="name">thebravetoast</field>
+            <field name="nombre">La tostadora valiente</field>
+            <field name="sinopsis">La trepidante aventura de una tostadora, muy valiente</field>
+            <field name="duracion">90</field>
+            <field name="fecha_estreno">22/02/2024</field>
+            <field name="distribuidora" ref="dis1"></field>
+          </record>
+          <record id="film2" model="cinema.pelicula">
+            <field name="name">dune</field>
+            <field name="nombre">DUNE</field>
+            <field name="sinopsis">Una historia muy distinta a cualquier otra </field>
+            <field name="duracion">175</field>
+            <field name="fecha_estreno">22/02/2023</field>
+            <field name="distribuidora" ref="dis2"></field>
+          </record>
+       <!-- SESIONES -->
+          <record id="ses1" model="cinema.sesion">
+            <field name="name">1</field>
+            <field name="peli" ref="film1"></field>
+            <field name="sala">1</field>
+            <field name="fecha">22/02/2024 21:00:00</field>
+          </record>
+          <record id="ses2" model="cinema.sesion">
+            <field name="name">1</field>
+            <field name="peli" ref="film2"></field>
+            <field name="sala">8</field>
+            <field name="fecha">22/02/2023 22:30:00</field>
+          </record>
+  </data>
+</odoo>

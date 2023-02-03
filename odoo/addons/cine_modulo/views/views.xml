@@ -1,0 +1,101 @@
+<odoo>
+  <data>
+    <!--Empleados-->
+    <record model="ir.ui.view" id="cinema.empleado">
+      <field name="name">Plantilla de empleados</field>
+      <field name="model">cinema.empleado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="dni" />
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="telefono" />
+        </tree>
+      </field>
+    </record>
+    <!--Cliente-->
+    <record model="ir.ui.view" id="cinema.cliente">
+      <field name="name">Clientes</field>
+      <field name="model">cinema.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="telefono" />
+          <field name="cod_postal" />
+        </tree>
+      </field>
+    </record>
+    <!--Peliculas-->
+    <record model="ir.ui.view" id="cinema.pelicula">
+      <field name="name">Pelicula</field>
+      <field name="model">cinema.pelicula</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="nombre" />
+          <field name="sinopsis" />
+          <field name="duracion" />
+          <field name="fecha_estreno" />
+        </tree>
+      </field>
+    </record>
+    <!--Distribuidora-->
+    <record model="ir.ui.view" id="cinema.distribuidora">
+      <field name="name">Distribuidora</field>
+      <field name="model">cinema.distribuidora</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="nombre" />
+        </tree>
+      </field>
+    </record>
+    <!--Sesiones-->
+    <record model="ir.ui.view" id="cinema.sesion">
+      <field name="name">Sesion</field>
+      <field name="model">cinema.sesion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="peli" />
+          <field name="sala" />
+          <field name="fecha" />
+        </tree>
+      </field>
+    </record>
+<!--Acciones-->
+    <!--Acciones_empleado-->
+    <record model="ir.actions.act_window" id="cinema.empleado_action_window">
+      <field name="name">Empleado</field>
+      <field name="res_model">cinema.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--Acciones_cliente-->
+    <record model="ir.actions.act_window" id="cinema.cliente_action_window">
+      <field name="name">Cliente</field>
+      <field name="res_model">cinema.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--Acciones_peliculas-->
+    <record model="ir.actions.act_window" id="cinema.pelicula_action_window">
+      <field name="name">Peliculas</field>
+      <field name="res_model">cinema.pelicula</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--Aciones_distribuidoras-->
+    <record model="ir.actions.act_window" id="cinema.distribuidora_action_window">
+      <field name="name">Distribuidora</field>
+      <field name="res_model">cinema.distribuidora</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--Acciones_sesiones-->
+    <record model="ir.actions.act_window" id="cinema.sesion_action_window">
+      <field name="name">Sesiones disponibles</field>
+      <field name="res_model">cinema.sesion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+  </data>
+</odoo>
