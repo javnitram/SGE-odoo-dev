@@ -17,7 +17,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="libreria.categoria_action_window">
-      <field name="name">Categoria window</field>
+      <field name="name">Categoria Libros</field>
       <field name="res_model">ar.libreria.categoria</field>
       <field name="view_mode">tree,form</field>
     </record>
