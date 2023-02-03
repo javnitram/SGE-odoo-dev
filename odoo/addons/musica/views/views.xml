@@ -2,13 +2,13 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="tiendainstrumento.categoria">
+    <record model="ir.ui.view" id="musica.categoria">
       <field name="name">Lista de categorias</field>
       <field name="model">jr.tiendainstrumento.categoria</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="description"/>
+          
           </tree>
       </field>
     </record>
@@ -16,7 +16,7 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="jr.tiendainstrumento.categoria">
+    <record model="ir.actions.act_window" id="musica.categoria_action_window">
       <field name="name">Lista de categorias</field>
       <field name="res_model">jr.tiendainstrumento.categoria</field>
       <field name="view_mode">tree,form</field>
@@ -40,18 +40,18 @@
 -->
 
     <!-- Top menu item -->
-
-    <menuitem name="TiendaInstrumentos" id="jr.musica.menu_root"/>
+<!--Elemento de menu, con id interno. Este id sera usado en los submenus como padre-->
+    <menuitem name="TiendaInstrumentos" id="musica.menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Categoria" id="jr.tiendainstrumentos.menu_1" parent="jr.musica.menu_root"/>
-    <menuitem name="Instrumento" id="jr.tiendainstrumentos.menu_2" parent="jr.musica.menu_root"/>
+    <menuitem name="Categoria" id="musica_menu_1" parent="musica.menu_root"/>
+    <menuitem name="Instrumento" id="musica_menu_2" parent="musica.menu_root"/>
 
     <!-- actions -->
 
-    <menuitem name="List" id="musica.menu_1_list" parent="musica.menu_1"
-              action="musica.action_window"/>
+    <menuitem name="List" id="musica.menu_1_list" parent="musica_menu_1"
+              action="musica.categoria_action_window"/>
 <!--
     <menuitem name="Server to list" id="musica" parent="musica.menu_2"
               action="musica.action_server"/>

@@ -5,7 +5,7 @@ from odoo import models, fields, api
 class TiendainstrumentosCategoria(models.Model):
     _name = 'jr.tiendainstrumento.categoria'
     _description = 'model.technical.name'
-    nombre = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre', required=True)
 
 class TiendainstrumentosInstrumento(models.Model):
     _name = 'jr.tiendainstrumento.instrumento'
@@ -17,6 +17,12 @@ class TiendainstrumentosInstrumento(models.Model):
     fecha = fields.Date('Fecha')
 
 
+class TiendainstrumentosVenta(models.Model):
+    _name = 'jr.tiendainstrumento.venta'
+    _description = 'model.technical.name'
+    fecha = fields.Date('fecha')
+    precioPedido = fields.Float('Precio', required=True)
+    numeroProductos = fields.Char('Numero de productos', required=True)
     
 
 
