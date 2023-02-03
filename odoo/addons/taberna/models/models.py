@@ -17,6 +17,12 @@ class TabernaBebidas(models.Model):
     alcohol = fields.Boolean('alcohol', required=True)
     tipo = fields.Char('tipo', required=True)
     pais = fields.Char('pais', required=True)
+    tipo = fields.Selection([
+        ('1', 'rubia'),
+        ('2', 'tostada'),
+        ('3', 'negra')
+    ], string='tipo')
+
 
 class TabernaComidas(models.Model):
     _name = 'jm.taberna.comidas'
