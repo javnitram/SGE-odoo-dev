@@ -1,6 +1,39 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
+
+
+class game_shop_tienda(models.Model):
+    _name = 'game_shop.tienda'
+    _description = 'Tienda de videojuegos'
+    nombre= fields.Char(string="Nombre",required=True,help="Introduce el nombre de la tienda")
+    ubicacion = fields.Char(string="Ubicación",required=True,help="Introduce la ubicación de la tienda")
+    horario = fields.Char(string ="Horario",help="Introduce el horario de la tienda",default="10:00")
+    
+
+class game_shop_videojuego(models.Model):
+    _name = 'game_shop.videojuego'
+    _description = 'Videojuego'
+    nombre = fields.Char(string="Nombre",required=True,help="Introduce el nombre de el videojuego")
+    pegi= fields.Integer(string="Pegi",required=True,default=3,help="Introduce la edad minima para poder jugar al juego")
+    precio = fields.Float(string="Precio",required=True,help="Introduce el precio del videojuego")    
+    digital = fields.Boolean(string="Digital")
+    estado = fields.Selection([
+        ('0', 'Nuevo'),('1','Seminuevo'),('2','Usado')
+    ], string='Estado', required=True,default="0")
+
+class game_shop_distribuidor(models.Model):
+    _name = 'game_shop.distribuidor'
+    _description = 'Distribuidor'
+    nombre = fields.Char(string="Nombre", required=True,help="Introduce el nombre del distribuidor")
+    sede = fields.Selection([
+        ('0', 'Sevilla'),('1','Barcelona'),('2','Madrid'),
+        ('3','Valencia'),('4','Santiago de Compostela'),('5','Valladolid'),
+        ('6','Vitoria'),('7','Gran Canaria'),('8','Toledo'),
+        ('9','Murcia'),('10','Zaragoza'),('11','Palma'),('12','Mérida'),
+        ('13','Oviedo'),('14','Pamplona'),('15','Santander'),('16','Logroño'),
+        ('17','Melilla'),('18','Ceuta')
+    ], string='Sede',required=True,default="2")
 
 
 # class game_shop(models.Model):
