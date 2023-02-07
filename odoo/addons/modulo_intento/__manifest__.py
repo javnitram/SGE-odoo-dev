@@ -27,6 +27,9 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/artistas.xml',
+        'views/canciones.xml',
+        'views/discograficas.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

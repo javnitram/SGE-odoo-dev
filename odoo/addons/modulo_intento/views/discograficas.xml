@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="yf_discografica_list">
+        <field name="name">disco.discografica</field>
+        <field name="model">yf.disco.discografica</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="nombre"/>
+          </tree>
+        </field>
+      </record>
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="modulo_intento.action_window5">
+        <field name="name">Discograficas</field>
+        <field name="res_model">yf.disco.discografica</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+  
+      <!-- Top menu item -->
+  
+      <!-- <menuitem name="Tienda Discos" id="modulo_intento.menu_root"/> -->
+  
+      <!-- menu categories -->
+  
+      <menuitem name="Discograficas" id="modulo_intento.menu_5" parent="modulo_intento.menu_root"
+                action="modulo_intento.action_window5"/>
+  
+      <!-- actions -->
+  
+      <!--<menuitem name="List" id="modulo_intento.menu_1_list" parent="modulo_intento.menu_1"
+                action="modulo_intento.action_window"/>-->
+      <!-- <menuitem name="List" id="modulo_intento.menu_2_list" parent="modulo_intento.menu_2"
+                action="modulo_intento.action_window"/> -->
+    
+  
+    </data>
+  </odoo>

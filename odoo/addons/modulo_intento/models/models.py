@@ -13,6 +13,7 @@ class Disco_Disco(models.Model):
     _description = 'discos.disco'
     titulo = fields.Char('titulo')
     precio = fields.Float('precio')
+    artista = fields.Char('artista')
 
 class Disco_Artista(models.Model):
     _name = 'yf.disco.artista'
@@ -30,6 +31,8 @@ class Disco_Cancion(models.Model):
     nombre = fields.Char('nombre')
     duracion = fields.Float('duracion')
     album = fields.Char('album')
+    artista = fields.Char('artista')
+    genero = fields.Char('genero')
     
 #     name = fields.Char()
 #     value = fields.Integer()
