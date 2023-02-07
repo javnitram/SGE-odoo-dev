@@ -1,6 +1,6 @@
 <odoo>
     <data>
-<!--
+<!-- 
           <record id="object0" model="clubpadel.clubpadel">
             <field name="name">Object 0</field>
             <field name="value">0</field>
@@ -24,7 +24,7 @@
           <record id="object4" model="clubpadel.clubpadel">
             <field name="name">Object 4</field>
             <field name="value">40</field>
-          </record>
--->
+          </record> -->
+
     </data>
 </odoo>

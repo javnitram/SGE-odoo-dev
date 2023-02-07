@@ -3,7 +3,7 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="clubpadel.marca_list">
-      <field name="name">clubpadel list</field>
+      <field name="name">clubpadel List</field>
       <field name="model">clubpadel.marca</field>
       <field name="arch" type="xml">
         <tree>
@@ -12,12 +12,26 @@
       </field>
     </record>
 
-
+    <record model="ir.ui.view" id="clubpadel.modelo_list">
+      <field name="name">clubpadel List</field>
+      <field name="model">clubpadel.modelo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="clubpadel.action_window">
-      <field name="name">clubpadel window</field>
+    <record model="ir.actions.act_window" id="clubpadel.marca_action_window">
+      <field name="name">ClubPadel</field>
       <field name="res_model">clubpadel.marca</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="clubpadel.modelo_action_window">
+      <field name="name">ClubPadel</field>
+      <field name="res_model">clubpadel.modelo</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -45,11 +59,17 @@
     <!-- menu categories -->
 
     <menuitem name="Marca" id="clubpadel.menu_marca" parent="clubpadel.menu_root"/>
+    <menuitem name="Modelo" id="clubpadel.menu_modelo" parent="clubpadel.menu_root"/>
     
     <!-- actions -->
 
-    <menuitem name="List" id="clubpadel.menu_1_list" parent="clubpadel.menu_marca"
-              action="clubpadel.action_window"/>
+    <menuitem name="Lista" id="clubpadel.menu_1_list" parent="clubpadel.menu_marca"
+              action="clubpadel.marca_action_window"/>
+    <menuitem name="Nombre" id="clubpadel.menu_2_list" parent="clubpadel.menu_marca"
+              action="clubpadel.marca_action_window"/>
 
+    <menuitem name="Lista" id="clubpadel.menu_3_list" parent="clubpadel.menu_modelo"
+              action="clubpadel.modelo_action_window"/>
   </data>
+
 </odoo>

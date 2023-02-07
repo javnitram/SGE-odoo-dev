@@ -13,7 +13,7 @@ class ClubPadelModelo(models.Model):
     name = fields.Char(string="Título",required=True,help="Introduce el modelo de la pala")
     precio = fields.Float(string="Precio")
     versiones = fields.Selection([('0','Dura'),('1','Hibrida'),('2','Blanda')],string="Version",default="0")
-    forma = fields.Selection([('0','Gota'),('0','Diamante'),('0','Redonda')],string="Forma",default="0")
+    forma = fields.Selection([('0','Gota'),('1','Diamante'),('2','Redonda')],string="Forma",default="0")
     fecha = fields.Date(string="Fecha de compra")
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Nuevo'),('1','Regular'),('2','Malo')],string="Estado",default="0")
