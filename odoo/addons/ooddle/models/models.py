@@ -10,6 +10,7 @@ class Users(models.Model):
     points = fields.Integer( 'points', help = "Introduce los puntos que tiene el jugardor en la liga")
     league = fields.Char( 'league')
     mail = fields.Char( 'mail', required=True)
+    image = fields.Image('image')
 
 class UserResgistered(models.Model):
     _name = 'dm.ooddle.usersregistered'
@@ -26,4 +27,4 @@ class Courts(models.Model):
     _name = 'dm.ooddle.courts'
     place = fields.Char('place', required=True, help = 'Introduce el lugar de la pista')
     used = fields.Boolean( 'used', default = False, help = 'La pista esta en uso')
-        
+

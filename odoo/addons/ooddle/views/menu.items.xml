@@ -2,17 +2,18 @@
 <odoo>
     <data>
 
+
+    <!--Actions-->
+    <record id="ooddle_users_action_window" model="ir.actions.act_window">
+          <field name="name">Usuarios</field>
+          <field name="res_model">dm.ooddle.users</field>
+          <field name="view_mode">kanban,tree,form</field>
+    </record>  
+    
     <menuitem
       id="ooddle_menu_root"
       name="Ooddle"
       sequence="10"/>
-
-    <menuitem
-        id="ooddle_users_form_menu"
-        name="Create"
-        action="ooddle_users_action_window"
-        parent="ooddle_users_tree_menu"
-        sequence="10"/>
 
     <menuitem
         id="ooddle_users_tree_menu"
@@ -21,12 +22,7 @@
         parent="ooddle_menu_root"
         sequence="10"/>
 
-      <!--Actions-->
-      <record id="ooddle_users_action_window" model="ir.actions.act_window">
-            <field name="name">Usuarios</field>
-            <field name="res_model">dm.ooddle.users</field>
-            <field name="view_mode">tree</field>
-    </record>  
+
     
   </data>
 </odoo>
