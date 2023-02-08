@@ -2,15 +2,21 @@
 
 from odoo import models, fields, api
 
+
+class ClubPadelClub(models.Model):
+    _name = "clubpadel.club"
+    _description = "Nombre del Club"
+    name = fields.Char(string="Club",required=True,help="Introduce el nombre del club")
+
 class ClubPadelMarca(models.Model):
     _name = "clubpadel.marca"
     _description = "Marca de la pala"
-    name = fields.Char(string="Nombre",required=True,help="Introduce el nombre de la marca")
+    name = fields.Char(string="Marca",required=True,help="Introduce el nombre de la marca")
 
 class ClubPadelModelo(models.Model):
     _name = "clubpadel.modelo"
     _description = "Modelo de la pala"
-    name = fields.Char(string="Título",required=True,help="Introduce el modelo de la pala")
+    name = fields.Char(string="Modelo",required=True,help="Introduce el modelo de la pala")
     precio = fields.Float(string="Precio")
     versiones = fields.Selection([('0','Dura'),('1','Hibrida'),('2','Blanda')],string="Version",default="0")
     forma = fields.Selection([('0','Gota'),('1','Diamante'),('2','Redonda')],string="Forma",default="0")
@@ -20,7 +26,7 @@ class ClubPadelModelo(models.Model):
 class ClubPadelFabricante(models.Model):
     _name = "clubpadel.fabricante"
     _description = "Fabricante de la pala"
-    name = fields.Char(string="Título",required=True,help="Introduce el fabricante de la pala")
+    name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
     fecha_salida = fields.Date(string="Fecha de salida")
     
 # class clubpadel(models.Model):
