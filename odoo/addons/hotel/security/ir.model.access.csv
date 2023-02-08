@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_hotel_hotel,hotel.hotel,model_hotel_hotel,base.group_user,1,1,1,1
+access_hotel_cliente,Reglas acceso grupo general cliente,model_jf_hotel_cliente,base.group_user,1,1,1,1
+access_hotel_reserva,Reglas acceso grupo general reserva,model_jf_hotel_reserva,base.group_user,1,1,1,1
+access_hotel_empresa,Reglas acceso grupo general empresa,model_jf_hotel_empresa,base.group_user,1,1,1,1
+access_hotel_habitaciones,Reglas acceso grupo general habitaciones,model_jf_hotel_habitaciones,base.group_user,1,1,1,1
