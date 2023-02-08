@@ -2,12 +2,14 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="taberna_categoria_list">
+    <record model="ir.ui.view" id="taberna_informacion_list">
       <field name="name">taberna list</field>
-      <field name="model">jm.taberna.categoria</field>
+      <field name="model">jm.taberna.informacion</field>
       <field name="arch" type="xml">
         <tree>
           <field name="nombre"/>
+          <field name="direccion"/>
+          <field name="id_empleado"/>
         </tree>
       </field>
     </record>
@@ -17,7 +19,7 @@
 
     <record model="ir.actions.act_window" id="taberna_action_window">
       <field name="name">taberna window</field>
-      <field name="res_model">jm.taberna.categoria</field>
+      <field name="res_model">jm.taberna.informacion</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -33,7 +35,7 @@
 
     <!-- actions -->
 
-    <menuitem name="Listar categorias" id="taberna_menu_1_list" parent="taberna_menu_1"
+    <menuitem name="Información de la taberna" id="taberna_menu_1_list" parent="taberna_menu_1"
               action="taberna_action_window"/>
 
   </data>

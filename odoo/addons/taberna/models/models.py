@@ -3,11 +3,12 @@
 from odoo import models, fields, api
 
 
-class TabernaCategoria(models.Model):
-    _name = 'jm.taberna.categoria'
-    _description = 'jm.taberna.categoria'
+class TabernaInformacion(models.Model):
+    _name = 'jm.taberna.informacion'
+    _description = 'jm.taberna.informacion'
     nombre = fields.Char('nombre', required=True)
-
+    direccion = fields.Char('direccion', required=True)
+    id_empleado = fields.Integer('id_empleado', required=True)
 
 class TabernaBebidas(models.Model):
     _name = 'jm.taberna.bebidas'
@@ -23,14 +24,6 @@ class TabernaBebidas(models.Model):
         ('3', 'negra')
     ], string='tipo')
 
-
-class TabernaComidas(models.Model):
-    _name = 'jm.taberna.comidas'
-    _description = 'jm.taberna.comidas'
-    id_comida = fields.Integer('id', required=True)
-    nombre = fields.Char('nombre', required=True)
-    vegetariano = fields.Boolean('vegetariano', required=True)
-
 class TabernaEmpleados(models.Model):
     _name = 'jm.taberna.empleados'
     _description = 'jm.taberna.empleados'
@@ -38,10 +31,30 @@ class TabernaEmpleados(models.Model):
     nombre = fields.Char('nombre', required=True)
     apellido1 = fields.Char('apellido1', required=True)
     apellido2 = fields.Char('apellido2')
-    edad = fields.Integer('edad')
     salario = fields.Float('salario')
     telefono = fields.Integer('telefono', required=True)
-    
+    categoria = fields.Selection([
+        ('1', 'camarero'),
+        ('2', 'cocinero'),
+    ], string='categoria')
+
+class TabernaClientes(models.Model):
+    _name = 'jm.taberna.clientes'
+    _description = 'jm.taberna.clientes'
+    id_cliente= fields.Integer('id', required=True)
+    nombre = fields.Char('nombre', required=True)
+    apellido1 = fields.Char('apellido1', required=True)
+    apellido2 = fields.Char('apellido2')
+
+class TabernaPedidos(models.Model):
+    _name = 'jm.taberna.pedidos'
+    _description = 'jm.taberna.pedidos'
+    id_pedidos = fields.Integer('id', required=True)
+    cantidad = fields.Integer('cantidad', required=True)
+    id_bebida = fields.Integer('id', required=True)
+    id_empleado = fields.Integer('id', required=True)
+    id_empleado = fields.Integer('id', required=True)
+    id_cliente= fields.Integer('id', required=True)
 
 # classpaisuired
 # salario = fields.Float('salario')=Truern, re, requ, required=Trueired=Trueq
