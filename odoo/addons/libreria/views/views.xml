@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="libreria_categoria_tree">
+      <field name="name">libreria.categoria.tree</field>
+      <field name="model">libreria.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria_libro_tree">
+      <field name="name">libreria.libro.tree</field>
+      <field name="model">libreria.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="ejemplares"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="libreria_categoria_action_window">
+      <field name="name">CATEGORÍA</field>
+      <field name="res_model">libreria.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+     <record model="ir.actions.act_window" id="libreria_libro_action_window">
+      <field name="name">LIBRO</field>
+      <field name="res_model">libreria.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Librería" id="libreria_menu_root"/>
+
+    <!-- menu categories -->
+    <!-- actions -->
+    <menuitem name="Categorías" 
+      id="libreria_categoria_menu" 
+      parent="libreria_menu_root"
+      action="libreria_categoria_action_window"/>
+
+    <menuitem name="Libros" 
+    id="libreria_libro_menu" 
+    parent="libreria_menu_root"
+    action="libreria_libro_action_window"/>
+
+  </data>
+</odoo>

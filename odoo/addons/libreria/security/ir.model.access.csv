@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_libreria_categoria,Reglas de acceso de categoría,model_libreria_categoria,base.group_user,1,1,1,1
+access_libreria,Reglas de acceso de libros,model_libreria_libro,base.group_user,1,1,1,1
