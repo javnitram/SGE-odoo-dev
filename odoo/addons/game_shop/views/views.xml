@@ -1,28 +1,26 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="game_shop.list">
-      <field name="name">game_shop list</field>
-      <field name="model">game_shop.game_shop</field>
+
+    <record model="ir.ui.view" id="game_shop.tienda_list">
+      <field name="name"> Tienda videojuegos</field>
+      <field name="model">game_shop.tienda</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="nombre"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="game_shop.action_window">
-      <field name="name">game_shop window</field>
-      <field name="res_model">game_shop.game_shop</field>
+
+    <record model="ir.actions.act_window" id="game_shop.tienda_action_window">
+      <field name="name">Tienda</field>
+      <field name="res_model">game_shop.tienda</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +39,17 @@
 -->
 
     <!-- Top menu item -->
-<!--
+
     <menuitem name="game_shop" id="game_shop.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="game_shop.menu_1" parent="game_shop.menu_root"/>
-    <menuitem name="Menu 2" id="game_shop.menu_2" parent="game_shop.menu_root"/>
--->
+
+    <menuitem name="Tienda" id="game_shop.menu_tienda" parent="game_shop.menu_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="game_shop.menu_1_list" parent="game_shop.menu_1"
-              action="game_shop.action_window"/>
-    <menuitem name="Server to list" id="game_shop" parent="game_shop.menu_2"
-              action="game_shop.action_server"/>
--->
+
+    <menuitem name="Tiendas" id="game_shop.menu_1_list" parent="game_shop.menu_tienda"
+              action="game_shop.tienda_action_window"/>
+
   </data>
 </odoo>

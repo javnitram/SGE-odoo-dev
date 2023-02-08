@@ -35,6 +35,15 @@ class game_shop_distribuidor(models.Model):
         ('17','Melilla'),('18','Ceuta')
     ], string='Sede',required=True,default="2")
 
+class game_shop_almacen(models.Model):
+    _name = 'game_shop.almacen'
+    _description = 'Almacen juegos'
+    nombre = fields.Char(string = "Almacen",required=True,help="Introduce el nombre del almacen",default="almacen")
+    cantidad = fields.Integer(string = "Cantidad", help="Cantidad de juegos en el almacen",default=0)
+    #fk juego
+
+    
+
 
 # class game_shop(models.Model):
 #     _name = 'game_shop.game_shop'
