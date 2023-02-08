@@ -1,9 +1,11 @@
 <odoo>
   <data>
+    <!-- Floristeria -->
+
     <!-- explicit list view definition -->
-    <record model="ir.ui.view" id="floristeria.flower_list">
-      <field name="name">Floristeria.vista</field>
-      <field name="model">hf_floristeria_flower</field>
+    <record model="ir.ui.view" id="floristeria.floristeria_list">
+      <field name="name">floristeria.view.form</field>
+      <field name="model">hf_floristeria_floristeria</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -12,15 +14,15 @@
     </record>
 
     <!-- actions opening views on models -->
-    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_action_window">
-      <field name="name">Floristeria window</field>
-      <field name="res_model">floristeria.floristeria</field>
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_floristeria_action_window">
+      <field name="name">Flower window</field>
+      <field name="res_model">hf_floristeria_floristeria</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <!-- server action to the one above -->
-    <record model="ir.actions.server" id="floristeria.hf_floristeria_flower_action_server">
-      <field name="name">Floristeria server</field>
+    <!-- <record model="ir.actions.server" id="floristeria.hf_floristeria_flower_action_server">
+      <field name="name">Flower server</field>
       <field name="model_id" ref="model_hf_floristeria_flower"/>
       <field name="state">code</field>
       <field name="code">
@@ -31,19 +33,103 @@
         }
       </field>
     </record>
+ -->
 
     <!-- Top menu item -->
     <menuitem name="Floristeria" id="floristeria.menu_root"/>
 
+    <!-- Flower -->
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="floristeria.flower_list">
+      <field name="name">flower.view.form</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="scientific_name"/>
+          <field name="specie"/>
+          <field name="main_color"/>
+          <field name="group"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_action_window">
+      <field name="name">Flower window</field>
+      <field name="res_model">hf_floristeria_flower</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!-- <record model="ir.actions.server" id="floristeria.hf_floristeria_flower_action_server">
+      <field name="name">Flower server</field>
+      <field name="model_id" ref="model_hf_floristeria_flower"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+ -->
+
     <!-- menu categories -->
-    <menuitem name="Menu 1" id="floristeria.menu_1" parent="floristeria.menu_root"/>
-    <!-- <menuitem name="Menu 2" id="floristeria.menu_2" parent="floristeria.menu_root"/> -->
+    <menuitem name="Flores" id="floristeria.menu_1" parent="floristeria.menu_root"/>
     
     <!-- actions -->
     <menuitem name="List" id="floristeria.menu_1_list" parent="floristeria.menu_1"
               action="floristeria.hf_floristeria_flower_action_window"/>
-    <!-- <menuitem name="Server to list" id="floristeria" parent="floristeria.menu_2"
-              action="floristeria.action_server"/> -->
+
+    <!-- Bouquet -->
+
+    <record id="bouquet_view_form" model="ir.ui.view">
+      <field name="name">bouquet.view.form</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="arch" type="xml">
+        <form string="Ramo de flores">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="size"/>
+              <field name="price"/>
+              <field name="delivery_date"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_bouquet_action_window">
+      <field name="name">Bouquet window</field>
+      <field name="res_model">hf_floristeria_bouquet</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--     <record model="ir.actions.server" id="floristeria.hf_floristeria_bouquet_action_server">
+      <field name="name">Bouquet server</field>
+      <field name="model_id" ref="model_hf_floristeria_bouquet"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+    <!-- menu categories -->
+    <menuitem name="Ramos de flores" id="floristeria.menu_1" parent="floristeria.menu_root"/>
+    
+    <!-- actions -->
+    <menuitem name="List" id="floristeria.menu_1_list" parent="floristeria.menu_1"
+              action="floristeria.hf_floristeria_bouquet_action_window"/>
 
   </data>
 </odoo>
