@@ -37,11 +37,11 @@
 
     <!-- actions -->
 
-    <menuitem name="List" id="armas.menu_1_list" parent="armas.accesorios"
+    <menuitem name="Accesorios" id="armas.menu_1_list" parent="armas.accesorios"
               action="armas.action_window"/>
-    <menuitem name="List" id="armas.menu_2_list" parent="armas.camuflajes"
+    <menuitem name="Camuflajes" id="armas.menu_2_list" parent="armas.camuflajes"
               action="armas.action_window"/>
-    <menuitem name="List" id="armas.menu_3_list" parent="armas.clientes"
+    <menuitem name="Clientes" id="armas.menu_3_list" parent="armas.clientes"
               action="armas.action_window"/>
   </data>
 </odoo>
