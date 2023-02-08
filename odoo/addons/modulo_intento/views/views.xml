@@ -71,6 +71,7 @@
           <field name="titulo"/>
           <field name="precio"/>
           <field name="artista"/>
+          <field name="discografica"/>
         </tree>
       </field>
     </record>
