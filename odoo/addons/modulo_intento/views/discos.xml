@@ -20,6 +20,7 @@
         <field name="arch" type="xml">
           <form>
             <group colspan="2" col="2">
+                <img src='modulo_intento/images/Switchfoot.jpg'/>
                 <field name="titulo"/>
                 <field name="precio"/>
                 <field name="artista"/>
