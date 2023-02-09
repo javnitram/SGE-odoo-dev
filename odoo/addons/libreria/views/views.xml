@@ -3,7 +3,7 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="libreria.categoria_list">
-      <field name="name">libreria list</field>
+      <field name="name">Categorías</field>
       <field name="model">jm.libreria.categoria</field>
       <field name="arch" type="xml">
         <tree>
@@ -12,10 +12,47 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="libreria.libro_list">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="estado"/>
+          <field name="categoria_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria.autor_list">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.autor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fec_nacimiento"/>
+          <field name="pais_id"/>
+        </tree>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="libreria.categoria_action_window">
-      <field name="name">Listado de categorías</field>
+      <field name="name">Categorías</field>
       <field name="res_model">jm.libreria.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="libreria.libro_action_window">
+      <field name="name">Libros</field>
+      <field name="res_model">jm.libreria.libro</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="libreria.autor_action_window">
+      <field name="name">Autores</field>
+      <field name="res_model">jm.libreria.autor</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -28,8 +65,12 @@
     <menuitem name="Autores" id="libreria.menu_autores" parent="libreria.menu_root"/>
 
     <!-- actions -->
-    <menuitem name="Lista" id="libreria.categoria_menu_lista" parent="libreria.menu_categoria"
+    <menuitem name="Categorías" id="libreria.categoria_menu_lista_categorias" parent="libreria.menu_categoria"
               action="libreria.categoria_action_window"/>
+    <menuitem name="Libros" id="libreria.categoria_menu_lista_libros" parent="libreria.menu_libros"
+              action="libreria.libro_action_window"/>
+    <menuitem name="Autores" id="libreria.categoria_menu_lista_autores" parent="libreria.menu_autores"
+              action="libreria.autor_action_window"/>
 
   </data>
 </odoo>

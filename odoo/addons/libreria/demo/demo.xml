@@ -1,21 +1,22 @@
 <odoo>
     <data>
+
+          <record id="categoria_historica" model="jm.libreria.categoria">
+            <field name="name">Histórica</field>
+          </record>
+
+          <record id="libro_africanus" model="jm.libreria.libro">
+            <field name="name">Africanus</field>
+            <field name="precio">20</field>
+            <field name="categoria_id" ref="categoria_historica"/>
+          </record>
+
+          <record id="autor_posteguillo" model="jm.libreria.autor">
+            <field name="name">Santiago Posteguillo</field>
+            <field name="fec_nacimiento">1967-01-01</field>
+            <field name="pais_id" ref="base.es"/>
+          </record>
 <!--
-          <record id="object0" model="libreria.libreria">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
-
-          <record id="object1" model="libreria.libreria">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
-          </record>
-
-          <record id="object2" model="libreria.libreria">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
           <record id="object3" model="libreria.libreria">
             <field name="name">Object 3</field>
             <field name="value">30</field>

@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_libreria_categoria,Acceso categoría,model_jm_libreria_categoria,base.group_user,1,0,0,0
-access_libreria_autor,Acceso autor,model_jm_libreria_autor,base.group_user,1,0,0,0
-access_libreria_libro,Acceso libro,model_jm_libreria_libro,base.group_user,1,0,0,0
+access_libreria_categoria,Acceso categoría,model_jm_libreria_categoria,base.group_user,1,1,1,1
+access_libreria_autor,Acceso autor,model_jm_libreria_autor,base.group_user,1,1,1,1
+access_libreria_libro,Acceso libro,model_jm_libreria_libro,base.group_user,1,1,1,1

@@ -19,12 +19,15 @@ class LibreriaLibro(models.Model):
         ('1', 'Regular'),
         ('2', 'Malo')
     ], string='Estado')
+    categoria_id = fields.Many2one('jm.libreria.categoria', string='Categoría')
+    autores_ids = fields.Many2many('jm.libreria.autor', string='Autores')
     
 class LibreriaAutor(models.Model):
     _name = 'jm.libreria.autor'
     _description = 'Autor'
     name = fields.Char('Autor', required=True, help='Introduce el nombre del autor')
     fec_nacimiento = fields.Date('Fecha de nacimiento')
+    pais_id = fields.Many2one('res.country', string='País')
     
 
 # class libreria(models.Model):
