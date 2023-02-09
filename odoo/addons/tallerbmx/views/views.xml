@@ -1,0 +1,135 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="tallerbmx.bicicleta">
+      <field name="name">Lista bicicletas</field>
+      <field name="model">tallerbmx.bicicleta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="idBicicleta"/>
+          <field name="nombre"/>
+          <field name="nroCliente"/>
+          <field name="categoria"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tallerbmx.empleado">
+      <field name="name">Lista empleados</field>
+      <field name="model">tallerbmx.empleado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nroEmpleado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tallerbmx.reparacion">
+      <field name="name">Lista reparaciones</field>
+      <field name="model">tallerbmx.reparacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="idReparacion"/>
+          <field name="nroEmpleado"/>
+          <field name="nroPieza"/>
+          <field name="idBicicleta"/>
+          <field name="informe"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tallerbmx.pieza">
+      <field name="name">Lista piezas</field>
+      <field name="model">tallerbmx.pieza</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nroPieza"/>
+          <field name="piezaBici"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tallerbmx.cliente">
+      <field name="name">Lista clientes</field>
+      <field name="model">tallerbmx.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nroCliente"/>
+          <field name="nombre"/>
+          <field name="apellido"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="tallerbmx.action_window_1">
+      <field name="name">Taller Bicicletas</field>
+      <field name="res_model">tallerbmx.bicicleta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tallerbmx.action_window_2">
+      <field name="name">Taller Bicicletas</field>
+      <field name="res_model">tallerbmx.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tallerbmx.action_window_3">
+      <field name="name">Taller Bicicletas</field>
+      <field name="res_model">tallerbmx.reparacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tallerbmx.action_window_4">
+      <field name="name">Taller Bicicletas</field>
+      <field name="res_model">tallerbmx.pieza</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tallerbmx.action_window_5">
+      <field name="name">Taller Bicicletas</field>
+      <field name="res_model">tallerbmx.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tallerbmx.action_server">
+      <field name="name">tallerbmx server</field>
+      <field name="model_id" ref="model_tallerbmx_tallerbmx"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Taller BMX" id="tallerbmx.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Bicicletas" id="tallerbmx.menu_1" parent="tallerbmx.menu_root"/>
+    <menuitem name="Empleados" id="tallerbmx.menu_2" parent="tallerbmx.menu_root"/>
+    <menuitem name="Reparacion" id="tallerbmx.menu_3" parent="tallerbmx.menu_root"/>
+    <menuitem name="Pieza" id="tallerbmx.menu_4" parent="tallerbmx.menu_root"/>
+    <menuitem name="Cliente" id="tallerbmx.menu_5" parent="tallerbmx.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Registros" id="tallerbmx.menu_1_list" parent="tallerbmx.menu_1" action="tallerbmx.action_window_1"/>
+    <menuitem name="Registros" id="tallerbmx.menu_2_list" parent="tallerbmx.menu_2" action="tallerbmx.action_window_2"/>
+    <menuitem name="Registros" id="tallerbmx.menu_3_list" parent="tallerbmx.menu_3" action="tallerbmx.action_window_3"/>
+    <menuitem name="Registros" id="tallerbmx.menu_4_list" parent="tallerbmx.menu_4" action="tallerbmx.action_window_4"/>
+    <menuitem name="Registros" id="tallerbmx.menu_5_list" parent="tallerbmx.menu_5" action="tallerbmx.action_window_5"/>
+
+  </data>
+</odoo>
