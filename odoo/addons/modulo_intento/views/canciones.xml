@@ -36,7 +36,7 @@
       <record model="ir.actions.act_window" id="modulo_intento.action_window4">
         <field name="name">Canciones</field>
         <field name="res_model">yf.disco.cancion</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
       </record>
 
       <record model="ir.actions.act_window" id="modulo_intento.action_window6">

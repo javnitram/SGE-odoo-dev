@@ -30,6 +30,7 @@
         'views/artistas.xml',
         'views/canciones.xml',
         'views/discograficas.xml',
+        'views/discos.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
