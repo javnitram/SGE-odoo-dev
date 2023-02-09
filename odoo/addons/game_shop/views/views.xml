@@ -8,17 +8,67 @@
       <field name="arch" type="xml">
         <tree>
           <field name="nombre"/>
+          <field name="ubicacion"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="game_shop.tienda_form">
+      <field name="name">Alta tienda videojuegos</field>
+      <field name="model">game_shop.tienda</field>
+      <field name="arch" type="xml">
+        <form >
+          <sheet>
+            <group>
+              <field name="nombre"/>
+              <field name="ubicacion"/>
+              <field name="horario"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="game_shop.videojuego_form">
+      <field name="name">Videojuego</field>
+      <field name="model">game_shop.videojuego</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="nombre"/>
+              <field name="precio"/>
+              <field name="pegi"/>
+              <field name="estado"/>
+              <field name="digital"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
 
     <!-- actions opening views on models -->
 
+    <!--Action view de listar tiendas gracias a tener tree y form esto le va a permitir editar y ver los campos-->
     <record model="ir.actions.act_window" id="game_shop.tienda_action_window">
       <field name="name">Tienda</field>
       <field name="res_model">game_shop.tienda</field>
       <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Action view para dar de alta una tienda -->
+    <record model="ir.actions.act_window" id="game_shop.tienda_action_window_alta">
+      <field name="name">Alta tienda</field>
+      <field name="res_model">game_shop.tienda</field>
+      <field name="view_mode">form</field>
+    </record>
+
+
+
+    <record model="ir.actions.act_window" id="game_shop.videojuego_action_window">
+      <field name="name">Videojuego</field>
+      <field name="res_model">game_shop.videojuego</field>
+      <field name="view_mode">form</field>
     </record>
 
 
@@ -40,16 +90,22 @@
 
     <!-- Top menu item -->
 
-    <menuitem name="game_shop" id="game_shop.menu_root"/>
+    <menuitem name="Tienda videojuegos" id="game_shop.menu_root"/>
 
     <!-- menu categories -->
 
     <menuitem name="Tienda" id="game_shop.menu_tienda" parent="game_shop.menu_root"/>
+    <menuitem name="Videojuego" id="game_shop.menu_videojuego" parent="game_shop.menu_root"/>
 
     <!-- actions -->
-
-    <menuitem name="Tiendas" id="game_shop.menu_1_list" parent="game_shop.menu_tienda"
+    <!-- Menu items tiendas  -->
+    <menuitem name="Vista tiendas" id="game_shop.menu_tiendas_vista" parent="game_shop.menu_tienda"
               action="game_shop.tienda_action_window"/>
+    <menuitem name="Alta tiendas" id="game_shop.menu_tiendas_alta" parent="game_shop.menu_tienda"
+              action="game_shop.tienda_action_window_alta"/>
+    <!-- Menu items juegos  -->
+    <menuitem name="Alta Videojuego" id="game_shop.menu_videojuegos" parent="game_shop.menu_videojuego"
+              action="game_shop.videojuego_action_window"/>
 
   </data>
 </odoo>
