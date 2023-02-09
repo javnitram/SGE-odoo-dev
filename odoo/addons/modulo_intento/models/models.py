@@ -13,14 +13,14 @@ class Disco_Disco(models.Model):
     _description = 'discos.disco'
     titulo = fields.Char('titulo')
     precio = fields.Float('precio')
-    artista = fields.Char('artista')
+    artista_id = fields.Many2one("yf.disco.artista", string="artista", required=True)
     discografica = fields.Char('discografica')
     image = fields.Binary()
 
 class Disco_Artista(models.Model):
     _name = 'yf.disco.artista'
     _description = 'disco.artista'
-    nombre = fields.Char('nombre')
+    name = fields.Char('nombre')
     anhofundacion = fields.Char('año de fundacion')
 
 class Disco_Discografica(models.Model):

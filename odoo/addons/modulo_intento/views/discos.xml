@@ -9,7 +9,7 @@
         <tree>
           <field name="titulo"/>
           <field name="precio"/>
-          <field name="artista"/>
+          <field name="artista_id"/>
           <field name="discografica"/>
         </tree>
       </field>
@@ -26,7 +26,7 @@
                     <img src='/modulo_intento/images/Switchfoot.png'/>
                     <field name="titulo"/>
                     <field name="precio"/>
-                    <field name="artista"/>
+                    <field name="artista_id"/>
                     <field name="discografica"/>
                 </group> 
             </sheet>   
