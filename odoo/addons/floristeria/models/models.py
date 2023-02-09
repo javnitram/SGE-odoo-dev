@@ -19,13 +19,23 @@ class flower(models.Model):
         ('A', 'Angiospermas'),
         ('G', 'Gimnospermas')
     ], string='Grupo',required=True)
-    """ subgroup = fields.Selection([
+    subgroup_gim = fields.Selection([
         ('0', 'Cícadas'),
         ('1', 'Ginko'),
         ('2', 'Coníferas'),
         ('3', 'Gnetales')
-    ], string='Subgrupo',required=True) """
-    image = fields.Image('Imagen')
+    ], string='Subgrupo de las gimnospermas',required=True)
+    subgroup_ang = fields.Selection([
+        ('0', 'Amborellales'),
+        ('1', 'Nymphaeales'),
+        ('2', 'Austrobaileyales'),
+        ('3', 'Chloranthales'),
+        ('4', 'Magnólidas'),
+        ('5', 'Ceratophyllales'),
+        ('6', 'Eudicotiledóneas'),
+        ('7', 'Monocotiledóneas')
+    ], string='Subgrupo de las angiospermas',required=True)
+    flower_image = fields.Image('Imagen')
 
 class bouquet(models.Model):
     _name = 'hf_floristeria_bouquet'
@@ -40,4 +50,4 @@ class bouquet(models.Model):
     ], string='Tamaño',required=True)
     price = fields.Float('Precio', required=True)
     delivery_date = fields.Date('Fecha de entrega')
-    image = fields.Image('Imagen')
+    bouquet_image = fields.Image('Imagen')
