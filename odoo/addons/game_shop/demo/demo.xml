@@ -2,7 +2,7 @@
     <data>
 
           <record id="tienda1" model="game_shop.tienda">
-            <field name="nombre">Pepeland</field>
+            <field name="name">Pepeland</field>
             <field name="ubicacion">Los morancos</field>
             <field name="horario">12:00</field>
           </record>
