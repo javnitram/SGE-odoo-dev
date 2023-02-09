@@ -6,7 +6,14 @@ from odoo import models, fields, api
 class ClubPadelClub(models.Model):
     _name = "clubpadel.club"
     _description = "Nombre del Club"
-    name = fields.Char(string="Club",required=True,help="Introduce el nombre del club")
+    nombre = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
+    ubicacion = fields.Char(string="Ubicacion",required=True,help="Introduce la ubicacion del club.")
+
+class ClubPadelFabricante(models.Model):
+    _name = "clubpadel.fabricante"
+    _description = "Fabricante de la pala"
+    name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
+    fecha_salida = fields.Date(string="Fecha de salida")
 
 class ClubPadelMarca(models.Model):
     _name = "clubpadel.marca"
@@ -23,11 +30,6 @@ class ClubPadelModelo(models.Model):
     fecha = fields.Date(string="Fecha de compra")
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Nuevo'),('1','Regular'),('2','Malo')],string="Estado",default="0")
-class ClubPadelFabricante(models.Model):
-    _name = "clubpadel.fabricante"
-    _description = "Fabricante de la pala"
-    name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
-    fecha_salida = fields.Date(string="Fecha de salida")
     
 # class clubpadel(models.Model):
 #     _name = 'clubpadel.clubpadel'

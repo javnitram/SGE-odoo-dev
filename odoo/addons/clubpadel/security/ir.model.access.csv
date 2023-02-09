@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_clubpadel_club,Acceso clubpadel club,model_clubpadel_club,base.group_user,1,1,1,1
+access_clubpadel_fabricante,Acceso clubpadel fabricante,model_clubpadel_fabricante,base.group_user,1,1,1,1
 access_clubpadel_marca,Acceso clubpadel marca,model_clubpadel_marca,base.group_user,1,1,1,1
 access_clubpadel_modelo,Acceso clubpadel modelo,model_clubpadel_modelo,base.group_user,1,1,1,1

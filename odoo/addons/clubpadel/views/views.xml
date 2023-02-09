@@ -6,7 +6,19 @@
       <field name="model">clubpadel.club</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="nombre"/>
+          <field name="ubicacion"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clubpadel.fabricante_list">
+      <field name="name">clubpadel List</field>
+      <field name="model">clubpadel.fabricante</field>
+      <field name="arch" type="xml">
+        <tree>
           <field name="name"/>
+          <field name="fecha_salida"/>
         </tree>
       </field>
     </record>
@@ -27,14 +39,27 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="precio"/>
+          <field name="versiones"/>
+          <field name="forma"/>
+          <field name="fecha"/>
+          <field name="segmano"/>
+          <field name="estado"/>
         </tree>
       </field>
     </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="clubpadel.club_action_window">
       <field name="name">ClubPadel</field>
       <field name="res_model">clubpadel.club</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="clubpadel.fabricante_action_window">
+      <field name="name">ClubPadel</field>
+      <field name="res_model">clubpadel.fabricante</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -73,6 +98,7 @@
 
     <!-- menu categories -->
     <menuitem name="Club" id="clubpadel.menu_club" parent="clubpadel.menu_root"/>
+    <menuitem name="Fabricante" id="clubpadel.menu_fabricante" parent="clubpadel.menu_root"/>
     <menuitem name="Marca" id="clubpadel.menu_marca" parent="clubpadel.menu_root"/>
     <menuitem name="Modelo" id="clubpadel.menu_modelo" parent="clubpadel.menu_root"/>
     
@@ -81,10 +107,13 @@
     <menuitem name="Clubes" id="clubpadel.menu_clubes" parent="clubpadel.menu_club"
               action="clubpadel.club_action_window"/>
 
-    <menuitem name="Nombres" id="clubpadel.menu_marcas" parent="clubpadel.menu_marca"
+    <menuitem name="Fabricantes" id="clubpadel.menu_fabricantes" parent="clubpadel.menu_fabricante"
+              action="clubpadel.fabricante_action_window"/>
+
+    <menuitem name="Marcas" id="clubpadel.menu_marcas" parent="clubpadel.menu_marca"
               action="clubpadel.marca_action_window"/>
 
-    <menuitem name="Lista" id="clubpadel.menu_modelos" parent="clubpadel.menu_modelo"
+    <menuitem name="Modelos" id="clubpadel.menu_modelos" parent="clubpadel.menu_modelo"
               action="clubpadel.modelo_action_window"/>
   </data>
 
