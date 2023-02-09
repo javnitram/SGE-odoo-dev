@@ -2,49 +2,99 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="dhm_concesionario_marca_list">
+    <record model="ir.ui.view" id="dhm_concesionario_pedidos_list">
       <field name="name">concesionario list</field>
-      <field name="model">dhm.concesionario.marcas</field>
+      <field name="model">dhm.concesionario.pedidos</field>
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
-          <field name="nombre"/>
+
         </tree>
       </field>
     </record>
 
+    <record model="ir.ui.view" id="dhm_concesionario_vehiculos_list">
+      <field name="name">concesionario list</field>
+      <field name="model">dhm.concesionario.vehiculos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="marca"/>
+          <field name="modelo"/>
+          <field name="estado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dhm_concesionario_clientes_list">
+      <field name="name">concesionario list</field>
+      <field name="model">dhm.concesionario.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="dhm_concesionario_matriculacion_list">
+      <field name="name">concesionario list</field>
+      <field name="model">dhm.concesionario.matriculacion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="matricula"/>
+        </tree>
+      </field>
+    </record>
+
+    
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="concesionario.action_window">
-      <field name="name">Lista de marcas</field>
-      <field name="res_model">dhm.concesionario.marcas</field>
+    <record model="ir.actions.act_window" id="concesionario.action_window_pedidos">
+      <field name="name">Lista de pedidos</field>
+      <field name="res_model">dhm.concesionario.pedidos</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="concesionario.action_server">
-      <field name="name">concesionario server</field>
-      <field name="model_id" ref="model_concesionario_concesionario"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    <record model="ir.actions.act_window" id="concesionario.action_window_vehiculos">
+      <field name="name">Lista de vehiculos</field>
+      <field name="res_model">dhm.concesionario.vehiculos</field>
+      <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- Top menu item -->
+    <record model="ir.actions.act_window" id="concesionario.action_window_clientes">
+      <field name="name">Lista de clientes</field>
+      <field name="res_model">dhm.concesionario.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="concesionario.action_window_matriculas">
+      <field name="name">Lista de matriculas</field>
+      <field name="res_model">dhm.concesionario.matriculacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+     <!-- Top menu item -->
     <menuitem name="concesionario" id="concesionario.menu_root"/>
+    
     <!-- menu categories -->
-    <menuitem name="Menu" id="concesionario.menu" parent="concesionario.menu_root"/>
+    <menuitem name="Pedidos" id="concesionario.menu_pedidos" parent="concesionario.menu_root"/>
+    <menuitem name="Clientes" id="concesionario.menu_clientes" parent="concesionario.menu_root"/>
+    <menuitem name="Vehiculos" id="concesionario.menu_vehiculos" parent="concesionario.menu_root"/>
+    <menuitem name="Matriculas" id="concesionario.menu_matriculas" parent="concesionario.menu_root"/>
    
     <!-- actions -->
-    <menuitem name="Lista" id="concesionario.menu_list" parent="concesionario.menu"
-              action="concesionario.action_window"/>
+    <menuitem name="Lista pedidos" id="concesionario.menu_pedidos_list" parent="concesionario.menu_pedidos"
+              action="concesionario.action_window_pedidos"/>
+    <menuitem name="Lista clientes" id="concesionario.menu_clientes_list" parent="concesionario.menu_clientes"
+              action="concesionario.action_window_clientes"/>
+    <menuitem name="Lista vehiculos" id="concesionario.menu_vehiculos_list" parent="concesionario.menu_vehiculos"
+              action="concesionario.action_window_vehiculos"/>
+    <menuitem name="Lista matriculas" id="concesionario.menu_matriculas_list" parent="concesionario.menu_matriculas"
+              action="concesionario.action_window_matriculas"/>
 
   </data>
 </odoo>

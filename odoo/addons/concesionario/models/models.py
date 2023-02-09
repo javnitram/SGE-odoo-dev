@@ -3,38 +3,34 @@
 from odoo import models, fields, api
 
 
-class ConcesionarioMarcas(models.Model):
-    _name = 'dhm.concesionario.marcas'
+class ConcesionarioPedidos(models.Model):
+    _name = 'dhm.concesionario.pedidos'
     _description = 'Marcas'
     id = fields.Integer('Id',required=True)
-    nombre = fields.Char('Nombre',required=True,help='Introduzca el nombre de la marca')
 
-class ConcesionarioModelo(models.Model):
-    _name = 'dhm.concesionario.modelo'
-    _description = 'Modelos'
+class ConcesionarioVehiculos(models.Model):
+    _name = 'dhm.concesionario.vehiculos'
+    _description = 'Vehiculo'
     id = fields.Integer('Id',required=True)
-    nombre = fields.Char('Nombre',required=True,help='Introduzca el nombre del modelo')
+    marca = fields.Char('Nombre',required=True,help='Introduzca el nombre de la marca')
+    modelo = fields.Char('Nombre',required=True,help='Introduzca el nombre del modelo')
     estado = fields.Selection([
         ('0', 'Nuevo'),
         ('1', 'KM-0'),
-        ('2', 'Seminuevo'),
-        ('3', 'Fallos'),
-        ('4', 'Desguaze')
+        ('2', 'Seminuevo')
     ], string='Estado')
 
-class ConcesionarioMotorizacion(models.Model):
-    _name = 'dhm.concesionario.motorizacion'
-    _description = 'Motorizacion'
-    id = fields.Integer('Id',required=True)
-    nombre = fields.Char('Nombre',required=True,help='Introduzca la motorizacion del modelo')
-    caballos = fields.Integer('Caballos',required=True)
-    cilindrada = fields.Char('Cilindrada',required=True,help='Introduzca la cilindrada del modelo')
+class ConcesionarioClientes(models.Model):
+    _name = 'dhm.concesionario.clientes'
+    _description = 'Clientes'
+    dni = fields.Integer('Dni',required=True)
+    nombre = fields.Char('Nombre',required=True,help='Introduzca el nombre')
+    apellidos = fields.Char('apellidos',required=True,help='Introduzca el apellido')
 
 
-class ConcesionarioCaracteristicas(models.Model):
-    _name = 'dhm.concesionario.caracteristicas'
-    _description = 'Caracteristicas'
-    id = fields.Integer('Id',required=True)
-    nombre = fields.Char('Nombre',required=True,help='Introduzca el nombre de la caracteristica')
-    descripcion = fields.Char('Descripcion',required=True,help='Introduzca la descricion de la caracteristica')
+class ConcesionarioMatriculacion(models.Model):
+    _name = 'dhm.concesionario.matriculacion'
+    _description = 'Matriculacion'
+    matricula = fields.Integer('Matricula',required=True)
+    
     
