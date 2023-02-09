@@ -1,20 +1,35 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-
+    
     <record model="ir.ui.view" id="gatoteca.empleado">
-      <field name="name">gatoteca empleado</field>
+      <field name="name">Empleado</field>
       <field name="model">gatoteca.empleado</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="sueldo"/>
+          <field name="encargado" />
+          <field name="puesto" />
         </tree>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.jefe">
-      <field name="name">gatoteca jefe</field>
-      <field name="model">gatoteca.jefe</field>
+    <record model="ir.ui.view" id="gatoteca.menu">
+      <field name="name">Menu</field>
+      <field name="model">gatoteca.menu</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo" />
+          <field name="precio" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gatoteca.cliente">
+      <field name="name">Cliente</field>
+      <field name="model">gatoteca.cliente</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -22,15 +37,41 @@
       </field>
     </record>
 
-
+    <record model="ir.ui.view" id="gatoteca.gato">
+      <field name="name">Gato</field>
+      <field name="model">gatoteca.gato</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="raza" />
+        </tree>
+      </field>
+    </record>
     <!-- actions opening views on models -->
-<!--
+
     <record model="ir.actions.act_window" id="gatoteca.action_window">
-      <field name="name">gatoteca window</field>
-      <field name="res_model">gatoteca.gatoteca</field>
+      <field name="name">Empleados</field>
+      <field name="res_model">gatoteca.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
+    <record model="ir.actions.act_window" id="gatoteca_menu_action_window">
+      <field name="name">Menu</field>
+      <field name="res_model">gatoteca.menu</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gatoteca_cliente_action_window">
+      <field name="name">Cliente</field>
+      <field name="res_model">gatoteca.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gatoteca_gato_action_window">
+      <field name="name">Gato</field>
+      <field name="res_model">gatoteca.gato</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- server action to the one above -->
 <!--
@@ -49,20 +90,27 @@
 -->
 
     <!-- Top menu item -->
-<!--
+
     <menuitem name="gatoteca" id="gatoteca.menu_root"/>
--->
+
     <!-- menu categories -->
+
+    <menuitem name="Empleados" id="gatoteca.empleado_menu" parent="gatoteca.menu_root"/>
+    <menuitem name="Menu" id="gatoteca.menu_menu" parent="gatoteca.menu_root"/>
+    <menuitem name="Cliente" id="gatoteca.cliente_menu" parent="gatoteca.menu_root"/>
+    <menuitem name="Gato" id="gatoteca.gato_menu" parent="gatoteca.menu_root"/>
 <!--
-    <menuitem name="Menu 1" id="gatoteca.menu_1" parent="gatoteca.menu_root"/>
     <menuitem name="Menu 2" id="gatoteca.menu_2" parent="gatoteca.menu_root"/>
 -->
     <!-- actions -->
-<!--
-    <menuitem name="List" id="gatoteca.menu_1_list" parent="gatoteca.menu_1"
-              action="gatoteca.action_window"/>
-    <menuitem name="Server to list" id="gatoteca" parent="gatoteca.menu_2"
-              action="gatoteca.action_server"/>
--->
+
+    <menuitem name="Empleados" id="gatoteca.menu_emp_list" parent="gatoteca.empleado_menu" 
+      action="gatoteca.action_window"/>
+    <menuitem name="Menu" id="gatoteca.menu_men_list" parent="gatoteca.menu_menu" 
+      action="gatoteca_menu_action_window"/>
+    <menuitem name="Cliente" id="gatoteca.menu_cliente_list" parent="gatoteca.cliente_menu" 
+      action="gatoteca_cliente_action_window"/>
+    <menuitem name="Gato" id="gatoteca.menu_gato_list" parent="gatoteca.gato_menu" 
+      action="gatoteca_gato_action_window"/>
   </data>
 </odoo>

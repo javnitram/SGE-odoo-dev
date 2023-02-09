@@ -4,13 +4,26 @@ from odoo import models, fields, api
 
 class GatotecaEmpleado(models.Model):
     _name = 'gatoteca.empleado'
-    _description = 'Empleados'
+    _description = 'Empleado'
     name = fields.Char('Empleado',required=True)
+    sueldo = fields.Integer('Sueldo')
+    encargado = fields.Boolean('Encargado',required=True)
+    puesto = fields.Selection([
+        ('0', 'Dependiente'),
+        ('1','Camarero')
+    ], string='Puesto')
 
-class GatotecaJefe(models.Model):
-    _name = 'gatoteca.jefe'
-    _description = 'Jefe'
-    name = fields.Char('Jefe',required=True)
+class GatotecaMenu(models.Model):
+    _name = 'gatoteca.menu'
+    _description = 'Menu'
+    name = fields.Char('Menu',required=True)
+    tipo = fields.Selection([
+        ('0', 'Desayuno'),
+        ('1','Comida'),
+        ('2','Merienda'),
+        ('3','Solo bebida')
+    ], string='Tipo')
+    precio = fields.Integer('Precio')
 
 class GatotecaCliente(models.Model):
     _name = 'gatoteca.cliente'
@@ -25,13 +38,10 @@ class GatotecaGato(models.Model):
         ('0', 'Siames'),
         ('1', 'Sphynx'),
         ('2', 'Persa'),
-        ('3', 'scottish fold'),
+        ('3', 'Scottish fold'),
         ('4', 'Comun europeo')
-    ], string='raza')
-    
-    
-    
-    
+    ], string='Raza')
+
 
 # class gatoteca(models.Model):
 #     _name = 'gatoteca.gatoteca'
