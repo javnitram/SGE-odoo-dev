@@ -1,5 +1,6 @@
-<odoo>
+<!--<odoo>
   <data>
+  -->
     <!-- explicit list view definition -->
 <!--
     <record model="ir.ui.view" id="cm_veterinaria.list">
@@ -53,5 +54,5 @@
 <!--
     <menuitem name="List" id="cm_veterinaria.menu_1_list" parent="cm_veterinaria.menu_1"
               action="cm_veterinaria.action_window"/>
-    -->
-</odoo>
+    
+</odoo>-->
