@@ -32,6 +32,9 @@
         'views/discograficas.xml',
         'views/discos.xml',
     ],
+    'images': [
+        'images/Switchfoot.png',
+        ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
