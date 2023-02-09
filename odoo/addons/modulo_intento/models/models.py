@@ -15,6 +15,7 @@ class Disco_Disco(models.Model):
     precio = fields.Float('precio')
     artista = fields.Char('artista')
     discografica = fields.Char('discografica')
+    image = fields.Binary()
 
 class Disco_Artista(models.Model):
     _name = 'yf.disco.artista'
