@@ -18,8 +18,8 @@ class HotelReserva(models.Model):
     _name = 'jf.hotel.reserva'
     _description = 'jf.hotel.reserva'
     dni_cliente = fields.Integer(string='dni_cliente',required=True)
-    fecha_inicio = fields.Date(string='Fecha inicio',required=True)
-    fecha_final = fields.Date(string='Fecha final',required=True)
+    fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
+    fecha_final = fields.Date(string='Fecha final reserva',required=True)
     precio_total = fields.Float(string='Precio total',required=True)
 
 
@@ -38,6 +38,7 @@ class HotelEmpresa(models.Model):
 class HotelHabitaciones(models.Model):
     _name = 'jf.hotel.habitaciones'
     _description = 'jf.hotel.habitaciones'
+    numero = fields.Integer(string='Número de la habitación', required=True)
     plazas = fields.Integer(string='Plazas',required=True)
     precio = fields.Float(string='Precio por noche',required=True)
     planta = fields.Integer(string='Planta',required=True)

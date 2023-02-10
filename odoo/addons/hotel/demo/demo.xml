@@ -1,30 +1,68 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="hotel.hotel">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+          <record id="cliente1" model="jf.hotel.cliente">
+            <field name="dni">48207558</field>
+            <field name="nombre">Juan</field>
+            <field name="apellidos">Fernández Hinojar</field>
+            <field name="telefono">609275711</field>
+            <field name="correo">juanfh2003@gmail.com</field>
           </record>
 
-          <record id="object1" model="hotel.hotel">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="cliente2" model="jf.hotel.cliente">
+            <field name="dni">50358076</field>
+            <field name="nombre">Adrián</field>
+            <field name="apellidos">Cortés de Dios</field>
+            <field name="telefono">619483748</field>
           </record>
 
-          <record id="object2" model="hotel.hotel">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+          <!--<record id="reserva1" model="jf.hotel.reserva">
+            <field name="dni_cliente">48207558</field>
+            <field name="fecha_inicio" options="{'format': 'DD/MM/YYYY'}">02/04/2023</field>
+            <field name="fecha_final" options="{'format': 'DD/MM/YYYY'}">04/04/2023</field>
+            <field name="precio_final">20</field>
+          </record>
+          
+          <record id="reserva2" model="jf.hotel.reserva">
+            <field name="dni_cliente">50358076</field>
+            <field name="fecha_inicio" options="{'format': 'DD/MM/YYYY'}">20/04/2023</field>
+            <field name="fecha_final" options="{'format': 'DD/MM/YYYY'}">24/04/2023</field>
+            <field name="precio_final">90</field>
+          </record>-->
+
+          <record id="empresa1" model="jf.hotel.empresa">
+            <field name="nombre">Empresaurios SL</field>
+            <field name="telefono">987654321</field>
+            <field name="correo">empresaurios@gmail.com</field>
+            <field name="sitio_web">www.empresaurios.com</field>
+            <field name="direccion">Calle Inventada 4</field>
+            <field name="localidad">Alcobendas</field>
+            <field name="pais">España</field>
+          </record>
+          
+          <record id="empresa2" model="jf.hotel.empresa">
+            <field name="nombre">Tuki tuki SL</field>
+            <field name="telefono">654125879</field>
+            <field name="correo">tukituki@gmail.com</field>
+            <field name="sitio_web">www.tukituki.com</field>
+            <field name="direccion">Calle Naval 7</field>
+            <field name="localidad">Zaragoza</field>
+            <field name="pais">España</field>
           </record>
 
-          <record id="object3" model="hotel.hotel">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="habitacion1" model="jf.hotel.habitaciones">
+            <field name="numero">1</field>
+            <field name="plazas">2</field>
+            <field name="precio">10</field>
+            <field name="planta">1</field>
+            <field name="estado">0</field>
           </record>
 
-          <record id="object4" model="hotel.hotel">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+          <record id="habitacion2" model="jf.hotel.habitaciones">
+            <field name="numero">2</field>
+            <field name="plazas">4</field>
+            <field name="precio">20</field>
+            <field name="planta">2</field>
+            <field name="estado">1</field>
           </record>
--->
     </data>
 </odoo>

@@ -1,23 +1,23 @@
 <odoo>
     <data>
       <!--Insert data to model categoria-->
-      <record id="object0" model="jf.prueba.categoria">
+      <record id="categoria1" model="jf.prueba.categoria">
         <field name="name">Terror</field>
         <field name="descripcion">Da mucho miedo</field>
       </record>
 
-      <record id="object1" model="jf.prueba.categoria">
+      <record id="categoria2" model="jf.prueba.categoria">
         <field name="name">Comedia</field>
         <field name="descripcion">Da mucha risa</field>
       </record>
 
-      <record id="object2" model="jf.prueba.categoria">
+      <record id="categoria3" model="jf.prueba.categoria">
         <field name="name">Trama</field>
         <field name="descripcion">Te pone muy tenso</field>
       </record>
 
       <!--Insert data to model libro-->
-      <record id="object0" model="jf.prueba.libro">
+      <record id="libro1" model="jf.prueba.libro">
         <field name="name">La casa de Bernarda Alba</field>
         <field name="precio">10</field>
         <field name="ejemplares">2</field>

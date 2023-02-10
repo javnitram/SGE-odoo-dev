@@ -49,6 +49,7 @@
       <field name="model">jf.hotel.habitaciones</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="numero"/>
           <field name="plazas"/>
           <field name="precio"/>
           <field name="planta"/>

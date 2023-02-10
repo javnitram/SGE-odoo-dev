@@ -1,0 +1,8 @@
+-4 clases (ok)
+-Vistas From & Tree x4
+-Vista Formulario propio
+-Elementos de menú (ok)
+-Seguridad básica (ok)
+-Relaciones
+-Imagenes en forms
+-Icono módulo (ok)
