@@ -13,26 +13,90 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="taberna_empleados_list">
+      <field name="name">taberna list</field>
+      <field name="model">jm.taberna.empleados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_empleado"/>
+          <field name="nombre"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+          <field name="salario"/>
+          <field name="telefono"/>
+          <field name="categoria"/>
+          <field name="nombre_taberna"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taberna_pedidos_list">
+      <field name="name">taberna list</field>
+      <field name="model">jm.taberna.pedidos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_pedidos"/>
+          <field name="cantidad"/>
+          <field name="id_empleado"/>
+          <field name="id_cliente"/>
+          <field name="id_bebida"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taberna_clientes_list">
+      <field name="name">taberna list</field>
+      <field name="model">jm.taberna.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_cliente"/>
+          <field name="nombre"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="taberna_bebidas_list">
+      <field name="name">taberna list</field>
+      <field name="model">jm.taberna.bebidas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_bebida"/>
+          <field name="nombre"/>
+          <field name="alcohol"/>
+          <field name="pais"/>
+          <field name="tipo"/>
+          <field name="id_pedidos"/>
+        </tree>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="taberna_action_window_informacion">
-      <field name="name">taberna window</field>
+      <field name="name">Información de la taberna</field>
       <field name="res_model">jm.taberna.informacion</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_empleados">
-      <field name="name">taberna window</field>
+      <field name="name">Información de los empleados</field>
       <field name="res_model">jm.taberna.empleados</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_pedidos">
-      <field name="name">taberna window</field>
+      <field name="name">Información de los pedidos</field>
       <field name="res_model">jm.taberna.pedidos</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_clientes">
-      <field name="name">taberna window</field>
+      <field name="name">Información de los clientes</field>
       <field name="res_model">jm.taberna.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="taberna_action_window_bebidas">
+      <field name="name">Información de las bebidas</field>
+      <field name="res_model">jm.taberna.bebidas</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -46,7 +110,7 @@
     <menuitem name="Empleados" id="taberna_menu_empleados" parent="taberna_menu_root"/>
     <menuitem name="Pedidos" id="taberna_menu_pedidos" parent="taberna_menu_root"/>
     <menuitem name="Clientes" id="taberna_menu_clientes" parent="taberna_menu_root"/>
-    <menuitem name="Bebidas" id="taberna_menu_5" parent="taberna_menu_root"/>
+    <menuitem name="Bebidas" id="taberna_menu_bebidas" parent="taberna_menu_root"/>
 
     <!-- actions -->
 
@@ -58,6 +122,8 @@
               action="taberna_action_window_pedidos"/>
     <menuitem name="Información de los clientes" id="taberna_menu_clientes_list" parent="taberna_menu_clientes"
               action="taberna_action_window_clientes"/>
+    <menuitem name="Información de las bebidas" id="taberna_menu_bebidas_list" parent="taberna_menu_bebidas"
+              action="taberna_action_window_bebidas"/>
 
   </data>
 </odoo>
