@@ -8,6 +8,7 @@ class libreriaCategoria(models.Model):
     _description = 'libreria Categoria'
     name = fields.Char(string='Nombre',required=True,help='Introduce el título de la categoria')
     description = fields.Char('Descripcion')
+    precio = fields.Float('Precio')
 
 class libreriaLibro(models.Model):
     _name = 'ar.libreria.libro'
@@ -18,11 +19,18 @@ class libreriaLibro(models.Model):
     fecha = fields.Date('Fecha')
     
 
-class LibreriaAutor(models.Model):
+class libreriaAutor(models.Model):
     _name = 'ar.libreria.autor'
     _description='Modelo autor'
     name = fields.Char(string='Nombre Autor')
     
+
+class editorialLibro(models.Model):
+    _name = 'ar.libreria.editorial'
+    _description = 'Modelo Editorial'
+    name = fields.Char('Nombre')
+    fundacion = fields.Date('fecha de nacimiento')
+
 
 
 #     name = fields.Char()

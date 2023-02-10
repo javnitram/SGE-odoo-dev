@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_libreria_categoria,Reglas acceso grupo general categoria,model_ar_libreria_categoria,base.group_user,1,1,1,1
+access_libreria_autor,Reglas acceso grupo general autor,model_ar_libreria_autor,base.group_user,1,1,1,1
+access_libreria_libro,Reglas acceso grupo general libro,model_ar_libreria_libro,base.group_user,1,1,1,1
+access_libreria_editorial,Reglas acceso grupo general editorial,model_ar_libreria_editorial,base.group_user,1,1,1,1
