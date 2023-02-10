@@ -11,7 +11,7 @@
     """,
 
     'author': "Javier MH",
-    'website': "https://www.youtube.com/watch?v=uE-1RPDqJAY",
+    'website': "https://acortar.link/kxKBoP",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
