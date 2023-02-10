@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "prueba",
+    'name': "payasos",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "Yo",
+    'author': "My Company",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing

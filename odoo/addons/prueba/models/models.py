@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class prueba(models.Model):
-#     _name = 'prueba.prueba'
-#     _description = 'prueba.prueba'
+class pruebaCategoria(models.Model):
+    _name = 'prueba.prueba_na'
+    _description = 'prueba.prueba_des'
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
+
+class pruebaPersona(models.Model):
+    _name = 'prueba.persona.name'
+    _description = 'prueba.persona.desc'
+    name = fields.Char()
+    age = fields.Integer()
+    height = fields.Float()
 #
 #     @api.depends('value')
 #     def _value_pc(self):
