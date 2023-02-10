@@ -58,7 +58,7 @@ class clientes(models.Model):
     _description = 'Clientes'
 
     nombre_cliente = fields.Char('nombre_cliente')
-    telefono = fields.Float('telefono')
+    telefono = fields.Integer('telefono')
     fecha_nacimiento = fields.Date('fecha_nacimiento')
     direccion = fields.Char('direccion')
         

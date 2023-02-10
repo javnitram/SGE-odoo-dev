@@ -7,7 +7,5 @@
             <field name="categoria">2</field>
             <field name="disponibilidad">True</field>
           </record>
-
-
     </data>
 </odoo>
