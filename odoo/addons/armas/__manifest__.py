@@ -10,7 +10,7 @@
         Long description of module's purpose
     """,
 
-    'author': "My Company",
+    'author': "Adrian CD",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -33,4 +33,5 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'application': True
 }
