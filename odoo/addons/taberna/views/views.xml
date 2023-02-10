@@ -15,25 +15,49 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="taberna_action_window">
+    <record model="ir.actions.act_window" id="taberna_action_window_informacion">
       <field name="name">taberna window</field>
       <field name="res_model">jm.taberna.informacion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="taberna_action_window_empleados">
+      <field name="name">taberna window</field>
+      <field name="res_model">jm.taberna.empleados</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="taberna_action_window_pedidos">
+      <field name="name">taberna window</field>
+      <field name="res_model">jm.taberna.pedidos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="taberna_action_window_clientes">
+      <field name="name">taberna window</field>
+      <field name="res_model">jm.taberna.clientes</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Top menu item -->
 
-    <menuitem name="taberna" id="taberna_menu_root"/>
+    <menuitem name="Taberna" id="taberna_menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="taberna_menu_1" parent="taberna_menu_root"/>
-    <menuitem name="Menu 2" id="taberna_menu_2" parent="taberna_menu_root"/>
+    <menuitem name="Información" id="taberna_menu_informacion" parent="taberna_menu_root"/>
+    <menuitem name="Empleados" id="taberna_menu_empleados" parent="taberna_menu_root"/>
+    <menuitem name="Pedidos" id="taberna_menu_pedidos" parent="taberna_menu_root"/>
+    <menuitem name="Clientes" id="taberna_menu_clientes" parent="taberna_menu_root"/>
+    <menuitem name="Bebidas" id="taberna_menu_5" parent="taberna_menu_root"/>
 
     <!-- actions -->
 
-    <menuitem name="Información de la taberna" id="taberna_menu_1_list" parent="taberna_menu_1"
-              action="taberna_action_window"/>
+    <menuitem name="Información de la taberna" id="taberna_menu_informacion_list" parent="taberna_menu_informacion"
+              action="taberna_action_window_informacion"/>
+    <menuitem name="Información de los empleados" id="taberna_menu_empleados_list" parent="taberna_menu_empleados"
+              action="taberna_action_window_empleados"/>
+    <menuitem name="Información de los pedidos" id="taberna_menu_pedidos_list" parent="taberna_menu_pedidos"
+              action="taberna_action_window_pedidos"/>
+    <menuitem name="Información de los clientes" id="taberna_menu_clientes_list" parent="taberna_menu_clientes"
+              action="taberna_action_window_clientes"/>
 
   </data>
 </odoo>
