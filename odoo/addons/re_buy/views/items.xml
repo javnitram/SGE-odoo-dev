@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Actions-->
+    <record id="rebuy_tree" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">am.rebuy.product</field>
+        <field name="view_mode">tree</field>
+    </record> 
+
+    <menuitem
+        id="rebuy_menu_root"
+        name="reBuy"
+        sequence="10"/>
+    <menuitem
+        id="rebuy_menu_tree"
+        name="Dashboard"
+        action="rebuy_tree"
+        parent="rebuy_menu_root"
+        sequence="10"/>
+    
+  </data>
+</odoo>

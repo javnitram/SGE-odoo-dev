@@ -28,7 +28,7 @@ class rebuyClient(models.Model):
     client_fidelity_number = fields.Integer('Fidelity card number')
 
 class rebuyClientProduct(models.Model):
-    _name = 'am.rebuy.clientproduct'
+    _name = 'am.rebuy.client_product'
     client_product_name = fields.Char('Name', help = "Insert product name")
     client_product_price = fields.Float('Price', help = "Insert product price")
     client_product_stock = fields.Integer('Stock', help = "Insert product stock")
