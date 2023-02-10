@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "conciertos",
+    'name': 'Conciertos',
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -10,8 +10,8 @@
         Long description of module's purpose
     """,
 
-    'author': "Samuel Amaro",
-    'website': "https://amsamu.github.io",
+    'author': 'Samuel Amaro',
+    'website': 'https://amsamu.github.io',
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml

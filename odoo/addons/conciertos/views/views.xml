@@ -7,9 +7,43 @@
       <field name="model">sa.conciertos.concierto</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="fecha"/>
-          <field name="artista_id"/>
-          <field name="recinto_id"/>
+          <field name="fecha" />
+          <field name="artista_id" />
+          <field name="recinto_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.artista_list">
+      <field name="name">Lista de artistas</field>
+      <field name="model">sa.conciertos.artista</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.recinto_list">
+      <field name="name">Lista de recintos</field>
+      <field name="model">sa.conciertos.recinto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+          <field name="ciudad" />
+          <field name="pais" />
+          <field name="capacidad" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.entrada_list">
+      <field name="name">Registro de entradas</field>
+      <field name="model">sa.conciertos.entrada</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="concierto_id" />
+          <field name="precio" />
         </tree>
       </field>
     </record>
@@ -18,25 +52,53 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="conciertos.concierto_action_window">
-      <field name="name">Concierto window</field>
+      <field name="name">Lista de conciertos</field>
       <field name="res_model">sa.conciertos.concierto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="conciertos.artista_action_window">
+      <field name="name">Lista de artistas</field>
+      <field name="res_model">sa.conciertos.artista</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="conciertos.recinto_action_window">
+      <field name="name">Lista de recintos</field>
+      <field name="res_model">sa.conciertos.recinto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="conciertos.entrada_action_window">
+      <field name="name">Registro de entradas</field>
+      <field name="res_model">sa.conciertos.entrada</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Top menu item -->
 
-    <menuitem name="Conciertos" id="conciertos.menu_root"/> <!-- Al no especificar elemento padre, se convierte en el elemento Top -->
+    <menuitem name="Conciertos" id="conciertos.menu_root" />
 
     <!-- menu categories -->
 
-    <menuitem name="Lista de conciertos" id="conciertos.concierto" parent="conciertos.menu_root"/>
-    <menuitem name="Artistas" id="conciertos.artistas" parent="conciertos.menu_root"/>
-    <menuitem name="Recintos" id="conciertos.recintos" parent="conciertos.menu_root"/>
+    <menuitem name="Conciertos" id="conciertos.menu_conciertos" parent="conciertos.menu_root" />
+    <menuitem name="Artistas" id="conciertos.menu_artistas" parent="conciertos.menu_root" />
+    <menuitem name="Recintos" id="conciertos.menu_recintos" parent="conciertos.menu_root" />
+    <menuitem name="Entradas" id="conciertos.menu_entradas" parent="conciertos.menu_root" />
 
     <!-- actions -->
 
-    <menuitem name="List" id="conciertos_menu_1_list" parent="conciertos.concierto"
-              action="conciertos.concierto_action_window"/>
+    <menuitem name="Conciertos" id="conciertos.menu_conciertos_list" parent="conciertos.menu_conciertos"
+      action="conciertos.concierto_action_window" />
 
+    <menuitem name="Artistas" id="conciertos.menu_artistas_list" parent="conciertos.menu_artistas"
+      action="conciertos.artista_action_window" />
+
+    <menuitem name="Recintos" id="conciertos.menu_recintos_list" parent="conciertos.menu_recintos"
+      action="conciertos.recinto_action_window" />
+    
+    <menuitem name="Entradas" id="conciertos.menu_entradas_list" parent="conciertos.menu_entradas"
+      action="conciertos.entrada_action_window" />
+    
   </data>
 </odoo>
