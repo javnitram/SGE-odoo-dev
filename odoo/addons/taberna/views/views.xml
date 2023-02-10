@@ -9,11 +9,9 @@
         <tree>
           <field name="nombre"/>
           <field name="direccion"/>
-          <field name="id_empleado"/>
         </tree>
       </field>
     </record>
-
 
     <!-- actions opening views on models -->
 
@@ -22,7 +20,6 @@
       <field name="res_model">jm.taberna.informacion</field>
       <field name="view_mode">tree,form</field>
     </record>
-
 
     <!-- Top menu item -->
 
