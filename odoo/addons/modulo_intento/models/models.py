@@ -14,19 +14,20 @@ class Disco_Disco(models.Model):
     titulo = fields.Char('titulo')
     precio = fields.Float('precio')
     artista_id = fields.Many2one("yf.disco.artista", string="artista", required=True)
-    discografica = fields.Char('discografica')
-    image = fields.Binary()
+    discografica_id = fields.Many2one("yf.disco.discografica", string="discografica")
+    image = fields.Binary(string="portada")
 
 class Disco_Artista(models.Model):
     _name = 'yf.disco.artista'
     _description = 'disco.artista'
     name = fields.Char('nombre')
     anhofundacion = fields.Char('año de fundacion')
+    discografia_id = fields.One2many('yf.discos.disco', 'artista_id', string='Discografia')
 
 class Disco_Discografica(models.Model):
     _name = 'yf.disco.discografica'
     _description = 'disco.discografica'
-    nombre = fields.Char('nombre')
+    name = fields.Char('nombre')
     anhofundacion = fields.Char('año de fundacion')
 class Disco_Cancion(models.Model):
     _name = 'yf.disco.cancion'
@@ -36,7 +37,8 @@ class Disco_Cancion(models.Model):
     album = fields.Char('album')
     artista = fields.Char('artista')
     genero = fields.Char('genero')
-    
+
+
 #     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)

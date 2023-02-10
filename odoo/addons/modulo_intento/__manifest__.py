@@ -33,7 +33,7 @@
         'views/discos.xml',
     ],
     'images': [
-        'images/Switchfoot.png',
+        'modulo_intento/images/Switchfoot.png',
         ],
     # only loaded in demonstration mode
     'demo': [

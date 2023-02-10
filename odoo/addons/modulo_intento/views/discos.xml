@@ -10,7 +10,7 @@
           <field name="titulo"/>
           <field name="precio"/>
           <field name="artista_id"/>
-          <field name="discografica"/>
+          <field name="discografica_id"/>
         </tree>
       </field>
     </record>
@@ -23,11 +23,11 @@
                 <group colspan="2" col="2">
 
                    <!--  <field name="image" widget="modulo_intento/images/Switchfoot.jpg"/> -->
-                    <img src='/modulo_intento/images/Switchfoot.png'/>
+                    <field name='image' widget="image" class="yf.disco.disco" />
                     <field name="titulo"/>
                     <field name="precio"/>
                     <field name="artista_id"/>
-                    <field name="discografica"/>
+                    <field name="discografica_id"/>
                 </group> 
             </sheet>   
           </form>
