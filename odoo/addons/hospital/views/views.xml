@@ -1,60 +1,59 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="/mnt/extra-addons/hospital.list">
-      <field name="name">/mnt/extra-addons/hospital list</field>
-      <field name="model">/mnt/extra-addons/hospital./mnt/extra-addons/hospital</field>
+    <record model="ir.ui.view" id="hospital_doctores_tree">
+      <field name="name">DOCTORES</field>
+      <field name="model">hospital.doctores</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="surname"/>
+          <field name="date"/>
+          <field name="specialty"/>
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="/mnt/extra-addons/hospital.action_window">
-      <field name="name">/mnt/extra-addons/hospital window</field>
-      <field name="res_model">/mnt/extra-addons/hospital./mnt/extra-addons/hospital</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="/mnt/extra-addons/hospital.action_server">
-      <field name="name">/mnt/extra-addons/hospital server</field>
-      <field name="model_id" ref="model_/mnt/extra-addons/hospital_/mnt/extra-addons/hospital"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record model="ir.ui.view" id="hospital_pacientes_tree">
+      <field name="name">PACIENTES</field>
+      <field name="model">hospital.pacientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="date"/>
+          <field name="history"/>
+          <field name="alergias"/>
+        </tree>
       </field>
     </record>
--->
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="hospital_doctores_action_window">
+      <field name="name">DOCTORES</field>
+      <field name="res_model">hospital.doctores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_pacientes_action_window">
+      <field name="name">PACIENTES</field>
+      <field name="res_model">hospital.pacientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="/mnt/extra-addons/hospital" id="/mnt/extra-addons/hospital.menu_root"/>
--->
+    <menuitem name="Hospital" id="hospital_menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="/mnt/extra-addons/hospital.menu_1" parent="/mnt/extra-addons/hospital.menu_root"/>
-    <menuitem name="Menu 2" id="/mnt/extra-addons/hospital.menu_2" parent="/mnt/extra-addons/hospital.menu_root"/>
--->
     <!-- actions -->
-<!--
-    <menuitem name="List" id="/mnt/extra-addons/hospital.menu_1_list" parent="/mnt/extra-addons/hospital.menu_1"
-              action="/mnt/extra-addons/hospital.action_window"/>
-    <menuitem name="Server to list" id="/mnt/extra-addons/hospital" parent="/mnt/extra-addons/hospital.menu_2"
-              action="/mnt/extra-addons/hospital.action_server"/>
--->
+    <menuitem name="Doctores" 
+      id="hospital_doctores_menu" 
+      parent="hospital_menu_root"
+      action="hospital_doctores_action_window"/>
+
+    <menuitem name="Pacientes" 
+      id="hospital_pacientes_menu" 
+      parent="hospital_menu_root"
+      action="hospital_pacientes_action_window"/>
   </data>
 </odoo>

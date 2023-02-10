@@ -51,9 +51,9 @@
       action="libreria_categoria_action_window"/>
 
     <menuitem name="Libros" 
-    id="libreria_libro_menu" 
-    parent="libreria_menu_root"
-    action="libreria_libro_action_window"/>
+      id="libreria_libro_menu" 
+      parent="libreria_menu_root"
+      action="libreria_libro_action_window"/>
 
   </data>
 </odoo>

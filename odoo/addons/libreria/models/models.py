@@ -16,7 +16,3 @@ class LibreriaLibro(models.Model):
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Bueno'),('1','Regular'),('2','Malo')],string="Estado",default="0")
 
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
