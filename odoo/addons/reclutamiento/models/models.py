@@ -16,6 +16,7 @@ class general(models.Model):
     id_general= fields.Integer(required=True)
     nombre = fields.Char()
     edad= fields.Char() 
+    ejercitos_gestionados = fields.One2many('ac.reclutamiento.ejercito', 'id_ejercito', string='ejercitos_gesionados')
   
   
 
@@ -41,6 +42,7 @@ class infanteria_proyectiles(models.Model):
     municion= fields.Integer()
     ##poner valor por defecto
     alcance= fields.Integer()
+    
 
 
 class undiades_motadas(models.Model):

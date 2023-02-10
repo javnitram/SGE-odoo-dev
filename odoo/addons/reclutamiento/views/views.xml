@@ -15,8 +15,6 @@
     </record>
 
 
-
-
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="reclutamiento.action_window">
@@ -27,7 +25,7 @@
 
 
      
-            <record model="ir.ui.view" id="infanteria.cac.list">
+            <record model="ir.ui.view" id="reclutamiento.infanteria_cac_list">
               <field name="name">reclutamiento infanteria cac</field>
               <field name="model">ac.reclutamiento.infanteria.cac</field>
               <field name="arch" type="xml">
@@ -43,8 +41,8 @@
 
 
 
-    <record model="ir.actions.act_window" id="infanteria.action_window">
-      <field name="name">reclutamiento cuerpo a cuerpo </field>
+    <record model="ir.actions.act_window" id="reclutamiento.infanteria_action_window">
+      <field name="name">Tropas cuerpo a cuerpo </field>
       <field name="res_model">ac.reclutamiento.infanteria.cac</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -53,10 +51,52 @@
 
 
 
+    <record model="ir.ui.view" id="reclutamiento.general_list">
+      <field name="name">reclutamiento general</field>
+      <field name="model">ac.reclutamiento.general</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_general"/>
+          <field name="nombre"/>
+          <field name="edad"/>
+          <field name="ejercitos_gestionados"/>
+        </tree>
+      </field>
+    </record>
 
 
 
 
+<record model="ir.actions.act_window" id="reclutamiento.general_action_window">
+<field name="name">General Svpremvs </field>
+<field name="res_model">ac.reclutamiento.general</field>
+<field name="view_mode">tree,form</field>
+</record>
+
+
+
+
+<record model="ir.ui.view" id="reclutamiento.general_list">
+  <field name="name">reclutamiento general</field>
+  <field name="model">ac.reclutamiento.general</field>
+  <field name="arch" type="xml">
+    <tree>
+      <field name="ID Infanteria Proyectiles"/>
+      <field name="nombre"/>
+      <field name="edad"/>
+      <field name="ejercitos_gestionados"/>
+    </tree>
+  </field>
+</record>
+
+
+
+
+<record model="ir.actions.act_window" id="reclutamiento.general_action_window">
+<field name="name">general del ejercito </field>
+<field name="res_model">ac.reclutamiento.general</field>
+<field name="view_mode">tree,form</field>
+</record>
 
 
 
@@ -84,16 +124,19 @@
     <!-- menu categories -->
 
     <menuitem name="Ejercito" id="reclutamiento.menu_1" parent="reclutamiento.menu_root"/>
-    <menuitem name="infanteria_cac" id="reclutamiento.menu_2" parent="reclutamiento.menu_root"/>
+    
 
     <!-- actions -->
 
-    <menuitem name="ejercito" id="reclutamiento.menu_1_list" parent="reclutamiento.menu_1"
+    <menuitem name="Ejercito" id="reclutamiento.menu_1_list" parent="reclutamiento.menu_1"
               action="reclutamiento.action_window"/>
 
 
-    <menuitem name="infanteriacac" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_2"
-              action="infanteria.action_window"/>    
+    <menuitem name="infanteria_cac" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_1"
+              action="reclutamiento.infanteria_action_window"/>   
+              
+    <menuitem name="General" id="reclutamiento.menu_3_list" parent="reclutamiento.menu_1"
+              action="reclutamiento.general_action_window"/>    
     <!-- 
     <menuitem name="Server to list" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_2"
               action="reclutamiento.action_window"/>
