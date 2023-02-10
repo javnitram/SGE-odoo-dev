@@ -25,6 +25,7 @@ class Matches(models.Model):
 
 class Courts(models.Model):
     _name = 'dm.ooddle.courts'
+    match_ids = fields.One2many('dm.ooddle.matches', 'court', string='indica el partido que se jugara en esa vista')
     place = fields.Char('place', required=True, help = 'Introduce el lugar de la pista')
     used = fields.Boolean( 'used', default = False, help = 'La pista esta en uso')
 

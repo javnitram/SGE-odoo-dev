@@ -33,7 +33,23 @@
             </tree>
         </field>
     </record>
+<!--
   
+   <record id="ooddle.user_act" model="ir.ui.view">
+     <field name="name">dm.ooddle.users.activity</field>
+      <field name="model">dm.ooddle.users</field>
+      <field name="arch" type="xml">
+        <activity string="Users">
+          <templates>
+            <div t-name="activity-box">
+              <field name="name"/>
+            </div>
+          </templates>
+        </activity>
+      </field>
+    </record>
+
+-->
   <record id="ooddle.users_kanban" model="ir.ui.view">
     <field name="name">dm.ooddle.users.kanban</field>
     <field name="model">dm.ooddle.users</field>

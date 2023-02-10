@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_ooddle_users,Reglas acceso a los usuarios,model_dm_ooddle_users,base.group_user,1,1,1,1
+access_ooddle_matches,Reglas acceso a los partidos,model_dm_ooddle_matches,base.group_user,1,1,1,1

@@ -9,7 +9,12 @@
           <field name="res_model">dm.ooddle.users</field>
           <field name="view_mode">kanban,tree,form</field>
     </record>  
-    
+
+       <record id="ooddle_matches_action_window" model="ir.actions.act_window">
+          <field name="name">Partidos</field>
+          <field name="res_model">dm.ooddle.matches</field>
+          <field name="view_mode">tree</field>
+    </record>  
     <menuitem
       id="ooddle_menu_root"
       name="Ooddle"
@@ -22,7 +27,11 @@
         parent="ooddle_menu_root"
         sequence="10"/>
 
-
-    
+    <menuitem
+        id="ooddle_matches_tree_menu"
+        name="Matches"
+        action="ooddle_matches_action_window"
+        parent="ooddle_menu_root"
+        sequence="10"/>
   </data>
 </odoo>
