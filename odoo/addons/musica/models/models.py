@@ -6,6 +6,7 @@ class TiendainstrumentosCategoria(models.Model):
     _name = 'jr.tiendainstrumento.categoria'
     _description = 'model.technical.name'
     name = fields.Char('Nombre', required=True)
+    libros_name_ids = fields.One2many('jr.tiendainstrumento.instrumento', 'inverse_field_name', string='Instrumentos por categoria')
 
 class TiendainstrumentosInstrumento(models.Model):
     _name = 'jr.tiendainstrumento.instrumento'
@@ -15,6 +16,7 @@ class TiendainstrumentosInstrumento(models.Model):
     marca = fields.Char('Marca', required=True)
     stock = fields.Float('Stock')
     fecha = fields.Date('Fecha')
+    categoria_id = fields.Many2one('jr.tiendainstrumento.categoria', string='Categoria')
 
 
 class TiendainstrumentosVenta(models.Model):
@@ -24,6 +26,11 @@ class TiendainstrumentosVenta(models.Model):
     precioPedido = fields.Float('Precio', required=True)
     numeroProductos = fields.Char('Numero de productos', required=True)
     
+class TiendainstrumentosCliente(models.Model):
+    _name = 'jr.tiendainstrumento.cliente'
+    _description = 'model.technical.name'
+    nombreCliente = fields.Char('Nombre', required=True)
+#oofon
 
 
 # class musica(models.Model):

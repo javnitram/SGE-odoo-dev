@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-musica_categoria,TiendaInstrumentos,model_jr_tiendainstrumento_categoria,musica_categoria,1,1,1,1
+id_categoria,categoria,model_jr_tiendainstrumento_categoria,base.group_user,1,1,1,1
+id_instrumento,instrumento,model_jr_tiendainstrumento_instrumento,base.group_user,1,1,1,1
+id_ventas,venta,model_jr_tiendainstrumento_venta,base.group_user,1,1,1,1

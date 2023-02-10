@@ -22,7 +22,54 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+  <!-- ***************************************************** -->
+  <!-- id = nombre del modulo. y algo identificativo-->
+    <record model="ir.ui.view" id="musica.instrumento">
+      <field name="name">Instrumentos</field>
+      <field name="model">jr.tiendainstrumento.instrumento</field>
+      <field name="arch" type="xml">
+        <tree>
+        <!-- nombre del campo del modelo-->
+          <field name="modelo"/>
+          
+          </tree>
+      </field>
+    </record>
 
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="musica.instrumento_action_window">
+      <field name="name">Lista de instrumentos</field>
+      <field name="res_model">jr.tiendainstrumento.instrumento</field>
+      <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!--*************************-->
+
+    <record model="ir.ui.view" id="musica.venta">
+      <field name="name">Ventas</field>
+      <field name="model">jr.tiendainstrumento.venta</field>
+      <field name="arch" type="xml">
+        <tree>
+        <!-- nombre del campo del modelo-->
+          <field name="fecha"/>
+          <field name = "precioPedido"/>
+          <field name = "numeroProductos"/>
+          
+          </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="musica.venta_action_window">
+      <field name="name">Lista de ventas</field>
+      <field name="res_model">jr.tiendainstrumento.venta</field>
+      <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
+      <field name="view_mode">tree,form</field>
+    </record>
     <!-- server action to the one above -->
 <!--
     <record model="ir.actions.server" id="musica.action_server">
@@ -41,20 +88,23 @@
 
     <!-- Top menu item -->
 <!--Elemento de menu, con id interno. Este id sera usado en los submenus como padre-->
-    <menuitem name="TiendaInstrumentos" id="musica.menu_root"/>
+    <menuitem name="Instrumentos" 
+              id="musica.menu_root"
+              web_icon = "icon.png"
+    />
 
-    <!-- menu categories -->
-
-    <menuitem name="Categoria" id="musica_menu_1" parent="musica.menu_root"/>
-    <menuitem name="Instrumento" id="musica_menu_2" parent="musica.menu_root"/>
+    <menuitem name="Categoria" id="musica_menu_1" parent="musica.menu_root" action = "musica.categoria_action_window"/>
+    <menuitem name="Instrumento" id="musica_menu_2" parent="musica.menu_root" action = "musica.instrumento_action_window"/>
+    <menuitem name="Ventas" id="musica_menu_3" parent="musica.menu_root" action = "musica.venta_action_window"/>
 
     <!-- actions -->
 
-    <menuitem name="List" id="musica.menu_1_list" parent="musica_menu_1"
-              action="musica.categoria_action_window"/>
+   <!-- Por cada menu item, declaras su accion-->
 <!--
-    <menuitem name="Server to list" id="musica" parent="musica.menu_2"
-              action="musica.action_server"/>
+    <menuitem name="Server to list" id="musica" parent="musica.menu_root"
+              action="musica.categoria_action_window"/>
+
+    Puedes hacer una accion de tipo form, para acceder a un formulario directamente desde el menu 
 -->
   </data>
 </odoo>
