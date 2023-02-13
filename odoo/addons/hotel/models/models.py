@@ -11,17 +11,8 @@ class HotelCliente(models.Model):
     apellidos = fields.Char(string='Apellidos',required=True)
     telefono = fields.Integer(string='Telefono',required=True)
     correo = fields.Char(string='Correo')
-
-
-    
-class HotelReserva(models.Model):
-    _name = 'jf.hotel.reserva'
-    _description = 'jf.hotel.reserva'
-    dni_cliente = fields.Integer(string='dni_cliente',required=True)
-    fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
-    fecha_final = fields.Date(string='Fecha final reserva',required=True)
-    precio_total = fields.Float(string='Precio total',required=True)
-
+    empresa_id = fields.Many2one('jf.hotel.empresa', string='Empresa')
+    reserva_id = fields.Many2one('jf.hotel.reserva', string='Reserva')
 
 class HotelEmpresa(models.Model):
     _name = 'jf.hotel.empresa'
@@ -33,7 +24,17 @@ class HotelEmpresa(models.Model):
     direccion = fields.Char(string='Dirección',required=True)
     localidad = fields.Char(string='Localidad',required=True)
     pais = fields.Char(string='País',required=True)
+    cliente_ids = fields.One2many('jf.hotel.cliente', 'empresa_id', string='Clientes de la empresa')
 
+class HotelReserva(models.Model):
+    _name = 'jf.hotel.reserva'
+    _description = 'jf.hotel.reserva'
+    dni_cliente = fields.Integer(string='dni_cliente',required=True)
+    fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
+    fecha_final = fields.Date(string='Fecha final reserva',required=True)
+    precio_total = fields.Float(string='Precio total',required=True)
+    cliente_ids = fields.One2many('jf.hotel.cliente', 'reserva_id', string='Reservas del cliente')
+    habitacion_ids = fields.Many2many('jf.hotel.habitaciones', string='Habitacion/es reservada/s')
 
 class HotelHabitaciones(models.Model):
     _name = 'jf.hotel.habitaciones'
@@ -45,6 +46,7 @@ class HotelHabitaciones(models.Model):
     estado = fields.Selection([
         ('0','Disponible'),('1','Ocupado')
     ],string='Estado',default="0")
+    reserva_ids = fields.Many2many('jf.hotel.reserva', string='Reservas de la habitación')
     
     
     

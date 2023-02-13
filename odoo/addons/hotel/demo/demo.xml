@@ -15,19 +15,19 @@
             <field name="telefono">619483748</field>
           </record>
 
-          <!--<record id="reserva1" model="jf.hotel.reserva">
+          <record id="reserva1" model="jf.hotel.reserva">
             <field name="dni_cliente">48207558</field>
-            <field name="fecha_inicio" options="{'format': 'DD/MM/YYYY'}">02/04/2023</field>
-            <field name="fecha_final" options="{'format': 'DD/MM/YYYY'}">04/04/2023</field>
+            <field name="fecha_inicio">2023-04-02</field>
+            <field name="fecha_final">2023-04-04</field>
             <field name="precio_final">20</field>
           </record>
           
           <record id="reserva2" model="jf.hotel.reserva">
             <field name="dni_cliente">50358076</field>
-            <field name="fecha_inicio" options="{'format': 'DD/MM/YYYY'}">20/04/2023</field>
-            <field name="fecha_final" options="{'format': 'DD/MM/YYYY'}">24/04/2023</field>
+            <field name="fecha_inicio">2023-20-04</field>
+            <field name="fecha_final">2023-24-04</field>
             <field name="precio_final">90</field>
-          </record>-->
+          </record>
 
           <record id="empresa1" model="jf.hotel.empresa">
             <field name="nombre">Empresaurios SL</field>
