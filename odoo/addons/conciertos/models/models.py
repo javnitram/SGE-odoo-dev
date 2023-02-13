@@ -6,6 +6,7 @@ class ConciertosArtista(models.Model):
     _name = 'sa.conciertos.artista'
     _description = 'sa.conciertos.artista'
     nombre = fields.Char('Nombre', required=True)
+    conciertos_ids = fields.One2many('sa.conciertos.concierto', 'artistas_id', string='Conciertos')
 
 class ConciertoRecinto(models.Model):
     _name = 'sa.conciertos.recinto'
@@ -21,7 +22,7 @@ class ConciertosConcierto(models.Model):
     _name = 'sa.conciertos.concierto'
     _description = 'sa.conciertos.concierto'
     fecha = fields.Date('Fecha')
-    artista_id = fields.Many2one('sa.conciertos.artista', string='Artista')
+    artistas_ids = fields.Many2many('sa.conciertos.artista', string='Artistas')
     recinto_id = fields.Many2one('sa.conciertos.recinto', string='Recinto', help='El recinto donde tendrá lugar')
     
 
