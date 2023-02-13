@@ -8,6 +8,7 @@ class TabernaInformacion(models.Model):
     _description = 'jm.taberna.informacion'
     nombre = fields.Char('Nombre', required=True)
     direccion = fields.Char('Dirección')
+    empleado_ids = fields.One2many('jm.taberna.empleados', 'id_empleado', string='ID del empleado')
 
 class TabernaBebidas(models.Model):
     _name = 'jm.taberna.bebidas'
@@ -37,6 +38,7 @@ class TabernaEmpleados(models.Model):
         ('2', 'Cocinero'),
     ], string='Categoría')
     nombre_taberna = fields.Many2one('jm.taberna.informacion', string='Nombre de la taberna')
+    pedidos_ids = fields.One2many('jm.taberna.pedidos', 'id_pedidos', string='ID de pedido')
 
 class TabernaClientes(models.Model):
     _name = 'jm.taberna.clientes'
@@ -45,6 +47,7 @@ class TabernaClientes(models.Model):
     nombre = fields.Char('Nombre')
     apellido1 = fields.Char('Apellido 1')
     apellido2 = fields.Char('Apellido 2')
+    pedidos_ids = fields.One2many('jm.taberna.pedidos', 'id_pedidos', string='ID de pedido')
 
 class TabernaPedidos(models.Model):
     _name = 'jm.taberna.pedidos'
