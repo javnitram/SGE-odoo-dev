@@ -24,6 +24,7 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+
     <!-- Top menu item -->
 
     <menuitem name="Gimnasio" id="gimnasio.menu_root"/>
