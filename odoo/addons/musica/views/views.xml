@@ -25,12 +25,17 @@
   <!-- ***************************************************** -->
   <!-- id = nombre del modulo. y algo identificativo-->
     <record model="ir.ui.view" id="musica.instrumento">
-      <field name="name">Instrumentos</field>
+      <field name="name">Lista de instrumentos</field>
       <field name="model">jr.tiendainstrumento.instrumento</field>
       <field name="arch" type="xml">
         <tree>
         <!-- nombre del campo del modelo-->
           <field name="modelo"/>
+          <field name="precio"/>
+          <field name="marca"/>
+          <field name="stock"/>
+          <field name="fecha"/>
+          
           
           </tree>
       </field>
@@ -48,7 +53,7 @@
     <!--*************************-->
 
     <record model="ir.ui.view" id="musica.venta">
-      <field name="name">Ventas</field>
+      <field name="name">Lista de ventas</field>
       <field name="model">jr.tiendainstrumento.venta</field>
       <field name="arch" type="xml">
         <tree>
@@ -71,6 +76,34 @@
       <field name="view_mode">tree,form</field>
     </record>
     <!-- server action to the one above -->
+
+
+
+
+
+<record model="ir.ui.view" id="musica.cliente">
+      <field name="name">Lista de clientes</field>
+      <field name="model">jr.tiendainstrumento.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+        <!-- nombre del campo del modelo-->
+          <field name="nombreCliente"/>
+         
+          
+          </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="musica.cliente_action_window">
+      <field name="name">Lista de clientes</field>
+      <field name="res_model">jr.tiendainstrumento.cliente</field>
+      <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
+      <field name="view_mode">tree,form</field>
+    </record>
+
 <!--
     <record model="ir.actions.server" id="musica.action_server">
       <field name="name">musica server</field>
@@ -96,6 +129,7 @@
     <menuitem name="Categoria" id="musica_menu_1" parent="musica.menu_root" action = "musica.categoria_action_window"/>
     <menuitem name="Instrumento" id="musica_menu_2" parent="musica.menu_root" action = "musica.instrumento_action_window"/>
     <menuitem name="Ventas" id="musica_menu_3" parent="musica.menu_root" action = "musica.venta_action_window"/>
+    <menuitem name="Clientes" id="musica_menu_4" parent="musica.menu_root" action = "musica.cliente_action_window"/>
 
     <!-- actions -->
 
