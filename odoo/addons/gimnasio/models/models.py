@@ -28,15 +28,16 @@ class ClientesGimnasio(models.Model):
     dni = fields.Char('DNI',required=True)
     nombre = fields.Char('Nombre',required=True)
     activo = fields.Boolean('Activo?',default=True)
-    telefono = fields.Integer('telefono',required=True)
+    telefono = fields.Integer('Telefono',required=True)
+
 
 class ClasesGimnasio(models.Model):
     _name = 'ar.gimnasio.clases'
     _description = 'ar.gimnasio.clases'
     
-    nombre_clase = fields.Char('nombre_clase',required=True)
-    precio = fields.Float('precio',required=True)
-    monitor = fields.Char('monitor',required=True)
+    nombre_clase = fields.Char('Nombre_clase',required=True)
+    precio = fields.Float('Precio',required=True)
+    monitor = fields.Char('Monitor',required=True)
     
 class InscripcionesGimnasio(models.Model):
     _name = 'ar.gimnasio.inscripciones'
@@ -48,14 +49,14 @@ class InscripcionesGimnasio(models.Model):
         ('2', '6 meses'),
         ('3', '12 meses')
     ],string='tipo_inscripcion')
-    fecha_inscripcion = fields.Date('fecha_inscripcion',required=True)
-    precio = fields.Float('precio')
+    fecha_inscripcion = fields.Date('Fecha de inscripcion',required=True)
+    precio = fields.Float('Precio')
 
 class ProductosGimnasio(models.Model):
     _name = 'ar.gimnasio.productos'
     _description = 'ar.gimnasio.productos'
 
-    nombre_producto = fields.Char('nombre_producto',required=True)
-    precio = fields.Float('precio',required=True)
-    disponibilidad = fields.Boolean('disponibilidad',default=True)
-    descripcion = fields.Char('descripcion')
+    nombre_producto = fields.Char('Nombre del producto',required=True)
+    precio = fields.Float('Precio',required=True)
+    disponibilidad = fields.Boolean('Disponibilidad',default=True)
+    descripcion = fields.Char('Descripcion')

@@ -15,12 +15,67 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="gimnasio.clases_list">
+      <field name="name">Lista Clases gym</field>
+      <field name="model">ar.gimnasio.clases</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre_clase"/>
+          <field name="precio"/>
+          <field name="monitor"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gimnasio.inscripciones_list">
+      <field name="name">Lista Inscripciones Gym</field>
+      <field name="model">ar.gimnasio.inscripciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="tipo_inscripcion"/>
+          <field name="fecha_inscripcion"/>
+          <field name="precio"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gimnasio.productos_list">
+      <field name="name">Lista Productos Gym</field>
+      <field name="model">ar.gimnasio.productos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre_producto"/>
+          <field name="precio"/>
+          <field name="disponibilidad"/>
+          <field name="descripcion"/>
+        </tree>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="gimnasio.action_window">
       <field name="name">Clientes</field>
       <field name="res_model">ar.gimnasio.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gimnasio.clases_action_window">
+      <field name="name">Clases</field>
+      <field name="res_model">ar.gimnasio.clases</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gimnasio.inscripciones_action_window">
+      <field name="name">Inscripciones</field>
+      <field name="res_model">ar.gimnasio.inscripciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gimnasio.productos_action_window">
+      <field name="name">Productos</field>
+      <field name="res_model">ar.gimnasio.productos</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -41,11 +96,11 @@
     <menuitem name="Lista Clientes" id="gimnasio.menu_1_list" parent="gimnasio.clientes"
               action="gimnasio.action_window"/>
     <menuitem name="Clases" id="gimnasio.menu_2_list" parent="gimnasio.clases"
-              action="gimnasio.action_window"/>
+              action="gimnasio.clases_action_window"/>
     <menuitem name="Inscripciones" id="gimnasio.menu_3_list" parent="gimnasio.inscripciones"
-              action="gimnasio.action_window"/>
+              action="gimnasio.inscripciones_action_window"/>
     <menuitem name="Productos" id="gimnasio.menu_4_list" parent="gimnasio.productos"
-              action="gimnasio.action_window"/>                              
+              action="gimnasio.productos_action_window"/>                              
 
   </data>
 </odoo>
