@@ -21,9 +21,9 @@
         <field name="name">La casa de Bernarda Alba</field>
         <field name="precio">10</field>
         <field name="ejemplares">2</field>
-        <field name="fecha"></field>
+        <field name="fecha">2020-02-09</field>
         <field name="segmano">False</field>
-        <field name="estado"></field>
+        <field name="estado">1</field>
       </record>
 
     </data>

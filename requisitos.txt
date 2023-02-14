@@ -1,8 +1,9 @@
 -4 clases (ok)
 -Vistas Tree x4 (ok)
--Vistas Forms propio x4
+-Vistas Forms propio x4 (ok)
 -Elementos de menú (ok)
 -Seguridad básica (ok)
 -Relaciones (ok)
 -Imágenes en vista Forms 
 -Icono módulo (ok)
+-Campos calculados

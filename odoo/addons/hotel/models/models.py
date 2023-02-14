@@ -5,7 +5,8 @@ from odoo import models, fields, api
 
 class HotelCliente(models.Model):
     _name = 'jf.hotel.cliente'
-    _description = 'jf.hotel.cliente'
+    _description = 'Modelo Cliente'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Selecciona imagen aquí")
     dni = fields.Integer(string='DNI',required=True)
     nombre = fields.Char(string='Nombre',required=True)
     apellidos = fields.Char(string='Apellidos',required=True)
@@ -16,7 +17,8 @@ class HotelCliente(models.Model):
 
 class HotelEmpresa(models.Model):
     _name = 'jf.hotel.empresa'
-    _description = 'jf.hotel.empresa'
+    _description = 'Modelo Empresa'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Selecciona imagen aquí")
     nombre = fields.Char(string='Nombre',required=True)
     telefono = fields.Integer(string='Teléfono',required=True)
     correo = fields.Char(string='Correo')
@@ -28,8 +30,8 @@ class HotelEmpresa(models.Model):
 
 class HotelReserva(models.Model):
     _name = 'jf.hotel.reserva'
-    _description = 'jf.hotel.reserva'
-    dni_cliente = fields.Integer(string='dni_cliente',required=True)
+    _description = 'Modelo Reserva'
+    dni_cliente = fields.Integer(string='DNI del cliente',required=True)
     fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
     fecha_final = fields.Date(string='Fecha final reserva',required=True)
     precio_total = fields.Float(string='Precio total',required=True)
@@ -38,7 +40,7 @@ class HotelReserva(models.Model):
 
 class HotelHabitaciones(models.Model):
     _name = 'jf.hotel.habitaciones'
-    _description = 'jf.hotel.habitaciones'
+    _description = 'Modelo Habitaciones'
     numero = fields.Integer(string='Número de la habitación', required=True)
     plazas = fields.Integer(string='Plazas',required=True)
     precio = fields.Float(string='Precio por noche',required=True)

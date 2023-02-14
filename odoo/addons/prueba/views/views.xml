@@ -12,18 +12,54 @@
       </field>
     </record>
 
+    <record id="prueba.categoria_form" model="ir.ui.view">
+      <field name="name">Formulario de Categorias</field>
+      <field name="model">jf.prueba.categoria</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="descripcion"></field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="prueba.libro_list">
       <field name="name">Lista de libros</field>
       <field name="model">jf.prueba.libro</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="portada" widget="image" class="oe_avatar oe_left" options="{'size': [100, 100]}"/>
           <field name="precio"/>
           <field name="ejemplares"/>
           <field name="fecha"/>
           <field name="segmano"/>
           <field name="estado"/> 
         </tree>
+      </field>
+    </record>
+
+    <record id="prueba.libro_form" model="ir.ui.view">
+      <field name="name">Formulario de libros</field>
+      <field name="model">jf.prueba.libro</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="portada" widget="image" class="oe_avatar oe_left" options="{'size': [100, 100]}"/>
+              <field name="precio"/>
+              <field name="ejemplares"/>
+              <field name="fecha"/>
+              <field name="segmano"/>
+              <field name="estado"/> 
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 

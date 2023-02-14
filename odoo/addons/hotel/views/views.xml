@@ -1,7 +1,7 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-    <record id="hotel.cliente_list" model="ir.ui.view">
+    <record id="hotel_cliente_list" model="ir.ui.view">
       <field name="name">Lista de Clientes</field>
       <field name="model">jf.hotel.cliente</field>
       <field name="arch" type="xml">
@@ -15,6 +15,25 @@
       </field>
     </record>
 
+    <record id="hotel_cliente_form" model="ir.ui.view">
+      <field name="name">Formulario de Categorias</field>
+      <field name="model">jf.hotel.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 100]}"/>
+              <field name="dni"/>
+              <field name="nombre"/>
+              <field name="apellidos"/>
+              <field name="telefono"/>
+              <field name="correo"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <record id="hotel_reserva_list" model="ir.ui.view">
       <field name="name">Lista de Reservas</field>
       <field name="model">jf.hotel.reserva</field>
@@ -25,6 +44,23 @@
           <field name="fecha_final"/>
           <field name="precio_total"/>
         </tree>
+      </field>
+    </record>
+
+    <record id="hotel_reserva_form" model="ir.ui.view">
+      <field name="name">Formulario de Reservas</field>
+      <field name="model">jf.hotel.reserva</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="dni_cliente"/>
+              <field name="fecha_inicio"/>
+              <field name="fecha_final"/>
+              <field name="precio_total"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -44,6 +80,27 @@
       </field>
     </record>
 
+    <record id="hotel_empresa_form" model="ir.ui.view">
+      <field name="name">Formulario de Empresa</field>
+      <field name="model">jf.hotel.empresa</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 100]}"/>
+              <field name="nombre"/>
+              <field name="telefono"/>
+              <field name="correo"/>
+              <field name="sitio_web"/>
+              <field name="direccion"/>
+              <field name="localidad"/>
+              <field name="pais"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <record id="hotel_habitaciones_list" model="ir.ui.view">
       <field name="name">Lista de habitaciones</field>
       <field name="model">jf.hotel.habitaciones</field>
@@ -58,27 +115,45 @@
       </field>
     </record>
 
+    <record id="hotel_habitaciones_form" model="ir.ui.view">
+      <field name="name">Formulario de habitaciones</field>
+      <field name="model">jf.hotel.habitaciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="numero"/>
+              <field name="plazas"/>
+              <field name="precio"/>
+              <field name="planta"/>
+              <field name="estado"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record id="hotel.cliente_action_window" model="ir.actions.act_window">
-      <field name="name">Cliente window</field>
+      <field name="name">Ventana Cliente</field>
       <field name="res_model">jf.hotel.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record id="hotel.reserva_action_window" model="ir.actions.act_window">
-      <field name="name">Reserva window</field>
+      <field name="name">Ventana Reserva</field>
       <field name="res_model">jf.hotel.reserva</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record id="hotel.empresa_action_window" model="ir.actions.act_window">
-      <field name="name">Empresa window</field>
+      <field name="name">Ventana Empresa</field>
       <field name="res_model">jf.hotel.empresa</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record id="hotel.habitaciones_action_window" model="ir.actions.act_window">
-      <field name="name">Habitaciones window</field>
+      <field name="name">Ventana Habitaciones</field>
       <field name="res_model">jf.hotel.habitaciones</field>
       <field name="view_mode">tree,form</field>
     </record>

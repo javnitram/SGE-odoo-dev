@@ -19,6 +19,7 @@ class PruebaLibro(models.Model):
     estado = fields.Selection([
         ('0','Bueno'),('1','Regular'),('2','Malo')
     ], string='Estado',default="0")
+    portada = fields.Image(string='portada',store=True,relation="res.partner",help="Selecciona imagen aquí")
 
 
     
