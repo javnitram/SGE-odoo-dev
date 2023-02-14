@@ -1,8 +1,6 @@
 <odoo>
   <data>
   <!--User form view -->
-
-
     <record id="ooddle.user_form" model="ir.ui.view">
         <field name="name">dm.ooddle.users.form</field>
         <field name="model">dm.ooddle.users</field>

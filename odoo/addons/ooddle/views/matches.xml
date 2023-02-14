@@ -1,16 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data>
     <record id="ooddle_matches_view_tree" model="ir.ui.view">
         <field name="name">dm.ooddle.matches.tree</field>
         <field name="model">dm.ooddle.matches</field>
         <field name="arch" type="xml">
-            <tree string="">
+            <tree string="Matches">
                 <field name="id" />
-                <field name="court"/>
-                <field name="time" />
-                <field name="price" />
+                <field name="price"/>
+                <field name="time"/>
+                <field name="court_id" />
+                <field name="UserResgitered"/>
             </tree>
+        </field>
+    </record>
+
+    <record id="ooddle._matches_view_form" model="ir.ui.view">
+        <field name="name">dm.ooddle.matches.form</field>
+        <field name="model">dm.ooddle.matches</field>
+        <field name="arch" type="xml">
+            <form string="Matches Form">
+            <group colspan="2" col="2">
+              <field name="id"/>
+              <field name="price"/>
+              <field name="court_id"/>
+              <field name="time"/>
+              <field name="UserResgitered"/>
+            </group>
+            </form>
         </field>
     </record>
         <record id="ooddle_view_calendar" model="ir.ui.view">

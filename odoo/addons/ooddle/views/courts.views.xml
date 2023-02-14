@@ -1,0 +1,13 @@
+<record id="ooddle._courts_view_form" model="ir.ui.view">
+        <field name="name">dm.ooddle.courts.form</field>
+        <field name="model">dm.ooddle.courts</field>
+        <field name="arch" type="xml">
+            <form string="Courts Form">
+            <group colspan="2" col="2">
+              <field name="match_ids"/>
+              <field name="place"/>
+              <field name="in_use"/>
+            </group>
+            </form>
+        </field>
+    </record>

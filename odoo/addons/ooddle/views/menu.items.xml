@@ -10,27 +10,41 @@
           <field name="view_mode">kanban,tree,form</field>
     </record>  
 
-       <record id="ooddle_matches_action_window" model="ir.actions.act_window">
+    <record id="ooddle_matches_action_window" model="ir.actions.act_window">
           <field name="name">Partidos</field>
           <field name="res_model">dm.ooddle.matches</field>
-          <field name="view_mode">tree</field>
+          <field name="view_mode">tree,form</field>
     </record>  
+
+    <record id="ooddle_courts_action_window" model="ir.actions.act_window">
+          <field name="name">Pistas</field>
+          <field name="res_model">dm.ooddle.courts</field>
+          <field name="view_mode">form</field>
+    </record>  
+
     <menuitem
       id="ooddle_menu_root"
       name="Ooddle"
       sequence="10"/>
 
     <menuitem
-        id="ooddle_users_tree_menu"
+        id="ooddle_users_menu"
         name="Users"
         action="ooddle_users_action_window"
         parent="ooddle_menu_root"
         sequence="10"/>
 
     <menuitem
-        id="ooddle_matches_tree_menu"
+        id="ooddle_matches_menu"
         name="Matches"
         action="ooddle_matches_action_window"
+        parent="ooddle_menu_root"
+        sequence="10"/>
+
+    <menuitem
+        id="ooddle_courts_menu"
+        name="Courts"
+        action="ooddle_courts_action_window"
         parent="ooddle_menu_root"
         sequence="10"/>
   </data>
