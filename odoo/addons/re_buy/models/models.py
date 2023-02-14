@@ -14,7 +14,7 @@ class rebuyProduct(models.Model):
     product_price = fields.Float('Price', help = "Insert product price")
     product_stock = fields.Integer('Stock', help = "Insert product stock")
     product_grade = fields.Char('Grade', help = "Insert product grade")
-    client_product_employee = fields.Many2one('Employee')
+    client_product_employee = fields.Many2one('am.rebuy.employees', string='seller')
     client_product_client = fields.Many2one('Client')
     product_check_grade = fields.Selection([
         ('a', 'A'),

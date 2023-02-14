@@ -5,7 +5,19 @@
     <record id="rebuy_tree" model="ir.actions.act_window">
         <field name="name">Dashboard</field>
         <field name="res_model">am.rebuy.product</field>
-        <field name="view_mode">tree</field>
+        <field name="view_mode">tree,form</field>
+    </record> 
+
+    <record id="rebuy_client_kanban" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">am.rebuy.client_product</field>
+        <field name="view_mode">kanban,form</field>
+    </record> 
+
+    <record id="rebuy_client_tree" model="ir.actions.act_window">
+        <field name="name">Client Product Summary</field>
+        <field name="res_model">am.rebuy.client_product</field>
+        <field name="view_mode">tree,form</field>
     </record> 
 
     <menuitem
@@ -14,10 +26,23 @@
         sequence="10"/>
     <menuitem
         id="rebuy_menu_tree"
-        name="Dashboard"
+        name="Products"
         action="rebuy_tree"
         parent="rebuy_menu_root"
         sequence="10"/>
-    
+    <menuitem
+        id="rebuy_menu_client_product"
+        name="Coming Products"
+        parent="rebuy_menu_root"/>
+    <menuitem
+        id="rebuy_menu_client_tree"
+        name="Summary"
+        action="rebuy_client_tree"
+        parent="rebuy_menu_client_product"/>
+    <menuitem
+        id="rebuy_menu_client_kanban"
+        name="Dashboard"
+        action="rebuy_client_kanban"
+        parent="rebuy_menu_client_product"/>
   </data>
 </odoo>

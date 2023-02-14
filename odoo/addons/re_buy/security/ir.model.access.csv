@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_rebuy_tree,Access rule,model_am_rebuy_product,base.group_user,1,1,1,1
+access_rebuy_kanban,Access rule,model_am_rebuy_client_product,base.group_user,1,1,1,1

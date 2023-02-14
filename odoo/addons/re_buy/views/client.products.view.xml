@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+      <record id="rebuy_view_client_product_kanban" model="ir.ui.view">
+        <field name="name">am.rebuy.client_product.view.kanban</field>
+        <field name="model">am.rebuy.client_product</field>
+        <field name="arch" type="xml">
+          <kanban>
+            <templates>
+                <t t-name="kanban-box">
+                <div class="oe_kanban_vignette">
+                <!-- Left side image: -->
+                <div class="oe_kanban_details">
+                  <!-- Title and data -->
+                  <h4><field name="client_product_name"/></h4>
+                  <br>Name: <field name="client_product_name"/></br>
+                  <ul>
+                    <li>Grade: <field name="client_product_grade"/></li>
+                    <li>Price: <field name="client_product_price"/></li>
+                    <li>Accepted: <field name="client_product_accepted"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+        </field>
+      </record>
+      <record id="rebuy_view_client_product_form" model="ir.ui.view">
+        <field name="name">am.rebuy.client_product_form.view.form</field>
+        <field name="model">am.rebuy.client_product</field>
+        <field name="arch" type="xml">
+          <form string="Client product form">
+            <sheet>
+              <group colspan="2" col="2">
+                <field name="client_product_name"></field>
+                <field name="client_product_price"></field>
+                <field name="client_product_stock"></field>
+                <field name="client_product_grade"></field>
+                <field name="client_product_accepted"></field>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+      <record id="rebuy_view_client_product_tree" model="ir.ui.view">
+        <field name="name">am.rebuy.client_product.view.tree</field>
+        <field name="model">am.rebuy.client_product</field>
+        <field name="arch" type="xml">
+          <tree string="Client Product Summary">
+            <field name="client_product_name"></field>
+            <field name="client_product_price"></field>
+            <field name="client_product_stock"></field>
+            <field name="client_product_grade"></field>
+            <field name="client_product_accepted"></field>
+          </tree>
+        </field>
+      </record>
+  </data>
+</odoo>
