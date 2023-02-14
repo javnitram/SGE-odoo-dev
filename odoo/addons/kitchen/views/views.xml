@@ -1,28 +1,77 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="kitchen.list">
+
+    <record model="ir.ui.view" id="kitchen_plato">
       <field name="name">kitchen list</field>
-      <field name="model">kitchen.kitchen</field>
+      <field name="model">cocina.plato</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="precio"/>
+          <field name="temperatura"/>
         </tree>
       </field>
     </record>
--->
+
+    <record model="ir.ui.view" id="kitchen_partida">
+      <field name="name">kitchen list</field>
+      <field name="model">cocina.partida</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="kitchen_jefe">
+      <field name="name">kitchen list</field>
+      <field name="model">cocina.jefe</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="kitchen_cliente">
+      <field name="name">kitchen list</field>
+      <field name="model">cocina.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="kitchen.action_window">
-      <field name="name">kitchen window</field>
-      <field name="res_model">kitchen.kitchen</field>
+
+    <record model="ir.actions.act_window" id="kitchen.action_platos">
+      <field name="name">Lista de platos</field>
+      <field name="res_model">cocina.plato</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
+    <record model="ir.actions.act_window" id="kitchen.action_partidas">
+      <field name="name">Lista de partidas</field>
+      <field name="res_model">cocina.partida</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="kitchen.action_jefes">
+      <field name="name">Lista de Jefes</field>
+      <field name="res_model">cocina.jefe</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="kitchen.action_clientes">
+      <field name="name">Lista de Clientes</field>
+      <field name="res_model">cocina.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +90,26 @@
 -->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="kitchen" id="kitchen.menu_root"/>
--->
+    
+    <menuitem name="Cocina" id="kitchen.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="kitchen.menu_1" parent="kitchen.menu_root"/>
-    <menuitem name="Menu 2" id="kitchen.menu_2" parent="kitchen.menu_root"/>
--->
+
+    <menuitem name="Platos" id="kitchen.plato_menu" parent="kitchen.menu_root"/>
+    <menuitem name="Partidas" id="kitchen.partida_menu" parent="kitchen.menu_root"/>
+    <menuitem name="Jefes" id="kitchen.jefe_menu" parent="kitchen.menu_root"/>
+    <menuitem name="Clientes" id="kitchen.cliente_menu" parent="kitchen.menu_root"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="kitchen.menu_1_list" parent="kitchen.menu_1"
-              action="kitchen.action_window"/>
-    <menuitem name="Server to list" id="kitchen" parent="kitchen.menu_2"
-              action="kitchen.action_server"/>
--->
+
+    <menuitem name="Platos" id="kitchen.lista_platos" parent="kitchen.plato_menu"
+              action="kitchen.action_platos"/>
+    <menuitem name="Partidas" id="kitchen.lista_partida" parent="kitchen.partida_menu"
+              action="kitchen.action_partidas"/>
+    <menuitem name="Jefes" id="kitchen.lista_jefe" parent="kitchen.jefe_menu"
+              action="kitchen.action_jefes"/>
+    <menuitem name="Clientes" id="kitchen.lista_cliente" parent="kitchen.cliente_menu"
+              action="kitchen.action_clientes"/>
+
   </data>
 </odoo>
