@@ -3,42 +3,90 @@
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="hospital_doctores_tree">
       <field name="name">DOCTORES</field>
-      <field name="model">hospital.doctores</field>
+      <field name="model">gs.hospital.doctores</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="dni"/>
           <field name="name"/>
           <field name="surname"/>
           <field name="date"/>
-          <field name="specialty"/>
+          <field name="tlf"/>
+          <field name="especialidad"/>
         </tree>
       </field>
     </record>
 
     <record model="ir.ui.view" id="hospital_pacientes_tree">
       <field name="name">PACIENTES</field>
-      <field name="model">hospital.pacientes</field>
+      <field name="model">gs.hospital.pacientes</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="dni"/>
           <field name="name"/>
           <field name="surname"/>
           <field name="date"/>
+          <field name="tlf"/>
           <field name="history"/>
           <field name="alergias"/>
         </tree>
       </field>
     </record>
 
+    <record model="ir.ui.view" id="hospital_enfermeros_form">
+      <field name="name">ENFERMEROS</field>
+      <field name="model">gs.hospital.enfermeros</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="dni"/>
+            <field name="name"/>
+            <field name="surname"/>
+            <field name="sexo"/>
+            <field name="date"/>
+            <field name="tlf"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_enfermeros_form">
+      <field name="name">MEDICINAS</field>
+      <field name="model">gs.hospital.medicinas</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="nroserie"/>
+            <field name="name"/>
+            <field name="cantidad"/>
+            <field name="tipo"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="hospital_doctores_action_window">
       <field name="name">DOCTORES</field>
-      <field name="res_model">hospital.doctores</field>
+      <field name="res_model">gs.hospital.doctores</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="hospital_pacientes_action_window">
       <field name="name">PACIENTES</field>
-      <field name="res_model">hospital.pacientes</field>
+      <field name="res_model">gs.hospital.pacientes</field>
       <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_enfermeros_action_window">
+      <field name="name">ENFERMEROS</field>
+      <field name="res_model">gs.hospital.enfermeros</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_medicinas_action_window">
+      <field name="name">MEDICINAS</field>
+      <field name="res_model">gs.hospital.medicinas</field>
+      <field name="view_mode">form</field>
     </record>
 
     <!-- Top menu item -->
@@ -55,5 +103,15 @@
       id="hospital_pacientes_menu" 
       parent="hospital_menu_root"
       action="hospital_pacientes_action_window"/>
+
+    <menuitem name="Enfermeros" 
+      id="hospital_pacientes_menu" 
+      parent="hospital_menu_root"
+      action="hospital_enfermeros_action_window"/>
+
+    <menuitem name="Medicinas" 
+      id="hospital_pacientes_menu" 
+      parent="hospital_menu_root"
+      action="hospital_medicinas_action_window"/>
   </data>
 </odoo>
