@@ -8,7 +8,9 @@
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
-
+          <field name="nombre"/>
+          <field name="descripcion"/>
+          <field name="vehiculos_ids"/>
         </tree>
       </field>
     </record>
@@ -31,25 +33,25 @@
       <field name="model">dhm.concesionario.clientes</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id"/>
+          <field name="dni"/>
           <field name="nombre"/>
           <field name="apellidos"/>
         </tree>
       </field>
     </record>
 
-
-    <record model="ir.ui.view" id="dhm_concesionario_matriculacion_list">
+    <record model="ir.ui.view" id="dhm_concesionario_facturas_list">
       <field name="name">concesionario list</field>
-      <field name="model">dhm.concesionario.matriculacion</field>
+      <field name="model">dhm.concesionario.facturas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="matricula"/>
+          <field name="id"/>
+          <field name="cantidad"/>
+          <field name="precio"/>
         </tree>
       </field>
     </record>
 
-    
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="concesionario.action_window_pedidos">
@@ -70,9 +72,9 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="concesionario.action_window_matriculas">
-      <field name="name">Lista de matriculas</field>
-      <field name="res_model">dhm.concesionario.matriculacion</field>
+    <record model="ir.actions.act_window" id="concesionario.action_window_facturas">
+      <field name="name">Lista de facturas</field>
+      <field name="res_model">dhm.concesionario.facturas</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -84,7 +86,7 @@
     <menuitem name="Pedidos" id="concesionario.menu_pedidos" parent="concesionario.menu_root"/>
     <menuitem name="Clientes" id="concesionario.menu_clientes" parent="concesionario.menu_root"/>
     <menuitem name="Vehiculos" id="concesionario.menu_vehiculos" parent="concesionario.menu_root"/>
-    <menuitem name="Matriculas" id="concesionario.menu_matriculas" parent="concesionario.menu_root"/>
+    <menuitem name="Facturas" id="concesionario.menu_facturas" parent="concesionario.menu_root"/>
    
     <!-- actions -->
     <menuitem name="Lista pedidos" id="concesionario.menu_pedidos_list" parent="concesionario.menu_pedidos"
@@ -93,8 +95,8 @@
               action="concesionario.action_window_clientes"/>
     <menuitem name="Lista vehiculos" id="concesionario.menu_vehiculos_list" parent="concesionario.menu_vehiculos"
               action="concesionario.action_window_vehiculos"/>
-    <menuitem name="Lista matriculas" id="concesionario.menu_matriculas_list" parent="concesionario.menu_matriculas"
-              action="concesionario.action_window_matriculas"/>
+    <menuitem name="Lista facturas" id="concesionario.menu_facturas_list" parent="concesionario.menu_facturas"
+              action="concesionario.action_window_facturas"/>
 
   </data>
 </odoo>
