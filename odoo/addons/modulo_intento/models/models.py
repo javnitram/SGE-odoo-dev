@@ -6,7 +6,8 @@ from odoo import models, fields, api
 class Disco_Genero(models.Model):
     _name = 'yf.discos.genero'
     _description = 'discos.genero'
-    nomcat = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre', required=True)
+    canciones_ids = fields.One2many('yf.disco.cancion', 'genero_id', string='Canciones')
 
 class Disco_Disco(models.Model):
     _name = 'yf.discos.disco'
@@ -29,14 +30,22 @@ class Disco_Discografica(models.Model):
     _description = 'disco.discografica'
     name = fields.Char('nombre')
     anhofundacion = fields.Char('año de fundacion')
+
 class Disco_Cancion(models.Model):
     _name = 'yf.disco.cancion'
     _description = 'disco.cancion'
-    nombre = fields.Char('nombre')
+    name = fields.Char('nombre')
     duracion = fields.Float('duracion')
     album = fields.Char('album')
     artista = fields.Char('artista')
-    genero = fields.Char('genero')
+    genero_id = fields.Many2one("yf.discos.genero", string="genero", required=True)
+
+class DisqueraArtista(models.Model):
+    _name = 'yf.disquera.artista'
+    _description = 'Disqueras y sus esclavos'
+    name = fields.Char(string="Nombre")
+    artistas_id = fields.Many2many("yf.disco.artista", string='Artistas')
+
 
 
 #     name = fields.Char()

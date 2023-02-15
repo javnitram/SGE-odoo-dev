@@ -7,11 +7,11 @@
         <field name="model">yf.disco.cancion</field>
         <field name="arch" type="xml">
           <tree>
-            <field name="nombre"/>
+            <field name="name"/>
             <field name="duracion"/>
             <field name="album"/>
             <field name="artista"/>
-            <field name="genero"/>
+            <field name="genero_id"/>
           </tree>
         </field>
       </record>
@@ -21,11 +21,11 @@
         <field name="arch" type="xml">
           <form>
             <group colspan="2" col="2">
-              <field name="nombre"/>
+              <field name="name"/>
               <field name="duracion"/>
               <field name="album"/>
               <field name="artista"/>
-              <field name="genero"/>
+              <field name="genero_id"/>
           </group>
           </form>
         </field>
