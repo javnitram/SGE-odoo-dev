@@ -1,2 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-permiso_inmobiliaria,Permisos generales de inmobiliaria,model_il_inmobiliaria_inmueble,base.group_user,1,1,1,1
+permiso_inmobiliaria_inmueble,Permisos generales de inmobiliaria 1,model_il_inmobiliaria_inmueble,base.group_user,1,1,1,1
+permiso_inmobiliaria_cliente,Permisos generales de inmobiliaria 2,model_il_inmobiliaria_cliente,base.group_user,1,1,1,1
+permiso_inmobiliaria_agente,Permisos generales de inmobiliaria 3,model_il_inmobiliaria_agente,base.group_user,1,1,1,1
+permiso_inmobiliaria_venta,Permisos generales de inmobiliaria 4,model_il_inmobiliaria_venta,base.group_user,1,1,1,1

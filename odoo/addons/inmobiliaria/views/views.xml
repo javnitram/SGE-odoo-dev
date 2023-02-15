@@ -3,15 +3,118 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="inmobiliaria.inmueble_list">
-      <field name="name">Lista de inmuebles</field>
+      <field name="name">Tree de inmuebles</field>
       <field name="model">il.inmobiliaria.inmueble</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="referencia"/>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="tipo"/>
+          <field name="precio"/>
+          <field name="m2"/>
           <field name="fecha_entrada"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.cliente_list">
+      <field name="name">Tree de clientes</field>
+      <field name="model">il.inmobiliaria.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.agente_list">
+      <field name="name">Tree de agentes</field>
+      <field name="model">il.inmobiliaria.agente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+          <field name="puesto"/>
+          <field name="salario"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.venta_list">
+      <field name="name">Tree de ventas</field>
+      <field name="model">il.inmobiliaria.venta</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cliente"/>
+          <field name="inmueble"/>
+          <field name="agente"/>
+          <field name="fecha"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="inmobiliaria.inmuebleform_list">
+      <field name="name">Form de inmuelbes</field>
+      <field name="model">il.inmobiliaria.inmueble</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="1">
+          <field name="name"/>
+          <field name="tipo"/>
+          <field name="precio"/>
+          <field name="m2"/>
+          <field name="fecha_entrada"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.agenteform_list">
+      <field name="name">Form de agentes</field>
+      <field name="model">il.inmobiliaria.agente</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="1">
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+          <field name="puesto"/>
+          <field name="salario"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.clienteform_list">
+      <field name="name">Form de clientes</field>
+      <field name="model">il.inmobiliaria.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="1">
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+        </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="inmobiliaria.ventaform_list">
+      <field name="name">Form de ventas</field>
+      <field name="model">il.inmobiliaria.venta</field>
+      <field name="arch" type="xml">
+        <form>
+        <group colspan="2" col="1">
+          <field name="cliente"/>
+          <field name="inmueble"/>
+          <field name="agente"/>
+          <field name="fecha"/>
+        </group>
+        </form>
       </field>
     </record>
 
@@ -19,9 +122,51 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="inmobiliaria.inmueble_action_window">
-      <field name="name">Inmueble window</field>
+      <field name="name">Ventana de inmueble</field>
       <field name="res_model">il.inmobiliaria.inmueble</field>
       <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.cliente_action_window">
+      <field name="name">Ventana de cliente</field>
+      <field name="res_model">il.inmobiliaria.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.agente_action_window">
+      <field name="name">Ventana de agente</field>
+      <field name="res_model">il.inmobiliaria.agente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.venta_action_window">
+      <field name="name">Ventana de venta</field>
+      <field name="res_model">il.inmobiliaria.venta</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.inmuebleform_action_window">
+      <field name="name">Ventana de inmuebles en form</field>
+      <field name="res_model">il.inmobiliaria.inmueble</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.clienteform_action_window">
+      <field name="name">Ventana de clientes en form</field>
+      <field name="res_model">il.inmobiliaria.cliente</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.agenteform_action_window">
+      <field name="name">Ventana de agentes en form</field>
+      <field name="res_model">il.inmobiliaria.agente</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="inmobiliaria.ventaform_action_window">
+      <field name="name">Ventana de ventas en form</field>
+      <field name="res_model">il.inmobiliaria.venta</field>
+      <field name="view_mode">form</field>
     </record>
 
 
@@ -35,12 +180,34 @@
     <!--                 -->
 
     <menuitem name="Inmueble" id="inmobiliaria.inmueble" parent="inmobiliaria.menu_root"/>
-    <!--<menuitem name="Venta" id="il.inmobiliaria.menu_2" parent="il.inmobiliaria.menu_root"/> -->
+    <menuitem name="Cliente" id="inmobiliaria.cliente" parent="inmobiliaria.menu_root"/>
+    <menuitem name="Agente" id="inmobiliaria.agente" parent="inmobiliaria.menu_root"/>
+    <menuitem name="Venta" id="inmobiliaria.venta" parent="inmobiliaria.menu_root"/>
 
     <!-- actions -->
     <!--         -->
-    <menuitem name="Listar inmuebles" id="inmobiliaria.menu_1_list" parent="inmobiliaria.inmueble"
+    <menuitem name="Listar inmuebles #Tree" id="inmobiliaria.menu_1_list" parent="inmobiliaria.inmueble"
               action="inmobiliaria.inmueble_action_window"/>
 
+    <menuitem name="Listar clientes #Tree" id="inmobiliaria.menu_2_list" parent="inmobiliaria.cliente"
+              action="inmobiliaria.cliente_action_window"/>
+
+    <menuitem name="Listar agentes #Tree" id="inmobiliaria.menu_3_list" parent="inmobiliaria.agente"
+              action="inmobiliaria.agente_action_window"/>
+
+    <menuitem name="Listar ventas #Tree" id="inmobiliaria.menu_4_list" parent="inmobiliaria.venta"
+              action="inmobiliaria.venta_action_window"/>
+
+    <menuitem name="Listar Inmuebles #Form" id="inmobiliaria.menu_5_list" parent="inmobiliaria.inmueble"
+              action="inmobiliaria.inmuebleform_action_window"/>
+
+    <menuitem name="Listar Clientes #Form" id="inmobiliaria.menu_6_list" parent="inmobiliaria.cliente"
+              action="inmobiliaria.clienteform_action_window"/>
+
+    <menuitem name="Listar Agentes #Form" id="inmobiliaria.menu_7_list" parent="inmobiliaria.agente"
+              action="inmobiliaria.agenteform_action_window"/>
+
+    <menuitem name="Listar Ventas #Form" id="inmobiliaria.menu_8_list" parent="inmobiliaria.venta"
+              action="inmobiliaria.ventaform_action_window"/>
   </data>
 </odoo>

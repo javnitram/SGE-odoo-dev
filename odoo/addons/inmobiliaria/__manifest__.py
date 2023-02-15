@@ -29,6 +29,7 @@
         #VISTAS QUE ODOO TENDRA EN CUENTA PARA EL MODULO
         'views/views.xml',
         'views/templates.xml',
+        'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
