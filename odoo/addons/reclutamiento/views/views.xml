@@ -76,15 +76,16 @@
 
 
 
-<record model="ir.ui.view" id="reclutamiento.general_list">
-  <field name="name">reclutamiento general</field>
-  <field name="model">ac.reclutamiento.general</field>
+<record model="ir.ui.view" id="reclutamiento.infanteria_proyectiles_list">
+  <field name="name">reclutamiento tropas con proyectiles</field>
+  <field name="model">ac.reclutamiento.infanteria.proyectiles</field>
   <field name="arch" type="xml">
     <tree>
-      <field name="ID Infanteria Proyectiles"/>
+      <field name="id_proyectiles"/>
       <field name="nombre"/>
-      <field name="edad"/>
-      <field name="ejercitos_gestionados"/>
+      <field name="descripcion"/>
+      <field name="municion"/>
+      <field name="alcance" />
     </tree>
   </field>
 </record>
@@ -92,9 +93,9 @@
 
 
 
-<record model="ir.actions.act_window" id="reclutamiento.general_action_window">
-<field name="name">general del ejercito </field>
-<field name="res_model">ac.reclutamiento.general</field>
+<record model="ir.actions.act_window" id="reclutamiento.infanteria_proyectiles_window">
+<field name="name">Infanteria de proyectiles </field>
+<field name="res_model">ac.reclutamiento.infanteria.proyectiles</field>
 <field name="view_mode">tree,form</field>
 </record>
 
@@ -123,20 +124,24 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Ejercito" id="reclutamiento.menu_1" parent="reclutamiento.menu_root"/>
+    <menuitem name="Ejercito" id="reclutamiento.menu_general" parent="reclutamiento.menu_root"/>
     
 
     <!-- actions -->
 
-    <menuitem name="Ejercito" id="reclutamiento.menu_1_list" parent="reclutamiento.menu_1"
+    <menuitem name="Ejercito" id="reclutamiento.ejercito_list" parent="reclutamiento.menu_general"
               action="reclutamiento.action_window"/>
 
+    <menuitem name="General" id="reclutamiento.general_list" parent="reclutamiento.menu_general"
+              action="reclutamiento.general_action_window"/> 
 
-    <menuitem name="infanteria_cac" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_1"
+    <menuitem name="infanteria_cac" id="reclutamiento.infanteria_cac_list" parent="reclutamiento.menu_general"
               action="reclutamiento.infanteria_action_window"/>   
               
-    <menuitem name="General" id="reclutamiento.menu_3_list" parent="reclutamiento.menu_1"
-              action="reclutamiento.general_action_window"/>    
+    <menuitem name="infaneria_proyectiles" id="reclutamiento.infanteria_proyectiles_list" parent="reclutamiento.menu_general"
+              action="reclutamiento.infanteria_proyectiles_window"/> 
+
+    
     <!-- 
     <menuitem name="Server to list" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_2"
               action="reclutamiento.action_window"/>

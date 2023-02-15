@@ -9,6 +9,7 @@ class ejercito(models.Model):
     id_ejercito= fields.Integer(required=True)
     nombre = fields.Char()
     unidades= fields.Integer()
+    general = fields.Many2one('ac.reclutamiento.general', string='nombre')
 
 class general(models.Model):
     _name = 'ac.reclutamiento.general'
@@ -28,9 +29,9 @@ class infanteria_CaC(models.Model):
     nombre = fields.Char()
     descripcion = fields.Text()
     armadura = fields.Selection([
-        ('1', 'ligera')
-        ,('2','media')
-        ,('3','pesada')
+        ('1', 'Ligera')
+        ,('2','Media')
+        ,('3','Pesada')
     ], string='armadura')
 
 class infanteria_proyectiles(models.Model):
@@ -52,7 +53,9 @@ class undiades_motadas(models.Model):
     nombre = fields.Char()
     descripcion = fields.Text()
     monturas = fields.Selection([
-        ('1', 'caballo'),('2','camello'),('3','elefante')
+        ('1', 'Caballo'),
+        ('2','Camello'),
+        ('3','Elefante')
     ], string='montura')
     ##atributo calculado
     ##velocidad= flieds.integer()
@@ -64,7 +67,8 @@ class artilleria(models.Model):
     nombre = fields.Char()
     descripcion = fields.Text()
     municion = fields.Selection([
-        ('1', 'piedra'),('2','virote')
+        ('1', 'piedra'),
+        ('2','virote')
     ], string='municion')    
     ##poner valor por defecto
     alcance= fields.Integer()
