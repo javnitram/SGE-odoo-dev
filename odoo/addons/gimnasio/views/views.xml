@@ -8,9 +8,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="dni"/>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="activo"/>
           <field name="telefono"/>
+          <field name="clases_ids"/>
+          <field name="inscripciones_id"/>
         </tree>
       </field>
     </record>
@@ -20,9 +22,10 @@
       <field name="model">ar.gimnasio.clases</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_clase"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="monitor"/>
+          <field name="clientes_ids"/>
         </tree>
       </field>
     </record>
@@ -32,9 +35,10 @@
       <field name="model">ar.gimnasio.inscripciones</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="tipo_inscripcion"/>
+          <field name="name"/>
           <field name="fecha_inscripcion"/>
           <field name="precio"/>
+          
         </tree>
       </field>
     </record>
@@ -44,11 +48,83 @@
       <field name="model">ar.gimnasio.productos</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_producto"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="disponibilidad"/>
           <field name="descripcion"/>
         </tree>
+      </field>
+    </record>
+
+    <!-- Vista de Formulario -->
+    <record id="gimnasio.clientes_view_form" model="ir.ui.view">
+      <field name="name">Formulario Clientes</field>
+      <field name="model">ar.gimnasio.clientes</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="dni"/>
+              <field name="name"/>
+              <field name="activo"/>
+              <field name="telefono"/>
+              <field name="clases_ids"/>
+              <field name="inscripciones_id"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="gimnasio.clases_view_form" model="ir.ui.view">
+      <field name="name">Formulario Clases</field>
+      <field name="model">ar.gimnasio.clases</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="monitor"/>
+              <field name="clientes_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="gimnasio.inscripciones_view_form" model="ir.ui.view">
+      <field name="name">Formulario Inscripciones</field>
+      <field name="model">ar.gimnasio.inscripciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="fecha_inscripcion"/>
+              <field name="precio"/>
+
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="gimnasio.productos_view_form" model="ir.ui.view">
+      <field name="name">Formulario Productos</field>
+      <field name="model">ar.gimnasio.productos</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="disponibilidad"/>
+              <field name="descripcion"/>
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 

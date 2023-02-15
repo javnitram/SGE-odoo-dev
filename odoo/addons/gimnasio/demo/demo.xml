@@ -1,18 +1,42 @@
 <odoo>
     <data>
 
-          <record id="PruebaClientes" model="ar.gimnasio.clientes">
+          <record id="cliente1" model="ar.gimnasio.clientes">
             <field name="dni">587945Q</field>
-            <field name="nombre">Juan</field>
+            <field name="name">Juan Vazquez</field>
             <field name="activo">True</field>
             <field name="telefono">602458789</field>
           </record>
 
-          <record id="PruebaClientes2" model="ar.gimnasio.clientes">
+          <record id="cliente2" model="ar.gimnasio.clientes">
             <field name="dni">1423432Q</field>
-            <field name="nombre">Pepe</field>
+            <field name="name">Pepe Ruiz</field>
             <field name="activo">False</field>
             <field name="telefono">603458789</field>
+          </record>
+          <record id="cliente3" model="ar.gimnasio.clientes">
+            <field name="dni">87654321T</field>
+            <field name="name">Manolo Ronaldo</field>
+            <field name="activo">False</field>
+            <field name="telefono">603458789</field>
+          </record>
+          <record id="cliente4" model="ar.gimnasio.clientes">
+            <field name="dni">478541E</field>
+            <field name="name">Berto Romero</field>
+            <field name="activo">True</field>
+            <field name="telefono">602421745</field>
+          </record>
+
+          <record id="clase1" model="ar.gimnasio.clases">
+            <field name="name">Zumba</field>
+            <field name="precio">30</field>
+            <field name="monitor">Juan Hernandez</field>
+          </record>
+
+          <record id="clase2" model="ar.gimnasio.clases">
+            <field name="name">PowerLifting</field>
+            <field name="precio">50</field>
+            <field name="monitor">Ismael Lopez</field>
           </record>
 
     </data>
