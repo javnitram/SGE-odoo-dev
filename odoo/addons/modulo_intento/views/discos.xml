@@ -7,7 +7,7 @@
       <field name="model">yf.discos.disco</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="titulo"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="artista_id"/>
           <field name="discografica_id"/>
@@ -24,7 +24,7 @@
 
                    <!--  <field name="image" widget="modulo_intento/images/Switchfoot.jpg"/> -->
                     <field name='image' widget="image" class="yf.disco.disco" />
-                    <field name="titulo"/>
+                    <field name="name"/>
                     <field name="precio"/>
                     <field name="artista_id"/>
                     <field name="discografica_id"/>

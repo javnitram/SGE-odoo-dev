@@ -31,7 +31,6 @@
         'views/canciones.xml',
         'views/discograficas.xml',
         'views/discos.xml',
-        'views/disquerasyartist.xml'
     ],
     'images': [
         'modulo_intento/images/Switchfoot.png',

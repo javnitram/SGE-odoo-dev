@@ -12,10 +12,10 @@ class Disco_Genero(models.Model):
 class Disco_Disco(models.Model):
     _name = 'yf.discos.disco'
     _description = 'discos.disco'
-    titulo = fields.Char('titulo')
+    name = fields.Char('titulo')
     precio = fields.Float('precio')
     artista_id = fields.Many2one("yf.disco.artista", string="artista", required=True)
-    discografica_id = fields.Many2one("yf.disco.discografica", string="discografica")
+    discografica_id = fields.Many2one("yf.disco.discografica", string='discografica')
     image = fields.Binary(string="portada")
 
 class Disco_Artista(models.Model):
@@ -40,11 +40,13 @@ class Disco_Cancion(models.Model):
     artista = fields.Char('artista')
     genero_id = fields.Many2one("yf.discos.genero", string="genero", required=True)
 
-class DisqueraArtista(models.Model):
+""" class DisqueraArtista(models.Model):
     _name = 'yf.disquera.artista'
     _description = 'Disqueras y sus esclavos'
-    name = fields.Char(string="Nombre")
-    artistas_id = fields.Many2many("yf.disco.artista", string='Artistas')
+    name = fields.Char('Pareja')
+    artistas_id = fields.Many2many("yf.disco.artista", 'name' ,string='Artistas')
+    disqueras_id = fields.Many2many("yf.disco.discografica", 'name' ,string='Disqueras')
+    anhocolaboracion = fields.Char('año de colaboracion') """
 
 
 

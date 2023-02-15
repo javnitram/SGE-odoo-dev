@@ -2,17 +2,19 @@
     <data>
       <!-- explicit list view definition -->
   
-      <record model="ir.ui.view" id="yf_discografica_tree">
+      <record model="ir.ui.view" id="yf_disqueraart_tree">
         <field name="name">disqueras.artistas.tree</field>
         <field name="model">yf.disquera.artista</field>
         <field name="arch" type="xml">
           <tree>
             <field name="name"/>
             <field name="artistas_id"/>
+            <field name="disqueras_id"/>
+              <field name="anhocolaboracion"/>
           </tree>
         </field>
       </record>
-      <record model="ir.ui.view" id="yf_discografica_form">
+      <record model="ir.ui.view" id="yf_disqueraart_form">
         <field name="name">dsiqueras.artistas.form</field>
         <field name="model">yf.disquera.artista</field>
         <field name="arch" type="xml">
@@ -20,6 +22,8 @@
             <group colspan="2" col="2">
               <field name="name"/>
               <field name="artistas_id"/>
+              <field name="disqueras_id"/>
+              <field name="anhocolaboracion"/>
           </group>
           </form>
         </field>
