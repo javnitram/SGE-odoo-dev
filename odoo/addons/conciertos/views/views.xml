@@ -8,9 +8,26 @@
       <field name="arch" type="xml">
         <tree>
           <field name="fecha" />
-          <field name="artista_id" />
+          <field name="artistas_ids" />
           <field name="recinto_id" />
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.concierto_form">
+      <field name="name">Vista form de conciertos</field>
+      <field name="model">sa.conciertos.concierto</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="fecha" />
+              <field name="artistas_ids" />
+              <field name="recinto_id" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -19,7 +36,8 @@
       <field name="model">sa.conciertos.artista</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre" />
+          <field name="name" />
+          <field name="conciertos_ids" />
         </tree>
       </field>
     </record>
@@ -29,10 +47,11 @@
       <field name="model">sa.conciertos.recinto</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre" />
+          <field name="name" />
           <field name="ciudad" />
-          <field name="pais" />
+          <field name="pais_id" />
           <field name="capacidad" />
+          <field name="conciertos_ids" />
         </tree>
       </field>
     </record>
