@@ -7,7 +7,6 @@
       <field name="model">ac.reclutamiento.ejercito</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id_ejercito"/>
           <field name="nombre"/>
           <field name="unidades"/>
         </tree>
@@ -30,7 +29,6 @@
               <field name="model">ac.reclutamiento.infanteria.cac</field>
               <field name="arch" type="xml">
                 <tree>
-                  <field name="id_cac"/>
                   <field name="nombre"/>
                   <field name="descripcion"/>
                   <field name="armadura"/>
@@ -55,12 +53,12 @@
       <field name="name">reclutamiento general</field>
       <field name="model">ac.reclutamiento.general</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="id_general"/>
+        <form>
+          <field name="imagen" widget="image" class="oe_avatar_oe_left" options="{'size':[100,100]}"/>
           <field name="nombre"/>
           <field name="edad"/>
           <field name="ejercitos_gestionados"/>
-        </tree>
+        </form>
       </field>
     </record>
 
@@ -80,8 +78,8 @@
   <field name="name">reclutamiento tropas con proyectiles</field>
   <field name="model">ac.reclutamiento.infanteria.proyectiles</field>
   <field name="arch" type="xml">
+    
     <tree>
-      <field name="id_proyectiles"/>
       <field name="nombre"/>
       <field name="descripcion"/>
       <field name="municion"/>
@@ -98,6 +96,33 @@
 <field name="res_model">ac.reclutamiento.infanteria.proyectiles</field>
 <field name="view_mode">tree,form</field>
 </record>
+
+
+
+<record model="ir.ui.view" id="reclutamiento.campana_list">
+  <field name="name">Hora de la guerrra!, Inserte sus datos</field>
+  <field name="model">ac.reclutamiento.campana</field>
+  <field name="arch" type="xml">   
+    <tree>
+      <field name="nombre"/>
+      <field name="pais_id"/>
+      <field name="fecha_inicio"/>
+    </tree>
+  </field>
+</record>
+
+
+
+
+<record model="ir.actions.act_window" id="reclutamiento.campana_window">
+<field name="name">Campañas </field>
+<field name="res_model">ac.reclutamiento.campana</field>
+<field name="view_mode">tree,form</field>
+</record>
+
+
+
+
 
 
 
@@ -140,6 +165,9 @@
               
     <menuitem name="infaneria_proyectiles" id="reclutamiento.infanteria_proyectiles_list" parent="reclutamiento.menu_general"
               action="reclutamiento.infanteria_proyectiles_window"/> 
+              
+    <menuitem name="Campaña" id="reclutamiento.campana_list" parent="reclutamiento.menu_general"
+              action="reclutamiento.campana_window"/>    
 
     
     <!-- 

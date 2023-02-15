@@ -3,3 +3,4 @@ access_reclutamiento_ejercito,reclutamiento.reclutamiento,model_ac_reclutamiento
 access_reclutamiento_infanteria_CaC,reclutamiento.reclutamiento,model_ac_reclutamiento_infanteria_cac,base.group_user,1,1,1,1
 access_reclutamiento_general,reclutamiento.reclutamiento,model_ac_reclutamiento_general,base.group_user,1,1,1,1
 access_reclutamiento_infanteria_proyectiles,reclutamiento.reclutamiento,model_ac_reclutamiento_infanteria_proyectiles,base.group_user,1,1,1,1
+access_reclutamiento_campana,reclutamiento.reclutamiento,model_ac_reclutamiento_campana,base.group_user,1,1,1,1

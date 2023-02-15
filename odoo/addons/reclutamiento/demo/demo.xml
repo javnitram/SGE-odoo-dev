@@ -1,12 +1,30 @@
 <odoo>
     <data>
 
-          <record id="cac_0" model="reclutamiento.ac.reclutamiento.infanteria.cac">
-            <field name="id_cac"> 0</field>
+          <record id="cac_0" model="ac.reclutamiento.infanteria.cac">
             <field name="nombre">Hastati</field>
-            <field name="descripcion">Infanteria con lanza, los pilares de la republica</field>
+            <field name="descripcion">Infanteria con lanza, los pilares de la república</field>
             <field name="armadura">1</field>
           </record>
+
+          <record id="cac_1" model="ac.reclutamiento.infanteria.cac">
+            <field name="nombre">Legionarios</field>
+            <field name="descripcion">Clasica unidad con armamento pesado y una moral inquebrantable</field>
+            <field name="armadura">3</field>
+          </record>
+
+          <record id="cac_2" model="ac.reclutamiento.infanteria.cac">
+            <field name="nombre">Legionarios</field>
+            <field name="descripcion">Clasica unidad con armamento pesado y una moral inquebrantable</field>
+            <field name="armadura">3</field>
+          </record>
+
+          <record id="cac_2" model="res.country">
+            <field name="nombre">Legionarios</field>
+            <field name="descripcion">Clasica unidad con armamento pesado y una moral inquebrantable</field>
+            <field name="armadura">3</field>
+          </record>
+          
 <!--
           <record id="object1" model="reclutamiento.reclutamiento">
             <field name="name">Object 1</field>
