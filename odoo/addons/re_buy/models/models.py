@@ -39,7 +39,7 @@ class rebuyClientProducts(models.Model):
     client_product_grade = fields.Char('Grade', help = "Insert product grade")
     client_product_employee = fields.Many2one('am.rebuy.employees', string="Employee", help="Enter employee name")
     client_product_client = fields.Many2one('am.rebuy.client', string='Client', help="Enter client name")
-    client_product_accepted = fields.Boolean('Accepted', help = "Enter if accepted")
+    client_product_state = fields.Char('Product state', help = "Enter product buy state")
     stage_id = fields.Many2one('am.rebuy.stages', string='stage')
     client_product_check_grade = fields.Selection([
         ('a', 'A'),
@@ -49,8 +49,6 @@ class rebuyClientProducts(models.Model):
 
 class rebuyStages(models.Model):
     _name = 'am.rebuy.stages'
-    client_product_stage_new = fields.Char('New', help = "Insert stage")
-    client_product_stage_checking = fields.Char('Checking', help = "Insert stage")
-    client_product_stage_approved = fields.Char('Approved', help = "Insert stage")
-    client_product_stage_completed = fields.Char('Completed', help = "Insert stage")
+    name = fields.Char('Name', help = "Insert stage")
+    is_checked = fields.Boolean('Checked?')
     product_stage_ids = fields.One2many('am.rebuy.client_products', 'stage_id', string='products')

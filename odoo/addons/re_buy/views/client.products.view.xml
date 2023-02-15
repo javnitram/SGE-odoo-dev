@@ -4,20 +4,20 @@
         <field name="name">am.rebuy.client_products.view.kanban</field>
         <field name="model">am.rebuy.client_products</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="stage_id" class="am.rebuy.cli" on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
-            <field name="stage_id" options="{&quot;group_by_tooltip&quot;: {&quot;requirements&quot;: &quot;Description&quot;}}"/>
+            <kanban default_group_by="stage_id" class="am.rebuy.stages" on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
+            <field name="stage_id"/>
+            <progressbar field="client_product_state" colors='{"Checked" : "Checking", "Accepted" : "Refused", "Proposal_accepted" : "Proporsal_refused"}'/>
             <templates>
                 <t t-name="kanban-box">
                 <div class="oe_kanban_vignette">
                 <!-- Left side image: -->
                 <div class="oe_kanban_details">
-                  <!-- Title and data -->
                   <h4><field name="name"/></h4>
-                  <br>Name: <field name="name"/></br>
+                  <br>€<field name="client_product_price"/></br>
+                  Grade: <field name="client_product_grade"/>
                   <ul>
-                    <li>Grade: <field name="client_product_grade"/></li>
-                    <li>Price: <field name="client_product_price"/></li>
-                    <li>Accepted: <field name="client_product_accepted"/></li>
+                    <li>State: <field name="client_product_state"/></li>
+                    <li>Number of products: <field name="client_product_stock"/></li>
                   </ul>
                 </div>
               </div>
@@ -37,7 +37,7 @@
                 <field name="client_product_price"></field>
                 <field name="client_product_stock"></field>
                 <field name="client_product_grade"></field>
-                <field name="client_product_accepted"></field>
+                <field name="client_product_state"></field>
                 <field name="client_product_client"></field>
                 <field name="client_product_employee"></field>
               </group>
@@ -54,7 +54,7 @@
             <field name="client_product_price"></field>
             <field name="client_product_stock"></field>
             <field name="client_product_grade"></field>
-            <field name="client_product_accepted"></field>
+            <field name="client_product_state"></field>
             <field name="client_product_client"></field>
             <field name="client_product_employee"></field>
           </tree>

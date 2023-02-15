@@ -14,7 +14,7 @@
         <field name="view_mode">kanban,form</field>
     </record> 
 
-    <record id="rebuy_client_tree" model="ir.actions.act_window">
+    <record id="rebuy_client_product_tree" model="ir.actions.act_window">
         <field name="name">Client Product Summary</field>
         <field name="res_model">am.rebuy.client_products</field>
         <field name="view_mode">tree,form</field>
@@ -49,7 +49,7 @@
     <menuitem
         id="rebuy_menu_client_products_tree"
         name="Summary"
-        action="rebuy_client_tree"
+        action="rebuy_client_product_tree"
         parent="rebuy_menu_client_products"/>
     <menuitem
         id="rebuy_menu_client_products_kanban"
