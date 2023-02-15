@@ -5,22 +5,22 @@ from odoo import models, fields, api
 class ConciertosArtista(models.Model):
     _name = 'sa.conciertos.artista'
     _description = 'sa.conciertos.artista'
-    nombre = fields.Char('Nombre', required=True)
-    conciertos_ids = fields.One2many('sa.conciertos.concierto', 'artistas_id', string='Conciertos')
+    name = fields.Char('Nombre', required=True)
+    conciertos_ids = fields.Many2many('sa.conciertos.concierto', string='Conciertos')
 
 class ConciertoRecinto(models.Model):
     _name = 'sa.conciertos.recinto'
     _description = 'sa.conciertos.recinto'
-    nombre = fields.Char('Nombre')
+    name = fields.Char('Nombre')
     ciudad = fields.Char('Ciudad')
-    pais = fields.Selection([
-        ('key', 'value')
-    ], string='País')
+    pais_id = fields.Many2one('res.country', string='País')
     capacidad = fields.Integer('Capacidad')
+    conciertos_ids = fields.One2many('sa.conciertos.concierto', 'recinto_id', string='Conciertos')
 
 class ConciertosConcierto(models.Model):
     _name = 'sa.conciertos.concierto'
     _description = 'sa.conciertos.concierto'
+    name = fields.Char('Nombre')
     fecha = fields.Date('Fecha')
     artistas_ids = fields.Many2many('sa.conciertos.artista', string='Artistas')
     recinto_id = fields.Many2one('sa.conciertos.recinto', string='Recinto', help='El recinto donde tendrá lugar')
