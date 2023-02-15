@@ -20,6 +20,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="integrantes"/>
+          <field name="descripcion"/>
         </tree>
       </field>
     </record>
@@ -30,6 +32,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="partida"/>
         </tree>
       </field>
     </record>
@@ -40,7 +43,62 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="turno"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_kitchen_plato">
+      <field name="name">kitchen form</field>
+      <field name="model">cocina.plato</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="temperatura"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_kitchen_partida">
+      <field name="name">kitchen form</field>
+      <field name="model">cocina.partida</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="integrantes"/>
+            <field name="descripcion"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_kitchen_jefe">
+      <field name="name">kitchen form</field>
+      <field name="model">cocina.jefe</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="partida"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="form_kitchen_cliente">
+      <field name="name">kitchen form</field>
+      <field name="model">cocina.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="turno"/>
+          </group>
+        </form>
       </field>
     </record>
 

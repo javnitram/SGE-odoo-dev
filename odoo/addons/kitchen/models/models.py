@@ -8,8 +8,8 @@ class CocinaPlato(models.Model):
     name = fields.Char('Plato')
     precio = fields.Float('Precio')
     temperatura = fields.Selection([
-        ('0', 'frio'),
-        ('1', 'caliente')
+        ('0', 'Frio'),
+        ('1', 'Caliente')
     ], string='Temperatura')
 
 class CocinaPartida(models.Model):
@@ -17,6 +17,10 @@ class CocinaPartida(models.Model):
     _description = 'Partida de cocina'
     name = fields.Char('Partida')
     integrantes = fields.Integer('Numero de integrantes')
+    descripcion = fields.Selection([
+        ('0', 'Salado'),
+        ('1', 'Dulce')
+    ], string='Descripcion')
 
 class CocinaJefe(models.Model):
     _name = 'cocina.jefe'
@@ -28,7 +32,7 @@ class CocinaCliente(models.Model):
     _name = 'cocina.cliente'
     _description = 'Clientes del restaurante'
     name = fields.Char('Cliente')
-    field_name = fields.Selection([
+    turno = fields.Selection([
         ('0', 'Comida'),
         ('1', 'Cena')
     ], string='Turno')
