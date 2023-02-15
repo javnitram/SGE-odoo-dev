@@ -4,3 +4,4 @@ access_modulo2,acceso2,model_yf_discos_disco,base.group_user,1,1,1,1
 access_modulo3,acceso3,model_yf_disco_artista,base.group_user,1,1,1,1
 access_modulo4,acceso4,model_yf_disco_discografica,base.group_user,1,1,1,1
 access_modulo5,acceso5,model_yf_disco_cancion,base.group_user,1,1,1,1
+access_modulo6,acceso6,model_yf_disquera_artista,base.group_user,1,1,1,1

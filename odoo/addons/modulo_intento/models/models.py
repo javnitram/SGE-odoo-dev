@@ -40,13 +40,13 @@ class Disco_Cancion(models.Model):
     artista = fields.Char('artista')
     genero_id = fields.Many2one("yf.discos.genero", string="genero", required=True)
 
-""" class DisqueraArtista(models.Model):
+class DisqueraArtista(models.Model):
     _name = 'yf.disquera.artista'
     _description = 'Disqueras y sus esclavos'
     name = fields.Char('Pareja')
-    artistas_id = fields.Many2many("yf.disco.artista", 'name' ,string='Artistas')
-    disqueras_id = fields.Many2many("yf.disco.discografica", 'name' ,string='Disqueras')
-    anhocolaboracion = fields.Char('año de colaboracion') """
+    anhocolaboracion = fields.Char('año de colaboracion')
+    artistas_id = fields.Many2many("yf.disco.artista", string='Artistas')
+    disqueras_id = fields.Many2many("yf.disco.discografica", string='Disqueras')
 
 
 
