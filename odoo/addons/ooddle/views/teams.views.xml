@@ -1,0 +1,28 @@
+<odoo>
+  <data>
+    <record id="ooddle.teams_view_form" model="ir.ui.view">
+        <field name="name">dm.ooddle.teams.form</field>
+        <field name="model">dm.ooddle.teams</field>
+        <field name="arch" type="xml">
+            <form string="Teams Form">
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="users_ids"/>
+            </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="ooddle.teams_view_tree" model="ir.ui.view">
+        <field name="name">dm.ooddle.teams.tree</field>
+        <field name="model">dm.ooddle.teams</field>
+        <field name="arch" type="xml">
+            <tree string="Teams">
+             <field name="name"/>
+              <field name="users_ids" widget="many2one_avatar_user" optional="show" domain="[('share', '=', False)]"/>
+              <field name="matches_ids"/>
+            </tree>
+        </field>
+    </record>
+    </data>
+</odoo>

@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-    <record id="ooddle.matches_view_tree" model="ir.ui.view">
-        <field name="name">dm.ooddle.matches.view.tree</field>
-        <field name="model">dm.ooddle.matches</field>
-        <field name="arch" type="xml">
-            <tree string="Matches tree">
+        <record id="ooddle.matches_view_tree" model="ir.ui.view">
+            <field name="name">dm.ooddle.matches.view.tree</field>
+            <field name="model">dm.ooddle.matches</field>
+            <field name="arch" type="xml">
+                <tree string="Matches tree">
+                    <field name="name"/>
+                    <field name="price"/>
+                    <field name="court"/>
+                    <field name="time"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="ooddle.matches_view_form" model="ir.ui.view">
+            <field name="name">dm.ooddle.matches.form</field>
+            <field name="model">dm.ooddle.matches</field>
+            <field name="arch" type="xml">
+                <form string="Matches Form">
+                <group colspan="4" col="4">
                 <field name="name"/>
                 <field name="price"/>
                 <field name="court"/>
                 <field name="time"/>
-                <field name="users_ids"/>
-            </tree>
-        </field>
-    </record>
+                <field name="team_ids" />
+                </group>
+                </form>
+            </field>
+        </record>
 
-    <record id="ooddle.matches_view_form" model="ir.ui.view">
-        <field name="name">dm.ooddle.matches.form</field>
-        <field name="model">dm.ooddle.matches</field>
-        <field name="arch" type="xml">
-            <form string="Matches Form">
-            <group colspan="4" col="4">
-              <field name="name"/>
-              <field name="price"/>
-              <field name="court"/>
-              <field name="time"/>
-              <field name="users_ids"/>
-            </group>
-            </form>
-        </field>
-    </record>
+
+        <record id="ooddle.tournaments_kanban" model="ir.ui.view">
+            <field name="name">dm.ooddle.tournaments.kanban</field>
+            <field name="model">dm.ooddle.matches</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="stage_ids" class="dm.ooddle.match.states" on_create="quick_create" quick_create_view="dm.ooddle.match.states.form" examples="project">
+                <templates>
+                <style>
+                .a{
+                    background-color: black;
+                }
+                </style>
+                    <t t-name="kanban-box" >
+                    <div class="oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                    <div class="oe_kanban_details">
+                        <!-- Title and data -->
+                        <h4 class ="a"><field name="name"/></h4>
+                        Equipos:
+                            <tree string="teams">
+                                    <field name="team_ids"/>
+                                </tree>
+                        <ul>
+                            <li>Pista: <field name="court"/></li>
+                            <li>Horario: <field name="time"/></li>
+                        </ul>
+                    </div>
+                    </div>
+                </t>
+                </templates>
+            </kanban>
+            </field>
+        </record>
     </data>
 </odoo>
