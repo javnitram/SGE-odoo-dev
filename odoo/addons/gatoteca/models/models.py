@@ -16,31 +16,33 @@ class GatotecaEmpleado(models.Model):
 class GatotecaMenu(models.Model):
     _name = 'gatoteca.menu'
     _description = 'Menu'
-    name = fields.Char('Menu',required=True)
     tipo = fields.Selection([
         ('0', 'Desayuno'),
         ('1','Comida'),
         ('2','Merienda'),
         ('3','Solo bebida')
-    ], string='Tipo')
+    ], string='Tipo',required=True)
     precio = fields.Integer('Precio')
 
 class GatotecaCliente(models.Model):
     _name = 'gatoteca.cliente'
     _description = 'Cliente'
     name = fields.Char('Cliente',required=True)
+    email = fields.Char('Email')
+    adopcion = fields.Boolean('Quiere adoptar')
 
 class GatotecaGato(models.Model):
     _name = 'gatoteca.gato'
     _description = 'Gato'
     name = fields.Char('Gato',required=True)
-    raza = fields.Selection([
-        ('0', 'Siames'),
-        ('1', 'Sphynx'),
-        ('2', 'Persa'),
-        ('3', 'Scottish fold'),
-        ('4', 'Comun europeo')
-    ], string='Raza')
+    adopcion = fields.Boolean('Espera adopcion')
+
+class GatotecaRaza(models.Model):
+    _name = 'gatoteca.raza'
+    _description = 'Registro de razas de gatos'
+    name = fields.Char('Raza')
+    existe = fields.Boolean('Se encuentra')
+    
 
 
 # class gatoteca(models.Model):
