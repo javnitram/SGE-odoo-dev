@@ -7,35 +7,99 @@
       <field name="model">wb.golosy.golosinas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id_asig"/>
           <field name="name"/>
           <field name="precio"/>
+          <field name="cantidad"/>
           <field name="description"/>
+          <field name="camion"/>
         </tree>
       </field>
     </record>
-<!--
+
     <record model="ir.ui.view" id="golosy_golosinas_form">
       <field name="name">golosy.golosinas.form</field>
       <field name="model">wb.golosy.golosinas</field>
       <field name="arch" type="xml">
         <form>
-          <group colspan="4" col="4">
-            <field name="id_asig"/>
+          <group colspan="5" col="5">
             <field name="name"/>
             <field name="precio"/>
+            <field name="cantidad"/>
             <field name="description"/>
+            <field name="camion"/>
           </group>
         </form>
       </field>
     </record>
--->
+
+
+    <record model="ir.ui.view" id="golosy_categoria_tree">
+      <field name="name">golosy.categoria.tree</field>
+      <field name="model">wb.golosy.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="tipo"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_categoria_form">
+      <field name="name">golosy.categoria.form</field>
+      <field name="model">wb.golosy.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="tipo"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="golosy_camion_tree">
+      <field name="name">golosy.camion.tree</field>
+      <field name="model">wb.golosy.camion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="productos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_camion_form">
+      <field name="name">golosy.camion.form</field>
+      <field name="model">wb.golosy.camion</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="productos"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="golosy_golosinas_action_window">
-      <field name="name">Golosinasaaa</field>
+      <field name="name">Golosinas</field>
       <field name="res_model">wb.golosy.golosinas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="golosy_categoria_action_window">
+      <field name="name">Categoria</field>
+      <field name="res_model">wb.golosy.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="golosy_camion_action_window">
+      <field name="name">Camion</field>
+      <field name="res_model">wb.golosy.camion</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -62,10 +126,20 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1"
+    <menuitem name="Golosinas 1"
     id="golosy_golosinas_menu_1" 
     parent="golosy_menu_root"
     action="golosy_golosinas_action_window"/>
+
+    <menuitem name="Categorias 2"
+    id="golosy_categorias_menu_2" 
+    parent="golosy_menu_root"
+    action="golosy_categoria_action_window"/>
+
+    <menuitem name="Camiones 3"
+    id="golosy_camiones_menu_3" 
+    parent="golosy_menu_root"
+    action="golosy_camion_action_window"/>
     <!-- actions -->
 <!--
     <menuitem name="List" id="golosy_menu_1_list" parent="golosy_golosinas_menu_1"

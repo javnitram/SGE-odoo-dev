@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_golosy_golosy,golosy.golosy,model_golosy_golosy,base.group_user,1,1,1,1
+access_golosy_golosy,golosy.golosy,model_wb_golosy_golosinas,base.group_user,1,1,1,1
+access_golosy_golosy2,golosy.golosy,model_wb_golosy_categoria,base.group_user,1,1,1,1
+access_golosy_golosy3,golosy.golosy,model_wb_golosy_camion,base.group_user,1,1,1,1
