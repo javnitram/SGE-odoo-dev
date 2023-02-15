@@ -16,16 +16,22 @@ class CocinaPartida(models.Model):
     _name = 'cocina.partida'
     _description = 'Partida de cocina'
     name = fields.Char('Partida')
+    integrantes = fields.Integer('Numero de integrantes')
 
 class CocinaJefe(models.Model):
     _name = 'cocina.jefe'
     _description = 'Jefe de cocina'
     name = fields.Char('Jefe')
+    partida = fields.Char('Partida')
 
 class CocinaCliente(models.Model):
     _name = 'cocina.cliente'
     _description = 'Clientes del restaurante'
     name = fields.Char('Cliente')
+    field_name = fields.Selection([
+        ('0', 'Comida'),
+        ('1', 'Cena')
+    ], string='Turno')
 
 # class kitchen(models.Model):
 #     _name = 'kitchen.kitchen'
