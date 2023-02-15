@@ -13,8 +13,8 @@
         </field>
       </record>
       <record model="ir.ui.view" id="yf_discografica_form">
-        <field name="name">disco.discografica</field>
-        <field name="model">yf.disco.discografica</field>
+        <field name="name">dsiqueras.artistas.form</field>
+        <field name="model">yf.disquera.artista</field>
         <field name="arch" type="xml">
           <form>
             <group colspan="2" col="2">
@@ -44,13 +44,13 @@
   
       <!-- menu categories -->
   
-      <menuitem name="Disqueras y Artistas" id="modulo_intento.menu_102" parent="modulo_intento.menu_root"/>
+      <menuitem name="Disqueras y Artistas" id="modulo_intento.menu_alto" parent="modulo_intento.menu_root"/>
   
       <!-- actions -->
   
-      <menuitem name="Tree" id="modulo_intento.menu_101_list" parent="modulo_intento.menu_102"
+      <menuitem name="Tree" id="modulo_intento.menu_101_list" parent="modulo_intento.menu_alto"
                 action="modulo_intento.action_window101"/>
-      <menuitem name="Form" id="modulo_intento.menu_111_list" parent="modulo_intento.menu_102"
+      <menuitem name="Form" id="modulo_intento.menu_111_list" parent="modulo_intento.menu_alto"
                 action="modulo_intento.action_window111"/>
      -->
   
