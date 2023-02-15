@@ -1,31 +1,43 @@
 <odoo>
     <data>
 
-          <record id="taberna1" model="jm.taberna.informacion">
-            <field name="nombre">Pony Pisador</field>
+          <record id="demo_informacion" model="jm.taberna.informacion">
+            <field name="name">Pony Pisador</field>
             <field name="direccion">Calle Tierra Media</field>
+            <!--<field name="empleado_ids" ref="demo_empleados"/>-->
           </record>
 
-<!--
-          <record id="object1" model="taberna.taberna">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="demo_empleados" model="jm.taberna.empleados">
+            <field name="id_empleado">1</field>
+            <field name="name">Frodo</field>
+            <field name="apellido1">Bolson</field>
+            <field name="apellido2">Brandigamo</field>
+            <field name="salario">1600</field>
+            <field name="telefono">111</field>
+            <field name="categoria">1</field>
+            <field name="nombre_taberna" ref="demo_informacion"/>
           </record>
 
-          <record id="object2" model="taberna.taberna">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+          <record id="demo_bebidas" model="jm.taberna.bebidas">
+            <field name="id_bebida">1</field>
+            <field name="name">Delirium Tremens</field>
+            <field name="alcohol">True</field>
+            <field name="tipo">1</field>
+            <field name="pais_id" ref="base.be"/>
           </record>
 
-          <record id="object3" model="taberna.taberna">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="demo_clientes" model="jm.taberna.clientes">
+            <field name="id_cliente">1</field>
+            <field name="name">Gollum</field>
+            <field name="apellido1">Gollum</field>
+            <field name="apellido2">Gollum</field>
           </record>
 
-          <record id="object4" model="taberna.taberna">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+          <record id="demo_pedidos" model="jm.taberna.pedidos">
+            <field name="id_pedidos">1</field>
+            <field name="cantidad">1</field>
+            <field name="id_empleado" ref="demo_empleados"/>
+            <field name="id_cliente" ref="demo_clientes"/>
           </record>
--->
     </data>
 </odoo>

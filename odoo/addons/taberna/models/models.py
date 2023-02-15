@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class TabernaInformacion(models.Model):
     _name = 'jm.taberna.informacion'
     _description = 'jm.taberna.informacion'
-    nombre = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre', required=True)
     direccion = fields.Char('Dirección')
     empleado_ids = fields.One2many('jm.taberna.empleados', 'id_empleado', string='ID del empleado')
 
@@ -14,21 +14,22 @@ class TabernaBebidas(models.Model):
     _name = 'jm.taberna.bebidas'
     _description = 'jm.taberna.bebidas'
     id_bebida = fields.Integer('ID', required=True)
-    nombre = fields.Char('Nombre')
+    name = fields.Char('Nombre')
     alcohol = fields.Boolean('Alcohol')
-    pais = fields.Char('Pais')
+    #  pais = fields.Char('Pais')
     tipo = fields.Selection([
         ('1', 'Rubia'),
         ('2', 'Tostada'),
         ('3', 'Negra')
     ], string='Tipo')
     id_pedidos = fields.Many2many('jm.taberna.pedidos', string='id_pedidos')
+    pais_id = fields.Many2one('res.country', string='País')
 
 class TabernaEmpleados(models.Model):
     _name = 'jm.taberna.empleados'
     _description = 'jm.taberna.empleados'
     id_empleado = fields.Integer('ID', required=True)
-    nombre = fields.Char('Nombre')
+    name = fields.Char('Nombre')
     apellido1 = fields.Char('Apellido 1')
     apellido2 = fields.Char('Apellido 2')
     salario = fields.Float('Salario')
@@ -44,7 +45,7 @@ class TabernaClientes(models.Model):
     _name = 'jm.taberna.clientes'
     _description = 'jm.taberna.clientes'
     id_cliente= fields.Integer('ID', required=True)
-    nombre = fields.Char('Nombre')
+    name = fields.Char('Nombre')
     apellido1 = fields.Char('Apellido 1')
     apellido2 = fields.Char('Apellido 2')
     pedidos_ids = fields.One2many('jm.taberna.pedidos', 'id_pedidos', string='ID de pedido')
