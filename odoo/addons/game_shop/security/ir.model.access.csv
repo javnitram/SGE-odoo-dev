@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_game_shop_tienda,Acceso a tienda,model_game_shop_tienda,base.group_user,1,1,1,1
 access_game_shop_videojuego,Acceso a videojuegos,model_game_shop_videojuego,base.group_user,1,1,1,1
 access_game_shop_distribuidor,Acceso a distribuidor,model_game_shop_distribuidor,base.group_user,1,1,1,1
+access_game_shop_almacen,Acceso a almacen,model_game_shop_almacen,base.group_user,1,1,1,1

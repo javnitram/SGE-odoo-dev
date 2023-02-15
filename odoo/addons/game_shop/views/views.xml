@@ -74,6 +74,18 @@
       </field>
     </record>
 
+     <!-- Vistas almacen -->
+    <record id="game_shop.almacen_list" model="ir.ui.view">
+      <field name="name">game_shop.almacen.view.tree</field>
+      <field name="model">game_shop.almacen</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="cantidad"/>      
+        </tree>
+      </field>
+    </record>
+
 
 
     <!-- actions opening views on models -->
@@ -110,7 +122,12 @@
       <field name="res_model">game_shop.distribuidor</field>
       <field name="view_mode">tree,form</field>
     </record>
-
+    <!-- Action view para ver a un almacen -->
+    <record model="ir.actions.act_window" id="game_shop.almacen_action_window">
+      <field name="name">Almacen</field>
+      <field name="res_model">game_shop.almacen</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
 
     <!-- server action to the one above -->
@@ -138,6 +155,7 @@
     <menuitem name="Tienda" id="game_shop.menu_tienda" parent="game_shop.menu_root"/>
     <menuitem name="Videojuego" id="game_shop.menu_videojuego" parent="game_shop.menu_root"/>
     <menuitem name="Distribuidor" id="game_shop.menu_distribuidor" parent="game_shop.menu_root"/>
+    <menuitem name="Almacen" id="game_shop.menu_almacen" parent="game_shop.menu_root"/>
 
     <!-- actions -->
     <!-- Menu items tiendas  -->
@@ -153,5 +171,8 @@
     <!-- Menu items distribuidor -->
      <menuitem name="Marca" id="game_shop.menu_distribuidor_vista" parent="game_shop.menu_distribuidor"
               action="game_shop.distribuidor_action_window"/>
+    <!-- Menu items Almacen -->
+     <menuitem name="Almacen" id="game_shop.menu_almacen_vista" parent="game_shop.menu_almacen"
+              action="game_shop.almacen_action_window"/>
   </data>
 </odoo>
