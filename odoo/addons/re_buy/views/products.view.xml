@@ -1,28 +1,32 @@
 <odoo>
     <data>
-        <record id="rebuy_view_tree" model="ir.ui.view">
-            <field name="name">am.rebuy.view.tree</field>
-            <field name="model">am.rebuy.product</field>
+        <record id="rebuy_view_products_tree" model="ir.ui.view">
+            <field name="name">am.rebuy.view.products.tree</field>
+            <field name="model">am.rebuy.products</field>
             <field name="arch" type="xml">
               <tree string="Product">
-                <field name="product_name"></field>
+                <field name="name"></field>
                 <field name="product_price"></field>
                 <field name="product_grade"></field>
                 <field name="product_stock"></field>
+                <field name="product_employee"></field>
+                <field name="product_client"></field>
               </tree>
             </field>
           </record>
-          <record id="rebuy_tree_view_form" model="ir.ui.view">
-            <field name="name">am.rebuy.view.form</field>
-            <field name="model">am.rebuy.product</field>
+          <record id="rebuy_view_products_form" model="ir.ui.view">
+            <field name="name">am.rebuy.view.products.form</field>
+            <field name="model">am.rebuy.products</field>
             <field name="arch" type="xml">
-              <form string="Product form">
+              <form string="Products form">
                 <sheet>
                   <group colspan="2" col="2">
-                    <field name="product_name"></field>
+                    <field name="name"></field>
                     <field name="product_price"></field>
                     <field name="product_grade"></field>
                     <field name="product_stock"></field>
+                    <field name="product_employee"></field>
+                    <field name="product_client"></field>
                 </group>
               </sheet>
             </form>
