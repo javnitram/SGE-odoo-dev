@@ -54,7 +54,7 @@
       <field name="model">gs.hospital.medicinas</field>
       <field name="arch" type="xml">
         <form>
-          <group>
+          <group colspan="4" col="2">
             <field name="nroserie"/>
             <field name="name"/>
             <field name="cantidad"/>
@@ -80,13 +80,13 @@
     <record model="ir.actions.act_window" id="hospital_enfermeros_action_window">
       <field name="name">ENFERMEROS</field>
       <field name="res_model">gs.hospital.enfermeros</field>
-      <field name="view_mode">form</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="hospital_medicinas_action_window">
       <field name="name">MEDICINAS</field>
       <field name="res_model">gs.hospital.medicinas</field>
-      <field name="view_mode">form</field>
+      <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Top menu item -->

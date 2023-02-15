@@ -8,8 +8,8 @@ class HospitalDoctores(models.Model):
     name=fields.Char(string ="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")
     date=fields.Date(string="Fecha de nacimiento")
-    tlf=fields.Int(int="Teléfono")
-    especialidad=fields.Char(string = "Especialidad",required=True,help="Introduce la especialidad")
+    tlf=fields.Integer(string="Teléfono")
+    especialidad=fields.Selection([('0','Cirugía'),('1','General'),('2','Traumatología'),('3','Oftalmología')],string = "Especialidad",help="Introduce la especialidad")
 
 class HospitalPacientes(models.Model):
     _name="gs.hospital.pacientes"
@@ -17,7 +17,7 @@ class HospitalPacientes(models.Model):
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string="Apellido",required=True,help="Introduce el apellido")
     date=fields.Date(string="Fecha de nacimiento")
-    tlf=fields.Int(int="Teléfono")
+    tlf=fields.Integer(int="Teléfono")
     history=fields.Char(string="Historia",required=True,help="Introduce la razón de visita al hospital")
     alergias=fields.Char(string="Alergias",help="Posible alergia a medicamentos")
 
@@ -26,13 +26,14 @@ class HospitalEnfermeros(models.Model):
     dni=fields.Char(string="DNI",required=True)
     name=fields.Char(string ="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")
+    sexo=fields.Boolean(bool="Sexo",required=True)
     date=fields.Date(string="Fecha de nacimiento")
-    specialty=fields.Char(string = "Especialidad",required=True,help="Introduce la especialidad")
+    tlf=fields.Integer(int="Teléfono")
 
 class HospitalMedicinas(models.Model):
     _name="gs.hospital.medicinas"
     nroserie=fields.Char(string="Número de serie",required=True)
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
-    cantidad=fields.Int(int="Cantidad", required=True)
+    cantidad=fields.Integer(int="Cantidad", required=True)
     tipo=fields.Char(string="Tipo de medicamento")
 
