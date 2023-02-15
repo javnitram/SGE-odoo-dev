@@ -26,6 +26,8 @@
         'security/ir.model.access.csv',
         'views/users.views.xml',
         'views/menu.items.xml',
+        'views/matches.views.xml', 
+        'views/courts.views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
