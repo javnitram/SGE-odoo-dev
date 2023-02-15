@@ -8,6 +8,7 @@ class ClubPadelClub(models.Model):
     _description = "Nombre del Club"
     nombre = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
     ubicacion = fields.Char(string="Ubicacion",required=True,help="Introduce la ubicacion del club.")
+    marcas_ids = fields.Many2many('clubpadel.marca', string='Marcas del club')
 
 class ClubPadelFabricante(models.Model):
     _name = "clubpadel.fabricante"
@@ -15,6 +16,7 @@ class ClubPadelFabricante(models.Model):
     name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
     fecha_salida = fields.Date(string="Fecha de salida")
     ubicacion = fields.Char(string="Ubicacion",required=True,help="Introduce la ubicacion del fabricante.")
+    marcas_ids = fields.One2many('clubpadel.marca', 'fabricante_id', string='Marcas del fabricante')
 
 class ClubPadelMarca(models.Model):
     _name = "clubpadel.marca"
@@ -22,6 +24,8 @@ class ClubPadelMarca(models.Model):
     name = fields.Char(string="Marca",required=True,help="Introduce el nombre de la marca")
     fecha = fields.Date(string="Fecha de creación")
     gama = fields.Char(string="Gama",required=True,help="Gama de la marca.")
+    models_ids = fields.One2many('clubpadel.modelo', 'marca_id', string='Modelos de la marca')
+    fabricante_id = fields.Many2one("clubpadel.fabricante", string="Fabricante de la marca")
 
 class ClubPadelModelo(models.Model):
     _name = "clubpadel.modelo"
@@ -33,6 +37,7 @@ class ClubPadelModelo(models.Model):
     fecha = fields.Date(string="Fecha de salida")
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Nuevo'),('1','Regular'),('2','Malo')],string="Estado",default="0")
+    marca_id = fields.Many2one("clubpadel.marca", string="Marca del modelo")
     
 # class clubpadel(models.Model):
 #     _name = 'clubpadel.clubpadel'
