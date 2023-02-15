@@ -1,17 +1,20 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
+    <!-- Vistas de lista -->
 
     <record model="ir.ui.view" id="armas.list">
       <field name="name">Lista de armas</field>
       <field name="model">ac.armas.categoria</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_arma"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="referencia"/>
           <field name="categoria"/>
           <field name="disponibilidad"/>
+          <field name="camuflaje_id"/>
+          <field name="accesorios_id"/>
+          <field name="clientes_ids"/>
         </tree>
       </field>
     </record>
@@ -21,7 +24,7 @@
       <field name="model">ac.accesorios.armas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_accesorio"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="referencia"/>
           <field name="disponibilidad"/>
@@ -34,7 +37,7 @@
       <field name="model">ac.camuflajes.armas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_camuflaje"/>
+          <field name="name"/>
           <field name="precio"/>
           <field name="referencia"/>
           <field name="disponibilidad"/>
@@ -47,11 +50,88 @@
       <field name="model">ac.clientes.tienda</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre_cliente"/>
+          <field name="name"/>
           <field name="telefono"/>
           <field name="fecha_nacimiento"/>
           <field name="direccion"/>
+          <field name="arma_ids"/>
         </tree>
+      </field>
+    </record>
+
+    <!-- Vistas de formulario -->
+
+    <record id="armas_view_form" model="ir.ui.view">
+      <field name="name">Creación de armas</field>
+      <field name="model">ac.armas.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="categoria"/>
+              <field name="disponibilidad"/>
+              <field name="camuflaje_id"/>
+              <field name="accesorios_id"/>
+              <field name="clientes_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="accesorios_view_form" model="ir.ui.view">
+      <field name="name">Accesorios del arma</field>
+      <field name="model">ac.accesorios.armas</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="disponibilidad"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="camuflajes_view_form" model="ir.ui.view">
+      <field name="name">Camuflajes del arma</field>
+      <field name="model">ac.camuflajes.armas</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="disponibilidad"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="clientes_view_form" model="ir.ui.view">
+      <field name="name">Clientes de la tienda</field>
+      <field name="model">ac.clientes.tienda</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="telefono"/>
+              <field name="fecha_nacimiento"/>
+              <field name="direccion"/>
+              <field name="arma_ids"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 

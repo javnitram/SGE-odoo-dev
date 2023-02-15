@@ -1,11 +1,29 @@
 <odoo>
     <data>
-          <record id="arma1" model="ac.armas.categoria">
-            <field name="nombre_arma">MP5</field>
+          <record id="camuflaje_ola" model="ac.camuflajes.armas">
+            <field name="name">Ola</field>
+            <field name="precio">30</field>
+            <field name="referencia">KOR4568</field>
+            <field name="disponibilidad">True</field>
+          </record>
+
+          <record id="accesorio_culata" model="ac.accesorios.armas">
+            <field name="name">Culata</field>
+            <field name="precio">72</field>
+            <field name="referencia">USA7812</field>
+            <field name="disponibilidad">True</field>
+          </record>
+
+          <record id="arma_mp5" model="ac.armas.categoria">
+            <field name="name">MP5</field>
             <field name="precio">385.45</field>
             <field name="referencia">FRA4876</field>
             <field name="categoria">2</field>
             <field name="disponibilidad">True</field>
+            <field name="camuflaje_id" ref="camuflaje_ola"/>
+            <field name="accesorios_id" ref="accesorio_culata"/>
           </record>
+
+          
     </data>
 </odoo>
