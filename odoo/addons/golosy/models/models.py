@@ -69,3 +69,4 @@ class Empleados(models.Model):
      name = fields.Char('Nombre', required=True, help='Nombre del empleado')
      dni = fields.Char('DNI', required=True, help='DNI del empleado')
      telefono = fields.Integer('Telèfono', required=True, help='Telèfono del empleado')
+     antiguedad = fields.Date('Antiguedad', required=True, help='Fecha de primer dia de trabajo')

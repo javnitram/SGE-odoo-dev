@@ -97,6 +97,7 @@
           <field name="name"/>
           <field name="dni"/>
           <field name="telefono"/>
+          <field name="antiguedad"/>
         </tree>
       </field>
     </record>
@@ -110,6 +111,7 @@
             <field name="name"/>
             <field name="dni"/>
             <field name="telefono"/>
+            <field name="antiguedad"/>
           </group>
         </form>
       </field>
@@ -142,6 +144,19 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Vista de busqueda REVISAR
+
+    <record model="ir.ui.view" id="golosy_golosinas_search_view">
+      <field name="name">golosy.golosinas.search</field>
+      <field name="model">wb.golosy.golosinas</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" String='Titulo'/>
+          <field name="categoria_id" String='Categoria'/>
+        </search>
+      </field>
+    </record>
+-->
 
     <!-- server action to the one above -->
 <!--
