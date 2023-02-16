@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <!-- <field name="canciones_id"/> -->
+          <field name="canciones_ids"/>
         </tree>
       </field>
     </record>
