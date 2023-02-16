@@ -9,8 +9,8 @@
           <tree>
             <field name="name"/>
             <field name="duracion"/>
-            <field name="album"/>
-            <field name="artista"/>
+            <field name="album_id"/>
+            <field name="artista_id"/>
             <field name="genero_id"/>
           </tree>
         </field>
@@ -23,8 +23,8 @@
             <group colspan="2" col="2">
               <field name="name"/>
               <field name="duracion"/>
-              <field name="album"/>
-              <field name="artista"/>
+              <field name="album_id"/>
+              <field name="artista_id"/>
               <field name="genero_id"/>
           </group>
           </form>

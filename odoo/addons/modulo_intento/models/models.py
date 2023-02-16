@@ -36,8 +36,8 @@ class Disco_Cancion(models.Model):
     _description = 'disco.cancion'
     name = fields.Char('nombre')
     duracion = fields.Float('duracion')
-    album = fields.Char('album')
-    artista = fields.Char('artista')
+    album_id = fields.Many2one("yf.discos.disco", string="album")
+    artista_id = fields.Many2one("yf.disco.artista", string="artista")
     genero_id = fields.Many2one("yf.discos.genero", string="genero", required=True)
 
 class DisqueraArtista(models.Model):
