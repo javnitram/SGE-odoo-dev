@@ -12,6 +12,7 @@
           <field name="cantidad"/>
           <field name="description"/>
           <field name="camion"/>
+          <field name="categoria_id"/>
         </tree>
       </field>
     </record>
@@ -27,6 +28,7 @@
             <field name="cantidad"/>
             <field name="description"/>
             <field name="camion"/>
+            <field name="categoria_id"/>
           </group>
         </form>
       </field>
@@ -37,10 +39,13 @@
       <field name="name">golosy.categoria.tree</field>
       <field name="model">wb.golosy.categoria</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="tipo"/>
-        </tree>
+        <field name="golosinas_ids">
+          <tree>
+            <field name="name"/>
+            <field name="tipo"/>
+          </tree>
+        </field>
+        
       </field>
     </record>
 
@@ -48,12 +53,14 @@
       <field name="name">golosy.categoria.form</field>
       <field name="model">wb.golosy.categoria</field>
       <field name="arch" type="xml">
-        <form>
-          <group colspan="2" col="2">
-            <field name="name"/>
-            <field name="tipo"/>
-          </group>
-        </form>
+        <field name="golosinas_ids">
+          <form>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="tipo"/>
+            </group>
+          </form>
+        </field>
       </field>
     </record>
 
