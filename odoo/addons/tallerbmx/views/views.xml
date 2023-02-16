@@ -7,7 +7,6 @@
       <field name="model">tallerbmx.bicicleta</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="bicicleta_id"/>
           <field name="name"/>
           <field name="cliente_id"/>
           <field name="empleado_ids"/>
@@ -21,7 +20,6 @@
       <field name="model">tallerbmx.empleado</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="empleado_id"/>
           <field name="name"/>
           <field name="bicicleta_ids"/>
         </tree>
@@ -33,7 +31,6 @@
       <field name="model">tallerbmx.pieza</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="pieza_id"/>
           <field name="name"/>
           <field name="tipo"/>
         </tree>
@@ -45,11 +42,29 @@
       <field name="model">tallerbmx.cliente</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="cliente_id"/>
           <field name="name"/>
           <field name="apellido"/>
           <field name="bicicletas_ids"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tallerbmx.cliente">
+      <field name="name">Formulario clientes</field>
+      <field name="model">tallerbmx.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <group name="name" string="String">
+            <field name="name"/>
+            <field name="apellido"/>
+            <field name="bicicletas_ids">
+              <tree>
+                <field name="name" />
+                <field name="categoria" />
+              </tree>
+            </field>
+          </group>
+        </form>
       </field>
     </record>
 
