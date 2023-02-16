@@ -25,7 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/generos.xml',
         'views/templates.xml',
         'views/artistas.xml',
         'views/canciones.xml',
