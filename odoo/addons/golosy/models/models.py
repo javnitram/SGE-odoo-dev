@@ -53,7 +53,15 @@ class categorias(models.Model):
      
 class Camion(models.Model):
      _name = 'wb.golosy.camion'
-     _description = 'Solicitudes al camion'
+     _description = 'Camion envio a domicilio'
 
-     name = fields.Char('Pedido', required=True, help='Nombre de la pedido')
-     productos = fields.Integer('Productos', required=True, help='Productos a pedir')
+     name = fields.Char('Matricula', required=True, help='Matricula del camión')
+     productos = fields.Integer('Productos', required=True, help='Productos a enviar')
+
+class Empleados(models.Model):
+     _name = 'wb.golosy.empleados'
+     _description = 'Empleados de golosy'
+
+     name = fields.Char('Nombre', required=True, help='Nombre del empleado')
+     dni = fields.Char('DNI', required=True, help='DNI del empleado')
+     telefono = fields.Integer('Telèfono', required=True, help='Telèfono del empleado')

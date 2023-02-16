@@ -82,6 +82,32 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="golosy_empleados_tree">
+      <field name="name">golosy.empleados.tree</field>
+      <field name="model">wb.golosy.empleados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="dni"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_empleados_form">
+      <field name="name">golosy.empleados.form</field>
+      <field name="model">wb.golosy.empleados</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="4" col="4">
+            <field name="name"/>
+            <field name="dni"/>
+            <field name="telefono"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
@@ -100,6 +126,12 @@
     <record model="ir.actions.act_window" id="golosy_camion_action_window">
       <field name="name">Camion</field>
       <field name="res_model">wb.golosy.camion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="golosy_empleados_action_window">
+      <field name="name">Empleados</field>
+      <field name="res_model">wb.golosy.empleados</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -126,20 +158,25 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Golosinas 1"
+    <menuitem name="Golosinas"
     id="golosy_golosinas_menu_1" 
     parent="golosy_menu_root"
     action="golosy_golosinas_action_window"/>
 
-    <menuitem name="Categorias 2"
+    <menuitem name="Categorias"
     id="golosy_categorias_menu_2" 
     parent="golosy_menu_root"
     action="golosy_categoria_action_window"/>
 
-    <menuitem name="Camiones 3"
+    <menuitem name="Camiones"
     id="golosy_camiones_menu_3" 
     parent="golosy_menu_root"
     action="golosy_camion_action_window"/>
+
+    <menuitem name="Empleados"
+    id="golosy_empleados_menu_4" 
+    parent="golosy_menu_root"
+    action="golosy_empleados_action_window"/>
     <!-- actions -->
 <!--
     <menuitem name="List" id="golosy_menu_1_list" parent="golosy_golosinas_menu_1"
