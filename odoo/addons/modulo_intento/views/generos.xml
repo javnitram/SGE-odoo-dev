@@ -24,6 +24,23 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- <record model="ir.actions.act_window" id="modulo_intento.action_window234">
+      <field name="name">Genero</field>
+      <field name="res_model">yf.discos.genero</field>
+      <field name="view_mode"><record id="model_name_view_kanban" model="ir.ui.view">
+        <field name="name">model_name.view.kanban</field>
+        <field name="model">yf.discos.genero</field>
+        <field name="arch" type="xml">
+          <kanban>
+            <templates>
+              <t t-name="kanban-box">
+                
+              </t>
+            </templates>
+          </kanban>
+        </field>
+      </record></field>
+    </record> -->
 
     <!-- server action to the one above -->
 <!--
@@ -49,6 +66,9 @@
 
     <menuitem name="Generos" id="modulo_intento.menu_1" parent="modulo_intento.menu_root"
               action="modulo_intento.action_window1"/>
+    
+    <!-- <menuitem name="Generos" id="modulo_intento.menu_234" parent="modulo_intento.menu_root"
+              action="modulo_intento.action_window234"/>   -->        
     <!-- <menuitem name="Discos" id="modulo_intento.menu_2" parent="modulo_intento.menu_root"
               action="modulo_intento.action_window1"/> -->
 
