@@ -7,7 +7,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="nombre"/>
-          <field name="ubicacion"/>
+          <field name="pais_id"/>
+          <field name="provincia_id"/>
           <field name="marcas_ids"/>
         </tree>
       </field>
@@ -21,7 +22,8 @@
           <sheet>
             <group>
               <field name="nombre"/>
-              <field name="ubicacion"/>
+              <field name="pais_id"/>
+              <field name="provincia_id"/>
               <field name="marcas_ids"/>
             </group>
           </sheet>
@@ -36,7 +38,8 @@
         <tree>
           <field name="name"/>
           <field name="fecha_salida"/>
-          <field name="ubicacion"/>
+          <field name="pais_id"/>
+          <field name="provincia_id"/>
           <field name="marcas_ids"/>
         </tree>
       </field>
@@ -51,7 +54,8 @@
             <group>
               <field name="name"/>
               <field name="fecha_salida"/>
-              <field name="ubicacion"/>
+              <field name="pais_id"/>
+              <field name="provincia_id"/>
               <field name="marcas_ids"/>
             </group>
           </sheet>

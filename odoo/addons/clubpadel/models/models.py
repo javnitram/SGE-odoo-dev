@@ -6,8 +6,10 @@ from odoo import models, fields, api
 class ClubPadelClub(models.Model):
     _name = "clubpadel.club"
     _description = "Nombre del Club"
+    _translate = "True"
     nombre = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
-    ubicacion = fields.Char(string="Ubicacion",required=True,help="Introduce la ubicacion del club.")
+    pais_id = fields.Many2one('res.country', string='Pais')
+    provincia_id = fields.Many2one('res.country.state', string='Provincia')
     marcas_ids = fields.Many2many('clubpadel.marca', string='Marcas del club')
 
 class ClubPadelFabricante(models.Model):
@@ -15,7 +17,8 @@ class ClubPadelFabricante(models.Model):
     _description = "Fabricante de la pala"
     name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
     fecha_salida = fields.Date(string="Fecha de salida")
-    ubicacion = fields.Char(string="Ubicacion",required=True,help="Introduce la ubicacion del fabricante.")
+    pais_id = fields.Many2one('res.country', string='Pais')
+    provincia_id = fields.Many2one('res.country.state', string='Provincia')
     marcas_ids = fields.One2many('clubpadel.marca', 'fabricante_id', string='Marcas del fabricante')
 
 class ClubPadelMarca(models.Model):
