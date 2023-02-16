@@ -9,6 +9,9 @@
         <tree>
           <field name="name"/>
           <field name="ubicacion"/>
+          <field name="horario"/>
+          <field name="almacen_id"/>
+          <field name="videojuegos_ids"/>
         </tree>
       </field>
     </record>
@@ -23,6 +26,8 @@
               <field name="name"/>
               <field name="ubicacion"/>
               <field name="horario"/>
+              <field name="almacen_id"/>
+              <field name="videojuegos_ids"/>
             </group>
           </sheet>
         </form>
@@ -37,7 +42,9 @@
             <field name="name"/>
             <field name="precio"/>
             <field name="pegi"/>
-            <field name="estado"/>          
+            <field name="estado"/>
+            <field name="distribuidor_id"/>  
+            <field name="tiendas_ids"/>   
         </tree>
       </field>
     </record>
@@ -55,6 +62,8 @@
               <field name="estado"/>
               <field name="digital"/>
               <field name="imagen" widget="image"/>
+              <field name="distribuidor_id"/>
+              <field name="tiendas_ids"/>
             </group>
           </sheet>
         </form>
@@ -69,7 +78,9 @@
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
-            <field name="sede"/>      
+            <field name="pais_id"/>
+            <field name="provincia_id"/>
+            <field name="videojuegos_ids"/>     
         </tree>
       </field>
     </record>
@@ -81,7 +92,8 @@
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
-            <field name="cantidad"/>      
+            <field name="ubicacion"/>
+            <field name="tiendas_ids"/>       
         </tree>
       </field>
     </record>

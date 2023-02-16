@@ -9,7 +9,8 @@ class game_shop_tienda(models.Model):
     name= fields.Char(string="Nombre",required=True,help="Introduce el nombre de la tienda")
     ubicacion = fields.Char(string="Ubicación",required=True,help="Introduce la ubicación de la tienda")
     horario = fields.Char(string ="Horario",help="Introduce el horario de la tienda",default="10:00")
-    
+    almacen_id = fields.Many2one('game_shop.almacen', string="Almacen de la tienda")
+    videojuegos_ids = fields.Many2many('game_shop.videojuego', string="Videojuegos disponibles")
 
 class game_shop_videojuego(models.Model):
     _name = 'game_shop.videojuego'
@@ -22,12 +23,22 @@ class game_shop_videojuego(models.Model):
         ('0', 'Nuevo'),('1','Seminuevo'),('2','Usado')
     ], string='Estado', required=True,default="0")
     imagen = fields.Image(string="Imagen", max_width=640, max_height=480)
+    distribuidor_id = fields.Many2one('game_shop.distribuidor', string="Distribuidor del juego")
+    tiendas_ids = fields.Many2many('game_shop.tienda', string='Tiendas disponibles')
 
 class game_shop_distribuidor(models.Model):
     _name = 'game_shop.distribuidor'
     _description = 'Distribuidor'
     name = fields.Char(string="Nombre", required=True,help="Introduce el nombre del distribuidor")
-    sede = fields.Selection([
+    pais_id = fields.Many2one('res.country', string='Pais')
+    provincia_id = fields.Many2one('res.country.state', string='Provincia')
+    videojuegos_ids = fields.One2many('game_shop.videojuego', 'distribuidor_id', string="Juegos que son distribuidos")
+
+class game_shop_almacen(models.Model):
+    _name = 'game_shop.almacen'
+    _description = 'Almacen juegos'
+    name = fields.Char(string = "Almacen",required=True,help="Introduce el nombre del almacen",default="almacen")
+    ubicacion = fields.Selection([
         ('0', 'Sevilla'),('1','Barcelona'),('2','Madrid'),
         ('3','Valencia'),('4','Santiago de Compostela'),('5','Valladolid'),
         ('6','Vitoria'),('7','Gran Canaria'),('8','Toledo'),
@@ -35,13 +46,8 @@ class game_shop_distribuidor(models.Model):
         ('13','Oviedo'),('14','Pamplona'),('15','Santander'),('16','Logroño'),
         ('17','Melilla'),('18','Ceuta')
     ], string='Sede',required=True,default="2")
+    tiendas_ids = fields.One2many('game_shop.tienda', 'almacen_id', string="Tiendas a la que suminsitra")
 
-class game_shop_almacen(models.Model):
-    _name = 'game_shop.almacen'
-    _description = 'Almacen juegos'
-    name = fields.Char(string = "Almacen",required=True,help="Introduce el nombre del almacen",default="almacen")
-    cantidad = fields.Integer(string = "Cantidad", help="Cantidad de juegos en el almacen",default=0)
-    #fk juego
 
     
 
