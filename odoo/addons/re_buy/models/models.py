@@ -11,6 +11,7 @@ class rebuyEmployees(models.Model):
 class rebuyProducts(models.Model):
     _name = 'am.rebuy.products'
     name = fields.Char('Name', help = "Insert product name")
+    product_image = fields.Image('Image')
     product_price = fields.Float('Price', help = "Insert product price")
     product_stock = fields.Integer('Stock', help = "Insert product stock")
     product_grade = fields.Char('Grade', help = "Insert product grade")
@@ -34,21 +35,16 @@ class rebuyClient(models.Model):
 class rebuyClientProducts(models.Model):
     _name = 'am.rebuy.client_products'
     name = fields.Char('Name', help = "Insert product name")
+    client_product_image = fields.Image('Image')
     client_product_price = fields.Float('Price', help = "Insert product price")
     client_product_stock = fields.Integer('Stock', help = "Insert product stock")
-    client_product_grade = fields.Char('Grade', help = "Insert product grade")
+    client_product_grade = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string='Grade')
     client_product_employee = fields.Many2one('am.rebuy.employees', string="Employee", help="Enter employee name")
     client_product_client = fields.Many2one('am.rebuy.client', string='Client', help="Enter client name")
-    client_product_state = fields.Char('Product state', help = "Enter product buy state")
-    stage_id = fields.Many2one('am.rebuy.stages', string='stage')
-    client_product_check_grade = fields.Selection([
-        ('a', 'A'),
-        ('b', 'B'),
-        ('c', 'C'),
-    ], string='client_product_check_grade') 
+    client_product_state = fields.Selection([('new', 'New'), ('checking', 'Checking'), ('checked', 'Checked'),('accepted', 'Accepted'),
+    ('refused', 'Refused'),('completed', 'Completed'),('returned', 'Returned')], string='State')
+    client_product_stage = fields.Selection([('new', 'New'), ('checking', 'Checking'), ('priced', 'Priced'), ('completed', 'Completed')],
+    string='Stage', required=True, tracking=True, copy=False, group_expand='_expand_states')
 
-class rebuyStages(models.Model):
-    _name = 'am.rebuy.stages'
-    name = fields.Char('Name', help = "Insert stage")
-    is_checked = fields.Boolean('Checked?')
-    product_stage_ids = fields.One2many('am.rebuy.client_products', 'stage_id', string='products')
+    def _expand_states(self, sates, domain, order):
+        return[key for key, val in type(self).client_product_stage.selection]

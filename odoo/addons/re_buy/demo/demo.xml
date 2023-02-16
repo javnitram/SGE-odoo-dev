@@ -1,30 +1,132 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="re_buy.re_buy">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+          <record id="employee_william" model="am.rebuy.employees">
+            <field name="name">William</field>
           </record>
-
-          <record id="object1" model="re_buy.re_buy">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="employee_davis" model="am.rebuy.employees">
+            <field name="name">Davis</field>
           </record>
-
-          <record id="object2" model="re_buy.re_buy">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+          <record id="client_clara" model="am.rebuy.client">
+            <field name="name">Clara</field>
+            <field name="client_fidelity_number">32459098</field>
           </record>
-
-          <record id="object3" model="re_buy.re_buy">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="client_adrian" model="am.rebuy.client">
+            <field name="name">Adrian</field>
+            <field name="client_fidelity_number">09823548</field>
           </record>
-
-          <record id="object4" model="re_buy.re_buy">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+          <record id="client_joel" model="am.rebuy.client">
+            <field name="name">Joel</field>
+            <field name="client_fidelity_number">12312842</field>
           </record>
--->
+          <record id="product_psp" model="am.rebuy.products">
+            <field name="name">PSP</field>
+            <field name="product_price">40</field>
+            <field name="product_grade">B</field>
+            <field name="product_stock">2</field>
+            <!--<field name="product_employee" eval="[4,ref('employee_william')]"/>-->
+          </record>
+          <record id="product_iphonex" model="am.rebuy.products">
+            <field name="name">iPhone X</field>
+            <field name="product_price">250</field>
+            <field name="product_grade">B</field>
+            <field name="product_stock">5</field>
+            <!--<field name="product_employee">Davis</field>-->
+          </record>
+          <record id="product_macbook" model="am.rebuy.products">
+            <field name="name">Macbook Pro 2017</field>
+            <field name="product_price">400</field>
+            <field name="product_grade">C</field>
+            <field name="product_stock">1</field>
+            <!--<field name="product_employee">Davis</field>-->
+          </record>
+          <record id="product_macbook" model="am.rebuy.products">
+            <field name="name">Macbook Pro 2019</field>
+            <field name="product_price">450</field>
+            <field name="product_grade">C</field>
+            <field name="product_stock">1</field>
+            <!--<field name="product_employee">Davis</field>-->
+          </record>
+          <record id="client_product_macbook" model="am.rebuy.client_products">
+            <field name="name">Macbook Pro 2017</field>
+            <field name="client_product_price">310</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">c</field>
+            <field name="client_product_state">accepted</field>
+            <field name="client_product_stage">new</field>
+            <!--<field name="product_employee">Davis</field>
+            <field name="client_product_client">Clara</field>-->
+          </record>
+          <record id="client_product_ps5" model="am.rebuy.client_products">
+            <field name="name">Playstation 5</field>
+            <field name="client_product_price">400</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">a</field>
+            <field name="client_product_state">checking</field>
+            <field name="client_product_stage">checking</field>
+            <!--<field name="product_employee">William</field>
+            <field name="client_product_client">Joel</field>-->
+          </record>
+          <record id="client_product_guitar" model="am.rebuy.client_products">
+            <field name="name">Yamaha x310</field>
+            <field name="client_product_price">110</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">b</field>
+            <field name="client_product_state">checked</field>
+            <field name="client_product_stage">checking</field>
+            <!--<field name="product_employee">William</field>
+            <field name="client_product_client">Joel</field>-->
+          </record>
+          <record id="client_product_amiibo" model="am.rebuy.client_products">
+            <field name="name">Amiibo Zelda</field>
+            <field name="client_product_price">8</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">a</field>
+            <field name="client_product_state">completed</field>
+            <field name="client_product_stage">completed</field>
+            <!--<field name="product_employee">Davis</field>
+            <field name="client_product_client">Adrian</field>-->
+          </record>
+          <record id="client_product_headphones" model="am.rebuy.client_products">
+            <field name="name">Sony 3DPulse</field>
+            <field name="client_product_price">50</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">b</field>
+            <field name="client_product_state">refused</field>
+            <field name="client_product_stage">priced</field>
+            <!--<field name="product_employee">Davis</field>
+            <field name="client_product_client">Clara</field>-->
+          </record>-->
+          <record id="client_product_ps4" model="am.rebuy.client_products">
+            <field name="name">Playstation 4</field>
+            <field name="client_product_price">120</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">b</field>
+            <field name="client_product_state">returned</field>
+            <field name="client_product_stage">completed</field>
+          </record>
+          <record id="client_product_keyboard" model="am.rebuy.client_products">
+            <field name="name">Razer Blackwidow</field>
+            <field name="client_product_price">20</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">c</field>
+            <field name="client_product_state">accepted</field>
+            <field name="client_product_stage">priced</field>
+          </record>
+          <record id="client_product_keyboard" model="am.rebuy.client_products">
+            <field name="name">Corsair K90</field>
+            <field name="client_product_price">40</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">a</field>
+            <field name="client_product_state">accepted</field>
+            <field name="client_product_stage">priced</field>
+          </record>
+          <record id="client_product_nintendo" model="am.rebuy.client_products">
+            <field name="name">Nintendo Switch</field>
+            <field name="client_product_price">40</field>
+            <field name="client_product_stock">1</field>
+            <field name="client_product_grade">a</field>
+            <field name="client_product_state">completed</field>
+            <field name="client_product_stage">completed</field>
+          </record>
     </data>
 </odoo>

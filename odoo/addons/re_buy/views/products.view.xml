@@ -10,7 +10,6 @@
                 <field name="product_grade"></field>
                 <field name="product_stock"></field>
                 <field name="product_employee"></field>
-                <field name="product_client"></field>
               </tree>
             </field>
           </record>
@@ -22,11 +21,11 @@
                 <sheet>
                   <group colspan="2" col="2">
                     <field name="name"></field>
+                    <field name="product_image"></field>
                     <field name="product_price"></field>
                     <field name="product_grade"></field>
                     <field name="product_stock"></field>
                     <field name="product_employee"></field>
-                    <field name="product_client"></field>
                 </group>
               </sheet>
             </form>

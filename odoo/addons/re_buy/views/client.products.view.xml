@@ -4,20 +4,20 @@
         <field name="name">am.rebuy.client_products.view.kanban</field>
         <field name="model">am.rebuy.client_products</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="stage_id" class="am.rebuy.stages" on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
-            <field name="stage_id"/>
-            <progressbar field="client_product_state" colors='{"Checked" : "Checking", "Accepted" : "Refused", "Proposal_accepted" : "Proporsal_refused"}'/>
+            <kanban default_group_by="client_product_stage" on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
+            <field name="client_product_stage"/>
+            <progressbar field="client_product_state" colors='{"new" : "success", "checking" : "warning", "checked" : "success", "accepted" : "success", "refused" : "danger", "completed" : "success", "returned" : "danger"}' sum_field = "client_product_stock"/>
             <templates>
                 <t t-name="kanban-box">
-                <div class="oe_kanban_vignette">
-                <!-- Left side image: -->
-                <div class="oe_kanban_details">
+                <div class="oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                <field name="client_product_image" widget="image" width="100" height = "100"/>
+                <div class="oe_kanban_details" style="Padding-left: 10px;">
                   <h4><field name="name"/></h4>
-                  <br>€<field name="client_product_price"/></br>
+                  <br>€<field name="client_product_price" widget="monetary"/></br>
                   Grade: <field name="client_product_grade"/>
                   <ul>
-                    <li>State: <field name="client_product_state"/></li>
-                    <li>Number of products: <field name="client_product_stock"/></li>
+                    <br>State: <field name="client_product_state"/></br>
+                    Number of products: <field name="client_product_stock"/>
                   </ul>
                 </div>
               </div>
@@ -34,10 +34,12 @@
             <sheet>
               <group colspan="2" col="2">
                 <field name="name"></field>
+                <field name="client_product_image"></field>
                 <field name="client_product_price"></field>
                 <field name="client_product_stock"></field>
                 <field name="client_product_grade"></field>
                 <field name="client_product_state"></field>
+                <field name="client_product_stage"></field>
                 <field name="client_product_client"></field>
                 <field name="client_product_employee"></field>
               </group>
@@ -55,6 +57,7 @@
             <field name="client_product_stock"></field>
             <field name="client_product_grade"></field>
             <field name="client_product_state"></field>
+            <field name="client_product_stage"></field>
             <field name="client_product_client"></field>
             <field name="client_product_employee"></field>
           </tree>
