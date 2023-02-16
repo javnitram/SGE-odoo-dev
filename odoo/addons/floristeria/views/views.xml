@@ -12,6 +12,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+          <field name="bouquet_ids"/>
+          <field name="flower_pot_ids"/>
         </tree>
       </field>
     </record>
@@ -24,6 +26,10 @@
           <sheet>
             <group>
               <field name="name"/>
+            </group>
+            <group>
+              <field name="bouquet_ids"/>
+              <field name="flower_pot_ids"/>
             </group>
           </sheet>
         </form>
@@ -48,12 +54,12 @@
       <field name="model">hf_floristeria_flower</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="bouquet_ids"/>
-          <field name="flower_pot_ids"/>
           <field name="name"/>
           <field name="scientific_name"/>
           <field name="specie_id"/>
           <field name="main_color"/>
+          <field name="bouquet_ids"/>
+          <field name="flower_pot_ids"/>
         </tree>
       </field>
     </record>
@@ -99,12 +105,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- top menu item -->
-    <menuitem name="Flores" id="floristeria.menu_flower" parent="floristeria.menu_root"/>
-    <!-- submenu item -->
-    <menuitem name="Flores" id="floristeria.submenu_flower_2" parent="floristeria.menu_flower"
-              action="floristeria.hf_floristeria_flower_action_window"/>
-
     <!-- Specie -->
 
     <!-- explicit list view definition -->
@@ -142,10 +142,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- top menu item -->
-    <menuitem name="Especies" id="floristeria.submenu_specie_1" parent="floristeria.menu_flower"
-    action="floristeria.hf_floristeria_specie_action_window"/>
-
     <!-- Bouquet -->
 
     <record model="ir.ui.view" id="floristeria.bouquet_tree">
@@ -156,6 +152,8 @@
           <field name="name"/>
           <field name="size"/>
           <field name="price"/>
+          <field name="flower_ids"/>
+          <field name="manager_id"/>
         </tree>
       </field>
     </record>
@@ -174,6 +172,7 @@
                 <field name="name"/>
                 <field name="size"/>
                 <field name="price"/>
+                <field name="manager_id"/>
               </group>
               <separator/>
               <field name="flower_ids"/>
@@ -190,10 +189,6 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- submenu item -->
-    <menuitem name="Ramos de flores" id="floristeria.submenu_bouquet_3" parent="floristeria.menu_flower"
-    action="floristeria.hf_floristeria_bouquet_action_window"/>
-
     <!-- Flower Pot -->
 
     <!-- explicit list view definition -->
@@ -205,6 +200,7 @@
           <field name="name"/>
           <field name="size"/>
           <field name="flower_ids"/>
+          <field name="manager_id"/>
         </tree>
       </field>
     </record>
@@ -219,6 +215,7 @@
               <group>
                 <field name="name"/>
                 <field name="size"/>
+                <field name="manager_id"/>
               </group>
               <separator/>
               <field name="flower_ids"/>
@@ -234,8 +231,20 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- top menu item -->
-    <menuitem name="Macetas" id="floristeria.menu_flower_pot" parent="floristeria.menu_root"
+    <!-- top menu items -->
+    <menuitem name="Flores" id="floristeria.menu_flower" parent="floristeria.menu_root"/>
+    
+    <!-- flower submenu items -->
+    <menuitem name="Especies" id="floristeria.menu_specie" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_specie_action_window"/>
+
+    <menuitem name="Flores" id="floristeria.submenu_flower" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_flower_action_window"/>
+    
+    <menuitem name="Ramos de flores" id="floristeria.submenu_bouquet" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_bouquet_action_window"/>
+
+    <menuitem name="Macetas" id="floristeria.submenu_flower_pot" parent="floristeria.menu_flower"
     action="floristeria.hf_floristeria_flower_pot_action_window"/>
 
   </data>

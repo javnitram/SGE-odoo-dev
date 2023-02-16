@@ -6,15 +6,17 @@ class manager(models.Model):
     _name = 'hf_floristeria_manager'
     _description = 'Encargados'
     name = fields.Char('Nombre')
-    bouquet_ids = fields.Many2many('hf_floristeria_bouquet', string='Ramos de flores')
-    flower_pot_ids = fields.Many2many('hf_floristeria_flower_pot', string='Macetas')
+    bouquet_ids = fields.One2many('hf_floristeria_bouquet', 'manager_id', string=' Ramos de flores')
+    flower_pot_ids = fields.One2many('hf_floristeria_flower_pot', 'manager_id', string=' Macetas')
+    """ bouquet_ids = fields.Many2many('hf_floristeria_bouquet', string='Ramos de flores')
+    flower_pot_ids = fields.Many2many('hf_floristeria_flower_pot', string='Macetas') """
 
 class flower(models.Model):
     _name = 'hf_floristeria_flower'
     _description = 'Flores'
     name = fields.Char(string='Nombre común',required=True, help='')
-    bouquet_ids = fields.Many2many('hf_floristeria_bouquet', string=' Ramo de flores')
-    flower_pot_ids = fields.Many2many('hf_floristeria_flower_pot', string=' Maceta')
+    bouquet_ids = fields.Many2many('hf_floristeria_bouquet', string=' Ramos de flores')
+    flower_pot_ids = fields.Many2many('hf_floristeria_flower_pot', string=' Macetas')
     specie_id = fields.Many2one('hf_floristeria_specie', string='Especie', required=True)
 
     scientific_name = fields.Char(string='Nombre científico', required=True, help='')
@@ -46,14 +48,14 @@ class specie(models.Model):
         ('Gimnospermas', 'Gimnospermas'),
         ('Angiospermas', 'Angiospermas')
     ], string='Especie', required=True)
-    flower_ids = fields.One2many('hf_floristeria_flower', 'specie_id', string=' Flor')
+    flower_ids = fields.One2many('hf_floristeria_flower', 'specie_id', string=' Flores')
     
 class bouquet(models.Model):
     _name = 'hf_floristeria_bouquet'
     _description = 'Ramo de flores'
     name = fields.Char('Nombre', required=True)
-    flower_ids = fields.Many2many('hf_floristeria_flower', string=' Flor')
-    manager_ids = fields.Many2many('hf_floristeria_manager', string=' Encargados')
+    flower_ids = fields.Many2many('hf_floristeria_flower', string=' Flores')
+    manager_id = fields.Many2one('hf_floristeria_manager', string=' Encargado')
     
     size = fields.Selection([
         ('0', ''),
@@ -68,8 +70,8 @@ class flower_pot(models.Model):
     _name = 'hf_floristeria_flower_pot'
     _description = 'Macetas'
     name = fields.Char('Nombre', required=True)
-    flower_ids = fields.Many2many('hf_floristeria_flower', string=' Flor')
-    manager_ids = fields.Many2many('hf_floristeria_manager', string=' Encargados')
+    flower_ids = fields.Many2many('hf_floristeria_flower', string=' Flores')
+    manager_id = fields.Many2one('hf_floristeria_manager', string=' Encargado')
     
     size = fields.Selection([
         ('0', ''),
