@@ -35,23 +35,18 @@
             <field name="name">dm.ooddle.tournaments.kanban</field>
             <field name="model">dm.ooddle.matches</field>
             <field name="arch" type="xml">
-                <kanban default_group_by="stage_ids" class="dm.ooddle.match.states" on_create="quick_create" quick_create_view="dm.ooddle.match.states.form" examples="project">
+                <kanban default_group_by="state"  on_create="quick_create" quick_create_view="ooddle.teams_view_form" archivable = "false" sample= "1">
+                
+                <field name="state" />
                 <templates>
-                <style>
-                .a{
-                    background-color: black;
-                }
-                </style>
                     <t t-name="kanban-box" >
                     <div class="oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
                     <div class="oe_kanban_details">
                         <!-- Title and data -->
-                        <h4 class ="a"><field name="name"/></h4>
-                        Equipos:
-                            <tree string="teams">
-                                    <field name="team_ids"/>
-                                </tree>
+                        <h4><field name="name"/></h4>
+                           Equipos: <field name="team_ids" />
                         <ul>
+                            <li>Estado: <field name="state"/></li>
                             <li>Pista: <field name="court"/></li>
                             <li>Horario: <field name="time"/></li>
                         </ul>

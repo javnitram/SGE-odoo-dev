@@ -41,7 +41,7 @@
               <div class="oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
               <field name="image" widget="image" width="100" height = "100"/>
               <!-- Left side image: -->
-              <div class="oe_kanban_details">
+              <div class="oe_kanban_details" style= "padding-left: 10px; ">
                 <!-- Title and data -->
                 <h4><field name="name"/></h4>
                 <br>Liga: <field name="league"/></br>

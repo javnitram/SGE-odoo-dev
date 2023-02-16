@@ -19,7 +19,7 @@
         <field name="arch" type="xml">
             <tree string="Teams">
              <field name="name"/>
-              <field name="users_ids" widget="many2one_avatar_user" optional="show" domain="[('share', '=', False)]"/>
+              <field name="users_ids" widget="many2one_avatar_user" optional="show"/>
               <field name="matches_ids"/>
             </tree>
         </field>

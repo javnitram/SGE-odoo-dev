@@ -22,13 +22,16 @@
         <field name="points">3000</field>
 
       </record> 
-         <record id="object2" model="dm.ooddle.users">
+
+      <record id="object2" model="dm.ooddle.users">
         <field name="name">Odoo</field>
         <field name="mobile">6666666</field>
         <field name="league">gigachad</field>
         <field name="mail">Gigachad@odoo.com</field>
         <field name="points">9999</field>
       </record> 
+
+
 
     </data>
 </odoo>

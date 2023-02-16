@@ -28,8 +28,7 @@
         'views/menu.items.xml',
         'views/matches.views.xml', 
         'views/courts.views.xml',
-        'views/teams.views.xml',
-        'views/tourtnament.states.views.xml'
+        'views/teams.views.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
