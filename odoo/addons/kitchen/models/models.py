@@ -11,6 +11,8 @@ class CocinaPlato(models.Model):
         ('0', 'Frio'),
         ('1', 'Caliente')
     ], string='Temperatura')
+    partida_responsable_id = fields.Many2one('cocina.partida', string='Partida Responsable')
+    imagen = fields.Image('Imagen del Plato', max_width=200, max_height=200)
 
 class CocinaPartida(models.Model):
     _name = 'cocina.partida'
@@ -21,12 +23,16 @@ class CocinaPartida(models.Model):
         ('0', 'Salado'),
         ('1', 'Dulce')
     ], string='Descripcion')
+    platos_creados_ids = fields.One2many('cocina.plato', 'partida_responsable_id', string='Platos creados')
+    jefe_partida_id = fields.Many2one('cocina.jefe', string='Jefe de partida')
+    cliente_servido_ids = fields.Many2many('cocina.cliente', string='Cliente servido')
 
 class CocinaJefe(models.Model):
     _name = 'cocina.jefe'
     _description = 'Jefe de cocina'
     name = fields.Char('Jefe')
-    partida = fields.Char('Partida')
+    partida_manejada_ids = fields.One2many('cocina.partida', 'jefe_partida_id', string='Partida controlada')
+    
 
 class CocinaCliente(models.Model):
     _name = 'cocina.cliente'
@@ -36,6 +42,7 @@ class CocinaCliente(models.Model):
         ('0', 'Comida'),
         ('1', 'Cena')
     ], string='Turno')
+    partida_implicada_ids = fields.Many2many('cocina.partida', string='Partida implicada')
 
 # class kitchen(models.Model):
 #     _name = 'kitchen.kitchen'
