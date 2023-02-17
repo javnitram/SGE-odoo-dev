@@ -1,11 +1,28 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
+from odoo import models, fields, api
 
 
-# class pokemodulo(models.Model):
-#     _name = 'pokemodulo.pokemodulo'
-#     _description = 'pokemodulo.pokemodulo'
+class pokemoduloEquipo1(models.Model):
+     _name = 'ar.pokemodulo.equipo'
+     _description = 'pokemodulo_equipo'
+     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
+     Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
+     Mote = fields.Char('Mote del Pokemon')
+     Tipo1 = fields.Selection ([
+         ('0','Agua'),
+         ('1','Planta'),
+         ('2', 'Fuego')
+     ],string = 'Tipo1', required=True)
+     Tipo2 = fields.Selection ([
+         ('0','Null'),
+         ('1','Electrico'),
+         ('2','Fantasma'),
+         ('3','Normal')
+     ],string = 'Tipo2')
+
+
+
 
 #     name = fields.Char()
 #     value = fields.Integer()
