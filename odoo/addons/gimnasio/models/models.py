@@ -31,6 +31,8 @@ class ClientesGimnasio(models.Model):
     telefono = fields.Integer('Telefono',required=True)
     clases_ids = fields.Many2many('ar.gimnasio.clases', string='Clases')
     inscripciones_id = fields.Many2one('ar.gimnasio.inscripciones', string='Inscripcion')
+    productos_ids = fields.Many2many('ar.gimnasio.productos', string='Carrito de Productos')
+    
 
 class ClasesGimnasio(models.Model):
     _name = 'ar.gimnasio.clases'
@@ -39,7 +41,6 @@ class ClasesGimnasio(models.Model):
     name = fields.Char('Nombre_clase',required=True)
     precio = fields.Float('Precio',required=True)
     monitor = fields.Char('Monitor',required=True)
-
     clientes_ids = fields.Many2many('ar.gimnasio.clientes', string='Clientes')
     
 class InscripcionesGimnasio(models.Model):
@@ -65,3 +66,5 @@ class ProductosGimnasio(models.Model):
     imagen = fields.Image('Imagen',store=True,relation="res.partner")
     disponibilidad = fields.Boolean('Disponibilidad',default=True)
     descripcion = fields.Char('Descripcion')
+    clientesProductos_ids = fields.Many2many('ar.gimnasio.clientes', string='Clientes_productos')
+    

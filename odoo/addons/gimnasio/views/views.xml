@@ -13,6 +13,7 @@
           <field name="telefono"/>
           <field name="clases_ids"/>
           <field name="inscripciones_id"/>
+          <field name="productos_ids"/>
         </tree>
       </field>
     </record>
@@ -38,7 +39,6 @@
           <field name="name"/>
           <field name="fecha_inscripcion"/>
           <field name="precio"/>
-          
         </tree>
       </field>
     </record>
@@ -70,6 +70,7 @@
               <field name="telefono"/>
               <field name="clases_ids"/>
               <field name="inscripciones_id"/>
+              <field name="productos_ids"/>
             </group>
           </sheet>
         </form>

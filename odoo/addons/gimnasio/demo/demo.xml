@@ -1,11 +1,56 @@
 <odoo>
     <data>
+          <record id="clase1" model="ar.gimnasio.clases">
+            <field name="name">Zumba</field>
+            <field name="precio">30</field>
+            <field name="monitor">CR7</field>
+          </record>
 
+          <record id="clase2" model="ar.gimnasio.clases">
+            <field name="name">PowerLifting</field>
+            <field name="precio">50</field>
+            <field name="monitor">Fresi</field>
+          </record>
+
+          <record id="inscripcion1" model="ar.gimnasio.inscripciones">
+            <field name="name">1 mes</field>
+            <field name="fecha_inscripcion">2022-09-15</field>
+            <field name="precio">50</field>
+          </record>
+
+          <record id="inscripcion2" model="ar.gimnasio.inscripciones">
+            <field name="name">3 meses</field>
+            <field name="fecha_inscripcion">2022-12-20</field>
+            <field name="precio">130</field>
+          </record>
+
+          <record id="inscripcion3" model="ar.gimnasio.inscripciones">
+            <field name="name">12 meses</field>
+            <field name="fecha_inscripcion">2023-01-28</field>
+            <field name="precio">250</field>
+          </record>
+
+          <record id="producto1" model="ar.gimnasio.productos">
+            <field name="name">Queratina</field>
+            <field name="precio">35</field>
+            <field name="disponibilidad">True</field>
+            <field name="descripcion">Queratina de calidad Suprema</field>
+          </record>
+
+          <record id="producto2" model="ar.gimnasio.productos">
+            <field name="name">Proteina</field>
+            <field name="precio">40</field>
+            <field name="disponibilidad">True</field>
+            <field name="descripcion">Proteina whey de calidad Suprema</field>
+          </record>
+   
           <record id="cliente1" model="ar.gimnasio.clientes">
             <field name="dni">587945Q</field>
             <field name="name">Juan Vazquez</field>
             <field name="activo">True</field>
             <field name="telefono">602458789</field>
+            <field name="clases_ids"  eval="[(6,0,[ ref('clase1')])]"/>
+            <field name="inscripciones_id" ref="inscripcion1"/>
           </record>
 
           <record id="cliente2" model="ar.gimnasio.clientes">
@@ -13,31 +58,26 @@
             <field name="name">Pepe Ruiz</field>
             <field name="activo">False</field>
             <field name="telefono">603458789</field>
+            <field name="clases_ids"  eval="[(6,0,[ ref('clase2')])]"/>
+            <field name="inscripciones_id" ref="inscripcion2"/>
           </record>
+
           <record id="cliente3" model="ar.gimnasio.clientes">
             <field name="dni">87654321T</field>
             <field name="name">Manolo Ronaldo</field>
             <field name="activo">False</field>
             <field name="telefono">603458789</field>
+            <field name="clases_ids"  eval="[(6,0,[ ref('clase1'), ref('clase2')])]"/>
           </record>
+
           <record id="cliente4" model="ar.gimnasio.clientes">
             <field name="dni">478541E</field>
             <field name="name">Berto Romero</field>
             <field name="activo">True</field>
             <field name="telefono">602421745</field>
+            <field name="inscripciones_id" ref="inscripcion3"/>
           </record>
 
-          <record id="clase1" model="ar.gimnasio.clases">
-            <field name="name">Zumba</field>
-            <field name="precio">30</field>
-            <field name="monitor">Juan Hernandez</field>
-          </record>
-
-          <record id="clase2" model="ar.gimnasio.clases">
-            <field name="name">PowerLifting</field>
-            <field name="precio">50</field>
-            <field name="monitor">Ismael Lopez</field>
-          </record>
-
+          
     </data>
 </odoo>
