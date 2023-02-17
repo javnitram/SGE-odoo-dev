@@ -2,6 +2,7 @@
   <data>
     <!-- explicit list view definition -->
 
+          <!-- tabla información -->
     <record model="ir.ui.view" id="taberna_informacion_list">
       <field name="name">taberna list</field>
       <field name="model">jm.taberna.informacion</field>
@@ -30,6 +31,7 @@
       </field>
     </record>
 
+          <!-- tabla empleados -->
     <record model="ir.ui.view" id="taberna_empleados_list">
       <field name="name">taberna list</field>
       <field name="model">jm.taberna.empleados</field>
@@ -47,7 +49,7 @@
       </field>
     </record>
 
-    <record id="model_name_view_form" model="ir.ui.view">
+    <record id="taberna_empleados_form" model="ir.ui.view">
       <field name="name">Empleados Taberna</field>
       <field name="model">jm.taberna.empleados</field>
       <field name="arch" type="xml">
@@ -68,6 +70,7 @@
       </field>
     </record>
 
+          <!-- tabla pedidos -->
     <record model="ir.ui.view" id="taberna_pedidos_list">
       <field name="name">taberna list</field>
       <field name="model">jm.taberna.pedidos</field>
@@ -82,6 +85,25 @@
       </field>
     </record>
 
+    <record id="taberna_pedidos_form" model="ir.ui.view">
+      <field name="name">Pedidos Taberna</field>
+      <field name="model">jm.taberna.pedidos</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group colspan="4" col="4">
+              <field name="id_pedidos"/>
+              <field name="cantidad"/>
+              <field name="id_empleado"/>
+              <field name="id_cliente"/>
+              <field name="id_bebida"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+           <!-- tabla clientes -->
     <record model="ir.ui.view" id="taberna_clientes_list">
       <field name="name">taberna list</field>
       <field name="model">jm.taberna.clientes</field>
@@ -95,6 +117,24 @@
       </field>
     </record>
 
+    <record id="taberna_clientes_form" model="ir.ui.view">
+      <field name="name">Clientes Taberna</field>
+      <field name="model">jm.taberna.clientes</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group colspan="4" col="4">
+              <field name="id_cliente"/>
+              <field name="name"/>
+              <field name="apellido1"/>
+              <field name="apellido2"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+          <!-- tabla bebidas -->
     <record model="ir.ui.view" id="taberna_bebidas_list">
       <field name="name">taberna list</field>
       <field name="model">jm.taberna.bebidas</field>
@@ -107,6 +147,25 @@
           <field name="id_pedidos"/>
           <field name="pais_id"/>
         </tree>
+      </field>
+    </record>
+
+    <record id="taberna_bebidas_form" model="ir.ui.view">
+      <field name="name">Bebidas Taberna</field>
+      <field name="model">jm.taberna.bebidas</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group colspan="4" col="4">
+              <field name="id_bebida"/>
+              <field name="name"/>
+              <field name="alcohol"/>
+              <field name="tipo"/>
+              <field name="id_pedidos"/>
+              <field name="pais_id"/>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
