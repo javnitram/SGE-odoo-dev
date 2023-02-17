@@ -49,7 +49,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="tallerbmx.cliente">
+    <record model="ir.ui.view" id="tallerbmx.cliente_form">
       <field name="name">Formulario clientes</field>
       <field name="model">tallerbmx.cliente</field>
       <field name="arch" type="xml">
