@@ -8,6 +8,7 @@
       <field name="model">jm.taberna.informacion</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [50, 150]}"/>
           <field name="name"/>
           <field name="direccion"/>
           <field name="empleado_ids" ref="demo_empleados"/>
@@ -22,6 +23,7 @@
         <form>
           <sheet>
             <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="name"/>
               <field name="direccion"/>
               <field name="empleado_ids" ref="demo_empleados"/>
@@ -37,6 +39,7 @@
       <field name="model">jm.taberna.empleados</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [50, 150]}"/>
           <field name="id_empleado"/>
           <field name="name"/>
           <field name="apellido1"/>
@@ -56,6 +59,7 @@
         <form>
           <sheet>
             <group colspan="4" col="4">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_empleado"/>
               <field name="name"/>
               <field name="apellido1"/>
@@ -109,6 +113,7 @@
       <field name="model">jm.taberna.clientes</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [50, 150]}"/>
           <field name="id_cliente"/>
           <field name="name"/>
           <field name="apellido1"/>
@@ -124,6 +129,7 @@
         <form string="">
           <sheet>
             <group colspan="4" col="4">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_cliente"/>
               <field name="name"/>
               <field name="apellido1"/>
@@ -140,6 +146,7 @@
       <field name="model">jm.taberna.bebidas</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [50, 150]}"/>
           <field name="id_bebida"/>
           <field name="name"/>
           <field name="alcohol"/>
@@ -157,6 +164,7 @@
         <form string="">
           <sheet>
             <group colspan="4" col="4">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_bebida"/>
               <field name="name"/>
               <field name="alcohol"/>

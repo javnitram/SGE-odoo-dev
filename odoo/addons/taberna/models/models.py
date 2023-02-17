@@ -6,6 +6,7 @@ from odoo import models, fields, api
 class TabernaInformacion(models.Model):
     _name = 'jm.taberna.informacion'
     _description = 'jm.taberna.informacion'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Imagen")
     name = fields.Char('Nombre', required=True)
     direccion = fields.Char('Dirección')
     empleado_ids = fields.One2many('jm.taberna.empleados', 'id_empleado', string='ID del empleado')
@@ -13,6 +14,7 @@ class TabernaInformacion(models.Model):
 class TabernaBebidas(models.Model):
     _name = 'jm.taberna.bebidas'
     _description = 'jm.taberna.bebidas'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Imagen")
     id_bebida = fields.Integer('ID', required=True)
     name = fields.Char('Nombre')
     alcohol = fields.Boolean('Alcohol')
@@ -28,6 +30,7 @@ class TabernaBebidas(models.Model):
 class TabernaEmpleados(models.Model):
     _name = 'jm.taberna.empleados'
     _description = 'jm.taberna.empleados'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Imagen")
     id_empleado = fields.Integer('ID', required=True)
     name = fields.Char('Nombre')
     apellido1 = fields.Char('Apellido 1')
@@ -44,6 +47,7 @@ class TabernaEmpleados(models.Model):
 class TabernaClientes(models.Model):
     _name = 'jm.taberna.clientes'
     _description = 'jm.taberna.clientes'
+    imagen = fields.Image(string='Imagen',store=True,relation="res.partner",help="Imagen")
     id_cliente= fields.Integer('ID', required=True)
     name = fields.Char('Nombre')
     apellido1 = fields.Char('Apellido 1')
