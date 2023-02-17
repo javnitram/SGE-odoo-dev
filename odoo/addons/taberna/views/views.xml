@@ -48,6 +48,7 @@
           <field name="telefono"/>
           <field name="categoria"/>
           <field name="nombre_taberna"/>
+          <field name="pedidos_ids"/>
         </tree>
       </field>
     </record>
@@ -58,9 +59,11 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group colspan="4" col="4">
+            <group colspan="2" col="2">
               <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_empleado"/>
+            </group>
+            <group colspan="2" col="4">
               <field name="name"/>
               <field name="apellido1"/>
               <field name="apellido2"/>
@@ -68,6 +71,9 @@
               <field name="telefono"/>
               <field name="categoria"/>
               <field name="nombre_taberna"/>
+            </group>
+            <group colspan="2" col="1">
+              <field name="pedidos_ids"/>
             </group>
           </sheet>
         </form>
@@ -95,7 +101,7 @@
       <field name="arch" type="xml">
         <form string="">
           <sheet>
-            <group colspan="4" col="4">
+            <group colspan="2" col="2">
               <field name="id_pedidos"/>
               <field name="cantidad"/>
               <field name="id_empleado"/>
@@ -118,6 +124,7 @@
           <field name="name"/>
           <field name="apellido1"/>
           <field name="apellido2"/>
+          <field name="pedidos_ids"/>
         </tree>
       </field>
     </record>
@@ -128,12 +135,17 @@
       <field name="arch" type="xml">
         <form string="">
           <sheet>
-            <group colspan="4" col="4">
+            <group colspan="2" col="2">
               <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_cliente"/>
+            </group>
+            <group colspan="2" col="4">
               <field name="name"/>
               <field name="apellido1"/>
               <field name="apellido2"/>
+            </group>
+              <group colspan="2" col="1">
+              <field name="pedidos_ids"/>
             </group>
           </sheet>
         </form>
@@ -163,14 +175,14 @@
       <field name="arch" type="xml">
         <form string="">
           <sheet>
-            <group colspan="4" col="4">
+            <group colspan="2" col="2">
               <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="id_bebida"/>
               <field name="name"/>
               <field name="alcohol"/>
               <field name="tipo"/>
-              <field name="id_pedidos"/>
               <field name="pais_id"/>
+              <field name="id_pedidos"/>
             </group>
           </sheet>
         </form>

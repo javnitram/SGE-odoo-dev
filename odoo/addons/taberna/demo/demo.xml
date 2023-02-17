@@ -38,6 +38,7 @@
             <field name="cantidad">1</field>
             <field name="id_empleado" ref="demo_empleados"/>
             <field name="id_cliente" ref="demo_clientes"/>
+            <field name="id_bebida" eval="[(6, 0, [ ref('demo_bebidas')])]"/>
           </record>
     </data>
 </odoo>
