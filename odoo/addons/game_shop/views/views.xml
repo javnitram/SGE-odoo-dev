@@ -49,6 +49,39 @@
       </field>
     </record>
 
+    <record id="game_shop.videojuego_view_kanban" model="ir.ui.view">
+      <field name="name">game_shop.videojuego.view.kanban</field>
+      <field name="model">game_shop.videojuego</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="imagen" widget="image"/>
+          <field name="distribuidor_id"/>
+          <field name="pegi"/>
+          <templates>
+            <t t-name="kanban-box">
+            <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src ="kanban_image('game_shop.videojuego', 'imagen',record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li style="font-weight: bold;">Nombre:<field name="name"/></li>
+                    <li>Distribuidor: <field name="distribuidor_id"/></li>
+                    <li>Precio: <field name="precio"/></li>
+                    <li>Pegi: <field name="pegi"/></li>
+                  </ul>
+                </div>
+            </div>
+           </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
     <record model="ir.ui.view" id="game_shop.videojuego_form">
       <field name="name">game_shop.vieojuego.view.form</field>
       <field name="model">game_shop.videojuego</field>
@@ -67,6 +100,28 @@
             </group>
           </sheet>
         </form>
+      </field>
+    </record>
+
+    <record id="game_shop.videojuego_view_search" model="ir.ui.view">
+      <field name="name">game_shop.videojuego.view.search</field>
+      <field name="model">game_shop.videojuego</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Nombre"/>
+          <field name="precio" string="Precio"/>
+          <field name="pegi" string="Pegi"/>
+          <field name="estado" string="Estado"/>
+          <field name="digital" string="Digital"/>
+          <field name="distribuidor_id" string="Distribuidor"/>
+          <field name="tiendas_ids" string="Tienda"/>
+          <filter name="Mayor de 20€" domain="[('precio','&gt;',20)]"/>
+          <filter name="Mayor de 40€" domain="[('precio','&gt;',40)]"/>
+          <filter name="Mayor de 60€" domain="[('precio','&gt;',60)]"/>
+          <filter name="Menor de 20€" domain="[('precio','&lt;',20)]"/>
+          <filter name="Menor de 40€" domain="[('precio','&lt;',40)]"/>
+          <filter name="Menor de 60€" domain="[('precio','&lt;',60)]"/>   
+        </search>
       </field>
     </record>
 
@@ -127,6 +182,12 @@
       <field name="res_model">game_shop.videojuego</field>
       <field name="view_mode">form</field>
     </record>
+    <!-- Action view para ver videojuego en Kanban-->
+     <record model="ir.actions.act_window" id="game_shop.videojuego_action_window_ver">
+      <field name="name">Ver videojuego</field>
+      <field name="res_model">game_shop.videojuego</field>
+      <field name="view_mode">kanban,form</field>
+    </record>
 
     <!-- Action view para ver a un distribuidor -->
     <record model="ir.actions.act_window" id="game_shop.distribuidor_action_window">
@@ -171,15 +232,17 @@
 
     <!-- actions -->
     <!-- Menu items tiendas  -->
-    <menuitem name="Alta tiendas" id="game_shop.menu_tiendas_alta" parent="game_shop.menu_tienda"
-          action="game_shop.tienda_action_window_alta"/>
     <menuitem name="Vista tiendas" id="game_shop.menu_tiendas_vista" parent="game_shop.menu_tienda"
               action="game_shop.tienda_action_window"/>
+    <menuitem name="Alta tiendas" id="game_shop.menu_tiendas_alta" parent="game_shop.menu_tienda"
+          action="game_shop.tienda_action_window_alta"/>
     <!-- Menu items juegos  -->
     <menuitem name="Vista Videojuegos" id="game_shop.menu_videojuegos_vista" parent="game_shop.menu_videojuego"
               action="game_shop.videojuego_action_window"/>
     <menuitem name="Alta Videojuego" id="game_shop.menu_videojuegos_alta" parent="game_shop.menu_videojuego"
               action="game_shop.videojuego_action_window_alta"/>
+    <menuitem name="Videojuegos" id="game_shop.menu_videojuegos_ver" parent="game_shop.menu_videojuego"
+          action="game_shop.videojuego_action_window_ver"/>
     <!-- Menu items distribuidor -->
      <menuitem name="Marca" id="game_shop.menu_distribuidor_vista" parent="game_shop.menu_distribuidor"
               action="game_shop.distribuidor_action_window"/>

@@ -2,8 +2,8 @@
     <data>
 
           <record id="tienda1" model="game_shop.tienda">
-            <field name="name">Pepeland</field>
-            <field name="ubicacion">Los morancos</field>
+            <field name="name">GameStop</field>
+            <field name="ubicacion">Madrid</field>
             <field name="horario">12:00</field>
           </record>
 <!--  
