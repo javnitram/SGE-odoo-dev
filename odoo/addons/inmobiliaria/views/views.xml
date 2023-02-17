@@ -7,6 +7,7 @@
       <field name="model">il.inmobiliaria.inmueble</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="imagen"/>
           <field name="name"/>
           <field name="tipo"/>
           <field name="precio"/>
@@ -63,6 +64,7 @@
       <field name="arch" type="xml">
         <form>
         <group colspan="2" col="1">
+          <field name="imagen"/>
           <field name="name"/>
           <field name="tipo"/>
           <field name="precio"/>
