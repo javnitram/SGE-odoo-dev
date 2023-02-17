@@ -9,7 +9,8 @@
         <tree>
           <field name="name"/>
           
-          </tree>
+          
+        </tree>
       </field>
     </record>
 
@@ -17,7 +18,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="musica.categoria_action_window">
-      <field name="name">Lista de categorias</field>
+      <field name="name">Lista de categorias </field>
       <field name="res_model">jr.tiendainstrumento.categoria</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -27,17 +28,49 @@
     <record model="ir.ui.view" id="musica.instrumento">
       <field name="name">Lista de instrumentos</field>
       <field name="model">jr.tiendainstrumento.instrumento</field>
+      <field name="type">kanban</field>
       <field name="arch" type="xml">
-        <tree>
+        <kanban>
+
         <!-- nombre del campo del modelo-->
-          <field name="modelo"/>
-          <field name="precio"/>
-          <field name="marca"/>
-          <field name="stock"/>
-          <field name="fecha"/>
           
+        <field name="marca"/>
+        <field name="modelo"/>
+        <field name="precio"/>
+        <field name='id'/>
+        <field name="stock"/>
+        <field name="imagen"/>
+        <field name="estado"/>
+        <field name="ventas_ids" />
+        <templates>
+          <t t-name="kanban-box">
           
-          </tree>
+              <div class="oe_kanban_global_click">
+              <!--error aqui-->
+                  <div class = "o_kanban_image">
+                   
+                   <img t-att-src="kanban_image('jr.tiendainstrumento.instrumento','imagen',record.id.raw_value)"/>
+                  
+                  </div>
+                    <div class="oe_kanban_details">
+                      <!-- Title and data -->
+                      <h4><field name="marca"/></h4>
+                     
+                      <ul>
+                        <li>Modelo: <field name="modelo"/></li>
+                        <li>Precio: <field name="precio"/> €</li>
+                        <li>Stock: <field name="stock"/> u</li>
+                        <li><field name = "estado"/></li>
+                      </ul>
+                    </div>
+                  
+              </div>
+            </t>
+                   
+
+          </templates>
+          
+        </kanban>
       </field>
     </record>
 
@@ -48,7 +81,7 @@
       <field name="name">Lista de instrumentos</field>
       <field name="res_model">jr.tiendainstrumento.instrumento</field>
       <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
     <!--*************************-->
 
@@ -59,8 +92,8 @@
         <tree>
         <!-- nombre del campo del modelo-->
           <field name="fecha"/>
-          <field name = "precioPedido"/>
-          <field name = "numeroProductos"/>
+          <field name="instrumentos_ids" />
+                    
           
           </tree>
       </field>
@@ -85,15 +118,31 @@
       <field name="name">Lista de clientes</field>
       <field name="model">jr.tiendainstrumento.cliente</field>
       <field name="arch" type="xml">
-        <tree>
-        <!-- nombre del campo del modelo-->
-          <field name="nombreCliente"/>
+        <form>
+          <group colspan = "2" col = "2">
+            <field name = "nombreCliente"/>
+            <field name = "dni"/>
+            <field name = "fecha_nacimiento"/>
+            <field name="phone"/>
+          </group>
          
-          
-          </tree>
+        </form>
       </field>
     </record>
 
+<record model="ir.ui.view" id="musica.cliente">
+      <field name="name">Lista de clientes</field>
+      <field name="model">jr.tiendainstrumento.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name = "nombreCliente"/>
+            <field name = "dni"/>
+            <field name = "fecha_nacimiento"/>
+            <field name="phone"/>
+          
+       </tree>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 

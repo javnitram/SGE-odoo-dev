@@ -6,7 +6,8 @@ class TiendainstrumentosCategoria(models.Model):
     _name = 'jr.tiendainstrumento.categoria'
     _description = 'model.technical.name'
     name = fields.Char('Nombre', required=True)
-    instrumento_id = fields.One2many('jr.tiendainstrumento.instrumento', 'categoria_id', string='Instrumentos por categoria')
+    #instrumento_id = fields.One2many('jr.tiendainstrumento.instrumento', 'categoria_id', string='Instrumentos por categoria')
+
 
 class TiendainstrumentosInstrumento(models.Model):
     _name = 'jr.tiendainstrumento.instrumento'
@@ -15,25 +16,34 @@ class TiendainstrumentosInstrumento(models.Model):
     precio = fields.Float('Precio',required=True)
     marca = fields.Char('Marca', required=True)
     stock = fields.Float('Stock')
-    fecha = fields.Date('Fecha')
-    categoria_id = fields.Many2one('jr.tiendainstrumento.categoria', string='Categoria')
-    venta_id = fields.Many2one('jr.tiendainstrumento.venta', string='Venta')
+    imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí")
+    segundamano = fields.Boolean('Segunda mano')
+    estado = fields.Selection([
+        ('0', 'Recien Fabricado'),('1', 'Casi Nuevo'), ('2', 'Algo Desgastado')
+    ], string='estado', default = "0")
+
+    #categoria_id = fields.Many2one('jr.tiendainstrumento.categoria', string='Categoria')
+    ventas_ids = fields.Many2many('jr.tiendainstrumento.venta','instrumentos_ids', string='Ventas')
 
 
 class TiendainstrumentosVenta(models.Model):
     _name = 'jr.tiendainstrumento.venta'
     _description = 'model.technical.name'
     fecha = fields.Date('fecha')
-    precioPedido = fields.Float('Precio', required=True)
-    numeroProductos = fields.Char('Numero de productos', required=True)
+    #cliente_id = fields.Many2one('jr.tiendainstrumento.cliente', string='Cliente')
+    #clientes_ids = fields.Many2many('jr.tiendainstrumento.cliente','ventas_ids', string='Clientes')
+    instrumentos_ids = fields.Many2many('jr.tiendainstrumento.instrumento',' ventas_ids',  string='Instrumentos')
 
-    
+
 class TiendainstrumentosCliente(models.Model):
     _name = 'jr.tiendainstrumento.cliente'
     _description = 'model.technical.name'
     nombreCliente = fields.Char('Nombre', required=True)
     dni = fields.Char('dni', required=True)
     fecha_nacimiento = fields.Date('Fecha de nacimiento')
+    phone = fields.Integer('Phone')
+    #ventas_ids = fields.One2many('jr.tiendainstrumento.venta', 'cliente_id', string='Pedidos realizados')
+    #ventas_ids = fields.Many2many('jr.tiendainstrumento.venta', 'clientes_ids',  string='Ventas')
    
 #oofon
 

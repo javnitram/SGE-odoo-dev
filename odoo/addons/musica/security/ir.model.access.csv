@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-id_categoria,categoria,model_jr_tiendainstrumento_categoria,base.group_user,1,1,1,1
-id_instrumento,instrumento,model_jr_tiendainstrumento_instrumento,base.group_user,1,1,1,1
-id_ventas,venta,model_jr_tiendainstrumento_venta,base.group_user,1,1,1,1
-id_clientes,clientes,model_jr_tiendainstrumento_cliente,base.group_user,1,1,1,1
+id_categoria,categoria,model_jr_tiendainstrumento_categoria,base.group_user,1,1,1,0
+id_instrumento,instrumento,model_jr_tiendainstrumento_instrumento,base.group_user,1,1,1,0
+id_ventas,venta,model_jr_tiendainstrumento_venta,base.group_user,1,1,1,0
+id_clientes,clientes,model_jr_tiendainstrumento_cliente,base.group_user,1,1,1,0
