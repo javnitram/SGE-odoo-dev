@@ -3,7 +3,7 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="conciertos.concierto_list">
-      <field name="name">Lista de conciertos</field>
+      <field name="name">conciertos.concierto.list</field>
       <field name="model">sa.conciertos.concierto</field>
       <field name="arch" type="xml">
         <tree>
@@ -14,8 +14,47 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="conciertos.artista_list">
+      <field name="name">conciertos.artista.list</field>
+      <field name="model">sa.conciertos.artista</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="foto" widget="image" width="100" />
+          <field name="name" />
+          <field name="conciertos_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.recinto_list">
+      <field name="name">conciertos.recinto.list</field>
+      <field name="model">sa.conciertos.recinto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="ciudad" />
+          <field name="pais_id" />
+          <field name="capacidad" />
+          <field name="conciertos_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.entrada_list">
+      <field name="name">conciertos.entrada.list</field>
+      <field name="model">sa.conciertos.entrada</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="concierto_id" />
+          <field name="precio" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- forms definition -->
+
     <record model="ir.ui.view" id="conciertos.concierto_form">
-      <field name="name">Vista form de conciertos</field>
+      <field name="name">conciertos.concierto.form</field>
       <field name="model">sa.conciertos.concierto</field>
       <field name="arch" type="xml">
         <form string="">
@@ -31,39 +70,52 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="conciertos.artista_list">
-      <field name="name">Lista de artistas</field>
+    <record model="ir.ui.view" id="conciertos.artista_form" >
+      <field name="name">conciertos.artista.form</field>
       <field name="model">sa.conciertos.artista</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name" />
-          <field name="conciertos_ids" />
-        </tree>
+        <form string="">
+          <sheet>
+            <group>
+              <field name="foto" widget="image" />
+              <field name="name" />
+              <field name="conciertos_ids" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="conciertos.recinto_list">
-      <field name="name">Lista de recintos</field>
+    <record model="ir.ui.view" id="conciertos.recinto_form">
+      <field name="name">conciertos.recinto.form</field>
       <field name="model">sa.conciertos.recinto</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name" />
-          <field name="ciudad" />
-          <field name="pais_id" />
-          <field name="capacidad" />
-          <field name="conciertos_ids" />
-        </tree>
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="ciudad" />
+              <field name="pais_id" />
+              <field name="capacidad" />
+              <field name="conciertos_ids" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="conciertos.entrada_list">
-      <field name="name">Registro de entradas</field>
+    <record model="ir.ui.view" id="conciertos.entrada_form">
+      <field name="name">conciertos.entrada.form</field>
       <field name="model">sa.conciertos.entrada</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="concierto_id" />
-          <field name="precio" />
-        </tree>
+        <form string="">
+          <sheet>
+            <group>
+              <field name="concierto_id" />
+              <field name="precio" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 

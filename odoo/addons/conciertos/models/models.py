@@ -7,6 +7,7 @@ class ConciertosArtista(models.Model):
     _description = 'sa.conciertos.artista'
     name = fields.Char('Nombre', required=True)
     conciertos_ids = fields.Many2many('sa.conciertos.concierto', string='Conciertos')
+    foto = fields.Image('Foto', max_width=200, max_height=200)
 
 class ConciertoRecinto(models.Model):
     _name = 'sa.conciertos.recinto'
