@@ -2,30 +2,36 @@
     <data>
           <!-- OBJETOS INMUEBLE-->
           <record id="objeto_inmueble_1" model="il.inmobiliaria.inmueble">
+            <field name="imagen"></field>
             <field name="name">Casa Lujosa</field>
             <field name="tipo">1</field>
             <field name="precio">5000000</field>
+            <field name="m2">50</field>
             <field name="fecha_entrada">2022-07-02</field>
           </record>
 
           <record id="objeto_inmueble_2" model="il.inmobiliaria.inmueble">
+            <field name="imagen"></field>
             <field name="name">Local Rustico</field>
             <field name="tipo">1</field>
             <field name="precio">2800000</field>
+            <field name="m2">50</field>
             <field name="fecha_entrada">2022-03-02</field>
           </record>
 
           <record id="objeto_inmueble_3" model="il.inmobiliaria.inmueble">
+            <field name="imagen"></field>
             <field name="name">Terreno Basico</field>
             <field name="tipo">1</field>
             <field name="precio">1300000</field>
+            <field name="m2">50</field>
             <field name="fecha_entrada">2022-01-02</field>
           </record>
 
 
           <!-- OBJETOS CLIENTES-->
           <record id="objeto_cliente_1" model="il.inmobiliaria.cliente">
-            <field name="name">Juan Pedro</field>
+            <field name="name">Juan</field>
             <field name="apellido1">Iriarte</field>
             <field name="apellido2">Lopez</field>
           </record>
@@ -68,30 +74,29 @@
             <field name="salario">3300</field>
           </record>
 
-
           <!-- OBJETOS VENTAS-->
-<!--
+
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
-            <field name="cliente" ref="objeto_cliente_1">
-            <field name="inmueble" ref="objeto_inmueble_1">
-            <field name="agente" ref="objeto_agente_1">
+            <field name="cliente" ref="objeto_cliente_1"/>
+            <field name="inmueble" ref="objeto_inmueble_1"/>
+            <field name="agente" ref="objeto_agente_1"/>
             <field name="fecha">2023-01-02</field>
           </record>
-
+         
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
-            <field name="cliente" ref="objeto_cliente_2">
-            <field name="inmueble" ref="objeto_inmueble_2">
-            <field name="agente" ref="objeto_agente_2">
+            <field name="cliente" ref="objeto_cliente_2"/>
+            <field name="inmueble" ref="objeto_inmueble_2"/>
+            <field name="agente" ref="objeto_agente_2"/>
             <field name="fecha">2023-01-30</field>
           </record>
 
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
-            <field name="cliente" ref="objeto_cliente_3">
-            <field name="inmueble" ref="objeto_inmueble_3">
-            <field name="agente" ref="objeto_agente_3">
+            <field name="cliente" ref="objeto_cliente_3"/>
+            <field name="inmueble" ref="objeto_inmueble_3"/>
+            <field name="agente" ref="objeto_agente_3"/>
             <field name="fecha">2023-01-16</field>
           </record>
--->
+
 
 <!--
           <record id="object1" model="inmobiliaria.inmobiliaria">

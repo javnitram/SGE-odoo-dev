@@ -6,6 +6,7 @@ class InmobiliariaInmueble(models.Model):
     _name = 'il.inmobiliaria.inmueble'
     _description = 'il.inmobiliaria.inmueble'
 
+    imagen = fields.Image('imagen', max_width=150, max_height=150)
     name = fields.Char('Nombre',help='Introduce el nombre del inmueble')
     tipo = fields.Selection([
         ('0', 'Piso'),('1', 'Casa'),('2', 'Chalet'),('3', 'Local'),('4', 'Terreno urbano')
