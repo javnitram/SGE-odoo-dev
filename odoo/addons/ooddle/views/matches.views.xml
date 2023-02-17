@@ -32,8 +32,8 @@
         </record>
 
 
-        <record id="ooddle.tournaments_kanban" model="ir.ui.view">
-            <field name="name">dm.ooddle.tournaments.kanban</field>
+        <record id="ooddle.matches_kanban" model="ir.ui.view">
+            <field name="name">dm.ooddle.matches.kanban</field>
             <field name="model">dm.ooddle.matches</field>
             <field name="arch" type="xml">
                 <kanban default_group_by="state"  on_create="quick_create" quick_create_view="ooddle.teams_view_form" archivable = "false" sample= "1">
@@ -58,5 +58,16 @@
             </kanban>
             </field>
         </record>
+
+        <record id="view_task_calendar" model="ir.ui.view">
+            <field name="name">dm.ooddle.matches.calendar</field>
+            <field name="model">dm.ooddle.matches</field>
+            <field eval="2" name="priority"/>
+            <field name="arch" type="xml">
+                <calendar date_start="time" string="Tasks" mode="month" event_limit="5"
+                            hide_time="true" js_class="project_calendar" event_open_popup="true" quick_add="false">
+                </calendar>
+            </field>
+</record>
     </data>
 </odoo>
