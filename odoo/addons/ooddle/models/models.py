@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import _, models, fields, api
+from odoo import _, models, fields,api
 from odoo.exceptions import ValidationError
 
 class Users(models.Model):
@@ -33,16 +33,21 @@ class Teams(models.Model):
 class Matches(models.Model):
     _name = 'dm.ooddle.matches'
     name = fields.Char('Name',required=True)
-    team_ids = fields.Many2many('dm.ooddle.teams',relation='dm_ooddle_teams_match',string='Teams Registered')
+    team_ids = fields.Many2many('dm.ooddle.teams',string='Teams Registered')
     court = fields.Many2one('dm.ooddle.courts','Court',required=True)
     time = fields.Datetime(string='Time', required=True, help= 'indica la fecha del partido')
     price = fields.Float('price')
     state = fields.Selection([('open', 'Abierto'), ('close', 'Cerrado'), ('playing', 'En juego'), ('done', 'Finalizado')],
-        string='Status', required=True, tracking=True, copy=False,group_expand='_group_expand_states')
+        string='Status', required=True, tracking=True,copy=False,group_expand='_group_expand_states')
 
     def _group_expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
     
+    @api.onchange('team_ids')
+    def _next_state(self):
+        if len(self.team_ids) == 2:
+            self.state = 'close'
+            
     @api.constrains('team_ids')
     def _more_than_two(self):
         if len(self.team_ids)>2:

@@ -24,7 +24,8 @@
                 <field name="price"/>
                 <field name="court"/>
                 <field name="time"/>
-                <field name="team_ids" />
+                <field name="state" invisible = "1" />
+                <field name="team_ids"/>
                 </group>
                 </form>
             </field>
