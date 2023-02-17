@@ -14,6 +14,14 @@
             <field name="disponibilidad">True</field>
           </record>
 
+          <record id="Jaime" model="ac.clientes.tienda">
+            <field name="name">Jaime</field>
+            <field name="telefono">687123450</field>
+            <field name="fecha_nacimiento">2003-11-02</field>
+            <field name="direccion">Mostoles</field>
+            <field name="arma_ids" eval="[(6, 0, [ ref('arma_mp5')])]"/>
+          </record>
+
           <record id="arma_mp5" model="ac.armas.categoria">
             <field name="name">MP5</field>
             <field name="precio">385.45</field>
@@ -22,6 +30,7 @@
             <field name="disponibilidad">True</field>
             <field name="camuflaje_id" ref="camuflaje_ola"/>
             <field name="accesorios_id" ref="accesorio_culata"/>
+            <field name="clientes_ids" eval="[(6, 0, [ ref('Jaime')])]"/>
           </record>
 
           
