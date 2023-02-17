@@ -27,6 +27,7 @@
             <field name="telefono">609275711</field>
             <field name="correo">juanfh2003@gmail.com</field>
             <field name="empresa_id" ref="empresa1"></field>
+            <field name="imagen" type="base64"/>
           </record>
 
           <record id="cliente2" model="jf.hotel.cliente">
@@ -54,19 +55,19 @@
           </record>
 
           <record id="reserva1" model="jf.hotel.reserva">
-            <field name="name">48207558</field>
             <field name="fecha_inicio">2023-04-02</field>
             <field name="fecha_final">2023-04-04</field>
             <field name="precio_total">20</field>
             <field name="cliente_id" ref="cliente1"/>
+            <field name="habitacion_ids" eval="[(6,0, [ref('habitacion1')])]" />
           </record>
           
           <record id="reserva2" model="jf.hotel.reserva">
-            <field name="name">50358076</field>
             <field name="fecha_inicio">2023-04-20</field>
             <field name="fecha_final">2023-04-24</field>
             <field name="precio_total">90</field>
             <field name="cliente_id" ref="cliente2"/>
+            <field name="habitacion_ids" eval="[(6,0, [ref('habitacion2')])]" />
           </record>
     </data>
 </odoo>

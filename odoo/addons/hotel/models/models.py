@@ -31,7 +31,6 @@ class HotelEmpresa(models.Model):
 class HotelReserva(models.Model):
     _name = 'jf.hotel.reserva'
     _description = 'Modelo Reserva'
-    name = fields.Integer(string='DNI del cliente',required=True)
     fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
     fecha_final = fields.Date(string='Fecha final reserva',required=True)
     precio_total = fields.Float(string='Precio total',required=True)

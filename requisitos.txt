@@ -4,8 +4,8 @@
 -Elementos de menú (ok)
 -Seguridad básica (ok)
 -Relaciones (ok)
--Relaciones en los datos de demo
--Imágenes en los datos de demo
+-Relaciones en los datos de demo (ok)
+-Imágenes en los datos de demo ()
 -Imágenes en vista Forms (ok)
 -Icono módulo (ok)
 -Campos calculados
