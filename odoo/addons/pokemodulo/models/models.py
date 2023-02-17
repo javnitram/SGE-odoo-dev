@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class pokemoduloEquipo1(models.Model):
      _name = 'ar.pokemodulo.equipo'
      _description = 'pokemodulo_equipo'
-     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
+     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí")
      Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
      Mote = fields.Char('Mote del Pokemon')
      Tipo1 = fields.Selection ([
