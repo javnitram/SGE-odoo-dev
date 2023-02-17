@@ -78,21 +78,21 @@
 
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
             <field name="cliente" ref="objeto_cliente_1"/>
-            <field name="inmueble" ref="objeto_inmueble_1"/>
+            <field name="inmueble_id" ref="objeto_inmueble_1"/>
             <field name="agente" ref="objeto_agente_1"/>
             <field name="fecha">2023-01-02</field>
           </record>
          
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
             <field name="cliente" ref="objeto_cliente_2"/>
-            <field name="inmueble" ref="objeto_inmueble_2"/>
+            <field name="inmueble_id" ref="objeto_inmueble_2"/>
             <field name="agente" ref="objeto_agente_2"/>
             <field name="fecha">2023-01-30</field>
           </record>
 
           <record id="objeto_venta_1" model="il.inmobiliaria.venta">
             <field name="cliente" ref="objeto_cliente_3"/>
-            <field name="inmueble" ref="objeto_inmueble_3"/>
+            <field name="inmueble_id" ref="objeto_inmueble_3"/>
             <field name="agente" ref="objeto_agente_3"/>
             <field name="fecha">2023-01-16</field>
           </record>

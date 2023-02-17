@@ -13,6 +13,7 @@
           <field name="precio"/>
           <field name="m2"/>
           <field name="fecha_entrada"/>
+          <field name="venta_ids"/>
         </tree>
       </field>
     </record>
@@ -49,7 +50,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="cliente"/>
-          <field name="inmueble"/>
+          <field name="inmueble_id" />
           <field name="agente"/>
           <field name="fecha"/>
         </tree>
@@ -70,6 +71,7 @@
           <field name="precio"/>
           <field name="m2"/>
           <field name="fecha_entrada"/>
+          <field name="venta_ids"/>
         </group>
         </form>
       </field>
@@ -112,7 +114,7 @@
         <form>
         <group colspan="2" col="1">
           <field name="cliente"/>
-          <field name="inmueble"/>
+          <field name="inmueble_id" />
           <field name="agente"/>
           <field name="fecha"/>
         </group>

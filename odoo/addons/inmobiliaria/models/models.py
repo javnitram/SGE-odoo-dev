@@ -14,6 +14,7 @@ class InmobiliariaInmueble(models.Model):
     precio = fields.Float('Precio')
     m2 = fields.Float('m2')
     fecha_entrada = fields.Date('Fecha_entrada')
+    venta_ids = fields.One2many('il.inmobiliaria.venta', 'inmueble_id', string='venta')
 
 class InmobiliariaCiente(models.Model):
     _name = 'il.inmobiliaria.cliente'
@@ -40,7 +41,7 @@ class InmobiliariaVenta(models.Model):
     _description = 'il.inmobiliaria.venta'
 
     cliente = fields.Many2one('il.inmobiliaria.cliente', string='cliente')
-    inmueble = fields.Many2one('il.inmobiliaria.inmueble', string='inmueble')
+    inmueble_id = fields.Many2one('il.inmobiliaria.inmueble', string='inmueble')
     agente = fields.Many2one('il.inmobiliaria.agente', string='agente')
     fecha = fields.Date('Fecha')
     
