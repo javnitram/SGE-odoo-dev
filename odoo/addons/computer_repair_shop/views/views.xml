@@ -1,19 +1,21 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="computer_repair_shop.list">
-      <field name="name">computer_repair_shop list</field>
-      <field name="model">computer_repair_shop.computer_repair_shop</field>
+    <record id="computer_repairments_action_window" model="ir.actions.act_window">
+      <field name="name">Reparaciones</field>
+      <field name="res_model">ws.repairment</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="repairments" model="ir.ui.view">
+      <field name="name">ws.computer_repairment.repairment.view</field>
+      <field name="model">ws.repairment</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
+        <form string="Repairment Form">
+          <field name="repair_status"/>
+          <field name="start_date"/>
+        </form>
       </field>
     </record>
--->
 
     <!-- actions opening views on models -->
 <!--
@@ -40,11 +42,16 @@
     </record>
 -->
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="computer_repair_shop" id="computer_repair_shop.menu_root"/>
--->
-    <!-- menu categories -->
+    
+  <menuitem id="computer_repairments" name="Reparaciones" sequence="10"/>
+
+  <menuitem
+    id="reparaciones_menu"
+    name="Lista de reparaciones"
+    action="computer_repairments_action_window"
+    parent="computer_repairments"
+    sequence="10"/>
+ 
 <!--
     <menuitem name="Menu 1" id="computer_repair_shop.menu_1" parent="computer_repair_shop.menu_root"/>
     <menuitem name="Menu 2" id="computer_repair_shop.menu_2" parent="computer_repair_shop.menu_root"/>

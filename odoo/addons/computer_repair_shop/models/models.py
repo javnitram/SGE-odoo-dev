@@ -2,6 +2,12 @@
 
 from odoo import models, fields
 
+class Users(model.Model):
+    name = fields.Char('name')
+    phone = fields.Char('phone')
+    email = fields.Char('email')
+
+
 class Technician(models.Model):
     _name = "ws.technician"
     _description = "Technician Model"
@@ -15,6 +21,7 @@ class Repairment(models.Model):
     _description = 'Repair Model'
     repair_status = fields.Selection([
         ('quote', 'Presupuesto'),
+        ('rejected', 'Rechazado')
         ('accepted', "Aceptado"),
         ('processing', "En proceso"),
         ('ready', 'Listo')
@@ -22,6 +29,8 @@ class Repairment(models.Model):
     start_date = fields.Date('start_date')
     completion_date = fields.Date('completion_date')
     labor_cost = fields.Float('labor_cost')
+
+class Computers(model.Model):
 
 
 class Replacement(models.Model):

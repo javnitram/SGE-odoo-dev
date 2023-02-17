@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_computer_repair_shop_computer_repair_shop,computer_repair_shop.computer_repair_shop,model_computer_repair_shop_computer_repair_shop,base.group_user,1,1,1,1
+permiso1,Acceso al model reparaciones,model_ws_repairment,base.group_user,1,1,1,1
