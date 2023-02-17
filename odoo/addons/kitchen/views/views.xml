@@ -10,6 +10,7 @@
           <field name="name"/>
           <field name="precio"/>
           <field name="temperatura"/>
+          <field name="partida_responsable_id"/>
         </tree>
       </field>
     </record>
@@ -22,6 +23,9 @@
           <field name="name"/>
           <field name="integrantes"/>
           <field name="descripcion"/>
+          <field name="platos_creados_ids"/>
+          <field name="jefe_partida_id"/>
+          <field name="cliente_servido_ids"/>
         </tree>
       </field>
     </record>
@@ -32,7 +36,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="partida"/>
+          <field name="partida_manejada_ids"/>
         </tree>
       </field>
     </record>
@@ -44,6 +48,7 @@
         <tree>
           <field name="name"/>
           <field name="turno"/>
+          <field name="partida_implicada_ids"/>
         </tree>
       </field>
     </record>
@@ -54,9 +59,13 @@
       <field name="arch" type="xml">
         <form>
           <group colspan="2" col="2">
+            <field name="imagen" widget="image" />
+          </group>
+          <group colspan="2" col="2">
             <field name="name"/>
             <field name="precio"/>
             <field name="temperatura"/>
+            <field name="partida_responsable_id"/>
           </group>
         </form>
       </field>
@@ -71,6 +80,9 @@
             <field name="name"/>
             <field name="integrantes"/>
             <field name="descripcion"/>
+            <field name="platos_creados_ids"/>
+            <field name="jefe_partida_id"/>
+            <field name="cliente_servido_ids"/>
           </group>
         </form>
       </field>
@@ -83,7 +95,7 @@
         <form>
           <group colspan="2" col="2">
             <field name="name"/>
-            <field name="partida"/>
+            <field name="partida_manejada_ids"/>
           </group>
         </form>
       </field>
@@ -97,6 +109,7 @@
           <group colspan="2" col="2">
             <field name="name"/>
             <field name="turno"/>
+            <field name="partida_implicada_ids"/>
           </group>
         </form>
       </field>
