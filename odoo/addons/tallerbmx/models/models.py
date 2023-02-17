@@ -3,11 +3,11 @@
 from odoo import models, fields, api
 
 class Bicicleta(models.Model):
-    _name = 'tallerbmx.bicicleta'
+    _name = 'ias.tallerbmx.bicicleta'
     _description = 'Bicicletas'
     name = fields.Char('Nombre', help='Es obligatorio indicar la marca de la bicicleta') #campo obligatorio, y la ayuda lo mostrar como etiqueta flotante
-    cliente_id = fields.Many2one('tallerbmx.cliente', string='Dueño de las bicis')
-    empleado_ids = fields.Many2many('tallerbmx.empleado', string='Empleados', relation="Reparaciones")    
+    cliente_id = fields.Many2one('ias.tallerbmx.cliente', string='Dueño de las bicis')
+    empleado_ids = fields.Many2many('ias.tallerbmx.empleado', string='Empleados', relation="Reparaciones")    
     categoria = fields.Selection([
        ('0', 'Bmx'),
        ('1', 'Mountain'),
@@ -15,13 +15,13 @@ class Bicicleta(models.Model):
    ], string='Categorias')
 
 class Empleado(models.Model):
-   _name = 'tallerbmx.empleado'
+   _name = 'ias.tallerbmx.empleado'
    _description = 'Lista empleados'
    name = fields.Char('Nombre')
-   bicicleta_ids = fields.Many2many('tallerbmx.bicicleta', string='Bicicleta')
+   bicicleta_ids = fields.Many2many('ias.tallerbmx.bicicleta', string='Bicicleta', relation="Reparaciones")
 
 class Pieza(models.Model):
-   _name = 'tallerbmx.pieza'
+   _name = 'ias.tallerbmx.pieza'
    _description = 'Piezas disponibles para reparar'
    name = fields.Char('Nombre')
    tipo = fields.Selection([
@@ -31,11 +31,11 @@ class Pieza(models.Model):
    ], string='Tipos de pieza')
 
 class Cliente(models.Model):
-   _name = 'tallerbmx.cliente'
+   _name = 'ias.tallerbmx.cliente'
    _description = 'Lista de clientes'
    name = fields.Char('Nombre')
    apellido = fields.Char('Apellido')
-   bicicletas_ids = fields.One2many('tallerbmx.bicicleta', 'cliente_id', string='Bicicletas del cliente')
+   bicicletas_ids = fields.One2many('ias.tallerbmx.bicicleta', 'cliente_id', string='Bicicletas del cliente')
     
 # class tallerbmx(models.Model):
 #     _name = 'tallerbmx.tallerbmx'
