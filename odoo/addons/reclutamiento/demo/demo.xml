@@ -19,10 +19,9 @@
             <field name="armadura">3</field>
           </record>
 
-          <record id="cac_2" model="res.country">
-            <field name="nombre">Legionarios</field>
-            <field name="descripcion">Clasica unidad con armamento pesado y una moral inquebrantable</field>
-            <field name="armadura">3</field>
+          <record id="Pais1" model="res.country">
+            <field name="id">245</field>
+            <field name="name">Cartago</field>
           </record>
           
 <!--
