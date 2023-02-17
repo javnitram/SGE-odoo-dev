@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="pokemodulo.list">
+      <field name="name">Pokemodulo list</field>
+      <field name="model">pokemodulo.pokemodulo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="pokemodulo.action_window">
+      <field name="name">Pokemodulo window</field>
+      <field name="res_model">pokemodulo.pokemodulo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="pokemodulo.action_server">
+      <field name="name">Pokemodulo server</field>
+      <field name="model_id" ref="model_pokemodulo_pokemodulo"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="Pokemodulo" id="pokemodulo.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="pokemodulo.menu_1" parent="pokemodulo.menu_root"/>
+    <menuitem name="Menu 2" id="pokemodulo.menu_2" parent="pokemodulo.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="pokemodulo.menu_1_list" parent="pokemodulo.menu_1"
+              action="pokemodulo.action_window"/>
+    <menuitem name="Server to list" id="pokemodulo" parent="pokemodulo.menu_2"
+              action="pokemodulo.action_server"/>
+-->
+  </data>
+</odoo>
