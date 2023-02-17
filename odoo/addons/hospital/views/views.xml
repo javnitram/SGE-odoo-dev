@@ -24,6 +24,7 @@
           <field name="dni"/>
           <field name="name"/>
           <field name="surname"/>
+          <field name="sexo"/>
           <field name="date"/>
           <field name="tlf"/>
           <field name="history"/>
@@ -41,7 +42,6 @@
             <field name="dni"/>
             <field name="name"/>
             <field name="surname"/>
-            <field name="sexo"/>
             <field name="date"/>
             <field name="tlf"/>
           </group>
@@ -105,12 +105,12 @@
       action="hospital_pacientes_action_window"/>
 
     <menuitem name="Enfermeros" 
-      id="hospital_pacientes_menu" 
+      id="hospital_enfermeros_menu" 
       parent="hospital_menu_root"
       action="hospital_enfermeros_action_window"/>
 
     <menuitem name="Medicinas" 
-      id="hospital_pacientes_menu" 
+      id="hospital_medicinas_menu" 
       parent="hospital_menu_root"
       action="hospital_medicinas_action_window"/>
   </data>

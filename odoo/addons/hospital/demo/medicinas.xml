@@ -1,0 +1,24 @@
+<odoo>
+    <data>  
+        <record id="medicina0" model="gs.hospital.medicinas">
+            <field name="nroserie">DGW1234</field>
+            <field name="name">Paracetamol</field>
+            <field name="cantidad">64</field>
+            <field name="tipo">analgésico y antipirético</field>            
+        </record>
+
+        <record id="medicina1" model="gs.hospital.medicinas">
+            <field name="nroserie">EAT5432</field>
+            <field name="name">Penicilina</field>
+            <field name="cantidad">85</field>
+            <field name="tipo">antibióticos betalactámicos</field>            
+        </record>
+
+        <record id="medicina2" model="gs.hospital.medicinas">
+            <field name="nroserie">PFS5467</field>
+            <field name="name">Ramipril</field>
+            <field name="cantidad">90</field>
+            <field name="tipo">inhibidores de la angiotensina</field>            
+        </record>
+    </data>
+</odoo>

@@ -28,7 +28,10 @@
     ],
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/doctores.xml',
+        'demo/pacientes.xml',
+        'demo/enfermeros.xml',
+        'demo/medicinas.xml',
     ],
     
     'application': True
