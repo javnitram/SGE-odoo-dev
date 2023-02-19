@@ -12,6 +12,7 @@
           <field name="cantidad"/>
           <field name="description"/>
           <field name="camion"/>
+          <field name="imagen"/>
         </tree>
       </field>
     </record>
@@ -21,14 +22,21 @@
       <field name="model">wb.golosy.golosinas</field>
       <field name="arch" type="xml">
         <form>
-          <group colspan="5" col="5">
-            <field name="name"/>
-            <field name="precio"/>
-            <field name="cantidad"/>
-            <field name="description"/>
-            <field name="camion"/>
-            <field name="categoria_id"/>
-          </group>
+          <sheet>
+            <group>
+              <group>
+                <field name="name" />
+                <field name="precio"/>
+                <field name="cantidad"/>
+                <field name="description"/>
+              </group>
+              <group >
+                <field name="imagen" widget='image' class='oe_avatar'/>
+                <field name="camion"/>
+                <field name="categoria_id"/>
+              </group>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -117,6 +125,19 @@
       </field>
     </record>
 
+<!-- Vista de busqueda -->
+    <record model="ir.ui.view" id="golosy_golosinas_search">
+      <field name="name">golosy.golosinas.search</field>
+      <field name="model">wb.golosy.golosinas</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Nombre golosina"/>
+          <field name="categoria_id" string="Categoria"/>
+          <field name="precio" string="Precio golosina"/>
+        </search>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
@@ -144,19 +165,7 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Vista de busqueda REVISAR
-
-    <record model="ir.ui.view" id="golosy_golosinas_search_view">
-      <field name="name">golosy.golosinas.search</field>
-      <field name="model">wb.golosy.golosinas</field>
-      <field name="arch" type="xml">
-        <search>
-          <field name="name" String='Titulo'/>
-          <field name="categoria_id" String='Categoria'/>
-        </search>
-      </field>
-    </record>
--->
+    
 
     <!-- server action to the one above -->
 <!--
@@ -182,28 +191,33 @@
 
     <menuitem name="Golosinas"
     id="golosy_golosinas_menu_1" 
-    parent="golosy_menu_root"
-    action="golosy_golosinas_action_window"/>
+    parent="golosy_menu_root"/>
 
     <menuitem name="Categorias"
     id="golosy_categorias_menu_2" 
-    parent="golosy_menu_root"
-    action="golosy_categoria_action_window"/>
+    parent="golosy_menu_root"/>
 
     <menuitem name="Camiones"
     id="golosy_camiones_menu_3" 
-    parent="golosy_menu_root"
-    action="golosy_camion_action_window"/>
+    parent="golosy_menu_root"/>
 
     <menuitem name="Empleados"
     id="golosy_empleados_menu_4" 
-    parent="golosy_menu_root"
-    action="golosy_empleados_action_window"/>
+    parent="golosy_menu_root"/>
     <!-- actions -->
-<!--
-    <menuitem name="List" id="golosy_menu_1_list" parent="golosy_golosinas_menu_1"
+
+    <menuitem name="Lista de golosinas" id="golosy_lista_golosinas" parent="golosy_golosinas_menu_1"
               action="golosy_golosinas_action_window"/>
--->
+
+    <menuitem name="Lista de categorias" id="golosy_lista_categorias" parent="golosy_categorias_menu_2"
+              action="golosy_categoria_action_window"/>
+
+    <menuitem name="Lista de camiones" id="golosy_lista_camion" parent="golosy_camiones_menu_3"
+              action="golosy_camion_action_window"/>
+
+    <menuitem name="Lista de empleados" id="golosy_lista_empleados" parent="golosy_empleados_menu_4"
+              action="golosy_empleados_action_window"/>
+
 <!--              
     <menuitem name="Server to list" id="golosy" parent="golosy.menu_2"
               action="golosy.action_server"/>

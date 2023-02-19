@@ -16,6 +16,7 @@ class golosinas(models.Model):
         ('1', 'Dar de baja al producto')
      ], string='¿Solicitar al camion nuevo envio?')
      categoria_id = fields.Many2one("wb.golosy.categoria",string="Categoría",required=True,ondelete="cascade")
+     imagen = fields.Image(string='Imagen', help='Imagen de la golosina')
      
 class categorias(models.Model):
      _name = 'wb.golosy.categoria'
@@ -27,33 +28,6 @@ class categorias(models.Model):
         ('1', 'Salado')
      ], string='Tipo de la categoria')
      golosinas_ids = fields.One2many('wb.golosy.golosinas', 'categoria_id', string='Categoria')
-     
-     
-#No valido
-class cantidades(models.Model):
-     _name = 'wb.golosy.cantidades'
-     _description = 'Cantidad de cada golosina'
-
-     name = fields.Char('Nombre', required=True, help='Nombre de la golosina')
-     id_asig = fields.Integer('id_golosina', required=True, help="Identificador de la golosina")
-     cantidad = fields.Integer('Cantidad', required=True, help='Cantidad stock de la golosina')
-     camion = fields.Selection([
-        ('0', 'Solicitar al camión'),
-        ('1', 'Dar de baja al producto')
-     ], string='¿Solicitar al camion nuevo envio?')
-     
-#No valido
-class stock(models.Model):
-     _name = 'wb.golosy.stock'
-     _description = 'Stock de las golosinas'
-
-     stock_total = fields.Integer('Stock', required=True, help='Stock total de las golosinas')
-     stock_tipo = fields.Selection([
-        ('0', 'Azucaradas'),
-        ('1', 'Sin azucar'),
-        ('2', 'Otros')
-     ], string='Cantidades divido en los tipos de golosinas')
-     
      
 class Camion(models.Model):
      _name = 'wb.golosy.camion'
