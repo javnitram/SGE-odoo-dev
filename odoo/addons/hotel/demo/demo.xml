@@ -68,9 +68,10 @@
           <record id="reserva2" model="jf.hotel.reserva">
             <field name="fecha_inicio">2023-04-20</field>
             <field name="fecha_final">2023-04-24</field>
-            <field name="precio_total">90</field>
+            <field name="precio_total">80</field>
             <field name="cliente_id" ref="cliente2"/>
             <field name="habitacion_ids" eval="[(6,0, [ref('habitacion2')])]" />
           </record>
+          
     </data>
 </odoo>
