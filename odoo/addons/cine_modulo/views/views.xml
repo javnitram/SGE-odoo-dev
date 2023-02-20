@@ -1,21 +1,21 @@
 <odoo>
   <data>
     <!--Empleados-->
-    <record model="ir.ui.view" id="cinema.empleado">
-      <field name="name">Plantilla de empleados</field>
+    <record model="ir.ui.view" id="cine_modulo.empleado">
+      <field name="name">Empleados</field>
       <field name="model">cinema.empleado</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name" />
           <field name="dni" />
           <field name="nombre" />
           <field name="apellidos" />
           <field name="telefono" />
+          <field name="puesto" />
         </tree>
       </field>
     </record>
     <!--Cliente-->
-    <record model="ir.ui.view" id="cinema.cliente">
+    <record model="ir.ui.view" id="cine_modulo.cliente">
       <field name="name">Clientes</field>
       <field name="model">cinema.cliente</field>
       <field name="arch" type="xml">
@@ -29,7 +29,7 @@
       </field>
     </record>
     <!--Peliculas-->
-    <record model="ir.ui.view" id="cinema.pelicula">
+    <record model="ir.ui.view" id="cine_modulo.pelicula">
       <field name="name">Pelicula</field>
       <field name="model">cinema.pelicula</field>
       <field name="arch" type="xml">
@@ -43,7 +43,7 @@
       </field>
     </record>
     <!--Distribuidora-->
-    <record model="ir.ui.view" id="cinema.distribuidora">
+    <record model="ir.ui.view" id="cine_modulo.distribuidora">
       <field name="name">Distribuidora</field>
       <field name="model">cinema.distribuidora</field>
       <field name="arch" type="xml">
@@ -54,48 +54,55 @@
       </field>
     </record>
     <!--Sesiones-->
-    <record model="ir.ui.view" id="cinema.sesion">
+    <record model="ir.ui.view" id="cine_modulo.sesion">
       <field name="name">Sesion</field>
       <field name="model">cinema.sesion</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name" />
-          <field name="peli" />
-          <field name="sala" />
-          <field name="fecha" />
+          <field name="numero_sala" />
+          <field name="pelicula" />
+          <field name="fecha_sesion" />
         </tree>
       </field>
     </record>
-<!--Acciones-->
     <!--Acciones_empleado-->
-    <record model="ir.actions.act_window" id="cinema.empleado_action_window">
+    <record model="ir.actions.act_window" id="cine_modulo.empleados_accion">
       <field name="name">Empleado</field>
       <field name="res_model">cinema.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_cliente-->
-    <record model="ir.actions.act_window" id="cinema.cliente_action_window">
+    <record model="ir.actions.act_window" id="cine_modulo.clientes_accion">
       <field name="name">Cliente</field>
       <field name="res_model">cinema.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_peliculas-->
-    <record model="ir.actions.act_window" id="cinema.pelicula_action_window">
+    <record model="ir.actions.act_window" id="cine_modulo.peliculas_accion">
       <field name="name">Peliculas</field>
       <field name="res_model">cinema.pelicula</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Aciones_distribuidoras-->
-    <record model="ir.actions.act_window" id="cinema.distribuidora_action_window">
+    <record model="ir.actions.act_window" id="cine_modulo.distribuidoras_accion">
       <field name="name">Distribuidora</field>
       <field name="res_model">cinema.distribuidora</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_sesiones-->
-    <record model="ir.actions.act_window" id="cinema.sesion_action_window">
+    <record model="ir.actions.act_window" id="cine_modulo.sesiones_accion">
       <field name="name">Sesiones disponibles</field>
       <field name="res_model">cinema.sesion</field>
       <field name="view_mode">tree,form</field>
     </record>
+    <!--MenuItems-->
+    <menuitem id="cine_modulo.menu_root" name="Cine"/>
+    <menuitem id="cine_modulo.empleados_menu"  name="Empleados" parent="cine_modulo.menu_root" action="cine_modulo.empleados_accion"/>
+    <menuitem id="cine_modulo.clientes_menu" name="Clientes" parent="cine_modulo.menu_root" action="cine_modulo.clientes_accion"/>
+    <menuitem id="cine_modulo.peliculas_menu" name="Peliculas" parent="cine_modulo.menu_root" action="cine_modulo.peliculas_accion"/>
+    <menuitem id="cine_modulo.sesiones_menu" name="Sesiones" parent="cine_modulo.menu_root" action="cine_modulo.sesiones_accion"/>
+    <menuitem id="cine_modulo.distribuidora_menu" name="Distribuidora" parent="cine_modulo.menu_root" action="cine_modulo.distribuidoras_accion"/>
+    <!--MenuAcciones-->
+    
   </data>
 </odoo>

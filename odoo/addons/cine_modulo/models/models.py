@@ -24,13 +24,13 @@ class peliculas(models.Model):
     sinopsis = fields.Char(string="Sinopsis", required = True)
     duracion = fields.Integer(string = "Duracion")
     fecha_estreno = fields.Date(string = "Fecha de estreno")
-    distribuidora = fields.Many2One("cinema.distribuidora",string = "Distribuidora")
+    distribuidora = fields.Many2one("cinema.distribuidora",string = "Distribuidora")
 
 class distribuidora(models.Model):
     _name = "cinema.distribuidora"
-    name = fields.Integer(string = "ID_distribuidora", required=True)
+    name = fields.Char(string = "ID_distribuidora", required=True)
     nombre = fields.Char(string = "Nombre Distribuidora", required=True)
-    pelicula = fields.One2Many("cinema.pelicula","distribuidora",string="Pelicula")
+    pelicula = fields.One2many("cinema.pelicula","distribuidora",string="Pelicula")
 
 class sesion(models.Model):
     _name = "cinema.sesion"
