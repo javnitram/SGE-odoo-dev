@@ -31,6 +31,8 @@
       </field>
     </record>
 
+<!--  -->
+
     <record model="ir.ui.view" id="clubpadel.fabricante_tree">
       <field name="name">clubpadel Tree</field>
       <field name="model">clubpadel.fabricante</field>
@@ -62,6 +64,8 @@
         </form>
       </field>
     </record>
+
+    <!--  -->
 
     <record model="ir.ui.view" id="clubpadel.marca_tree">
       <field name="name">clubpadel Tree</field>
@@ -99,6 +103,41 @@
       </field>
     </record>
 
+    <record id="clubpadel.marca_kanban" model="ir.ui.view">
+      <field name="name">clubpadel Kanban</field>
+      <field name="model">clubpadel.marca</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="imagen" widget="image"/>
+          <field name="fecha"/>
+          <field name="gama"/>
+          <field name="fabricante_id"/>
+          <field name="models_ids"/>
+          <field name="clubes_ids"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('clubpadel.marca', 'imagen', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>Nombre: <field name="name" /> </li>
+                    <li>Gama: <field name="gama" /> </li>
+                    <li>Fabricante: <field name="fabricante_id" /> </li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+<!--  -->
+
     <record model="ir.ui.view" id="clubpadel.modelo_tree">
       <field name="name">clubpadel Tree</field>
       <field name="model">clubpadel.modelo</field>
@@ -112,6 +151,7 @@
           <field name="segmano"/>
           <field name="estado"/>
           <field name="marca_id"/>
+          <field name="precio_final"/>
         </tree>
       </field>
     </record>
@@ -131,9 +171,27 @@
               <field name="segmano"/>
               <field name="estado"/>
               <field name="marca_id"/>
+              <field name="precio_final"/>
             </group>
           </sheet>
         </form>
+      </field>
+    </record>
+
+    <record id="clubpadel.modelo_view_search" model="ir.ui.view">
+      <field name="name">clubpadel Search</field>
+      <field name="model">clubpadel.modelo</field>
+      <field name="arch" type="xml">
+        <search string="">
+          <field name="name" string="Nombre"/>
+          <field name="marca_id" string="Marca"/>
+          <field name="precio" string="Precio"/>
+          <field name="versiones" string="Versiones"/>
+          <field name="forma" string="Forma"/>
+          <field name="estado" string="Estado"/>
+          <filter name="Baratas" domain="[('precio','&lt;=',150)]"/>
+          <filter name="Estado" domain="[('estado','=','Nuevo')]"/>
+        </search>
       </field>
     </record>
 
@@ -150,6 +208,8 @@
       <field name="view_mode">form</field>
     </record>
 
+<!--  -->
+
     <record model="ir.actions.act_window" id="clubpadel.fabricante_listar_action_window">
       <field name="name">ClubPadel</field>
       <field name="res_model">clubpadel.fabricante</field>
@@ -161,6 +221,8 @@
       <field name="view_mode">form</field>
     </record>
 
+<!--  -->
+
     <record model="ir.actions.act_window" id="clubpadel.marca_listar_action_window">
       <field name="name">ClubPadel</field>
       <field name="res_model">clubpadel.marca</field>
@@ -169,7 +231,7 @@
     <record model="ir.actions.act_window" id="clubpadel.marca_crear_action_window">
       <field name="name">ClubPadel</field>
       <field name="res_model">clubpadel.marca</field>
-      <field name="view_mode">form</field>
+      <field name="view_mode">kanban,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="clubpadel.modelo_listar_action_window">

@@ -43,6 +43,15 @@ class ClubPadelModelo(models.Model):
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Nuevo'),('1','Regular'),('2','Malo')],string="Estado",default="0")
     marca_id = fields.Many2one("clubpadel.marca", string="Marca del modelo", required=True)
+    precio_final = fields.Float(string="Precio final", compute="_preciofinal", store=True)
+    @api.depends('precio','segmano')
+    def _preciofinal(self):
+        for i in self:
+            if i.segmano == True:
+                i.precio_final = i.precio/2
+            else:
+                i.precio_final = i.precio
+
     
 # class clubpadel(models.Model):
 #     _name = 'clubpadel.clubpadel'
