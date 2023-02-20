@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pokemodulo_pokemodulo,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipo,base.group_user,1,1,1,1
+access_pokemodulo_pokemodulo,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipo1,base.group_user,1,1,1,1
+access_pokemodulo_pokemodulo,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipo2,base.group_user,1,1,1,1

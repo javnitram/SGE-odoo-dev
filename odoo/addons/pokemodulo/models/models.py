@@ -4,25 +4,100 @@ from odoo import models, fields, api
 
 
 class pokemoduloEquipo1(models.Model):
-     _name = 'ar.pokemodulo.equipo'
+     _name = 'ar.pokemodulo.equipo1'
      _description = 'pokemodulo_equipo'
-     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí")
+     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
      Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
      Mote = fields.Char('Mote del Pokemon')
      Tipo1 = fields.Selection ([
-         ('0','Agua'),
-         ('1','Planta'),
-         ('2', 'Fuego')
+         ('0','Acero'),
+         ('1','Agua'),
+         ('2', 'Bicho'),
+         ('3', 'Dragon'),
+         ('4', 'Electrico'),
+         ('5', 'Fantasma'),
+         ('6', 'Fuego'),
+         ('7', 'Hada'),
+         ('8', 'Hielo'),
+         ('9', 'Lucha'),
+         ('10', 'Normal'),
+         ('11', 'Planta'),
+         ('12', 'Psiquico'),
+         ('13', 'Roca'),
+         ('14', 'Siniestro'),
+         ('15', 'Tierra'),
+         ('16', 'Veneno'),
+         ('17', 'Volador')
      ],string = 'Tipo1', required=True)
      Tipo2 = fields.Selection ([
-         ('0','Null'),
-         ('1','Electrico'),
-         ('2','Fantasma'),
-         ('3','Normal')
+         ('0','Acero'),
+         ('1','Agua'),
+         ('2', 'Bicho'),
+         ('3', 'Dragon'),
+         ('4', 'Electrico'),
+         ('5', 'Fantasma'),
+         ('6', 'Fuego'),
+         ('7', 'Hada'),
+         ('8', 'Hielo'),
+         ('9', 'Lucha'),
+         ('10', 'Normal'),
+         ('11', 'Planta'),
+         ('12', 'Psiquico'),
+         ('13', 'Roca'),
+         ('14', 'Siniestro'),
+         ('15', 'Tierra'),
+         ('16', 'Veneno'),
+         ('17', 'Volador')
      ],string = 'Tipo2')
 
 
 
+class pokemoduloEquipo2(models.Model):
+     _name = 'ar.pokemodulo.equipo2'
+     _description = 'pokemodulo_equipo'
+     Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
+     Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
+     Mote = fields.Char('Mote del Pokemon')
+     Tipo1 = fields.Selection ([
+         ('0','Acero'),
+         ('1','Agua'),
+         ('2', 'Bicho'),
+         ('3', 'Dragon'),
+         ('4', 'Electrico'),
+         ('5', 'Fantasma'),
+         ('6', 'Fuego'),
+         ('7', 'Hada'),
+         ('8', 'Hielo'),
+         ('9', 'Lucha'),
+         ('10', 'Normal'),
+         ('11', 'Planta'),
+         ('12', 'Psiquico'),
+         ('13', 'Roca'),
+         ('14', 'Siniestro'),
+         ('15', 'Tierra'),
+         ('16', 'Veneno'),
+         ('17', 'Volador')
+     ],string = 'Tipo1', required=True)
+     Tipo2 = fields.Selection ([
+         ('0','Acero'),
+         ('1','Agua'),
+         ('2', 'Bicho'),
+         ('3', 'Dragon'),
+         ('4', 'Electrico'),
+         ('5', 'Fantasma'),
+         ('6', 'Fuego'),
+         ('7', 'Hada'),
+         ('8', 'Hielo'),
+         ('9', 'Lucha'),
+         ('10', 'Normal'),
+         ('11', 'Planta'),
+         ('12', 'Psiquico'),
+         ('13', 'Roca'),
+         ('14', 'Siniestro'),
+         ('15', 'Tierra'),
+         ('16', 'Veneno'),
+         ('17', 'Volador')
+     ],string = 'Tipo2')
 
 #     name = fields.Char()
 #     value = fields.Integer()
