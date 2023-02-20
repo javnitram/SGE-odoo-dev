@@ -2,7 +2,9 @@
 
 from odoo import models, fields
 
-class Users(model.Model):
+class Users(models.Model):
+    _name = "ws.users"
+    _description = "Users Model"
     name = fields.Char('name')
     phone = fields.Char('phone')
     email = fields.Char('email')
@@ -21,7 +23,7 @@ class Repairment(models.Model):
     _description = 'Repair Model'
     repair_status = fields.Selection([
         ('quote', 'Presupuesto'),
-        ('rejected', 'Rechazado')
+        ('rejected', 'Rechazado'),
         ('accepted', "Aceptado"),
         ('processing', "En proceso"),
         ('ready', 'Listo')
@@ -29,8 +31,6 @@ class Repairment(models.Model):
     start_date = fields.Date('start_date')
     completion_date = fields.Date('completion_date')
     labor_cost = fields.Float('labor_cost')
-
-class Computers(model.Model):
 
 
 class Replacement(models.Model):

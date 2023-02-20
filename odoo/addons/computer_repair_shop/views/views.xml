@@ -51,6 +51,13 @@
     action="computer_repairments_action_window"
     parent="computer_repairments"
     sequence="10"/>
+
+  <menuitem
+  id="clientes_menu"
+  name="Clientes"
+  action="computer_repairments_action_window"
+  parent="computer_repairments"
+  sequence="10"/>
  
 <!--
     <menuitem name="Menu 1" id="computer_repair_shop.menu_1" parent="computer_repair_shop.menu_root"/>
