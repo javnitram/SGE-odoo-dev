@@ -8,7 +8,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          
+          <field name = "instrumento_id"/>
           
         </tree>
       </field>
@@ -41,7 +41,7 @@
         <field name="stock"/>
         <field name="imagen"/>
         <field name="estado"/>
-        <field name="ventas_ids" />
+        
         <templates>
           <t t-name="kanban-box">
           
@@ -91,8 +91,10 @@
       <field name="arch" type="xml">
         <tree>
         <!-- nombre del campo del modelo-->
+        
           <field name="fecha"/>
-          <field name="instrumentos_ids" />
+          <field name = "cliente_id"/>
+          <!--<field name="instrumentos_ids" /> -->
                     
           
           </tree>
