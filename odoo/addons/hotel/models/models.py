@@ -33,9 +33,14 @@ class HotelReserva(models.Model):
     _description = 'Modelo Reserva'
     fecha_inicio = fields.Date(string='Fecha inicio reserva',required=True)
     fecha_final = fields.Date(string='Fecha final reserva',required=True)
-    precio_total = fields.Float(string='Precio total',required=True)
+    precio_total = fields.Float(string='Precio total',compute="_precio_total",store=True)
     cliente_id = fields.Many2one('jf.hotel.cliente', string='Cliente')
     habitacion_ids = fields.Many2many('jf.hotel.habitaciones', string='Habitacion/es reservada/s')
+
+    @api.depends('fecha_inicio', 'fecha_final', 'habitacion_ids')
+    def _precio_total(self):
+        for i in self.habitacion_ids:
+            self.precio_total = (self.fecha_final-self.fecha_inicio)*i.precio
 
 class HotelHabitaciones(models.Model):
     _name = 'jf.hotel.habitaciones'
