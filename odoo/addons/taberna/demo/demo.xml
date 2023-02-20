@@ -826,6 +826,7 @@
             <field name="name">Delirium Tremens</field>
             <field name="alcohol">True</field>
             <field name="tipo">1</field>
+            <field name="precio">4</field>
             <field name="pais_id" ref="base.be"/>
           </record>
 
