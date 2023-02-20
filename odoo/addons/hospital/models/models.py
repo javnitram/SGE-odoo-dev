@@ -38,3 +38,5 @@ class HospitalMedicinas(models.Model):
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
     cantidad=fields.Integer(int="Cantidad", required=True)
     tipo=fields.Char(string="Tipo de medicamento")
+    imagen = fields.Image(string="Imagen",store=True,relation="res.partner")
+    

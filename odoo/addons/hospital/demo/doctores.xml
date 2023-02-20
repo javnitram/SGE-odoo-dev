@@ -6,7 +6,7 @@
             <field name="surname">Scofield</field>
             <field name="date">1984-11-05</field>
             <field name="tlf">665896526</field>
-            <field name="especialidad">0</field>          
+            <field name="especialidad">0</field>                      
           </record>
 
           <record id="doctor1" model="gs.hospital.doctores">

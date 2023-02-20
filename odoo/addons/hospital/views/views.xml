@@ -49,7 +49,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="hospital_enfermeros_form">
+    <record model="ir.ui.view" id="hospital_medicinas_form">
       <field name="name">MEDICINAS</field>
       <field name="model">gs.hospital.medicinas</field>
       <field name="arch" type="xml">
@@ -58,7 +58,8 @@
             <field name="nroserie"/>
             <field name="name"/>
             <field name="cantidad"/>
-            <field name="tipo"/>
+            <field name="tipo"/>    
+            <field name="imagen" widget="image" options="{'size': [200, 200]}"/>
           </group>
         </form>
       </field>
