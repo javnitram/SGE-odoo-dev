@@ -41,6 +41,7 @@
         <tree>
             <field name="name"/>
             <field name="precio"/>
+            <field name="precio_iva"/>
             <field name="pegi"/>
             <field name="estado"/>
             <field name="distribuidor_id"/>  
@@ -91,6 +92,7 @@
             <group>
               <field name="name"/>
               <field name="precio"/>
+              <field name="precio_iva"/>
               <field name="pegi"/>
               <field name="estado"/>
               <field name="digital"/>
@@ -147,7 +149,8 @@
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
-            <field name="ubicacion"/>
+            <field name="calle"/>
+            <field name="provincia_id"/>
             <field name="tiendas_ids"/>       
         </tree>
       </field>

@@ -25,6 +25,14 @@ class game_shop_videojuego(models.Model):
     imagen = fields.Image(string="Imagen", max_width=640, max_height=480)
     distribuidor_id = fields.Many2one('game_shop.distribuidor', string="Distribuidor del juego")
     tiendas_ids = fields.Many2many('game_shop.tienda', string='Tiendas disponibles')
+    precio_iva = fields.Float(string="Precio con IVA",help="Precio calculado con el IVA", compute="_precioIVA",store=True)
+    @api.depends('precio','digital')
+    def _precioIVA(self):
+        for i in self:
+            if i.digital:
+                i.precio_iva = (i.precio-5)*1.21
+            else:
+                i.precio_iva = i.precio*1.21
 
 class game_shop_distribuidor(models.Model):
     _name = 'game_shop.distribuidor'
@@ -38,14 +46,8 @@ class game_shop_almacen(models.Model):
     _name = 'game_shop.almacen'
     _description = 'Almacen juegos'
     name = fields.Char(string = "Almacen",required=True,help="Introduce el nombre del almacen",default="almacen")
-    ubicacion = fields.Selection([
-        ('0', 'Sevilla'),('1','Barcelona'),('2','Madrid'),
-        ('3','Valencia'),('4','Santiago de Compostela'),('5','Valladolid'),
-        ('6','Vitoria'),('7','Gran Canaria'),('8','Toledo'),
-        ('9','Murcia'),('10','Zaragoza'),('11','Palma'),('12','Mérida'),
-        ('13','Oviedo'),('14','Pamplona'),('15','Santander'),('16','Logroño'),
-        ('17','Melilla'),('18','Ceuta')
-    ], string='Sede',required=True,default="2")
+    provincia_id = fields.Many2one('res.country.state', string='Provincia')
+    calle = fields.Char(string="Calle", help="Introduce el nombre de la calle")
     tiendas_ids = fields.One2many('game_shop.tienda', 'almacen_id', string="Tiendas a la que suminsitra")
 
 
