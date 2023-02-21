@@ -54,6 +54,7 @@
       <field name="model">hf_floristeria_flower</field>
       <field name="arch" type="xml">
         <tree>
+          <field class="oe_avatar" name="flower_image" widget="image"/>
           <field name="name"/>
           <field name="scientific_name"/>
           <field name="specie_id"/>
@@ -98,11 +99,57 @@
       </field>
     </record>
 
+    <!-- Flower kanban view -->
+
+    <record id="hf_floristeria_flower_view_kanban" model="ir.ui.view">
+      <field name="name">hf_floristeria_flower.view.kanban</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="scientific_name"/>
+          <field name="specie_id"/>
+          <field name="flower_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('hf_floristeria_flower','flower_image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li><strong class="o_kanban_record_title">Nombre: <field name="name"/></strong></li>
+                    <li>Nombre científico: <field name="scientific_name"/></li>
+                    <li>Especie: <field name="specie_id"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="hf_floristeria_flower_view_search" model="ir.ui.view">
+      <field name="name">hf_floristeria_flower.view.search</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="scientific_name" string="Nombre científico"/>
+          <field name="specie_id" string="Especie"/>
+          <field name="main_color" string="Color predominante"/>
+        </search>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_action_window">
       <field name="name">Flores</field>
       <field name="res_model">hf_floristeria_flower</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <!-- Specie -->
@@ -182,11 +229,55 @@
       </field>
     </record>
 
+    <!-- Bouquet kanban view -->
+
+    <record id="hf_floristeria_bouquet_view_kanban" model="ir.ui.view">
+      <field name="name">hf_floristeria_bouquet.view.kanban</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="size"/>
+          <field name="bouquet_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_card oe_kanban_global_click"
+                style="
+                  display: flex;
+                ">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('hf_floristeria_bouquet','bouquet_image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details" 
+                  style="padding: 1rem; display: grid; justify-content: space-between;">
+                  <div class="o_kanban_record_title"
+                    style="grid-column: 1 / span 2; grid-row: 1;">
+                    <field name="name"/>
+                  </div>
+                  <div style="grid-column: 2; grid-row: 1;">
+                    <field name="price"/>€
+                  </div>
+                  <div style="grid-column: 1 / 2; grid-row: 3; ">
+                    <field name="size"/>
+                  </div>
+                  <div style=" grid-column: 2 / 3; grid-row: 3; font-style: italic;">
+                    <field name="manager_id"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="floristeria.hf_floristeria_bouquet_action_window">
       <field name="name">Ramos de flores</field>
       <field name="res_model">hf_floristeria_bouquet</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <!-- Flower Pot -->

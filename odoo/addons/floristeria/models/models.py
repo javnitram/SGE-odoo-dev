@@ -8,8 +8,6 @@ class manager(models.Model):
     name = fields.Char('Nombre')
     bouquet_ids = fields.One2many('hf_floristeria_bouquet', 'manager_id', string=' Ramos de flores')
     flower_pot_ids = fields.One2many('hf_floristeria_flower_pot', 'manager_id', string=' Macetas')
-    """ bouquet_ids = fields.Many2many('hf_floristeria_bouquet', string='Ramos de flores')
-    flower_pot_ids = fields.Many2many('hf_floristeria_flower_pot', string='Macetas') """
 
 class flower(models.Model):
     _name = 'hf_floristeria_flower'
@@ -27,7 +25,7 @@ class flower(models.Model):
         ('2', 'Ginko'),
         ('3', 'Coníferas'),
         ('4', 'Gnetales')
-    ], string='Subgrupo de las gimnospermas',required=True)
+    ], string='Subgrupo de las gimnospermas')
     subgroup_ang = fields.Selection([
         ('0', ''),
         ('1', 'Amborellales'),
@@ -38,9 +36,9 @@ class flower(models.Model):
         ('6', 'Ceratophyllales'),
         ('7', 'Eudicotiledóneas'),
         ('8', 'Monocotiledóneas')
-    ], string='Subgrupo de las angiospermas',required=True)
+    ], string='Subgrupo de las angiospermas')
     flower_image = fields.Image('Imagen')
-
+    
 class specie(models.Model):
     _name = 'hf_floristeria_specie'
     _description = 'Especies'
@@ -58,13 +56,26 @@ class bouquet(models.Model):
     manager_id = fields.Many2one('hf_floristeria_manager', string=' Encargado')
     
     size = fields.Selection([
-        ('0', ''),
-        ('1', 'Pequeño'),
-        ('2', 'Normal'),
-        ('3', 'Grande')
+        ('s', 'Pequeño'),
+        ('m', 'Normal'),
+        ('l', 'Grande')
     ], string='Tamaño',required=True)
-    price = fields.Float('Precio', required=True)
     bouquet_image = fields.Image('Imagen')
+
+    price = fields.Float(compute='_compute_price', string='Precio')
+    
+    @api.depends('price', 'size', 'flower_ids')
+    def _compute_price(self):
+        for rec in self:
+            if(rec.size == 's'):
+                base_price = 15
+            elif(rec.size == 'm'):
+                base_price = 25
+            elif(rec.size == 'l'):
+                base_price = 40
+            else:
+                base_price = 10
+            rec.price = base_price + (len(rec.flower_ids) * 1.5)
 
 class flower_pot(models.Model):
     _name = 'hf_floristeria_flower_pot'
