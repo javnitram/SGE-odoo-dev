@@ -1,12 +1,37 @@
 <odoo>
     <data>
 
-          <record id="Club1" model="clubpadel.club">
+          <!-- <record id="Alphapadel" model="clubpadel.club">
             <field name="nombre">AlphaPadel</field>
-            <field name="ubicacion">Alcorcon</field>
+            <field name="pais_id" ref="base.es"/>
+            <field name="provincia_id" ref="base.es.M"/>
+            <field name="marcas_ids" eval="[
+              Command.create({
+                'name': 'nombre'
+              }),
+              Command.link(ref('Bullpadel')),
+            ]"/>
           </record>
 
-          <record id="Modelo1" model="clubpadel.modelo">
+          <record id="Exploit" model="clubpadel.fabricante">
+            <field name="name">Exploit</field>
+            <field name="fecha_salida">2019-04-15</field>
+            <field name="pais_id" ref="base.es"/>
+            <field name="provincia_id" ref="base.es.M"/>
+            <field name="marcas_ids"/>
+          </record> -->
+
+          <record id="Bullpadel" model="clubpadel.marca">
+            <field name="nombre">Bullpadel</field>
+            <field name="imagen" type="base64"></field>
+            <field name="fecha">2020-02-02</field>
+            <field name="gama">AltissimaPerro</field>
+            <!-- <field name="models_ids" ref="Bullpadel"/> -->
+            <!-- <field name="fabricante_id" ref="Exploit"/>
+            <field name="clubes_ids" ref="Bullpadel"/> -->
+          </record>
+
+          <!-- <record id="Bullpadel" model="clubpadel.marca">
               <field name="name">Hack 03</field>
               <field name="precio">200</field>
               <field name="versiones">0</field>
@@ -14,7 +39,17 @@
               <field name="fecha">2022-03-05</field>
               <field name="segmano">False</field>
               <field name="estado">0</field>
-          </record>
+          </record> -->
+
+          <!-- <record id="Modelo1" model="clubpadel.modelo">
+              <field name="name">Hack 03</field>
+              <field name="precio">200</field>
+              <field name="versiones">0</field>
+              <field name="forma">0</field>
+              <field name="fecha">2022-03-05</field>
+              <field name="segmano">False</field>
+              <field name="estado">0</field>
+          </record> -->
 
           <!-- <record id="object2" model="clubpadel.clubpadel">
             <field name="name">Object 2</field>

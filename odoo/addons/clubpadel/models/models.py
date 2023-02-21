@@ -2,6 +2,8 @@
 
 from odoo import models, fields, api
 
+# from odoo.exceptions import ValidationError
+
 
 class ClubPadelClub(models.Model):
     _name = "clubpadel.club"
@@ -31,6 +33,10 @@ class ClubPadelMarca(models.Model):
     models_ids = fields.One2many('clubpadel.modelo', 'marca_id', string='Modelos de la marca')
     fabricante_id = fields.Many2one("clubpadel.fabricante", string="Fabricante de la marca", required=True)
     clubes_ids = fields.Many2many('clubpadel.club', string='Clubes de la marca')
+    # @api.constrains('name')
+    # def _checkNombre(self):
+    #     if not self.name:
+    #         raise ValidationError("Debes elegir un nombre")
 
 class ClubPadelModelo(models.Model):
     _name = "clubpadel.modelo"
