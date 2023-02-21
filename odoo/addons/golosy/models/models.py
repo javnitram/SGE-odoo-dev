@@ -34,7 +34,7 @@ class Camion(models.Model):
 
      name = fields.Char('Matricula', required=True, help='Matricula del camión')
      golosinas2_ids = fields.Many2many('wb.golosy.golosinas', string=' Camion de pedido')
-     empleados_ids = fields.Many2many('wb.golosy.empleados', string=' Empleados')
+     empleado_id = fields.Many2one("wb.golosy.empleados",string=" Empleados",required=True,ondelete="cascade")
      productos = fields.Char('Productos')#compute="_productoscamion")
      
 
@@ -46,6 +46,8 @@ class Empleados(models.Model):
      dni = fields.Char('DNI', required=True, help='DNI del empleado')
      telefono = fields.Integer('Telèfono', required=True, help='Telèfono del empleado')
      antiguedad = fields.Date('Fecha de incorporacion', required=True, help='Fecha de primer dia de trabajo')
+     camiones_ids = fields.One2many('wb.golosy.camion', 'empleado_id', string=' camion')
+     imagen = fields.Image(string='Imagen', help='Imagen del empleado')
      mesestrabajados = fields.Char('Meses de trabajo en la empresa', compute="_mesestrabajados")
      
      def _mesestrabajados(self):

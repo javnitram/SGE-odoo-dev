@@ -11,7 +11,7 @@
           <field name="precio"/>
           <field name="cantidad"/>
           <field name="active"/>
-          <field name="imagen"/>
+          <field name="imagen" widget='image' options="{'size':[60,60]}"/>
         </tree>
       </field>
     </record>
@@ -86,6 +86,7 @@
         <tree>
           <field name="name"/>
           <field name="productos"/>
+          <field name="empleado_id" string="Conductor"/>
         </tree>
       </field>
     </record>
@@ -100,14 +101,7 @@
               <group>
                 <field name="name"/>
                 <field name="productos"/>
-              </group>
-              <group >
-                <field name="empleados_ids">
-                  <tree>
-                    <field name="name"/>
-                    <field name="dni"/>
-                  </tree>
-                </field>
+                <field name="empleado_id"/>
               </group>
               <field name="golosinas2_ids">
                 <tree>
@@ -131,6 +125,7 @@
           <field name="dni"/>
           <field name="telefono"/>
           <field name="mesestrabajados"/>
+          <field name="imagen" widget='image' options="{'size':[60,90]}"/>
         </tree>
       </field>
     </record>
@@ -142,6 +137,7 @@
         <form>
           <sheet>
             <group>
+              <field name="imagen" widget='image' class='oe_avatar oe_right' options="{'size':[200,250]}"/>
               <group>
                 <field name="name"/>
                 <field name="dni"/>
@@ -151,6 +147,11 @@
                 <field name="antiguedad"/>
                 <field name="mesestrabajados"/>
               </group>
+              <field name="camiones_ids">
+                <tree>
+                  <field name="name"/>
+                </tree>
+              </field>
             </group>
           </sheet>
         </form>
@@ -166,7 +167,9 @@
           <field name="name" string="Nombre golosina"/>
           <field name="categoria_id" string="Categoria"/>
           <field name="precio" string="Precio golosina"/>
-          <filter name="Barato" domain="[('precio', '&lt;=', '5')]"/>
+          <filter name="Barato (-1€)" domain="[('precio', '&lt;=', '1')]"/>
+          <filter name="Colocado" domain="[('active', '==', 'True')]"/>
+          <filter name="En almacen" domain="[('active', '==', 'False')]"/>
         </search>
       </field>
     </record>
@@ -177,7 +180,8 @@
       <field name="arch" type="xml">
         <search>
           <field name="name" string="Nombre categoria"/>
-          <field name="tipo" string="Tipo golosina"/>
+          <filter name="Dulces" domain="[('tipo', '=', 'Dulce')]"/>
+          <filter name="Salados" domain="[('tipo', '=', 'Salados')]"/>
         </search>
       </field>
     </record>
@@ -262,7 +266,7 @@
     id="golosy_categorias_menu_2" 
     parent="golosy_menu_root"/>
 
-    <menuitem name="Camiones"
+    <menuitem name="Pedidos"
     id="golosy_camiones_menu_3" 
     parent="golosy_menu_root"/>
 
