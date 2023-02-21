@@ -13,16 +13,7 @@ class GatotecaEmpleado(models.Model):
         ('1','Camarero')
     ], string='Puesto')
 
-class GatotecaMenu(models.Model):
-    _name = 'gatoteca.menu'
-    _description = 'Menu'
-    tipo = fields.Selection([
-        ('0', 'Desayuno'),
-        ('1','Comida'),
-        ('2','Merienda'),
-        ('3','Solo bebida')
-    ], string='Tipo',required=True)
-    precio = fields.Integer('Precio')
+    gatos_ids = fields.Many2many('gatoteca.gato', string='Gatos asignados')
 
 class GatotecaCliente(models.Model):
     _name = 'gatoteca.cliente'
@@ -31,18 +22,25 @@ class GatotecaCliente(models.Model):
     email = fields.Char('Email')
     adopcion = fields.Boolean('Quiere adoptar')
 
+    gatos_ids = fields.One2many('gatoteca.gato', 'cliente_id', string='Gatos adoptados')
+
 class GatotecaGato(models.Model):
     _name = 'gatoteca.gato'
     _description = 'Gato'
-    name = fields.Char('Gato',required=True)
-    adopcion = fields.Boolean('Espera adopcion')
+    name = fields.Char('Nombre',required=True)
+    imagen = fields.Image('Imagen del gato', max_width=200, max_height=200)
+
+    empleados_ids = fields.Many2many('gatoteca.empleado', string='Empleados asignados')
+    cliente_id = fields.Many2one('gatoteca.cliente', string='Adoptado por')
+    raza_id = fields.Many2one('gatoteca.raza', string='Raza')
 
 class GatotecaRaza(models.Model):
     _name = 'gatoteca.raza'
     _description = 'Registro de razas de gatos'
     name = fields.Char('Raza')
-    existe = fields.Boolean('Se encuentra')
-    
+    procedencia = fields.Char('Procedencia')
+
+    gatos_ids = fields.One2many('gatoteca.gato', 'raza_id', string='Gatos')
 
 
 # class gatoteca(models.Model):

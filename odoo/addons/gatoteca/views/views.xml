@@ -11,18 +11,24 @@
           <field name="sueldo"/>
           <field name="encargado" />
           <field name="puesto" />
+          <field name="gatos_ids" />
         </tree>
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.menu">
-      <field name="name">Menu</field>
-      <field name="model">gatoteca.menu</field>
+    <record model="ir.ui.view" id="gatoteca.empleado_form">
+      <field name="name">Empleado</field>
+      <field name="model">gatoteca.empleado</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="tipo" />
-          <field name="precio" />
-        </tree>
+        <form>
+          <group name="name" string="Datos">
+            <field name="name"/>
+            <field name="sueldo"/>
+            <field name="puesto" />
+            <field name="encargado" />
+            <field name="gatos_ids" />
+          </group>
+        </form>
       </field>
     </record>
 
@@ -34,7 +40,54 @@
           <field name="name"/>
           <field name="email" />
           <field name="adopcion" />
+          <field name="gatos_ids"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gatoteca.cliente_form">
+      <field name="name">Cliente</field>
+      <field name="model">gatoteca.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <group name="name" string="Datos">
+            <field name="name"/>
+            <field name="email"/>
+            <field name="adopcion"/>
+          </group>
+          <group name="name2" string="Gatos adoptados">
+            <field name="gatos_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record id="gatoteca.gato_view_kanban" model="ir.ui.view">
+      <field name="name">gatoteca.gato.view.kanban</field>
+      <field name="model">gatoteca.gato</field>
+      <field name="arch" type="xml">
+        <kanban>
+        <field name="id" />
+          <field name="name"/>
+          <field name="empleados_ids"/>
+          <field name="cliente_id"/>
+          <field name="raza_id"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('gatoteca.gato','imagen',record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>Nombre: <field name="name"/> </li>
+                    <li>Raza: <field name="raza_id"/> </li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
       </field>
     </record>
 
@@ -44,22 +97,65 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="raza" />
-          <field name="adopcion" />
+          <field name="imagen"/>
+          <field name="empleados_ids"/>
+          <field name="cliente_id"/>
+          <field name="raza_id"/>
         </tree>
       </field>
     </record>
+
+    <record model="ir.ui.view" id="gatoteca.gato_form">
+      <field name="name">Gato</field>
+      <field name="model">gatoteca.gato</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="imagen" widget="image"/>
+          </group>
+          <group name="name" string="Datos">
+            <field name="name"/>
+            <field name="empleados_ids"/>
+            <field name="raza_id"/>
+            <field name="cliente_id"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gatoteca.raza">
+      <field name="name">Raza</field>
+      <field name="model">gatoteca.raza</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="gatos_ids"/>
+          <field name="procedencia" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="gatoteca.raza_form">
+      <field name="name">Raza</field>
+      <field name="model">gatoteca.raza</field>
+      <field name="arch" type="xml">
+        <form>
+          <group name="name" string="Datos">
+            <field name="name"/>
+            <field name="procedencia" />
+          </group>
+          <group name="name2" string="Gatos registrados">
+            <field name="gatos_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="gatoteca.empleado_action_window">
       <field name="name">Empleados</field>
       <field name="res_model">gatoteca.empleado</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <record model="ir.actions.act_window" id="gatoteca.menu_action_window">
-      <field name="name">Menu</field>
-      <field name="res_model">gatoteca.menu</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -72,6 +168,12 @@
     <record model="ir.actions.act_window" id="gatoteca.gato_action_window">
       <field name="name">Gato</field>
       <field name="res_model">gatoteca.gato</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="gatoteca.raza_action_window">
+      <field name="name">Raza</field>
+      <field name="res_model">gatoteca.raza</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -99,20 +201,22 @@
 
     <menuitem name="Empleados" id="gatoteca.empleado_menu" parent="gatoteca.menu_root"
       action="gatoteca.empleado_action_window"/>
-    <menuitem name="Menus" id="gatoteca.menu_menu" parent="gatoteca.menu_root"
-      action="gatoteca.menu_action_window"/>
     <menuitem name="Clientes" id="gatoteca.cliente_menu" parent="gatoteca.menu_root"
       action="gatoteca.cliente_action_window"/>
-    <menuitem name="Gatos" id="gatoteca.gato_menu" parent="gatoteca.menu_root"
-      action="gatoteca.gato_action_window"/>
+    <menuitem name="Gatos" id="gatoteca.gato_menu" parent="gatoteca.menu_root"/>
+
 <!--
     <menuitem name="Menu 2" id="gatoteca.menu_2" parent="gatoteca.menu_root"/>
 -->
     <!-- actions -->
+    <menuitem name="Gatos" id="gatoteca.menu_gato_list" parent="gatoteca.gato_menu" 
+      action="gatoteca.gato_action_window"/>
+    <menuitem name="Razas" id="gatoteca.menu_raza_list" parent="gatoteca.gato_menu" 
+      action="gatoteca.raza_action_window"/>
   <!--
     <menuitem name="Empleados" id="gatoteca.menu_emp_list" parent="gatoteca.empleado_menu" 
       action="gatoteca.action_window"/>
-    
+  
     <menuitem name="Menu" id="gatoteca.menu_men_list" parent="gatoteca.menu_menu" 
       action="gatoteca_menu_action_window"/>
     <menuitem name="Cliente" id="gatoteca.menu_cliente_list" parent="gatoteca.cliente_menu" 
