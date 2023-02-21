@@ -8,10 +8,31 @@
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="descripcion"/>
-          <field name="vehiculos_ids"/>
+          <field name="facturas_id"/>
         </tree>
+      </field>
+    </record>
+
+  <record model="ir.ui.view" id="dhm_concesionario_pedidos_facturas_view_form">
+      <field name="name">Vehiculos</field>
+      <field name="model">dhm.concesionario.pedidos</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="id"/>
+              <field name="name"/>
+              <field name="descripcion"/>
+              <field name="facturas_id">
+                <tree>
+                  <field name="name" />
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -20,11 +41,35 @@
       <field name="model">dhm.concesionario.vehiculos</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id"/>
-          <field name="marca"/>
+          <field name="name"/>
           <field name="modelo"/>
           <field name="estado"/>
+          <field name="matricula"/>
         </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="dhm_concesionario_vehiculos_clientes_view_form">
+      <field name="name">Vehiculos</field>
+      <field name="model">dhm.concesionario.vehiculos</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="imagen" widget="image"/>
+              <field name="name"/>
+              <field name="modelo"/>
+              <field name="estado"/>
+              <field name="matricula"/>
+              <field name="clientes_ids">
+                <tree>
+                  <field name="name" />
+                  <field name="nombre" />
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -33,9 +78,16 @@
       <field name="model">dhm.concesionario.clientes</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="dni"/>
+          <field name="name"/>
           <field name="nombre"/>
           <field name="apellidos"/>
+          <field name="vehiculos_ids">
+            <tree>
+              <field name="name"/>
+              <field name="modelo"/>
+              <field name="matricula"/>
+            </tree>
+          </field>
         </tree>
       </field>
     </record>
@@ -45,7 +97,7 @@
       <field name="model">dhm.concesionario.facturas</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id"/>
+          <field name="name"/>
           <field name="cantidad"/>
           <field name="precio"/>
         </tree>
@@ -65,7 +117,6 @@
       <field name="res_model">dhm.concesionario.vehiculos</field>
       <field name="view_mode">tree,form</field>
     </record>
-
     <record model="ir.actions.act_window" id="concesionario.action_window_clientes">
       <field name="name">Lista de clientes</field>
       <field name="res_model">dhm.concesionario.clientes</field>
