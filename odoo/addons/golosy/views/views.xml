@@ -10,8 +10,7 @@
           <field name="name"/>
           <field name="precio"/>
           <field name="cantidad"/>
-          <field name="description"/>
-          <field name="camion"/>
+          <field name="active"/>
           <field name="imagen"/>
         </tree>
       </field>
@@ -29,12 +28,13 @@
                 <field name="precio"/>
                 <field name="cantidad"/>
                 <field name="description"/>
+                <field name="active"/>
               </group>
               <group >
                 <field name="imagen" widget='image' class='oe_avatar'/>
-                <field name="camion"/>
                 <field name="categoria_id"/>
               </group>
+              
             </group>
           </sheet>
         </form>
@@ -58,16 +58,22 @@
       <field name="model">wb.golosy.categoria</field>
       <field name="arch" type="xml">
           <form>
-            <group colspan="3" col="3">
-              <field name="name"/>
-              <field name="tipo"/>
-              <field name="golosinas_ids">
-                <tree>
+            <sheet>
+              <group>
+                <group>
                   <field name="name"/>
-                  <field name="precio"/>
-                </tree>
-              </field>
-            </group>
+                  <field name="tipo"/>
+                </group>
+                <group >
+                  <field name="golosinas_ids">
+                    <tree>
+                      <field name="name"/>
+                      <field name="precio"/>
+                    </tree>
+                  </field>
+                </group>
+              </group>
+            </sheet>
           </form>
       </field>
     </record>
@@ -89,10 +95,29 @@
       <field name="model">wb.golosy.camion</field>
       <field name="arch" type="xml">
         <form>
-          <group colspan="2" col="2">
-            <field name="name"/>
-            <field name="productos"/>
-          </group>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="productos"/>
+              </group>
+              <group >
+                <field name="empleados_ids">
+                  <tree>
+                    <field name="name"/>
+                    <field name="dni"/>
+                  </tree>
+                </field>
+              </group>
+              <field name="golosinas2_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="precio"/>
+                  <field name="description"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -105,7 +130,7 @@
           <field name="name"/>
           <field name="dni"/>
           <field name="telefono"/>
-          <field name="antiguedad"/>
+          <field name="mesestrabajados"/>
         </tree>
       </field>
     </record>
@@ -115,12 +140,19 @@
       <field name="model">wb.golosy.empleados</field>
       <field name="arch" type="xml">
         <form>
-          <group colspan="4" col="4">
-            <field name="name"/>
-            <field name="dni"/>
-            <field name="telefono"/>
-            <field name="antiguedad"/>
-          </group>
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="dni"/>
+                <field name="telefono"/>
+              </group>
+              <group>
+                <field name="antiguedad"/>
+                <field name="mesestrabajados"/>
+              </group>
+            </group>
+          </sheet>
         </form>
       </field>
     </record>
@@ -134,6 +166,39 @@
           <field name="name" string="Nombre golosina"/>
           <field name="categoria_id" string="Categoria"/>
           <field name="precio" string="Precio golosina"/>
+          <filter name="Barato" domain="[('precio', '&lt;=', '5')]"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_categoria_search">
+      <field name="name">golosy.categoria.search</field>
+      <field name="model">wb.golosy.categoria</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Nombre categoria"/>
+          <field name="tipo" string="Tipo golosina"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_camion_search">
+      <field name="name">golosy.camion.search</field>
+      <field name="model">wb.golosy.camion</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Matricula del camion"/>
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="golosy_empleados_search">
+      <field name="name">golosy.empleados.search</field>
+      <field name="model">wb.golosy.empleados</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Nombre empleado"/>
+          <field name="dni" string="DNI empleado"/>
         </search>
       </field>
     </record>

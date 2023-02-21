@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 
@@ -11,11 +12,9 @@ class golosinas(models.Model):
      precio = fields.Float('Precio', required=True, help='precio de la golosina')
      cantidad = fields.Integer('Cantidad', required=True, help='Cantidad stock de la golosina')
      description = fields.Text()
-     camion = fields.Selection([
-        ('0', 'Solicitar al camión'),
-        ('1', 'Dar de baja al producto')
-     ], string='¿Solicitar al camion nuevo envio?')
+     active = fields.Boolean(string ='¿Esta colocada en la tienda?', default=False, help='Golosina colocada o no')
      categoria_id = fields.Many2one("wb.golosy.categoria",string="Categoría",required=True,ondelete="cascade")
+     
      imagen = fields.Image(string='Imagen', help='Imagen de la golosina')
      
 class categorias(models.Model):
@@ -27,14 +26,17 @@ class categorias(models.Model):
         ('0', 'Dulce'),
         ('1', 'Salado')
      ], string='Tipo de la categoria')
-     golosinas_ids = fields.One2many('wb.golosy.golosinas', 'categoria_id', string='Categoria')
+     golosinas_ids = fields.One2many('wb.golosy.golosinas', 'categoria_id', string='Golosinas')
      
 class Camion(models.Model):
      _name = 'wb.golosy.camion'
      _description = 'Camion envio a domicilio'
 
      name = fields.Char('Matricula', required=True, help='Matricula del camión')
-     productos = fields.Integer('Productos', required=True, help='Productos a enviar')
+     golosinas2_ids = fields.Many2many('wb.golosy.golosinas', string=' Camion de pedido')
+     empleados_ids = fields.Many2many('wb.golosy.empleados', string=' Empleados')
+     productos = fields.Char('Productos')#compute="_productoscamion")
+     
 
 class Empleados(models.Model):
      _name = 'wb.golosy.empleados'
@@ -43,4 +45,15 @@ class Empleados(models.Model):
      name = fields.Char('Nombre', required=True, help='Nombre del empleado')
      dni = fields.Char('DNI', required=True, help='DNI del empleado')
      telefono = fields.Integer('Telèfono', required=True, help='Telèfono del empleado')
-     antiguedad = fields.Date('Antiguedad', required=True, help='Fecha de primer dia de trabajo')
+     antiguedad = fields.Date('Fecha de incorporacion', required=True, help='Fecha de primer dia de trabajo')
+     mesestrabajados = fields.Char('Meses de trabajo en la empresa', compute="_mesestrabajados")
+     
+     def _mesestrabajados(self):
+          fecha_hoy = datetime.date.today()
+          for empl in self:
+               if empl.antiguedad:
+                    antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
+                    total_meses = str(int((fecha_hoy - antiguedad).days/30))
+                    empl.mesestrabajados = total_meses
+               else:
+                    empl.mesestrabajados = "no hay registro"
