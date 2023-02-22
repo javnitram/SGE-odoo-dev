@@ -6,7 +6,7 @@ class InmobiliariaInmueble(models.Model):
     _name = 'il.inmobiliaria.inmueble'
     _description = 'il.inmobiliaria.inmueble'
 
-    imagen = fields.Image('imagen', max_width=150, max_height=150)
+    imagen = fields.Image('imagen', store=True, relation="res.partner")
     name = fields.Char('Nombre',help='Introduce el nombre del inmueble')
     tipo = fields.Selection([
         ('0', 'Piso'),('1', 'Casa'),('2', 'Chalet'),('3', 'Local'),('4', 'Terreno urbano')
@@ -23,6 +23,7 @@ class InmobiliariaCiente(models.Model):
     name = fields.Char('Nombre')
     apellido1 = fields.Char('Primer apellido')
     apellido2 = fields.Char('Segundo apellido')
+    venta = fields.Many2many('il.inmobiliaria.venta', string='cliente')
 
 class InmobiliariaAgente(models.Model):
     _name = 'il.inmobiliaria.agente'
@@ -40,7 +41,7 @@ class InmobiliariaVenta(models.Model):
     _name = 'il.inmobiliaria.venta'
     _description = 'il.inmobiliaria.venta'
 
-    cliente = fields.Many2one('il.inmobiliaria.cliente', string='cliente')
+    cliente = fields.Many2many('il.inmobiliaria.cliente', string='cliente')
     inmueble_id = fields.Many2one('il.inmobiliaria.inmueble', string='inmueble')
     agente = fields.Many2one('il.inmobiliaria.agente', string='agente')
     fecha = fields.Date('Fecha')

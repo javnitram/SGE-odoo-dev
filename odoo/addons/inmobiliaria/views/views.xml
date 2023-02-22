@@ -7,7 +7,6 @@
       <field name="model">il.inmobiliaria.inmueble</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="imagen"/>
           <field name="name"/>
           <field name="tipo"/>
           <field name="precio"/>
@@ -65,8 +64,8 @@
       <field name="arch" type="xml">
         <form>
         <group colspan="2" col="1">
-          <field name="imagen"/>
           <field name="name"/>
+          <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
           <field name="tipo"/>
           <field name="precio"/>
           <field name="m2"/>
