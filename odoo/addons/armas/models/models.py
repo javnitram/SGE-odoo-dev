@@ -33,7 +33,7 @@ class Armas(models.Model):
     disponibilidad = fields.Boolean('Disponibilidad:')
     imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
     camuflaje_id = fields.Many2one('ac.camuflajes.armas', string='Camuflaje')
-    accesorios_id = fields.Many2one('ac.accesorios.armas', string='Accesorios')
+    accesorios_ids = fields.Many2many('ac.accesorios.armas', string='Accesorios del arma')
     clientes_ids = fields.Many2many('ac.clientes.tienda', string='Cliente')
     
     
@@ -48,7 +48,7 @@ class accesoriosArmas(models.Model):
     precio = fields.Float('Precio:')
     referencia = fields.Char('Referencia:')
     disponibilidad = fields.Boolean('Disponibilidad:')
-    accesorios_ids = fields.One2many('ac.armas.categoria', 'accesorios_id', string='Accesorios')
+    arma_ids = fields.Many2many('ac.armas.categoria', string='Arma que lo tiene')
     imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
     
     

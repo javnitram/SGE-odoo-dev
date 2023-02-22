@@ -13,7 +13,7 @@
           <field name="categoria"/>
           <field name="disponibilidad"/>
           <field name="camuflaje_id"/>
-          <field name="accesorios_id"/>
+          <field name="accesorios_ids"/>
           <field name="clientes_ids"/>
         </tree>
       </field>
@@ -28,7 +28,7 @@
           <field name="precio"/>
           <field name="referencia"/>
           <field name="disponibilidad"/>
-          <field name="accesorios_ids" />
+          <field name="arma_ids" />
         </tree>
       </field>
     </record>
@@ -77,7 +77,7 @@
               <field name="categoria"/>
               <field name="disponibilidad"/>
               <field name="camuflaje_id"/>
-              <field name="accesorios_id"/>
+              <field name="accesorios_ids"/>
               <field name="clientes_ids"/>
             </group>
           </sheet>
@@ -97,7 +97,7 @@
               <field name="precio"/>
               <field name="referencia"/>
               <field name="disponibilidad"/>
-              <field name="accesorios_ids" />
+              <field name="arma_ids" />
             </group>
           </sheet>
         </form>
