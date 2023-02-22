@@ -33,12 +33,13 @@
       </field>
     </record>
 
-    <!--
+    
     <record id="taberna_informacion_kanban" model="ir.ui.view">
       <field name="name">Información taberna</field>
-      <field name="model">so.estanco.producto</field>
+      <field name="model">jm.taberna.informacion</field>
       <field name="arch" type="xml">
       <kanban>
+          <field name="imagen"/>
           <field name="name"/>
           <field name="direccion"/>
           <field name="empleado_ids" ref="demo_empleados"/>
@@ -46,13 +47,14 @@
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click">
                 <div class="o_kanban_image">
-                  <img t-att-src="kanban_image('so.estanco.producto','image',record.id.raw_value)"/>
+                  <!--<img t-att-src="kanban_image('jm.taberna.informacion','image',record.icon.value)"/> -->
+                  <!--<img t-att-src="kanban_image('jm.taberna.informacion','image',record.id.raw_value)"/> -->
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
                     <li>Nombre: <field name="name"/></li>
-                    <li>Categoria: <field name="category_id"/></li>
-                    <li>Precio: <field name="price"/></li>
+                    <li>Direccion: <field name="direccion"/></li>
+                    <li>Ids Empleados: <field name="empleado_ids"/></li>
                   </ul>
                 </div>
               </div>
@@ -61,7 +63,7 @@
        </kanban>
       </field>
     </record>
-  -->
+  
 
           <!-- tabla empleados -->
     <record model="ir.ui.view" id="taberna_empleados_list">
@@ -232,7 +234,7 @@
     <record model="ir.actions.act_window" id="taberna_action_window_informacion">
       <field name="name">Información de la taberna</field>
       <field name="res_model">jm.taberna.informacion</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_empleados">
       <field name="name">Información de los empleados</field>
