@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "gimnasio",
+    'name': "Gimnasio",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Modulo para gestionar el gimnasio
     """,
 
-    'author': "My Company",
+    'author': "Alberto Ruiz",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
