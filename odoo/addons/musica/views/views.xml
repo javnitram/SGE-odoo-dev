@@ -25,6 +25,9 @@
               <field name = "instrumento_id">
               <tree>
                 <field name = "marca"/>
+                <field name = "name"/>
+                <field name = "precio"/>
+
               </tree>
               </field>
            </group>               
@@ -130,8 +133,16 @@
         <!-- nombre del campo del modelo-->
         
           <field name="fecha"/>
-          <field name = "cliente_id"/>
+          <field name = "cliente_id">
+          <tree>
+            <field name = "name"/>
+              
+          </tree>
+          </field>
           <field name = "instrumentos_ids"/>
+           
+
+        
           <!--<field name="instrumentos_ids" /> -->
                     
           
@@ -160,7 +171,7 @@
       <field name="arch" type="xml">
         <form>
           <group colspan = "2" col = "2">
-            <field name = "nombreCliente"/>
+            <field name = "name"/>
             <field name = "dni"/>
             <field name = "fecha_nacimiento"/>
             <field name="phone"/>
@@ -175,7 +186,7 @@
       <field name="model">jr.tiendainstrumento.cliente</field>
       <field name="arch" type="xml">
         <tree>
-            <field name = "nombreCliente"/>
+            <field name = "name"/>
             <field name = "dni"/>
             <field name = "fecha_nacimiento"/>
             <field name="phone"/>

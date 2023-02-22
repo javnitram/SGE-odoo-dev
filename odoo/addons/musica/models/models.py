@@ -39,7 +39,7 @@ class TiendainstrumentosVenta(models.Model):
 class TiendainstrumentosCliente(models.Model):
     _name = 'jr.tiendainstrumento.cliente'
     _description = 'model.technical.name'
-    nombreCliente = fields.Char('Nombre', required=True)
+    name = fields.Char('Nombre', required=True)
     dni = fields.Char('dni', required=True)
     fecha_nacimiento = fields.Date('Fecha de nacimiento')
     phone = fields.Integer('Phone')
