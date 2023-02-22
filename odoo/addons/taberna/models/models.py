@@ -59,17 +59,16 @@ class TabernaPedidos(models.Model):
     _description = 'jm.taberna.pedidos'
     id_pedidos = fields.Integer('ID', required=True)
     cantidad = fields.Integer('Cantidad:')
-    #total_pedido = fields.Integer('Total pedido:')
-    total_pedido = fields.Integer(string='Total pedido', compute='calcular_total_pedido', store=True)
+    total_pedido = fields.Integer(string='Total pedido', compute='_calcular_total_pedido', store=True)
     id_empleado = fields.Many2one('jm.taberna.empleados', string='ID de empleado')
     id_cliente = fields.Many2one('jm.taberna.clientes', string='ID de cliente')
     id_bebida = fields.Many2many('jm.taberna.bebidas', string='ID de bebida')
 
-    @api.depends('precio','cantidad')
-
+    @api.depends('id_bebida.precio','cantidad')
     def _calcular_total_pedido(self):
-        for r in self:
-            r.total_pedido = r.cantidad * r.precio
+        for record in self:
+            for bebida in record.id_bebida:
+                record.total_pedido = record.cantidad * bebida.precio
 
 # classpaisuired
 # salario = fields.Float('salario')=Truern, re, requ, required=Trueired=Trueq
