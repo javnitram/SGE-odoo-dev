@@ -28,6 +28,7 @@
           <field name="precio"/>
           <field name="referencia"/>
           <field name="disponibilidad"/>
+          <field name="accesorios_ids" />
         </tree>
       </field>
     </record>
@@ -41,6 +42,7 @@
           <field name="precio"/>
           <field name="referencia"/>
           <field name="disponibilidad"/>
+          <field name="camuflajes_ids" />
         </tree>
       </field>
     </record>
@@ -95,6 +97,7 @@
               <field name="precio"/>
               <field name="referencia"/>
               <field name="disponibilidad"/>
+              <field name="accesorios_ids" />
             </group>
           </sheet>
         </form>
@@ -112,6 +115,7 @@
               <field name="precio"/>
               <field name="referencia"/>
               <field name="disponibilidad"/>
+              <field name="camuflajes_ids" />
             </group>
           </sheet>
         </form>
