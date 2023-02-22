@@ -6,7 +6,7 @@
         Modelo de inmobiliaria""",
 
     'description': """
-        Long description of module's purpose
+        Podras gestionar tus acciones de clientes, empleados y ventas
     """,
 
     'author': "Ismael-13",

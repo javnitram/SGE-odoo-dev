@@ -39,6 +39,7 @@
           <field name="apellido2"/>
           <field name="puesto"/>
           <field name="salario"/>
+          <field name="venta_ids"/>
         </tree>
       </field>
     </record>
@@ -87,6 +88,7 @@
           <field name="apellido2"/>
           <field name="puesto"/>
           <field name="salario"/>
+          <field name="venta_ids"/>
         </group>
         </form>
       </field>

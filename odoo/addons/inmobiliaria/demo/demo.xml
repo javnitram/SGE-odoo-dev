@@ -89,14 +89,14 @@
             <field name="fecha">2023-01-02</field>
           </record>
          
-          <record id="objeto_venta_1" model="il.inmobiliaria.venta">
+          <record id="objeto_venta_2" model="il.inmobiliaria.venta">
             <field name="cliente" eval="[(6,0,[ref('objeto_cliente_2')])]"/>
             <field name="inmueble_id" ref="objeto_inmueble_2"/>
             <field name="agente" ref="objeto_agente_2"/>
             <field name="fecha">2023-01-30</field>
           </record>
 
-          <record id="objeto_venta_1" model="il.inmobiliaria.venta">
+          <record id="objeto_venta_3" model="il.inmobiliaria.venta">
             <field name="cliente" eval="[(6,0,[ref('objeto_cliente_3')])]"/>
             <field name="inmueble_id" ref="objeto_inmueble_3"/>
             <field name="agente" ref="objeto_agente_3"/>

@@ -36,6 +36,7 @@ class InmobiliariaAgente(models.Model):
         ('0', 'Agente inmobiliario'),('1', 'Director')
     ], string='Puesto')
     salario = fields.Float('Salario')
+    venta_ids = fields.One2many('il.inmobiliaria.venta', 'agente', string='venta')
 
 class InmobiliariaVenta(models.Model):
     _name = 'il.inmobiliaria.venta'
