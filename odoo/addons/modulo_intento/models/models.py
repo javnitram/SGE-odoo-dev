@@ -30,6 +30,7 @@ class Disco_Discografica(models.Model):
     _description = 'disco.discografica'
     name = fields.Char('nombre')
     anhofundacion = fields.Char('año de fundacion')
+    discografia_id = fields.One2many('yf.discos.disco', 'discografica_id', string='Discografia')
 
 class Disco_Cancion(models.Model):
     _name = 'yf.disco.cancion'
