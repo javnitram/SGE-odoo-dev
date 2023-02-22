@@ -1,30 +1,89 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="cm_veterinaria.cm_veterinaria">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+          <record id="pet1" model="cm_veterinaria.mascotas">
+            <field name="name">Golfo</field>
+            <field name="fotoPet"></field>
+            <field name="petNum"
+                   type="base64"
+                   file="">1</field>
+            <field name="race">Mastin</field>
+            <field name="owner_id">César</field>
+            <field name="veterinarianName_id">Héctor Fernández</field>
+            <field name="healthInsurance">True</field>
+            <field name="registrationDate">08-02-2023</field>
+            <field name="vaccinesDone_id">Parvovirus</field>
           </record>
 
-          <record id="object1" model="cm_veterinaria.cm_veterinaria">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="pet2" model="cm_veterinaria.mascotas">
+            <field name="name">Garfield</field>
+            <field name="petNum">2</field>
+            <field name="race">Orange Tabby</field>
+            <field name="owner_id">Jon</field>
+            <field name="veterinarianName_id">Sergio Ojeda</field>
+            <field name="healthInsurance">True</field>
+            <field name="registrationDate">09-02-2023</field>
+            <field name="vaccinesDone_id">Feline Parvovirus</field>
           </record>
 
-          <record id="object2" model="cm_veterinaria.cm_veterinaria">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+          <record id="pet3" model="cm_veterinaria.mascotas">
+            <field name="name">Odie</field>
+            <field name="petNum">3</field>
+            <field name="race">Dog</field>
+            <field name="owner_id">Jon</field>
+            <field name="veterinarianName_id">Sergio Ojeda</field>
+            <field name="healthInsurance">True</field>
+            <field name="registrationDate">09-02-2023</field>
+            <field name="vaccinesDone_id">Parvovirus</field>
           </record>
 
-          <record id="object3" model="cm_veterinaria.cm_veterinaria">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="vaccine1" model="cm_veterinaria.vacunas">
+            <field name="name">Feline Parvovirus</field>
+            <field name="animalTree">Cat</field>
+            <field name="weekToVaccinate">7</field>
           </record>
 
-          <record id="object4" model="cm_veterinaria.cm_veterinaria">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+          <record id="vaccine2" model="cm_veterinaria.vacunas">
+            <field name="name">Parvovirus</field>
+            <field name="animalTree">Dog</field>
+            <field name="weekToVaccinate">6</field>
           </record>
--->
+
+          <record id="vet1" model="cm_veterinaria.veterinario">
+            <field name="name">Sergio Ojeda</field>
+            <field name="empnum">007</field>
+            <field name="room_id">002</field>
+            <field name="category">Veterinarian</field>
+          </record>
+
+          <record id="vet2" model="cm_veterinaria.veterinario">
+            <field name="name">Héctor Fernández</field>
+            <field name="empnum">008</field>            
+            <field name="room_id">001</field>
+            <field name="category">Veterinarian</field>
+          </record>
+
+          <record id="client1" model="cm_veterinaria.cliente">
+            <field name="clientNum">1</field>
+            <field name="name">César</field>
+            <field name="clientRegistrationDate">08-02-2023</field>
+            <field name="numberOfPets">1</field>
+          </record>
+
+          <record id="client2" model="cm_veterinaria.cliente">
+            <field name="clientNum">2</field>
+            <field name="name">Jon</field>
+            <field name="clientRegistrationDate">09-02-2023</field>
+            <field name="numberOfPets">2</field>
+          </record>
+
+          <record id="room1" model="cm_veterinaria.salas">
+            <field name="name">001</field>
+            <field name="employeeNum">008</field>            
+          </record>
+
+          <record id="room2" model="cm_veterinaria.salas">
+            <field name="name">002</field>
+            <field name="employeeNum">007</field>
+          </record>           
     </data>
 </odoo>
