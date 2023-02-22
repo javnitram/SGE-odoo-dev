@@ -54,7 +54,6 @@
       <field name="model">hf_floristeria_flower</field>
       <field name="arch" type="xml">
         <tree>
-          <field class="oe_avatar" name="flower_image" widget="image"/>
           <field name="name"/>
           <field name="scientific_name"/>
           <field name="specie_id"/>
