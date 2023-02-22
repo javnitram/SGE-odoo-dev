@@ -49,12 +49,11 @@ class pokemoduloEquipo1(models.Model):
          ('16', 'Veneno'),
          ('17', 'Volador')
      ],string = 'Tipo2')
-
-
+     
 
 class pokemoduloEquipo2(models.Model):
      _name = 'ar.pokemodulo.equipo2'
-     _description = 'pokemodulo_equipo'
+     _description = 'pokemodulo_equipo2'
      Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
      Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
      Mote = fields.Char('Mote del Pokemon')
@@ -98,6 +97,16 @@ class pokemoduloEquipo2(models.Model):
          ('16', 'Veneno'),
          ('17', 'Volador')
      ],string = 'Tipo2')
+
+
+
+class pokemoduloEntrenadores(models.Model):
+    _name = 'ar.pokemodulo.entrenadores'
+    _description = 'pokemodulo_entrenadores'
+    Nombre = fields.Char(string = 'Nombre del Entrenadore' ,required=True)
+
+
+
 
 #     name = fields.Char()
 #     value = fields.Integer()

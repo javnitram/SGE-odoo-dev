@@ -17,7 +17,7 @@
     </record>
 
 
-    <record model="ir.ui.view" id="pokemodulo.list">
+    <record model="ir.ui.view" id="pokemodulo.list2">
       <field name="name">Pokemodulo Equipo</field>
       <field name="model">ar.pokemodulo.equipo2</field>
       <field name="arch" type="xml">
@@ -27,6 +27,17 @@
           <field name="Mote"/>
           <field name="Tipo1"/>
           <field name="Tipo2" />
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="pokemodulo.entrenadores">
+      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="model">ar.pokemodulo.entrenadores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Nombre"/>
         </tree>
       </field>
     </record>
@@ -43,6 +54,13 @@
     <record model="ir.actions.act_window" id="pokemodulo.equipo2_action_window">
       <field name="name">Pokemodulo Equipo2</field>
       <field name="res_model">ar.pokemodulo.equipo2</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
+      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="res_model">ar.pokemodulo.entrenadores</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -72,8 +90,8 @@
     <!-- menu categories -->
 
     <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
-  <!--  <menuitem name="Lista Pokemon" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/> -->
-   <!-- <menuitem name="Equipo2" id="pokemodulo.menu_2" parent="pokemodulo.menu_root"/>-->
+    <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadores" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
+
 
     <!-- actions -->
 
@@ -81,7 +99,7 @@
               action="pokemodulo.equipo1_action_window"/>
 
     <menuitem name="Equipo2" id="pokemodulo.menu_2_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
+              action="pokemodulo.equipo2_action_window"/>
 
     <menuitem name="Equipo3" id="pokemodulo.menu_3_list" parent="pokemodulo.equipo"
               action="pokemodulo.equipo1_action_window"/>
@@ -94,7 +112,6 @@
 
     <menuitem name="Equipo6" id="pokemodulo.menu_6_list" parent="pokemodulo.equipo"
               action="pokemodulo.equipo1_action_window"/>
-
 
 
    <!-- <menuitem name="Server to list" id="pokemodulo" parent="pokemodulo.menu_2"
