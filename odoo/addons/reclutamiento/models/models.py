@@ -8,14 +8,16 @@ class ejercito(models.Model):
     _description = 'ac.reclutamiento.ejercito'
     nombre = fields.Char()
     unidades= fields.Integer()
+    campanas = fields.Many2many('ac.reclutamiento.campana', string='Campañas en las que participan')
     general = fields.Many2one('ac.reclutamiento.general', string='nombre')
+  
 
 class general(models.Model):
     _name = 'ac.reclutamiento.general'
     _description = 'ac.reclutamiento.general'
     imagen= fields.Image(string="imagen",store=True,relation="res.partner",help="Inserte la imagen aqui")
     nombre = fields.Char()
-    edad= fields.Char() 
+    edad= fields.Integer() 
     ejercitos_gestionados = fields.One2many('ac.reclutamiento.ejercito', 'nombre', string='ejercitos_gesionados')
   
   
@@ -37,7 +39,11 @@ class infanteria_proyectiles(models.Model):
     _description = 'ac.reclutamiento.infanteria.proyectiles'
     nombre = fields.Char()
     descripcion = fields.Text()
-    municion= fields.Integer()
+    municion= fields.Selection([
+        ('1','Piedras'),
+        ('2','Flechas'),
+        ('3','Jabalinas')
+    ], string='municion')
     ##poner valor por defecto
     alcance= fields.Integer()
     
@@ -45,17 +51,17 @@ class infanteria_proyectiles(models.Model):
 
 class undiades_motadas(models.Model):
     _name = 'ac.reclutamiento.unidades.montadas'
-    _description = 'ac.reclutamiento.montadas'
+    _description = 'ac.reclutamiento.unidades.montadas'
     nombre = fields.Char()
     descripcion = fields.Text()
     monturas = fields.Selection([
         ('1', 'Caballo'),
         ('2','Camello'),
         ('3','Elefante')
-    ], string='montura')
-    ##atributo calculado
-    ##velocidad= flieds.integer()
-    ##
+    ], string='monturas')
+    velocidad= fields.Integer()
+
+    
 class artilleria(models.Model):
     _name = 'ac.reclutamiento.artilleria'
     _description = 'ac.reclutamiento.artilleria' 
@@ -75,6 +81,8 @@ class campana(models.Model):
     nombre = fields.Char()
     pais_id = fields.Many2one('res.country', string='Pais')
     fecha_inicio= fields.Date()
+    ejercitos = fields.Many2many('ac.reclutamiento.ejercito', string='Ejercitos que participan')
+    
     ##poner valor por defecto
     
 

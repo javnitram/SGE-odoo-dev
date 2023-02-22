@@ -9,6 +9,7 @@
         <tree>
           <field name="nombre"/>
           <field name="unidades"/>
+          <field name="campanas"  />
         </tree>
       </field>
     </record>
@@ -46,18 +47,19 @@
     </record>
 
 
-
-
-
     <record model="ir.ui.view" id="reclutamiento.general_list">
       <field name="name">reclutamiento general</field>
       <field name="model">ac.reclutamiento.general</field>
       <field name="arch" type="xml">
-        <form>
-          <field name="imagen" widget="image" class="oe_avatar_oe_left" options="{'size':[100,100]}"/>
+      
+        <form >
+         
+          <field name="imagen" widget="image" class="oe_avatar_oe_left" options="{'size':[50,50]}"/>
           <field name="nombre"/>
+     
           <field name="edad"/>
           <field name="ejercitos_gestionados"/>
+       
         </form>
       </field>
     </record>
@@ -99,6 +101,34 @@
 
 
 
+<record model="ir.ui.view" id="reclutamiento.unidades_montadas_list">
+  <field name="name">reclutamiento tropas montadas</field>
+  <field name="model">ac.reclutamiento.unidades.montadas</field>
+  <field name="arch" type="xml">
+    <tree>
+      <field name="nombre"/>
+      <field name="descripcion"/>
+      <field name="monturas"/>
+      <field name="velocidad"/>
+    </tree>
+  </field>
+</record>
+
+
+
+
+<record model="ir.actions.act_window" id="reclutamiento.unidades_montadas_window">
+<field name="name">Infanteria montada </field>
+<field name="res_model">ac.reclutamiento.unidades.montadas</field>
+<field name="view_mode">tree,form</field>
+</record>
+
+
+
+
+
+
+
 <record model="ir.ui.view" id="reclutamiento.campana_list">
   <field name="name">Hora de la guerrra!, Inserte sus datos</field>
   <field name="model">ac.reclutamiento.campana</field>
@@ -107,6 +137,7 @@
       <field name="nombre"/>
       <field name="pais_id"/>
       <field name="fecha_inicio"/>
+      <field name="ejercitos"/>
     </tree>
   </field>
 </record>
@@ -119,6 +150,31 @@
 <field name="res_model">ac.reclutamiento.campana</field>
 <field name="view_mode">tree,form</field>
 </record>
+
+
+
+<record model="ir.ui.view" id="reclutamiento.artilleria_list">
+  <field name="name">reclutamiento artilleria</field>
+  <field name="model">ac.reclutamiento.artilleria</field>
+  <field name="arch" type="xml">
+    <tree>
+      <field name="nombre"/>
+      <field name="descripcion"/>
+      <field name="municion"/>
+      <field name="alcance"/>
+    </tree>
+  </field>
+</record>
+
+
+
+
+<record model="ir.actions.act_window" id="reclutamiento.artilleria_window">
+<field name="name">Artilleria </field>
+<field name="res_model">ac.reclutamiento.artilleria</field>
+<field name="view_mode">tree,form</field>
+</record>
+
 
 
 
@@ -150,6 +206,7 @@
     <!-- menu categories -->
 
     <menuitem name="Ejercito" id="reclutamiento.menu_general" parent="reclutamiento.menu_root"/>
+    <menuitem name="Tropas" id="reclutamiento.tropas" parent="reclutamiento.menu_root"/>
     
 
     <!-- actions -->
@@ -160,16 +217,23 @@
     <menuitem name="General" id="reclutamiento.general_list" parent="reclutamiento.menu_general"
               action="reclutamiento.general_action_window"/> 
 
-    <menuitem name="infanteria_cac" id="reclutamiento.infanteria_cac_list" parent="reclutamiento.menu_general"
+    <menuitem name="Infanteria Cuerpo a cuerpo" id="reclutamiento.infanteria_cac_list" parent="reclutamiento.tropas"
               action="reclutamiento.infanteria_action_window"/>   
               
-    <menuitem name="infaneria_proyectiles" id="reclutamiento.infanteria_proyectiles_list" parent="reclutamiento.menu_general"
+    <menuitem name="Infanteria de proyectiles" id="reclutamiento.infanteria_proyectiles_list" parent="reclutamiento.tropas"
               action="reclutamiento.infanteria_proyectiles_window"/> 
               
     <menuitem name="Campaña" id="reclutamiento.campana_list" parent="reclutamiento.menu_general"
-              action="reclutamiento.campana_window"/>    
+              action="reclutamiento.campana_window"/>  
 
-    
+    <menuitem name="Unidades Montadas" id="reclutamiento.unidades_montadas_list" parent="reclutamiento.tropas"
+              action="reclutamiento.unidades_montadas_window"/>    
+
+
+    <menuitem name="Artilleria" id="reclutamiento.artilleria_list" parent="reclutamiento.tropas"
+              action="reclutamiento.artilleria_window"/>    
+
+
     <!-- 
     <menuitem name="Server to list" id="reclutamiento.menu_2_list" parent="reclutamiento.menu_2"
               action="reclutamiento.action_window"/>
