@@ -2,7 +2,6 @@
 
 from odoo import models, fields, api
 
-
 class TabernaInformacion(models.Model):
     _name = 'jm.taberna.informacion'
     _description = 'jm.taberna.informacion'

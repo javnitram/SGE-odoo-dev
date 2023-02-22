@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "taberna",
+    'name': "Taberna",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Gestor de taberna medieval""",
 
     'description': """
-        Long description of module's purpose
+        Gestor de taberna medieval
     """,
 
     'author': "Javier MH",

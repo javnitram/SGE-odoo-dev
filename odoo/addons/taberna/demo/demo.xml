@@ -807,7 +807,6 @@
               gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
               gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA
               gICAgICAgICAgICAgICAgICAgICAg//Z</field>
-            <!--<field name="empleado_ids" ref="demo_empleados"/>-->
           </record>
 
           <record id="demo_empleados" model="jm.taberna.empleados">
@@ -819,6 +818,7 @@
             <field name="telefono">111</field>
             <field name="categoria">1</field>
             <field name="nombre_taberna" ref="demo_informacion"/>
+            <field name="imagen"></field>
           </record>
 
           <record id="demo_bebidas" model="jm.taberna.bebidas">

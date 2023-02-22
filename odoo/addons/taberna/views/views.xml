@@ -33,12 +33,12 @@
       </field>
     </record>
 
-    
     <record id="taberna_informacion_kanban" model="ir.ui.view">
       <field name="name">Información taberna</field>
       <field name="model">jm.taberna.informacion</field>
       <field name="arch" type="xml">
       <kanban>
+          <field name="id"/>
           <field name="imagen"/>
           <field name="name"/>
           <field name="direccion"/>
@@ -47,8 +47,7 @@
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click">
                 <div class="o_kanban_image">
-                  <!--<img t-att-src="kanban_image('jm.taberna.informacion','image',record.icon.value)"/> -->
-                  <!--<img t-att-src="kanban_image('jm.taberna.informacion','image',record.id.raw_value)"/> -->
+                  <img t-att-src="kanban_image('jm.taberna.informacion','imagen', record.id.raw_value)"/> 
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
@@ -63,7 +62,6 @@
        </kanban>
       </field>
     </record>
-  
 
           <!-- tabla empleados -->
     <record model="ir.ui.view" id="taberna_empleados_list">
@@ -112,6 +110,48 @@
       </field>
     </record>
 
+    <record id="taberna_empleados_kanban" model="ir.ui.view">
+      <field name="name">Empleados taberna</field>
+      <field name="model">jm.taberna.empleados</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="imagen"/>
+          <field name="id_empleado"/>
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+          <field name="salario"/>
+          <field name="telefono"/>
+          <field name="categoria"/>
+          <field name="nombre_taberna" ref="demo_informacion"/>
+          <field name="pedidos_ids" ref="demo_pedidos"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('jm.taberna.empleados','imagen', record.id.raw_value)"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>ID Empleado: <field name="id_empleado"/></li>
+                    <li>Nombre: <field name="name"/></li>
+                    <li>Apellido 1: <field name="apellido1"/></li>
+                    <li>Apellido 2: <field name="apellido2"/></li>
+                    <li>Salario: <field name="salario"/></li>
+                    <li>Teléfono: <field name="telefono"/></li>
+                    <li>Categoría: <field name="categoria"/></li>
+                    <li>Nombre Taberna: <field name="nombre_taberna"/></li>
+                    <li>Ids Pedidos: <field name="pedidos_ids"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
+      </field>
+    </record>
+
           <!-- tabla pedidos -->
     <record model="ir.ui.view" id="taberna_pedidos_list">
       <field name="name">taberna list</field>
@@ -144,6 +184,41 @@
             </group>
           </sheet>
         </form>
+      </field>
+    </record>
+
+    <record id="taberna_pedidos_kanban" model="ir.ui.view">
+      <field name="name">Pedidos taberna</field>
+      <field name="model">jm.taberna.pedidos</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="id_pedidos"/>
+          <field name="cantidad"/>
+          <field name="total_pedido"/>
+          <field name="id_empleado" ref="demo_empleados"/>
+          <field name="id_cliente" ref="demo_clientes"/>
+          <field name="id_bebida" ref="demo_bebidas"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('jm.taberna.pedidos')"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>ID Pedido: <field name="id_pedidos"/></li>
+                    <li>Cantidad: <field name="cantidad"/></li>
+                    <li>Total Pedido: <field name="total_pedido"/></li>
+                    <li>ID Empleado: <field name="id_empleado"/></li>
+                    <li>ID Cliente: <field name="id_cliente"/></li>
+                    <li>ID Bebida: <field name="id_bebida"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
       </field>
     </record>
 
@@ -183,6 +258,40 @@
             </group>
           </sheet>
         </form>
+      </field>
+    </record>
+
+    <record id="taberna_clientes_kanban" model="ir.ui.view">
+      <field name="name">Clientes taberna</field>
+      <field name="model">jm.taberna.clientes</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="imagen"/>
+          <field name="id_cliente"/>
+          <field name="name"/>
+          <field name="apellido1"/>
+          <field name="apellido2"/>
+          <field name="pedidos_ids" ref="demo_pedidos"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('jm.taberna.clientes','imagen', record.id.raw_value)"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>ID Cliente: <field name="id_cliente"/></li>
+                    <li>Nombre: <field name="name"/></li>
+                    <li>Apellido 1: <field name="apellido1"/></li>
+                    <li>Apellido 2: <field name="apellido2"/></li>
+                    <li>Ids Pedidos: <field name="pedidos_ids"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
       </field>
     </record>
 
@@ -229,6 +338,44 @@
       </field>
     </record>
 
+    <record id="taberna_bebidas_kanban" model="ir.ui.view">
+      <field name="name">Bebidas taberna</field>
+      <field name="model">jm.taberna.bebidas</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="imagen"/>
+          <field name="id_bebida"/>
+          <field name="name"/>
+          <field name="alcohol"/>
+          <field name="tipo"/>
+          <field name="precio"/>
+          <field name="id_pedidos" ref="demo_pedidos"/>
+          <field name="pais_id" ref="demo_pedidos"/> 
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('jm.taberna.bebidas','imagen', record.id.raw_value)"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>ID Bebida: <field name="id_bebida"/></li>
+                    <li>Nombre: <field name="name"/></li>
+                    <li>Alcohol: <field name="alcohol"/></li>
+                    <li>Tipo: <field name="tipo"/></li>
+                    <li>Precio: <field name="precio"/></li>
+                    <li>Ids Pedidos: <field name="id_pedidos"/></li>
+                    <li>Pais: <field name="pais_id"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="taberna_action_window_informacion">
@@ -239,22 +386,22 @@
     <record model="ir.actions.act_window" id="taberna_action_window_empleados">
       <field name="name">Información de los empleados</field>
       <field name="res_model">jm.taberna.empleados</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_pedidos">
       <field name="name">Información de los pedidos</field>
       <field name="res_model">jm.taberna.pedidos</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_clientes">
       <field name="name">Información de los clientes</field>
       <field name="res_model">jm.taberna.clientes</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
     <record model="ir.actions.act_window" id="taberna_action_window_bebidas">
       <field name="name">Información de las bebidas</field>
       <field name="res_model">jm.taberna.bebidas</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
     <!-- Top menu item -->
