@@ -90,6 +90,7 @@
         <form>
           <sheet>
             <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
               <field name="name"/>
               <field name="precio"/>
               <field name="referencia"/>
@@ -124,6 +125,7 @@
         <form>
           <sheet>
             <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
               <field name="name"/>
               <field name="telefono"/>
               <field name="fecha_nacimiento"/>

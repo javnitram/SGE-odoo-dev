@@ -49,6 +49,7 @@ class accesoriosArmas(models.Model):
     referencia = fields.Char('Referencia:')
     disponibilidad = fields.Boolean('Disponibilidad:')
     accesorios_ids = fields.One2many('ac.armas.categoria', 'accesorios_id', string='Accesorios')
+    imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
     
     
 
@@ -74,6 +75,7 @@ class clientes(models.Model):
     fecha_nacimiento = fields.Date('Fecha de nacimiento:')
     direccion = fields.Char('Dirección:')
     arma_ids = fields.Many2many('ac.armas.categoria', string='Arma')
+    imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
         
         
         
