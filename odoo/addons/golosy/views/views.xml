@@ -168,8 +168,8 @@
           <field name="categoria_id" string="Categoria"/>
           <field name="precio" string="Precio golosina"/>
           <filter name="Barato (-1€)" domain="[('precio', '&lt;=', '1')]"/>
-          <filter name="Colocado" domain="[('active', '==', 'True')]"/>
-          <filter name="En almacen" domain="[('active', '==', 'False')]"/>
+          <filter name="Colocado" domain="[('active', '=', True)]"/>
+          <filter name="En almacen" domain="[('active', '=', False)]"/>
         </search>
       </field>
     </record>
@@ -180,8 +180,8 @@
       <field name="arch" type="xml">
         <search>
           <field name="name" string="Nombre categoria"/>
-          <filter name="Dulces" domain="[('tipo', '=', 'Dulce')]"/>
-          <filter name="Salados" domain="[('tipo', '=', 'Salados')]"/>
+          <filter name="Dulce" domain="[('tipo', '=', 0)]"/>
+          <filter name="Salado" domain="[('tipo', '=', 1)]"/>
         </search>
       </field>
     </record>
@@ -192,6 +192,8 @@
       <field name="arch" type="xml">
         <search>
           <field name="name" string="Matricula del camion"/>
+          <filter name="Pedido pequeño" domain="[('productos', '&lt;=', '8')]"/>
+          <filter name="Pedido grande" domain="[('productos', '&gt;=', '8')]"/>
         </search>
       </field>
     </record>
@@ -203,6 +205,9 @@
         <search>
           <field name="name" string="Nombre empleado"/>
           <field name="dni" string="DNI empleado"/>
+          <filter name="Recluta" domain="[('mesestrabajados', '&lt;=', '12')]"/>
+          <filter name="Veterano" domain="[('mesestrabajados', '&gt;', '12')]"/>
+          
         </search>
       </field>
     </record>

@@ -48,14 +48,23 @@ class Empleados(models.Model):
      antiguedad = fields.Date('Fecha de incorporacion', required=True, help='Fecha de primer dia de trabajo')
      camiones_ids = fields.One2many('wb.golosy.camion', 'empleado_id', string=' camion')
      imagen = fields.Image(string='Imagen', help='Imagen del empleado')
-     mesestrabajados = fields.Char('Meses de trabajo en la empresa', compute="_mesestrabajados")
-     
+     mesestrabajados = fields.Integer('Meses de trabajo en la empresa', compute="_mesestrabajados", store=True)
+
      def _mesestrabajados(self):
           fecha_hoy = datetime.date.today()
           for empl in self:
                if empl.antiguedad:
                     antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
-                    total_meses = str(int((fecha_hoy - antiguedad).days/30))
+                    total_meses = (int((fecha_hoy - antiguedad).days/30))
                     empl.mesestrabajados = total_meses
-               else:
-                    empl.mesestrabajados = "no hay registro"
+     #mesestrabajados = fields.Char('Meses de trabajo en la empresa', compute="_mesestrabajados")
+     
+     #def _mesestrabajados(self):
+     #     fecha_hoy = datetime.date.today()
+     #     for empl in self:
+     #          if empl.antiguedad:
+     #               antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
+     #               total_meses = str(int((fecha_hoy - antiguedad).days/30))
+     #               empl.mesestrabajados = total_meses
+     #          else:
+     #               empl.mesestrabajados = "no hay registro"
