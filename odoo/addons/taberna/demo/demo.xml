@@ -757,11 +757,72 @@
 
           <record id="demo_bebidas3" model="jm.taberna.bebidas">
             <field name="id_bebida">3</field>
-            <field name="name">London Porter</field>
+            <field name="name">Krombacher</field>
             <field name="alcohol">True</field>
             <field name="tipo">3</field>
             <field name="precio">5</field>
-            <field name="pais_id" ref="base.gb"/>      
+            <field name="pais_id" ref="base.de"/>
+            <field name="imagen">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
+              /9k=</field>
           </record>
 
           <record id="demo_clientes" model="jm.taberna.clientes">

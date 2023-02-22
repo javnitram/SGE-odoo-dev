@@ -56,11 +56,12 @@ class TabernaClientes(models.Model):
 class TabernaPedidos(models.Model):
     _name = 'jm.taberna.pedidos'
     _description = 'jm.taberna.pedidos'
-    id_pedidos = fields.Integer('ID', required=True)
+    id_pedidos = fields.Integer('ID pedido', required=True)
+    name = fields.Char('Nombre')
     cantidad = fields.Integer('Cantidad:')
     total_pedido = fields.Integer(string='Total pedido', compute='_calcular_total_pedido', store=True)
-    id_empleado = fields.Many2one('jm.taberna.empleados', string='ID de empleado')
-    id_cliente = fields.Many2one('jm.taberna.clientes', string='ID de cliente')
+    id_empleado = fields.Many2one('jm.taberna.empleados', string='Nombre de empleado')
+    id_cliente = fields.Many2one('jm.taberna.clientes', string='Nombre de cliente')
     id_bebida = fields.Many2many('jm.taberna.bebidas', string='ID de bebida')
 
     @api.depends('id_bebida.precio','cantidad')

@@ -11,7 +11,6 @@
           <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [50, 150]}"/>
           <field name="name"/>
           <field name="direccion"/>
-          <field name="empleado_ids" ref="demo_empleados"/>
         </tree>
       </field>
     </record>
@@ -26,7 +25,6 @@
               <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size': [100, 200]}"/>
               <field name="name"/>
               <field name="direccion"/>
-              <field name="empleado_ids" ref="demo_empleados"/>
             </group>
           </sheet>
         </form>
@@ -42,7 +40,6 @@
           <field name="imagen"/>
           <field name="name"/>
           <field name="direccion"/>
-          <field name="empleado_ids" ref="demo_empleados"/>
           <templates>
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click">
@@ -53,7 +50,6 @@
                   <ul>
                     <li>Nombre: <field name="name"/></li>
                     <li>Direccion: <field name="direccion"/></li>
-                    <li>Ids Empleados: <field name="empleado_ids"/></li>
                   </ul>
                 </div>
               </div>
@@ -78,7 +74,6 @@
           <field name="telefono"/>
           <field name="categoria"/>
           <field name="nombre_taberna"/>
-          <field name="pedidos_ids"/>
         </tree>
       </field>
     </record>
@@ -102,9 +97,6 @@
               <field name="categoria"/>
               <field name="nombre_taberna"/>
             </group>
-            <group colspan="2" col="1">
-              <field name="pedidos_ids"/>
-            </group>
           </sheet>
         </form>
       </field>
@@ -125,7 +117,6 @@
           <field name="telefono"/>
           <field name="categoria"/>
           <field name="nombre_taberna" ref="demo_informacion"/>
-          <field name="pedidos_ids" ref="demo_pedidos"/>
           <templates>
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click">
@@ -142,7 +133,6 @@
                     <li>Teléfono: <field name="telefono"/></li>
                     <li>Categoría: <field name="categoria"/></li>
                     <li>Nombre Taberna: <field name="nombre_taberna"/></li>
-                    <li>Ids Pedidos: <field name="pedidos_ids"/></li>
                   </ul>
                 </div>
               </div>
@@ -163,7 +153,6 @@
           <field name="total_pedido"/>
           <field name="id_empleado"/>
           <field name="id_cliente"/>
-          <field name="id_bebida"/>
         </tree>
       </field>
     </record>
@@ -285,7 +274,6 @@
                     <li>Nombre: <field name="name"/></li>
                     <li>Apellido 1: <field name="apellido1"/></li>
                     <li>Apellido 2: <field name="apellido2"/></li>
-                    <li>Ids Pedidos: <field name="pedidos_ids"/></li>
                   </ul>
                 </div>
               </div>
@@ -307,7 +295,6 @@
           <field name="alcohol"/>
           <field name="tipo"/>
           <field name="precio"/>
-          <field name="id_pedidos"/>
           <field name="pais_id"/>
         </tree>
       </field>
@@ -330,9 +317,6 @@
                 <field name="precio"/>
                 <field name="pais_id"/>
               </group>
-              <group colspan="2" col="1">
-                <field name="id_pedidos"/>
-            </group>
           </sheet>
         </form>
       </field>
@@ -350,7 +334,6 @@
           <field name="alcohol"/>
           <field name="tipo"/>
           <field name="precio"/>
-          <field name="id_pedidos" ref="demo_pedidos"/>
           <field name="pais_id" ref="demo_pedidos"/> 
           <templates>
             <t t-name="kanban-box">
@@ -365,7 +348,6 @@
                     <li>Alcohol: <field name="alcohol"/></li>
                     <li>Tipo: <field name="tipo"/></li>
                     <li>Precio: <field name="precio"/></li>
-                    <li>Ids Pedidos: <field name="id_pedidos"/></li>
                     <li>Pais: <field name="pais_id"/></li>
                   </ul>
                 </div>
