@@ -23,7 +23,7 @@ class TabernaBebidas(models.Model):
         ('3', 'Negra')
     ], string='Tipo')
     precio = fields.Integer('Precio', required=True)
-    id_pedidos = fields.Many2many('jm.taberna.pedidos', string='id_pedidos')
+    id_pedidos = fields.Many2many('jm.taberna.pedidos', string='ID Pedidos')
     pais_id = fields.Many2one('res.country', string='País')
 
 class TabernaEmpleados(models.Model):
