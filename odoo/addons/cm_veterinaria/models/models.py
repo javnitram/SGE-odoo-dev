@@ -6,31 +6,70 @@ from odoo import models, fields, api
 class VeterinariaMascotas(models.Model):
     _name = 'cm.veterinaria.mascotas'
     _description = 'veterinaria.mascotas'
-    nombre = fields.Char('Nombre',required=True)
-    race = fields.Char('Raza',required=True)
-    owner = fields.Char('Owner')
+    name = fields.Char('Name',required=True)
+    fotoPet = fields.Image(string='Photo', max_width=265, max_height=300,store=True,relation="res.partner",help="Select picture here")    
+    petNum = fields.Char('Pet Number',required=True)    
+    race = fields.Selection([
+        ('0', 'Dog'),
+        ('1', 'Cat')
+    ], string='Race',required=True)
+    owner_id = fields.Many2one('cm.veterinaria.cliente', string='Owner')
+    veterinarianName_id = fields.Many2one('cm.veterinaria.veterinario', string='Veterinarian Name')
+    healthInsurance = fields.Boolean('Health Insurance',required=True)
+    registrationDate = fields.Date('Registration Date',required=True)
+    vaccinesDone_ids = fields.Many2many('cm.veterinaria.vacunas', string='Vaccines Done')
+        
 
-#class MascotasVacunas(models.Model):
-  #  _name = 'cm.mascotas.vacunas'
-  #  _description = 'mascotas.vacunas'
-  #  vacuna = fields.Char('Vacuna', required=True)
-  #  field_name = fields.Selection([
-   #     ('0', 'Si'),
-  #      ('1', 'Pendiente')
-   # ], string='Vacunado',required=True)
-   # #field_name_ids = fields.Many2many('comodel_name', string='field_name')
+class VeterinariaVacunas(models.Model):
+    _name = 'cm.veterinaria.vacunas'
+    _description = 'veterinaria.vacunas'
+    name = fields.Char('Vaccine',required=True,delegate=['vaccine_ids'])
+    animalTree = fields.Selection([
+        ('0', 'Dog'),
+        ('1', 'Cat')
+    ], string='Race',required=True)
+    weekToVaccinate = fields.Integer('Weeks',required=True)
+    vaccine_ids = fields.Many2many('cm.veterinaria.mascotas', string='Vaccines')
+   
+class VeterinariaVeterinario(models.Model):
+    _name = 'cm.veterinaria.veterinario'
+    _description = 'veterinaria.veterinario'
+    name = fields.Char('Name',required=True)
+    empnum = fields.Char('Employee Number',required=True)
+    room_id = fields.Many2one('cm.veterinaria.salas', string='Room')
+    category = fields.Selection([
+       ('0', 'Veterinary Assistant'),
+       ('1', 'Veterinarian'),
+       ('2', 'Veterinary Surgeon'),
+       ('3', 'Boss/Owner')
+    ], string='Category',required=True)
+    
 
-#class VeterinariaVeterinario(models.Model):
-  #  _name = 'cm.veterinaria.veterinario'
-  #  _description = 'veterinaria.veterinario'
-  #  nombre = fields.Char('Nombre',required=True)
-  #  numemp = fields.Char('Num Empleado',required=True)
+class VeterinariaCliente(models.Model):
+    _name = 'cm.veterinaria.cliente'
+    _description = 'veterinaria.cliente'
+    name = fields.Char('Nombre',required=True)
+    clientNum = fields.Char('Client Number',required=True)    
+    clientRegistrationDate = fields.Date('Client Registration Date',required=True)
+    mascotas_ids = fields.One2many('cm.veterinaria.mascotas', 'owner_id', string='Mascotas')
+    numberOfPets = fields.Integer('Number Of Pets', compute='conteoMascotas', store=True, readonly=True)
 
-#class VeterinariaCliente(models.Model):
- #   _name = 'cm.veterinaria.cliente'
-  #  _description = 'veterinaria.cliente'
-  #  name = fields.Char('Nombre',required=True)
-   # field_name_ids = fields.One2many('comodel_name', 'inverse_field_name', string='field_name')
+    @api.depends('mascotas_ids')
+    def conteoMascotas(self):
+        for r in self:
+            r.numberOfPets = len(r.mascotas_ids)
+
+class VeterinariaSalas(models.Model):
+    _name = 'cm.veterinaria.salas'
+    _description = 'veterinaria.salas'
+    name = fields.Char('Room',required=True)
+    veterinarian_ids = fields.One2many('cm.veterinaria.veterinario', 'room_id', string='Employee')
+
+    #vaccinated = fields.Selection([
+   #    ('0', 'Yes'),
+    #   ('1', 'Pending')
+   # ], string='Vaccinated',required=True)
+   # vaccineDate = fields.Date('Vaccine Date')
 
 # class cm_veterinaria(models.Model):
 #     _name = 'cm_veterinaria.cm_veterinaria'
