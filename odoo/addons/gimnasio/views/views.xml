@@ -39,6 +39,7 @@
           <field name="name"/>
           <field name="fecha_inscripcion"/>
           <field name="precio"/>
+          <field name="clientesInscripcion_ids"/>
         </tree>
       </field>
     </record>
@@ -51,6 +52,7 @@
           <field name="name"/>
           <field name="precio"/>
           <field name="disponibilidad"/>
+          <field name="clientesProductos_ids"/>
           <field name="descripcion"/>
         </tree>
       </field>
@@ -104,7 +106,7 @@
               <field name="name"/>
               <field name="fecha_inscripcion"/>
               <field name="precio"/>
-
+              <field name="clientesInscripcion_ids"/> 
             </group>
           </sheet>
         </form>
@@ -122,6 +124,7 @@
               <field name="precio"/>
               <field name="disponibilidad"/>
               <field name="descripcion"/>
+              <field name="clientesProductos_ids"/>
               <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
             </group>
           </sheet>
