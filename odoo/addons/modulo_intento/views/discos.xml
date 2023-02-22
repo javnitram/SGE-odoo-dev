@@ -21,8 +21,6 @@
           <form>
               <sheet>
                 <group colspan="2" col="2">
-
-                   <!--  <field name="image" widget="modulo_intento/images/Switchfoot.jpg"/> -->
                     <field name='image' widget="image" class="yf.disco.disco" />
                     <field name="name"/>
                     <field name="precio"/>
