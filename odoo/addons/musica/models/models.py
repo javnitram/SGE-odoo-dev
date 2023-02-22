@@ -6,13 +6,13 @@ class TiendainstrumentosCategoria(models.Model):
     _name = 'jr.tiendainstrumento.categoria'
     _description = 'model.technical.name'
     name = fields.Char('Nombre', required=True)
-    instrumento_id = fields.One2many('jr.tiendainstrumento.instrumento', 'categoria_id', string='Instrumentos por categoria')
+    instrumento_id = fields.One2many('jr.tiendainstrumento.instrumento', 'categoria_id',  string='Instrumentos por categoria')
 
 
 class TiendainstrumentosInstrumento(models.Model):
     _name = 'jr.tiendainstrumento.instrumento'
     _description = 'model.technical.name'
-    modelo = fields.Char('Modelo')
+    name = fields.Char('Modelo')
     precio = fields.Float('Precio',required=True)
     marca = fields.Char('Marca', required=True)
     stock = fields.Float('Stock')
@@ -23,7 +23,7 @@ class TiendainstrumentosInstrumento(models.Model):
     ], string='estado', default = "0")
 
     categoria_id = fields.Many2one('jr.tiendainstrumento.categoria', string='Categoria')
-    #ventas_ids = fields.Many2many('jr.tiendainstrumento.venta','instrumentos_ids', string='Ventas')
+    #ventas_ids = fields.Many2many('jr.tiendainstrumento.venta', string='Ventas')
 
 
 class TiendainstrumentosVenta(models.Model):
@@ -32,7 +32,7 @@ class TiendainstrumentosVenta(models.Model):
     fecha = fields.Date('fecha')
     #cliente_id = fields.Many2one('jr.tiendainstrumento.cliente', string='Cliente')
     #clientes_ids = fields.Many2many('jr.tiendainstrumento.cliente','ventas_ids', string='Clientes')
-    #instrumentos_ids = fields.Many2many('jr.tiendainstrumento.instrumento','ventas_ids',  string='Instrumentos')
+    instrumentos_ids = fields.Many2many('jr.tiendainstrumento.instrumento', string='Instrumentos')
     cliente_id = fields.Many2one('jr.tiendainstrumento.cliente', string='Cliente')
 
 
@@ -43,7 +43,7 @@ class TiendainstrumentosCliente(models.Model):
     dni = fields.Char('dni', required=True)
     fecha_nacimiento = fields.Date('Fecha de nacimiento')
     phone = fields.Integer('Phone')
-    ventas_ids = fields.One2many('jr.tiendainstrumento.venta', 'cliente_id', string='Ventas')
+    ventas_ids = fields.One2many('jr.tiendainstrumento.venta', 'cliente_id', string='Compras')
     #ventas_ids = fields.One2many('jr.tiendainstrumento.venta', 'cliente_id', string='Pedidos realizados')
     #ventas_ids = fields.Many2many('jr.tiendainstrumento.venta', 'clientes_ids',  string='Ventas')
    

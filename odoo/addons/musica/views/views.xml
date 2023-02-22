@@ -2,18 +2,36 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="musica.categoria">
-      <field name="name">Lista de categorias</field>
+    <record model="ir.ui.view" id="musica.categoria_tree">
+      <field name="name">musica.categoria.tree</field>
       <field name="model">jr.tiendainstrumento.categoria</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
           <field name = "instrumento_id"/>
+                           
           
         </tree>
       </field>
     </record>
 
+    <record model="ir.ui.view" id="musica.categoria_form">
+      <field name="name">musica.categoria.form</field>
+      <field name="model">jr.tiendainstrumento.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+           <group>
+              <field name="name"/>
+              <field name = "instrumento_id">
+              <tree>
+                <field name = "marca"/>
+              </tree>
+              </field>
+           </group>               
+          
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 
@@ -25,17 +43,32 @@
 
   <!-- ***************************************************** -->
   <!-- id = nombre del modulo. y algo identificativo-->
+
+  <record model="ir.ui.view" id="musica.instrumento">
+      <field name="name">Lista de instrumentos</field>
+      <field name="model">jr.tiendainstrumento.instrumento</field>
+      <field name="arch" type="xml">
+        <tree>
+            <field name = "name"/>
+            <field name = "marca"/>
+            
+          
+       </tree>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="musica.instrumento">
       <field name="name">Lista de instrumentos</field>
       <field name="model">jr.tiendainstrumento.instrumento</field>
       <field name="type">kanban</field>
       <field name="arch" type="xml">
+     
         <kanban>
 
         <!-- nombre del campo del modelo-->
           
         <field name="marca"/>
-        <field name="modelo"/>
+        <field name="name"/>
         <field name="precio"/>
         <field name='id'/>
         <field name="stock"/>
@@ -57,7 +90,7 @@
                       <h4><field name="marca"/></h4>
                      
                       <ul>
-                        <li>Modelo: <field name="modelo"/></li>
+                        <li>Modelo: <field name="name"/></li>
                         <li>Precio: <field name="precio"/> €</li>
                         <li>Stock: <field name="stock"/> u</li>
                         <li><field name = "estado"/></li>
@@ -71,8 +104,12 @@
           </templates>
           
         </kanban>
+        
       </field>
     </record>
+
+
+    
 
 
     <!-- actions opening views on models -->
@@ -94,6 +131,7 @@
         
           <field name="fecha"/>
           <field name = "cliente_id"/>
+          <field name = "instrumentos_ids"/>
           <!--<field name="instrumentos_ids" /> -->
                     
           
