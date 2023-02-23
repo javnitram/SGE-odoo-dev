@@ -1,31 +1,33 @@
 <odoo>
     <data>
-<!--  
-          <record id="tienda1" model="game_shop.tienda">
+          <!-- Distribuidor Naughty Dog -->
+          <record id="distribuidor_naughtyDog" model="sb_game_shop.distribuidor">
+            <field name="name">Naughty Dog</field>
+            <field name="pais_id" ref="base.es"/>
+            <!-- <field name="provincia_id" ref="base.es.M"/> -->
+          </record>
+          <!-- Almacen GameStop-->
+          <record id="almacen_gameStop" model="sb_game_shop.almacen">
+            <field name="name">Almacen GameStop Gran Via</field>
+            <!-- <field name="provincia_id" ref="base.es.M"/> -->
+            <field name="calle">Ejercito del aire N3</field>
+          </record>
+          <!-- Tienda GameStop -->
+          <record id="tienda_gameStop" model="sb_game_shop.tienda">
             <field name="name">GameStop</field>
-            <field name="ubicacion">Madrid</field>
-            <field name="horario">12:00</field>
+            <field name="calle">C/Gran Via</field>
+            <field name="horario">11:00</field>
+            <field name="almacen_id" ref="almacen_gameStop"/>
           </record>
-
-          <record id="object1" model="game_shop.game_shop">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <!-- Juego 1 de Naughty Dog -->
+          <record id="juego1" model="sb_game_shop.videojuego">
+            <field name="name">The Last of us</field>
+            <field name="pegi">18</field>
+            <field name="precio">69.99</field>
+            <field name="digital">True</field>
+            <field name="estado">0</field>
+            <field name="distribuidor_id" ref="distribuidor_naughtyDog"/>
+            <field name="tiendas_ids" eval="[(6,0,[ ref('tienda_gameStop')])]"/>
           </record>
-
-          <record id="object2" model="game_shop.game_shop">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
-          </record>
-
-          <record id="object3" model="game_shop.game_shop">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
-          </record>
-
-          <record id="object4" model="game_shop.game_shop">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
-          </record>
--->
     </data>
 </odoo>

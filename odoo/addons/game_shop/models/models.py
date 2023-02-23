@@ -7,7 +7,7 @@ class game_shop_tienda(models.Model):
     _name = 'sb_game_shop.tienda'
     _description = 'Tienda de videojuegos'
     name= fields.Char(string="Nombre",required=True,help="Introduce el nombre de la tienda")
-    ubicacion = fields.Char(string="Ubicación",required=True,help="Introduce la ubicación de la tienda")
+    calle = fields.Char(string="Calle",required=True,help="Introduce la calle de la tienda")
     horario = fields.Char(string ="Horario",help="Introduce el horario de la tienda",default="10:00")
     almacen_id = fields.Many2one('sb_game_shop.almacen', string="Almacen de la tienda")
     videojuegos_ids = fields.Many2many('sb_game_shop.videojuego', string="Videojuegos disponibles")
