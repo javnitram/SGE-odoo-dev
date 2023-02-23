@@ -4,21 +4,14 @@
           <record id="club_1" model="ab_clubpadel.club">
             <field name="nombre">AlphaPadel</field>
             <field name="pais_id" ref="base.es"/>
-            <field name="provincia_id" ref="base.es.M"/>
-            <field name="marcas_ids" eval="[
-              Command.create({
-                'name': 'name'
-              }),
-              Command.link(ref('marca_1')),
-            ]"/>
+            <field name="provincia_id" ref="base.m"/>
           </record>
 
           <record id="fabricante_2" model="ab_clubpadel.fabricante">
             <field name="name">Exploit2</field>
             <field name="fecha_salida">2019-04-15</field>
             <field name="pais_id" ref="base.es"/>
-            <field name="provincia_id" ref="base.es.M"/>
-            <field name="marcas_ids" ref="marca_1"/>
+            <!-- <field name="provincia_id" ref="base.es.M"/> -->
           </record>
 
           <record id="marca_1" model="ab_clubpadel.marca">
@@ -26,9 +19,8 @@
             <!-- <field name="imagen" type="base64"></field> -->
             <field name="fecha">2020-02-02</field>
             <field name="gama">AltissimaPerro</field>
-            <field name="models_ids" ref="Bullpadel"/>
-            <field name="fabricante_id" ref="Exploit"/>
-            <field name="clubes_ids" ref="Bullpadel"/>
+            <field name="fabricante_id" ref="fabricante_2"/>
+            <field name="clubes_ids" eval="[(6,0,[ ref('club_1')])]"/>
           </record>
 
           <record id="modelo_1" model="ab_clubpadel.modelo">
