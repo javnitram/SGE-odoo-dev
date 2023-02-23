@@ -18,6 +18,8 @@
       </field>
     </record>
 
+    <!-- Manager form view -->
+
     <record id="hf_floristeria_manager_view_form" model="ir.ui.view">
       <field name="name">hf_floristeria_manager.view.form</field>
       <field name="model">hf_floristeria_manager</field>
@@ -64,6 +66,8 @@
       </field>
     </record>
 
+    <!-- Flower form view -->
+
     <record id="hf_floristeria_flower_view_form" model="ir.ui.view">
       <field name="name">flower.view.form</field>
       <field name="model">hf_floristeria_flower</field>
@@ -105,7 +109,7 @@
       <field name="model">hf_floristeria_flower</field>
       <field name="type">kanban</field>
       <field name="arch" type="xml">
-        <kanban>
+        <kanban default_group_by="specie_id">
           <field name="id"/>
           <field name="name"/>
           <field name="scientific_name"/>
@@ -131,6 +135,8 @@
       </field>
     </record>
 
+    <!-- Flower search view -->
+
     <record id="hf_floristeria_flower_view_search" model="ir.ui.view">
       <field name="name">hf_floristeria_flower.view.search</field>
       <field name="model">hf_floristeria_flower</field>
@@ -140,6 +146,13 @@
           <field name="scientific_name" string="Nombre científico"/>
           <field name="specie_id" string="Especie"/>
           <field name="main_color" string="Color predominante"/>
+          <group expand="0" string="Group By">
+            <filter string="Ramo de flores" name="bouquet_ids" context="{'group_by': 'bouquet_ids'}"/>
+            <filter string="Especie" name="specie_id" context="{'group_by': 'specie_id'}"/>
+            <filter string="Color predominante" name="main_color" context="{'group_by': 'main_color'}"/>
+            <filter string="Subgrupo de las gimnospermas" name="subgroup_gim" context="{'group_by': 'subgroup_gim'}"/>
+            <filter string="Subgrupo de las angiospermas" name="subgroup_ang" context="{'group_by': 'subgroup_ang'}"/>
+          </group>
         </search>
       </field>
     </record>
@@ -204,6 +217,8 @@
       </field>
     </record>
 
+    <!-- Bouquet form view -->
+
     <record id="hf_floristeria_bouquet_view_form" model="ir.ui.view">
       <field name="name">bouquet.view.form</field>
       <field name="model">hf_floristeria_bouquet</field>
@@ -235,7 +250,7 @@
       <field name="model">hf_floristeria_bouquet</field>
       <field name="type">kanban</field>
       <field name="arch" type="xml">
-        <kanban>
+        <kanban default_group_by="size">
           <field name="id"/>
           <field name="name"/>
           <field name="size"/>
@@ -272,6 +287,26 @@
       </field>
     </record>
 
+    <!-- Bouquet search view -->
+
+    <record id="hf_floristeria_flower_view_search" model="ir.ui.view">
+      <field name="name">hf_floristeria_bouquet.view.search</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="size" string="Tamaño"/>
+          <field name="flower_ids" string="Flores"/>
+          <field name="manager_id" string="Encargado"/>
+          <group expand="0" string="Group By">
+            <filter string="Tamaño" name="size" context="{'group_by': 'size'}"/>
+            <filter string="Flores" name="flower_ids" context="{'group_by': 'flower_ids'}"/>
+            <filter string="Encargado" name="manager_id" context="{'group_by': 'manager_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="floristeria.hf_floristeria_bouquet_action_window">
       <field name="name">Ramos de flores</field>
@@ -294,6 +329,8 @@
         </tree>
       </field>
     </record>
+
+    <!-- Flower Pot form view -->
 
     <record id="hf_floristeria_flower_pot_view_form" model="ir.ui.view">
       <field name="name">flower_pot.view.form</field>
