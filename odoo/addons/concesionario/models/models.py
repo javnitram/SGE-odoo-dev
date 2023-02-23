@@ -7,7 +7,7 @@ class ConcesionarioPedidos(models.Model):
     _description = 'Marcas'
     name = fields.Char('Nombre',required=True)
     descripcion = fields.Char('Descripcion')
-    facturas_id = fields.Many2one('dhm.concesionario.facturas', string='Facturas')
+    facturas_id = fields.Many2one('dhm.concesionario.facturas', string='Factura')
 
 class ConcesionarioVehiculos(models.Model):
     _name = 'dhm.concesionario.vehiculos'
@@ -20,7 +20,7 @@ class ConcesionarioVehiculos(models.Model):
         ('2', 'Seminuevo'),
         ('3', 'Alquilado')
     ], string='Estado')
-    imagen = fields.Image('imagen')
+    imagen = fields.Image('Imagen')
     matricula = fields.Integer('Matricula',required=True)
     clientes_ids = fields.Many2many('dhm.concesionario.clientes', string='Clientes')
 
