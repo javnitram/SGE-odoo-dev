@@ -32,16 +32,6 @@
     </record>
 
 
-    <record model="ir.ui.view" id="pokemodulo.entrenadores">
-      <field name="name">Pokemodulo Entrenadores</field>
-      <field name="model">ar.pokemodulo.entrenadores</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Nombre"/>
-        </tree>
-      </field>
-    </record>
-
 
     <!-- actions opening views on models -->
 
@@ -58,11 +48,6 @@
     </record>
 
 
-    <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
-      <field name="name">Pokemodulo Entrenadores</field>
-      <field name="res_model">ar.pokemodulo.entrenadores</field>
-      <field name="view_mode">tree,form</field>
-    </record>
 
 
 
@@ -90,8 +75,6 @@
     <!-- menu categories -->
 
     <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
-    <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadores" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
-
 
     <!-- actions -->
 

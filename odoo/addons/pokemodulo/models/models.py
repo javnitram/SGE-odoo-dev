@@ -100,10 +100,6 @@ class pokemoduloEquipo2(models.Model):
 
 
 
-class pokemoduloEntrenadores(models.Model):
-    _name = 'ar.pokemodulo.entrenadores'
-    _description = 'pokemodulo_entrenadores'
-    Nombre = fields.Char(string = 'Nombre del Entrenadore' ,required=True)
 
 
 
