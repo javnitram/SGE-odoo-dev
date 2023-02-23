@@ -4,7 +4,7 @@
           <record id="club_1" model="ab_clubpadel.club">
             <field name="nombre">AlphaPadel</field>
             <field name="pais_id" ref="base.es"/>
-            <field name="provincia_id" ref="base.m"/>
+            <!-- <field name="provincia_id" ref="base.m"/> -->
           </record>
 
           <record id="fabricante_2" model="ab_clubpadel.fabricante">
