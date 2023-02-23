@@ -4,7 +4,7 @@
     <!-- Vistas tienda -->
     <record model="ir.ui.view" id="game_shop.tienda_list">
       <field name="name">game_shop.tienda.view.tree</field>
-      <field name="model">game_shop.tienda</field>
+      <field name="model">sb_game_shop.tienda</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -18,7 +18,7 @@
 
     <record model="ir.ui.view" id="game_shop.tienda_form">
       <field name="name">game_shop.tienda.view.form</field>
-      <field name="model">game_shop.tienda</field>
+      <field name="model">sb_game_shop.tienda</field>
       <field name="arch" type="xml">
         <form >
           <sheet>
@@ -36,7 +36,7 @@
     <!-- Vistas videojuego -->
     <record id="game_shop.videojuego_list" model="ir.ui.view">
       <field name="name">game_shop.videojuego.view.tree</field>
-      <field name="model">game_shop.videojuego</field>
+      <field name="model">sb_game_shop.videojuego</field>
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
@@ -52,7 +52,7 @@
 
     <record id="game_shop.videojuego_view_kanban" model="ir.ui.view">
       <field name="name">game_shop.videojuego.view.kanban</field>
-      <field name="model">game_shop.videojuego</field>
+      <field name="model">sb_game_shop.videojuego</field>
       <field name="arch" type="xml">
         <kanban>
           <field name="id"/>
@@ -65,7 +65,7 @@
             <t t-name="kanban-box">
             <div class="oe_kanban_global_click">
                 <div class="o_kanban_image">
-                  <img t-att-src ="kanban_image('game_shop.videojuego', 'imagen',record.id.raw_value)"/>
+                  <img t-att-src ="kanban_image('sb_game_shop.videojuego', 'imagen',record.id.raw_value)"/>
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
@@ -85,7 +85,7 @@
 
     <record model="ir.ui.view" id="game_shop.videojuego_form">
       <field name="name">game_shop.vieojuego.view.form</field>
-      <field name="model">game_shop.videojuego</field>
+      <field name="model">sb_game_shop.videojuego</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
@@ -107,7 +107,7 @@
 
     <record id="game_shop.videojuego_view_search" model="ir.ui.view">
       <field name="name">game_shop.videojuego.view.search</field>
-      <field name="model">game_shop.videojuego</field>
+      <field name="model">sb_game_shop.videojuego</field>
       <field name="arch" type="xml">
         <search>
           <field name="name" string="Nombre"/>
@@ -131,7 +131,7 @@
 
     <record id="game_shop.distribuidor_list" model="ir.ui.view">
       <field name="name">game_shop.distribuidor.view.tree</field>
-      <field name="model">game_shop.distribuidor</field>
+      <field name="model">sb_game_shop.distribuidor</field>
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
@@ -145,7 +145,7 @@
      <!-- Vistas almacen -->
     <record id="game_shop.almacen_list" model="ir.ui.view">
       <field name="name">game_shop.almacen.view.tree</field>
-      <field name="model">game_shop.almacen</field>
+      <field name="model">sb_game_shop.almacen</field>
       <field name="arch" type="xml">
         <tree>
             <field name="name"/>
@@ -163,64 +163,47 @@
     <!--Action view de listar tiendas gracias a tener tree y form esto le va a permitir editar y ver los campos-->
     <record model="ir.actions.act_window" id="game_shop.tienda_action_window">
       <field name="name">Tienda</field>
-      <field name="res_model">game_shop.tienda</field>
+      <field name="res_model">sb_game_shop.tienda</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!-- Action view para dar de alta una tienda -->
     <record model="ir.actions.act_window" id="game_shop.tienda_action_window_alta">
       <field name="name">Alta tienda</field>
-      <field name="res_model">game_shop.tienda</field>
+      <field name="res_model">sb_game_shop.tienda</field>
       <field name="view_mode">form</field>
     </record>
      <!--Action view de listar videojuegos gracias a tener tree y form esto le va a permitir editar y ver los campos-->
      <record model="ir.actions.act_window" id="game_shop.videojuego_action_window">
       <field name="name">Videojuegos</field>
-      <field name="res_model">game_shop.videojuego</field>
+      <field name="res_model">sb_game_shop.videojuego</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <!-- Action view para dar de alta un Videojuego -->
     <record model="ir.actions.act_window" id="game_shop.videojuego_action_window_alta">
       <field name="name">Alta Videojuego</field>
-      <field name="res_model">game_shop.videojuego</field>
+      <field name="res_model">sb_game_shop.videojuego</field>
       <field name="view_mode">form</field>
     </record>
     <!-- Action view para ver videojuego en Kanban-->
      <record model="ir.actions.act_window" id="game_shop.videojuego_action_window_ver">
       <field name="name">Ver videojuego</field>
-      <field name="res_model">game_shop.videojuego</field>
+      <field name="res_model">sb_game_shop.videojuego</field>
       <field name="view_mode">kanban,form</field>
     </record>
 
     <!-- Action view para ver a un distribuidor -->
     <record model="ir.actions.act_window" id="game_shop.distribuidor_action_window">
       <field name="name">Distribuidor</field>
-      <field name="res_model">game_shop.distribuidor</field>
+      <field name="res_model">sb_game_shop.distribuidor</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!-- Action view para ver a un almacen -->
     <record model="ir.actions.act_window" id="game_shop.almacen_action_window">
       <field name="name">Almacen</field>
-      <field name="res_model">game_shop.almacen</field>
+      <field name="res_model">sb_game_shop.almacen</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="game_shop.action_server">
-      <field name="name">game_shop server</field>
-      <field name="model_id" ref="model_game_shop_game_shop"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
 

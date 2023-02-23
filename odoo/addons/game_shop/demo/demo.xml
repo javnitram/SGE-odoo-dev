@@ -1,12 +1,12 @@
 <odoo>
     <data>
-
+<!--  
           <record id="tienda1" model="game_shop.tienda">
             <field name="name">GameStop</field>
             <field name="ubicacion">Madrid</field>
             <field name="horario">12:00</field>
           </record>
-<!--  
+
           <record id="object1" model="game_shop.game_shop">
             <field name="name">Object 1</field>
             <field name="value">10</field>
