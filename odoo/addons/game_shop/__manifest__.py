@@ -3,11 +3,16 @@
     'name': "game_shop",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Módulo que nos permitirá gestionar tiendas de videojuegos""",
 
     'description': """
-        Long description of module's purpose
+        En este módulo lo que podremos hacer es:
+        -Dar de alta/baja nuevas tiendas
+        -Dar de alta/baja nuevos juegos
+        -Añadir videojuegos a las tiendas donde se quiere vender
+        -Cada tienda podrá referenciar donde se encuentra su almacen
+        
+        En resumen nos permite gestionar una tienda de videojuegos
     """,
 
     'author': "Santiago Bricio Rojas",
@@ -17,7 +22,7 @@
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Sales',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],

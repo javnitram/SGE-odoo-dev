@@ -70,7 +70,7 @@
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
-                    <li style="font-weight: bold;">Nombre:<field name="name"/></li>
+                    <li style="font-weight: bold;"><field name="name"/></li>
                     <li>Distribuidor: <field name="distribuidor_id"/></li>
                     <li>Precio: <field name="precio"/></li>
                     <li>Precio IVA: <field name="precio_iva"/></li>
@@ -125,6 +125,11 @@
           <filter name="Menor de 20€" domain="[('precio','&lt;',20)]"/>
           <filter name="Menor de 40€" domain="[('precio','&lt;',40)]"/>
           <filter name="Menor de 60€" domain="[('precio','&lt;',60)]"/>   
+          <group expand="0" string="Group By">
+            <filter string="Distribuidor" name="distribuidor_id" context="{'group_by': 'distribuidor_id'}"/>
+            <filter string="Pegi" name="pegi" context="{'group_by': 'pegi'}"/>
+          </group>
+
         </search>
       </field>
     </record>
@@ -232,7 +237,7 @@
     <menuitem name="Videojuegos" id="game_shop.menu_videojuegos_ver" parent="game_shop.menu_videojuego"
           action="game_shop.videojuego_action_window_ver"/>
     <!-- Menu items distribuidor -->
-     <menuitem name="Marca" id="game_shop.menu_distribuidor_vista" parent="game_shop.menu_distribuidor"
+     <menuitem name="Distribuidor" id="game_shop.menu_distribuidor_vista" parent="game_shop.menu_distribuidor"
               action="game_shop.distribuidor_action_window"/>
     <!-- Menu items Almacen -->
      <menuitem name="Almacen" id="game_shop.menu_almacen_vista" parent="game_shop.menu_almacen"
