@@ -61,6 +61,7 @@
           <field name="imagen" widget="image"/>
           <field name="distribuidor_id"/>
           <field name="pegi"/>
+          <field name="precio_iva"/>
           <templates>
             <t t-name="kanban-box">
             <div class="oe_kanban_global_click">
@@ -72,6 +73,7 @@
                     <li style="font-weight: bold;">Nombre:<field name="name"/></li>
                     <li>Distribuidor: <field name="distribuidor_id"/></li>
                     <li>Precio: <field name="precio"/></li>
+                    <li>Precio IVA: <field name="precio_iva"/></li>
                     <li>Pegi: <field name="pegi"/></li>
                   </ul>
                 </div>

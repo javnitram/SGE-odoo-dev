@@ -17,7 +17,7 @@ class game_shop_videojuego(models.Model):
     _description = 'Videojuego'
     name = fields.Char(string="Nombre",required=True,help="Introduce el nombre de el videojuego")
     pegi= fields.Integer(string="Pegi",required=True,default=3,help="Introduce la edad minima para poder jugar al juego")
-    precio = fields.Float(string="Precio",required=True,help="Introduce el precio del videojuego")    
+    precio = fields.Float(string="Precio Unitario",required=True,help="Introduce el precio del videojuego")    
     digital = fields.Boolean(string="Digital")
     estado = fields.Selection([
         ('0', 'Nuevo'),('1','Seminuevo'),('2','Usado')
