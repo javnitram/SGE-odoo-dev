@@ -7,7 +7,7 @@ class Bicicleta(models.Model):
     _name = 'ias.tallerbmx.bicicleta'
     _description = 'Bicicletas'
     name = fields.Char('Nombre', help='Es obligatorio indicar la marca de la bicicleta') #campo obligatorio, y la ayuda lo mostrar como etiqueta flotante
-    cliente_ids = fields.One2many('ias.tallerbmx.cliente', 'bicicletas_id', string='Dueño de la bici')    
+    cliente_id = fields.Many2one('ias.tallerbmx.cliente', string='Cliente')
     imagen = fields.Image(string="Foto de la bici",help="Seleccionar imagen aquí")
     categoria = fields.Selection([
        ('0', 'Bmx'),
@@ -37,7 +37,7 @@ class Cliente(models.Model):
    _description = 'Lista de clientes'
    name = fields.Char('Nombre')
    apellido = fields.Char('Apellido')
-   bicicletas_id = fields.Many2one('ias.tallerbmx.bicicleta', string='Bicicleta')
+   bicicletas_ids = fields.One2many('ias.tallerbmx.bicicleta', 'cliente_id', string='Bicicletas')
 
    @api.constrains('name')
    def _check_name(self):
