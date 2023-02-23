@@ -7,7 +7,7 @@ class VeterinariaMascotas(models.Model):
     _name = 'cm.veterinaria.mascotas'
     _description = 'veterinaria.mascotas'
     name = fields.Char('Name',required=True)
-    fotoPet = fields.Image(string='Photo', max_width=265, max_height=300,store=True,relation="res.partner",help="Select picture here")    
+    fotoPet = fields.Image(string='Photo', max_width=800, max_height=600,store=True,relation="res.partner",help="Select picture here")    
     petNum = fields.Char('Pet Number',required=True)    
     race = fields.Selection([
         ('0', 'Dog'),
@@ -16,7 +16,7 @@ class VeterinariaMascotas(models.Model):
     owner_id = fields.Many2one('cm.veterinaria.cliente', string='Owner')
     veterinarianName_id = fields.Many2one('cm.veterinaria.veterinario', string='Veterinarian Name')
     healthInsurance = fields.Boolean('Health Insurance',required=True)
-    registrationDate = fields.Date('Registration Date',required=True)
+    registrationDate = fields.Date('Registration Date')
     vaccinesDone_ids = fields.Many2many('cm.veterinaria.vacunas', string='Vaccines Done')
         
 
