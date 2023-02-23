@@ -4,3 +4,4 @@ access_rebuy_client_products,Access rule,model_am_rebuy_client_products,base.gro
 access_rebuy_clients,Access rule,model_am_rebuy_clients,base.group_user,1,1,1,1
 access_rebuy_employees,Access rule,model_am_rebuy_employees,base.group_user,1,1,1,1
 access_rebuy_stock,Access rule,model_am_rebuy_stock,base.group_user,1,1,1,1
+access_rebuy_stock_sold,Access rule,model_am_rebuy_stock_sold,base.group_user,1,1,1,1

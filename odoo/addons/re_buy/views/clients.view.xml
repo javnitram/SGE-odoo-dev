@@ -9,7 +9,7 @@
             <field name="client_fidelity_number"></field>
             <field name="client_product_sold"></field>
             <field name="client_product_bought"></field>
-            <field name="preorder_ids"></field>
+            <field name="client_reservation"></field>
           </tree>
         </field>
       </record>
@@ -24,7 +24,7 @@
                 <field name="client_fidelity_number"></field>
                 <field name="client_product_sold"></field>
                 <field name="client_product_bought"></field>
-                <field name="preorder_ids"></field>
+                <field name="client_reservation"></field>
               </group>
             </sheet>
           </form>

@@ -5,8 +5,6 @@
         <field name="model">am.rebuy.products</field>
         <field name="arch" type="xml">
             <kanban on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
-            <!--<field name="client_product_stage"/>
-            <progressbar field="client_product_state" colors='{"new" : "success", "checking" : "warning", "checked" : "success", "accepted" : "success", "refused" : "danger", "completed" : "success", "returned" : "danger"}' sum_field = "client_product_stock"/>-->
             <templates>
                 <t t-name="kanban-box">
                 <div class="oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
@@ -20,7 +18,7 @@
           </templates>
         </kanban>
         </field>
-      </record>
+        </record>
         <record id="rebuy_view_products_tree" model="ir.ui.view">
             <field name="name">am.rebuy.view.products.tree</field>
             <field name="model">am.rebuy.products</field>
@@ -29,6 +27,7 @@
                 <field name="name"></field>
                 <field name="description"></field>
                 <field name="stock_ids"></field>
+                <field name="sold_ids"></field>
               </tree>
             </field>
           </record>
@@ -41,7 +40,22 @@
                 <field name="product_price"></field>
                 <field name="product_stock"></field>
                 <field name="product_grade"></field>
+                <field name="product_reserved"></field>
+              </tree>
+            </field>
+          </record>
+          <record id="rebuy_view_stock_sold_tree" model="ir.ui.view">
+            <field name="name">am.rebuy.view.stock.sold.tree</field>
+            <field name="model">am.rebuy.stock_sold</field>
+            <field name="arch" type="xml">
+              <tree string="Product">
+                <field name="product_id"></field>
+                <field name="product_price"></field>
+                <field name="product_stock"></field>
+                <field name="product_grade"></field>
                 <field name="product_employee"></field>
+                <field name="product_client"></field>
+                <field name="product_sold_date"></field>
               </tree>
             </field>
           </record>
@@ -55,9 +69,41 @@
                   <field name="product_price"></field>
                   <field name="product_stock"></field>
                   <field name="product_grade"></field>
-                  <field name="product_employee"></field>
+                  <field name="product_reserved"></field>
                 </group>
               </sheet>
+              <sheet>
+                <div>To sell product please fill the following fields, refresh page after pressing the button</div><br></br>
+                <group colspan="2" col="2">
+                <field name="product_employee"></field>
+                <field name="product_client"></field>
+                <button string="Sell" name="sell_stock" type="object" class="oe_highlight"/>
+              </group>
+            </sheet>
+            </form>
+            </field>
+          </record>
+          <record id="rebuy_view_stock_sold_form" model="ir.ui.view">
+            <field name="name">am.rebuy.view.stock.sold.form</field>
+            <field name="model">am.rebuy.stock_sold</field>
+            <field name="arch" type="xml">
+              <form string="Products form">
+                <sheet>
+                  <group colspan="2" col="2">
+                  <field name="product_price"></field>
+                  <field name="product_stock"></field>
+                  <field name="product_grade"></field>
+                  <field name="product_employee"></field>
+                  <field name="product_client"></field>
+                  <field name="product_sold_date"></field>
+                </group>
+              </sheet>
+              <sheet>
+                <div>To return product, please refresh page after pressing the button</div><br></br>
+                <group colspan="2" col="2">
+                <button string="Return" name="return_stock" type="object" class="oe_highlight"/>
+              </group>
+            </sheet>
             </form>
             </field>
           </record>
@@ -72,9 +118,20 @@
                     <field name="product_image"></field>
                     <field name="description"></field>
                     <field name="stock_ids"></field>
+                    <field name="sold_ids"></field>
                 </group>
               </sheet>
             </form>
+          </field>
+        </record>
+        <record id="rebuy_view_stock_sold_graph" model="ir.ui.view">
+          <field name="name">am.rebuy.view.products.sold.graph</field>
+          <field name="model">am.rebuy.stock_sold</field>
+          <field name="arch" type="xml">
+            <graph string="Analysis" sample="1">
+              <field name="product_sold_date" interval="month"/>
+              <field name="product_price" type="measure"/>
+            </graph>
           </field>
         </record>
     </data>
