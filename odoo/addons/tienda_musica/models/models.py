@@ -20,6 +20,12 @@ class TiendaMusicaCD(models.Model):
     estado = fields.Selection([('0','Bueno'),('1','Regular'),('2','Malo')],string="Estado",default="0")
     cantante_id = fields.Many2one("irc.tienda_musica.cantante",string="Cantante",required=True,ondelete="cascade")
     canciones_ids = fields.One2many("irc.tienda_musica.cancion", "disco_id", string="Canciones")
+    importetotal = fields.Float(string="Importe total", compute="_importetotal", store=True)
+
+    @api.depends('precio', 'ejemplares')
+    def _importetotal(self):
+        for i in self:
+            i.importetotal = i.ejemplares*i.precio
 
 
 class TiendaMusicaCantante(models.Model):
@@ -34,7 +40,6 @@ class TiendaMusicaCancion(models.Model):
     _name = "irc.tienda_musica.cancion"
     name = fields.Char(string="Nombre",required=True,help="Introduce el nombre de la canción")
     artista = fields.Char(string="Cantante")
-    album = fields.Char(string="Album")
     fecha = fields.Date(string="Fecha de salida")
     disco_id = fields.Many2one("irc.tienda_musica.disco", string="Album", required=True, ondelete="cascade")
     cancionimg = fields.Image(
