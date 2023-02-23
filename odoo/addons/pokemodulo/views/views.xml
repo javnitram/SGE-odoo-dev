@@ -32,6 +32,21 @@
     </record>
 
 
+    <record model="ir.ui.view" id="pokemodulo.list3">
+      <field name="name">Pokemodulo Equipo</field>
+      <field name="model">ar.pokemodulo.equipo3</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+          <field name="Nombre"/>
+          <field name="Mote"/>
+          <field name="Tipo1"/>
+          <field name="Tipo2" />
+        </tree>
+      </field>
+    </record>
+
+
 
     <!-- actions opening views on models -->
 
@@ -48,7 +63,11 @@
     </record>
 
 
-
+    <record model="ir.actions.act_window" id="pokemodulo.equipo3_action_window">
+      <field name="name">Pokemodulo Equipo3</field>
+      <field name="res_model">ar.pokemodulo.equipo3</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
 
 
@@ -85,16 +104,8 @@
               action="pokemodulo.equipo2_action_window"/>
 
     <menuitem name="Equipo3" id="pokemodulo.menu_3_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
+              action="pokemodulo.equipo3_action_window"/>
 
-    <menuitem name="Equipo4" id="pokemodulo.menu_4_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
-
-    <menuitem name="Equipo5" id="pokemodulo.menu_5_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
-
-    <menuitem name="Equipo6" id="pokemodulo.menu_6_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
 
 
    <!-- <menuitem name="Server to list" id="pokemodulo" parent="pokemodulo.menu_2"
