@@ -4,49 +4,20 @@
 
     <record model="ir.ui.view" id="pokemodulo.list">
       <field name="name">Pokemodulo Equipo</field>
-      <field name="model">ar.pokemodulo.equipo1</field>
+      <field name="model">ar.pokemodulo.equipo</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-          <field name="Nombre"/>
-          <field name="Mote"/>
-          <field name="Tipo1"/>
-          <field name="Tipo2" />
+          <field name="NombreEquipo"/>
+<!--      <field name="NombreEntrenador"/>
+          <field name="Poke1"/>
+          <field name="Poke2" />
+          <field name="Poke3"/>
+          <field name="Poke4" />
+          <field name="Poke5"/>
+          <field name="Poke6" />-->
         </tree>
       </field>
     </record>
-
-
-    <record model="ir.ui.view" id="pokemodulo.list2">
-      <field name="name">Pokemodulo Equipo</field>
-      <field name="model">ar.pokemodulo.equipo2</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-          <field name="Nombre"/>
-          <field name="Mote"/>
-          <field name="Tipo1"/>
-          <field name="Tipo2" />
-        </tree>
-      </field>
-    </record>
-
-
-    <record model="ir.ui.view" id="pokemodulo.list3">
-      <field name="name">Pokemodulo Equipo</field>
-      <field name="model">ar.pokemodulo.equipo3</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-          <field name="Nombre"/>
-          <field name="Mote"/>
-          <field name="Tipo1"/>
-          <field name="Tipo2" />
-        </tree>
-      </field>
-    </record>
-
-
 
     <record model="ir.ui.view" id="pokemodulo.entrenadores">
       <field name="name">Pokemodulo Entrenadores</field>
@@ -55,8 +26,29 @@
         <tree>
           <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
           <field name="Nombre"/>
-          <field name="Equipo"/>
         </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.pokemon">
+      <field name="name">Pokemodulo Pokemon</field>
+      <field name="model">ar.pokemodulo.pokemon</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="4">
+              <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="Nombre"/>
+              <field name="Generacion"/>
+            </group>  
+            <group colspan="2" col="2">
+              <field name="Tipo1"/>
+              <field name="Tipo2" />
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
 
@@ -64,29 +56,24 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="pokemodulo.equipo1_action_window">
-      <field name="name">Pokemodulo Equipo1</field>
-      <field name="res_model">ar.pokemodulo.equipo1</field>
+    <record model="ir.actions.act_window" id="pokemodulo.equipo_action_window">
+      <field name="name">Pokemodulo Equipo</field>
+      <field name="res_model">ar.pokemodulo.equipo</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <record model="ir.actions.act_window" id="pokemodulo.equipo2_action_window">
-      <field name="name">Pokemodulo Equipo2</field>
-      <field name="res_model">ar.pokemodulo.equipo2</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-
-    <record model="ir.actions.act_window" id="pokemodulo.equipo3_action_window">
-      <field name="name">Pokemodulo Equipo3</field>
-      <field name="res_model">ar.pokemodulo.equipo3</field>
-      <field name="view_mode">tree,form</field>
-    </record>
 
 
     <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
       <field name="name">Pokemodulo Entrenadores</field>
       <field name="res_model">ar.pokemodulo.entrenadores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="pokemodulo.pokemon_action_window">
+      <field name="name">Pokemodulo Pokemon</field>
+      <field name="res_model">ar.pokemodulo.pokemon</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -113,18 +100,11 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
+    <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root" action="pokemodulo.equipo_action_window"/>
     <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadoresL" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
+        <menuitem name="Lista Pokemon" id="pokemodulo.pokemonL" parent="pokemodulo.menu_root" action="pokemodulo.pokemon_action_window"/>
     <!-- actions -->
 
-    <menuitem name="Equipo1" id="pokemodulo.menu_1_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo1_action_window"/>
-
-    <menuitem name="Equipo2" id="pokemodulo.menu_2_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo2_action_window"/>
-
-    <menuitem name="Equipo3" id="pokemodulo.menu_3_list" parent="pokemodulo.equipo"
-              action="pokemodulo.equipo3_action_window"/>
 
 
 
