@@ -6,45 +6,47 @@
           <record id="employee_davis" model="am.rebuy.employees">
             <field name="name">Davis</field>
           </record>
-          <record id="client_clara" model="am.rebuy.client">
+          <record id="client_clara" model="am.rebuy.clients">
             <field name="name">Clara</field>
             <field name="client_fidelity_number">32459098</field>
           </record>
-          <record id="client_adrian" model="am.rebuy.client">
+          <record id="client_adrian" model="am.rebuy.clients">
             <field name="name">Adrian</field>
             <field name="client_fidelity_number">09823548</field>
           </record>
-          <record id="client_joel" model="am.rebuy.client">
+          <record id="client_joel" model="am.rebuy.clients">
             <field name="name">Joel</field>
             <field name="client_fidelity_number">12312842</field>
           </record>
           <record id="product_psp" model="am.rebuy.products">
             <field name="name">PSP</field>
+          </record>
+          <record id="stock_psp" model="am.rebuy.stock">
             <field name="product_price">40</field>
-            <field name="product_grade">B</field>
+            <field name="product_grade">b</field>
             <field name="product_stock">2</field>
-            <!--<field name="product_employee" eval="[4,ref('employee_william')]"/>-->
+            <field name="product_employee" ref="employee_william"/>
+            <field name="product_id" ref="product_psp"/>
           </record>
           <record id="product_iphonex" model="am.rebuy.products">
             <field name="name">iPhone X</field>
+          </record>
+          <record id="stock_iphonex" model="am.rebuy.stock">
             <field name="product_price">250</field>
-            <field name="product_grade">B</field>
+            <field name="product_grade">b</field>
             <field name="product_stock">5</field>
-            <!--<field name="product_employee">Davis</field>-->
+            <field name="product_employee" ref="employee_davis"/>
+            <field name="product_id" ref="product_iphonex"/>
           </record>
           <record id="product_macbook" model="am.rebuy.products">
             <field name="name">Macbook Pro 2017</field>
-            <field name="product_price">400</field>
-            <field name="product_grade">C</field>
-            <field name="product_stock">1</field>
-            <!--<field name="product_employee">Davis</field>-->
           </record>
-          <record id="product_macbook" model="am.rebuy.products">
-            <field name="name">Macbook Pro 2019</field>
-            <field name="product_price">450</field>
-            <field name="product_grade">C</field>
+          <record id="stock_macbook" model="am.rebuy.stock">
+            <field name="product_price">400</field>
+            <field name="product_grade">c</field>
             <field name="product_stock">1</field>
-            <!--<field name="product_employee">Davis</field>-->
+            <field name="product_employee" ref="employee_davis"/>
+            <field name="product_id" ref="product_macbook"/>
           </record>
           <record id="client_product_macbook" model="am.rebuy.client_products">
             <field name="name">Macbook Pro 2017</field>
@@ -79,7 +81,7 @@
           <record id="client_product_amiibo" model="am.rebuy.client_products">
             <field name="name">Amiibo Zelda</field>
             <field name="client_product_price">8</field>
-            <field name="client_product_stock">1</field>
+            <field name="client_product_stock">3</field>
             <field name="client_product_grade">a</field>
             <field name="client_product_state">completed</field>
             <field name="client_product_stage">completed</field>

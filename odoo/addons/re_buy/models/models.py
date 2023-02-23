@@ -6,31 +6,32 @@ from odoo import models, fields, api
 class rebuyEmployees(models.Model):
     _name = 'am.rebuy.employees'
     name = fields.Char('Name')
-    employee_product_sold = fields.One2many('am.rebuy.products', 'product_employee', string='Products sold')
+    employee_product_sold = fields.One2many('am.rebuy.stock', 'product_employee', string='Products sold')
     
 class rebuyProducts(models.Model):
     _name = 'am.rebuy.products'
+    description = fields.Text('Description')
     name = fields.Char('Name', help = "Insert product name")
     product_image = fields.Image('Image')
+    stock_ids = fields.One2many('am.rebuy.stock', 'product_id', string='Stock')
+    client_ids = fields.Many2many('am.rebuy.clients', string='Pre-order client')
+
+class rebuyStock(models.Model):
+    _name = 'am.rebuy.stock'
+    product_id = fields.Many2one('am.rebuy.products', string='Product')
     product_price = fields.Float('Price', help = "Insert product price")
     product_stock = fields.Integer('Stock', help = "Insert product stock")
-    product_grade = fields.Char('Grade', help = "Insert product grade")
-    product_employee = fields.Many2one('am.rebuy.employees', string='Employee')
-    product_client = fields.Many2one('am.rebuy.client', string='Client')
-    client_ids = fields.Many2many('am.rebuy.client', string='Pre-order client')
-    product_check_grade = fields.Selection([
-        ('a', 'A'),
-        ('b', 'B'),
-        ('c', 'C'),
-    ], string='product_check_grade') 
+    product_grade = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string='Grade')
+    product_employee = fields.Many2one('am.rebuy.employees', string='Seller')
+    product_client = fields.Many2one('am.rebuy.clients', string='Buyer')
 
-class rebuyClient(models.Model):
-    _name = 'am.rebuy.client'
+class rebuyClients(models.Model):
+    _name = 'am.rebuy.clients'
     name = fields.Char('Name')
     client_fidelity_number = fields.Char('Fidelity card number')
     client_product_sold = fields.One2many('am.rebuy.client_products', 'client_product_client', string='Sold products')
-    client_product_bought = fields.One2many('am.rebuy.products', 'product_client', string='Bought products')
-    preorder_ids = fields.Many2many('am.rebuy.products', string='Pre-orders')
+    client_product_bought = fields.One2many('am.rebuy.stock', 'product_client', string='Bought products')
+    preorder_ids = fields.Many2many('am.rebuy.stock', string='Pre-orders')
 
 class rebuyClientProducts(models.Model):
     _name = 'am.rebuy.client_products'
@@ -40,7 +41,7 @@ class rebuyClientProducts(models.Model):
     client_product_stock = fields.Integer('Stock', help = "Insert product stock")
     client_product_grade = fields.Selection([('a', 'A'), ('b', 'B'), ('c', 'C')], string='Grade')
     client_product_employee = fields.Many2one('am.rebuy.employees', string="Employee", help="Enter employee name")
-    client_product_client = fields.Many2one('am.rebuy.client', string='Client', help="Enter client name")
+    client_product_client = fields.Many2one('am.rebuy.clients', string='Client', help="Enter client name")
     client_product_state = fields.Selection([('new', 'New'), ('checking', 'Checking'), ('checked', 'Checked'),('accepted', 'Accepted'),
     ('refused', 'Refused'),('completed', 'Completed'),('returned', 'Returned')], string='State')
     client_product_stage = fields.Selection([('new', 'New'), ('checking', 'Checking'), ('priced', 'Priced'), ('completed', 'Completed')],

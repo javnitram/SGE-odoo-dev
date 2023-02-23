@@ -4,7 +4,7 @@
         <field name="name">am.rebuy.client_products.view.kanban</field>
         <field name="model">am.rebuy.client_products</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="client_product_stage" on_create="quick_create" quick_create_view="rebuy_view_client_product_form" archivable="false" sample="1">
+            <kanban default_group_by="client_product_stage" quick_create_view="rebuy_view_client_products_form">
             <field name="client_product_stage"/>
             <progressbar field="client_product_state" colors='{"new" : "success", "checking" : "warning", "checked" : "success", "accepted" : "success", "refused" : "danger", "completed" : "success", "returned" : "danger"}' sum_field = "client_product_stock"/>
             <templates>
@@ -13,11 +13,11 @@
                 <field name="client_product_image" widget="image" width="100" height = "100"/>
                 <div class="oe_kanban_details" style="Padding-left: 10px;">
                   <h4><field name="name"/></h4>
-                  <br>€<field name="client_product_price" widget="monetary"/></br>
-                  Grade: <field name="client_product_grade"/>
+                  €<field name="client_product_price" widget="monetary"/>
+                  <br>Grade: <field name="client_product_grade"/></br>
                   <ul>
                     <br>State: <field name="client_product_state"/></br>
-                    Number of products: <field name="client_product_stock"/>
+                    Number of products: <field name="client_product_stock"  />
                   </ul>
                 </div>
               </div>

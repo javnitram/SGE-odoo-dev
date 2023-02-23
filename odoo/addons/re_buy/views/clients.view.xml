@@ -2,7 +2,7 @@
   <data>
       <record id="rebuy_view_clients_tree" model="ir.ui.view">
         <field name="name">am.rebuy.clients.view.tree</field>
-        <field name="model">am.rebuy.client</field>
+        <field name="model">am.rebuy.clients</field>
         <field name="arch" type="xml">
           <tree string="">
             <field name="name"></field>
@@ -15,7 +15,7 @@
       </record>
       <record id="rebuy_view_clients_form" model="ir.ui.view">
         <field name="name">rebuy.view.clients.form</field>
-        <field name="model">am.rebuy.client</field>
+        <field name="model">am.rebuy.clients</field>
         <field name="arch" type="xml">
           <form string="">
             <sheet>

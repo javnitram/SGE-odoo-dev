@@ -2,10 +2,16 @@
 <odoo>
     <data>
         <!--Actions-->
-    <record id="rebuy_tree" model="ir.actions.act_window">
-        <field name="name">Dashboard</field>
+    <record id="rebuy_products_tree" model="ir.actions.act_window">
+        <field name="name">Summary</field>
         <field name="res_model">am.rebuy.products</field>
         <field name="view_mode">tree,form</field>
+    </record> 
+
+    <record id="rebuy_products_kanban" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">am.rebuy.products</field>
+        <field name="view_mode">kanban,form</field>
     </record> 
 
     <record id="rebuy_client_kanban" model="ir.actions.act_window">
@@ -28,7 +34,7 @@
 
     <record id="rebuy_client_tree" model="ir.actions.act_window">
         <field name="name">Clients</field>
-        <field name="res_model">am.rebuy.client</field>
+        <field name="res_model">am.rebuy.clients</field>
         <field name="view_mode">tree,form</field>
     </record> 
 
@@ -37,11 +43,20 @@
         name="reBuy"
         sequence="10"/>
     <menuitem
-        id="rebuy_menu_tree"
+        id="rebuy_products"
         name="Products"
-        action="rebuy_tree"
         parent="rebuy_menu_root"
-        sequence="10"/>
+        sequence="1"/>
+    <menuitem
+        id="rebuy_menu_products_tree"
+        name="Summary"
+        action="rebuy_products_tree"
+        parent="rebuy_products"/>
+    <menuitem
+        id="rebuy_menu_products_kanban"
+        name="Dashboard"
+        action="rebuy_products_kanban"
+        parent="rebuy_products"/>
     <menuitem
         id="rebuy_menu_client_products"
         name="Coming Products"
