@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tienda_musica_categoria,tienda de musica,model_irc_tienda_musica_categoria,base.group_user,1,1,1,1
+access_tienda_musica_disco,tienda de musica,model_irc_tienda_musica_disco,base.group_user,1,1,1,1
+access_tienda_musica_cantante,tienda de musica,model_irc_tienda_musica_cantante,base.group_user,1,1,1,1
+access_tienda_musica_cancion,tienda de musica,model_irc_tienda_musica_cancion,base.group_user,1,1,1,1

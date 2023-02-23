@@ -1,0 +1,227 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="tienda_musica.categoria_tree">
+      <field name="name">tienda_musica.categoria.tree</field>
+      <field name="model">irc.tienda_musica.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.categoria_form">
+      <field name="name">tienda_musica.categoria.form</field>
+      <field name="model">irc.tienda_musica.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+            <field name="name"/>
+            <field name="description"/>
+          </group>
+          <group>
+            <field name ="cantants_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.disco_tree">
+      <field name="name">tienda_musica.disco.tree</field>
+      <field name="model">irc.tienda_musica.disco</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="ejemplares"/>
+          <field name="fecha"/>
+          <field name="segmano"/>
+          <field name="estado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.disco_form">
+      <field name="name">tienda_musica.disco.form</field>
+      <field name="model">irc.tienda_musica.disco</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="6" col="6">
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="ejemplares"/>
+            <field name="fecha"/>
+            <field name="segmano"/>
+            <field name="estado"/>
+            <field name="cantante_id"/>
+            <field name="canciones_ids">
+              <tree>
+                <field name="name"/>
+                <field name="album"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.disco_search">
+      <field name="name">tienda_musica.disco.search</field>
+      <field name="model">irc.tienda_musica.disco</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <filter name="Bueno" domain="[('estado','=','0')]"/>
+          <filter name="Regular" domain="[('estado','=','1')]"/>
+          <filter name="Malo" domain="[('estado','=','2')]"/>
+        </search>
+      </field>  
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.cantante_tree">
+      <field name="name">tienda_musica.cantante.tree</field>
+      <field name="model">irc.tienda_musica.cantante</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="discos"/>
+          <field name="nacionalidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.cantante_form">
+      <field name="name">tienda_musica.cantante.form</field>
+      <field name="model">irc.tienda_musica.cantante</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="3" col="3">
+            <field name="name"/>
+            <field name="discos"/>
+            <field name="nacionalidad"/>
+            <field name="discos_ids">
+              <tree>
+                <field name="name"/>
+                <field name="fecha"/>
+              </tree>
+            </field>
+          </group>
+          <group>
+            <field name ="generos_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.cancion_tree">
+      <field name="name">tienda_musica.cancion.tree</field>
+      <field name="model">irc.tienda_musica.cancion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="artista"/>
+          <field name="album"/>
+          <field name="fecha"/>
+          <field name="disco_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.cancion_form">
+      <field name="name">tienda_musica.cancion.form</field>
+      <field name="model">irc.tienda_musica.cancion</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="4" col="4">
+            <field name="name"/>
+            <field name="artista"/>
+            <field name="album"/>
+            <field name="fecha"/>
+            <field name="cancionimg" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_categoria">
+      <field name="name">GÉNERO</field>
+      <field name="res_model">irc.tienda_musica.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_disco">
+      <field name="name">DISCOS</field>
+      <field name="res_model">irc.tienda_musica.disco</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_cantante">
+      <field name="name">CANTANTE</field>
+      <field name="res_model">irc.tienda_musica.cantante</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_cancion">
+      <field name="name">CANCION</field>
+      <field name="res_model">irc.tienda_musica.cancion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_inglesa">
+      <field name="name">INGLESA</field>
+      <field name="res_model">irc.tienda_musica.cancion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="tienda_musica.action_window_hispana">
+      <field name="name">ESPAÑOLA</field>
+      <field name="res_model">irc.tienda_musica.cancion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="tienda_musica.action_server">
+      <field name="name">tienda_musica server</field>
+      <field name="model_id" ref="model_tienda_musica_tienda_musica"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="tienda_musica" id="tienda_musica.menu_root"/>
+
+    <!-- menu categories -->
+
+    <!--menuitem name="Menu 1" id="tienda_musica.menu_1" parent="tienda_musica.menu_root"/-->
+
+    <!-- actions -->
+
+    <menuitem name="Categorias" id="tienda_musica.menu_categoria" parent="tienda_musica.menu_root"
+              action="tienda_musica.action_window_categoria"/>
+    <menuitem name="Discos" id="tienda_musica.menu_disco" parent="tienda_musica.menu_root"
+              action="tienda_musica.action_window_disco"/>
+    <menuitem name="Cantantes" id="tienda_musica.menu_cantante" parent="tienda_musica.menu_root"
+              action="tienda_musica.action_window_cantante"/>
+    <menuitem name="Canciones" id="tienda_musica.menu_cancion" parent="tienda_musica.menu_root"
+              action="tienda_musica.action_window_cancion"/>
+    <menuitem name="Inglesa" id="tienda_musica.menu_inglesa" parent="tienda_musica.menu_cancion" 
+              action="tienda_musica.action_window_inglesa"/>
+    <menuitem name="Española" id="tienda_musica.menu_hispana" parent="tienda_musica.menu_cancion" 
+              action="tienda_musica.action_window_hispana"/>
+  </data>
+</odoo>
