@@ -3,20 +3,19 @@
     'name': "Gimnasio",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Podrás gestionar tu gimansio desde este fantástico módulo""",
 
     'description': """
-        Modulo para gestionar tu propio gimnasio
+        Módulo para gestionar tu propio gimnasio
     """,
 
     'author': "Alberto Ruiz",
-    'website': "http://www.yourcompany.com",
+    'website': "https://strongmantarrako.net/content/7-club",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Deportes',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
