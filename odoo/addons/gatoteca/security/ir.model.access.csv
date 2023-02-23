@@ -1,5 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_gatoteca_empleado,Empleado,model_gatoteca_empleado,base.group_user,1,1,1,1
-access_gatoteca_cliente,Cliente,model_gatoteca_cliente,base.group_user,1,1,1,1
-access_gatoteca_gato,Gato,model_gatoteca_gato,base.group_user,1,1,1,1
-access_gatoteca_raza,Raza,model_gatoteca_raza,base.group_user,1,1,1,1
+access_ss_gatoteca_empleado,Empleado,model_ss_gatoteca_empleado,base.group_user,1,1,1,1
+access_ss_gatoteca_cliente,Cliente,model_ss_gatoteca_cliente,base.group_user,1,1,1,1
+access_ss_gatoteca_gato,Gato,model_ss_gatoteca_gato,base.group_user,1,1,1,1
+access_ss_gatoteca_raza,Raza,model_ss_gatoteca_raza,base.group_user,1,1,1,1

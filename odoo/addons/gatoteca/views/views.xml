@@ -2,9 +2,9 @@
   <data>
     <!-- explicit list view definition -->
     
-    <record model="ir.ui.view" id="gatoteca.empleado">
+    <record model="ir.ui.view" id="gatoteca_empleado">
       <field name="name">Empleado</field>
-      <field name="model">gatoteca.empleado</field>
+      <field name="model">ss.gatoteca.empleado</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -16,9 +16,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.empleado_form">
+    <record model="ir.ui.view" id="gatoteca_empleado_form">
       <field name="name">Empleado</field>
-      <field name="model">gatoteca.empleado</field>
+      <field name="model">ss.gatoteca.empleado</field>
       <field name="arch" type="xml">
         <form>
           <group name="name" string="Datos">
@@ -32,9 +32,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.cliente">
+    <record model="ir.ui.view" id="gatoteca_cliente">
       <field name="name">Cliente</field>
-      <field name="model">gatoteca.cliente</field>
+      <field name="model">ss.gatoteca.cliente</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -45,9 +45,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.cliente_form">
+    <record model="ir.ui.view" id="gatoteca_cliente_form">
       <field name="name">Cliente</field>
-      <field name="model">gatoteca.cliente</field>
+      <field name="model">ss.gatoteca.cliente</field>
       <field name="arch" type="xml">
         <form>
           <group name="name" string="Datos">
@@ -62,9 +62,9 @@
       </field>
     </record>
 
-    <record id="gatoteca.gato_view_kanban" model="ir.ui.view">
+    <record id="gatoteca_gato_view_kanban" model="ir.ui.view">
       <field name="name">gatoteca.gato.view.kanban</field>
-      <field name="model">gatoteca.gato</field>
+      <field name="model">ss.gatoteca.gato</field>
       <field name="arch" type="xml">
         <kanban>
         <field name="id" />
@@ -91,9 +91,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.gato">
+    <record model="ir.ui.view" id="gatoteca_gato">
       <field name="name">Gato</field>
-      <field name="model">gatoteca.gato</field>
+      <field name="model">ss.gatoteca.gato</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -105,9 +105,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.gato_form">
+    <record model="ir.ui.view" id="gatoteca_gato_form">
       <field name="name">Gato</field>
-      <field name="model">gatoteca.gato</field>
+      <field name="model">ss.gatoteca.gato</field>
       <field name="arch" type="xml">
         <form>
           <group colspan="2" col="2">
@@ -123,9 +123,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.raza">
+    <record model="ir.ui.view" id="gatoteca_raza">
       <field name="name">Raza</field>
-      <field name="model">gatoteca.raza</field>
+      <field name="model">ss.gatoteca.raza</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -135,9 +135,9 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="gatoteca.raza_form">
+    <record model="ir.ui.view" id="gatoteca_raza_form">
       <field name="name">Raza</field>
-      <field name="model">gatoteca.raza</field>
+      <field name="model">ss.gatoteca.raza</field>
       <field name="arch" type="xml">
         <form>
           <group name="name" string="Datos">
@@ -155,25 +155,25 @@
 
     <record model="ir.actions.act_window" id="gatoteca.empleado_action_window">
       <field name="name">Empleados</field>
-      <field name="res_model">gatoteca.empleado</field>
+      <field name="res_model">ss.gatoteca.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="gatoteca.cliente_action_window">
       <field name="name">Cliente</field>
-      <field name="res_model">gatoteca.cliente</field>
+      <field name="res_model">ss.gatoteca.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="gatoteca.gato_action_window">
       <field name="name">Gato</field>
-      <field name="res_model">gatoteca.gato</field>
+      <field name="res_model">ss.gatoteca.gato</field>
       <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="gatoteca.raza_action_window">
       <field name="name">Raza</field>
-      <field name="res_model">gatoteca.raza</field>
+      <field name="res_model">ss.gatoteca.raza</field>
       <field name="view_mode">tree,form</field>
     </record>
 
