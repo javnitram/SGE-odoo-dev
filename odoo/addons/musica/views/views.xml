@@ -69,6 +69,29 @@
       </field>
     </record>
 
+
+  <record model="ir.ui.view" id="musica.instrumento_form">
+      <field name="name">Lista de instrumentos</field>
+      <field name="model">jr.tiendainstrumento.instrumento</field>
+      <field name="arch" type="xml">
+        <form>
+        <group>
+            <field name = "imagen" widget = "image" class = "oe_avatar oe_left" options="{'size':[165,200]}"/>
+            <field name = "categoria_id"/>
+            <field name = "marca"/>
+            <field name = "name"/>
+            <field name = "precio"/>
+            <field name = "stock"/>
+            <field name = "segundamano"/>
+            <field name = "estado"/>
+            <field name = "ventas_ids" colspan = "8"/>
+         </group>   
+            
+          
+       </form>
+      </field>
+    </record>
+    
     <record model="ir.ui.view" id="musica.instrumento_kanban">
       <field name="name">Lista de instrumentos</field>
       <field name="model">jr.tiendainstrumento.instrumento</field>
@@ -132,6 +155,15 @@
       <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
       <field name="view_mode">kanban,tree,form</field>
     </record>
+
+    <record model="ir.actions.act_window" id="musica.instrumento_kanban_action_window">
+      <field name="name">Lista de instrumentos kanban</field>
+      <field name="res_model">jr.tiendainstrumento.instrumento</field>
+      <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    
     <!--*************************-->
 
     <record model="ir.ui.view" id="musica.venta_tree">
@@ -232,10 +264,14 @@
               web_icon = "icon.png"
     />
 
-    <menuitem name="Categoria" id="musica_menu_1" parent="musica.menu_root" action = "musica.categoria_action_window"/>
-    <menuitem name="Instrumento" id="musica_menu_2" parent="musica.menu_root" action = "musica.instrumento_action_window"/>
-    <menuitem name="Ventas" id="musica_menu_3" parent="musica.menu_root" action = "musica.venta_action_window"/>
-    <menuitem name="Clientes" id="musica_menu_4" parent="musica.menu_root" action = "musica.cliente_action_window"/>
+    <menuitem name="Categoria"              id="musica_menu_1"    parent="musica.menu_root" action = "musica.categoria_action_window"/>
+    <menuitem name="Instrumento"            id="musica_menu_2"    parent="musica.menu_root"/>
+        <menuitem name="Instrumentos Kanban" id="musica_menu_2_1" parent="musica_menu_2"    action = "musica.instrumento_action_window"/>
+        
+
+    <menuitem name="Ventas"                 id="musica_menu_3"    parent="musica.menu_root" action = "musica.venta_action_window"/>
+    <menuitem name="Clientes"               id="musica_menu_4"    parent="musica.menu_root"/>
+        <menuitem name="Clientes"           id="musica_menu_4_1"  parent="musica_menu_4" action = "musica.cliente_action_window"/>
 
     <!-- actions -->
 
