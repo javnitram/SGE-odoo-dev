@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
 
 class Bicicleta(models.Model):
     _name = 'ias.tallerbmx.bicicleta'
@@ -24,6 +25,7 @@ class Pieza(models.Model):
    _name = 'ias.tallerbmx.pieza'
    _description = 'Piezas disponibles para reparar'
    name = fields.Char('Nombre')
+   imagen = fields.Image(string="Foto de la pieza",help="Seleccionar imagen aquí")
    tipo = fields.Selection([
        ('0', 'Bmx'),
        ('1', 'Mountain'),
@@ -36,7 +38,13 @@ class Cliente(models.Model):
    name = fields.Char('Nombre')
    apellido = fields.Char('Apellido')
    bicicletas_id = fields.Many2one('ias.tallerbmx.bicicleta', string='Bicicleta')
-    
+
+   @api.constrains('name')
+   def _check_name(self):
+      letra = self.name[0]
+      if letra != letra.upper():
+         raise ValidationError("La primera letra debe estar en mayuscula")
+
 # class tallerbmx(models.Model):
 #     _name = 'tallerbmx.tallerbmx'
 #     _description = 'tallerbmx.tallerbmx'
