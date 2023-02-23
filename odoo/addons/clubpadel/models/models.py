@@ -2,44 +2,44 @@
 
 from odoo import models, fields, api
 
-# from odoo.exceptions import ValidationError
+from odoo.exceptions import ValidationError
 
 
 class ClubPadelClub(models.Model):
-    _name = "clubpadel.club"
+    _name = "ab_clubpadel.club"
     _description = "Nombre del Club"
     _translate = "True"
     nombre = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
     pais_id = fields.Many2one('res.country', string='Pais')
     provincia_id = fields.Many2one('res.country.state', string='Provincia')
-    marcas_ids = fields.Many2many('clubpadel.marca', string='Marcas del club')
+    marcas_ids = fields.Many2many('ab_clubpadel.marca', string='Marcas del club')
 
 class ClubPadelFabricante(models.Model):
-    _name = "clubpadel.fabricante"
+    _name = "ab_clubpadel.fabricante"
     _description = "Fabricante de la pala"
     name = fields.Char(string="Fabricante",required=True,help="Introduce el fabricante de la pala")
     fecha_salida = fields.Date(string="Fecha de salida")
     pais_id = fields.Many2one('res.country', string='Pais')
     provincia_id = fields.Many2one('res.country.state', string='Provincia')
-    marcas_ids = fields.One2many('clubpadel.marca', 'fabricante_id', string='Marcas del fabricante')
+    marcas_ids = fields.One2many('ab_clubpadel.marca', 'fabricante_id', string='Marcas del fabricante')
 
 class ClubPadelMarca(models.Model):
-    _name = "clubpadel.marca"
+    _name = "ab_clubpadel.marca"
     _description = "Marca de la pala"
-    name = fields.Char(string="Marca",required=True,help="Introduce el nombre de la marca")
+    name = fields.Char(string="Marca",help="Introduce el nombre de la marca")
     imagen = fields.Image('Imagen', max_width=400, max_height=300)
     fecha = fields.Date(string="Fecha de creación")
     gama = fields.Char(string="Gama",required=True,help="Gama de la marca.")
-    models_ids = fields.One2many('clubpadel.modelo', 'marca_id', string='Modelos de la marca')
-    fabricante_id = fields.Many2one("clubpadel.fabricante", string="Fabricante de la marca", required=True)
-    clubes_ids = fields.Many2many('clubpadel.club', string='Clubes de la marca')
-    # @api.constrains('name')
-    # def _checkNombre(self):
-    #     if not self.name:
-    #         raise ValidationError("Debes elegir un nombre")
+    models_ids = fields.One2many('ab_clubpadel.modelo', 'marca_id', string='Modelos de la marca')
+    fabricante_id = fields.Many2one("ab_clubpadel.fabricante", string="Fabricante de la marca", required=True)
+    clubes_ids = fields.Many2many('ab_clubpadel.club', string='Clubes de la marca')
+    @api.constrains('name')
+    def _checkNombre(self):
+        if not self.name:
+            raise ValidationError("Debes escribir un nombre para la Marca.")
 
 class ClubPadelModelo(models.Model):
-    _name = "clubpadel.modelo"
+    _name = "ab_clubpadel.modelo"
     _description = "Modelo de la pala"
     name = fields.Char(string="Modelo",required=True,help="Introduce el modelo de la pala")
     precio = fields.Float(string="Precio")
@@ -48,12 +48,12 @@ class ClubPadelModelo(models.Model):
     fecha = fields.Date(string="Fecha de salida")
     segmano = fields.Boolean(string="Segunda mano")
     estado = fields.Selection([('0','Nuevo'),('1','Regular'),('2','Malo')],string="Estado",default="0")
-    marca_id = fields.Many2one("clubpadel.marca", string="Marca del modelo", required=True)
+    marca_id = fields.Many2one("ab_clubpadel.marca", string="Marca del modelo", required=True)
     precio_final = fields.Float(string="Precio final", compute="_preciofinal", store=True)
     @api.depends('precio','segmano')
     def _preciofinal(self):
         for i in self:
-            if i.segmano == True:
+            if i.segmano:
                 i.precio_final = i.precio/2
             else:
                 i.precio_final = i.precio

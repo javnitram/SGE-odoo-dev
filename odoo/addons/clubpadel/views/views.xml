@@ -3,7 +3,7 @@
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="clubpadel.club_tree">
       <field name="name">clubpadel Tree</field>
-      <field name="model">clubpadel.club</field>
+      <field name="model">ab_clubpadel.club</field>
       <field name="arch" type="xml">
         <tree>
           <field name="nombre"/>
@@ -16,7 +16,7 @@
 
     <record model="ir.ui.view" id="clubpadel.club_form">
       <field name="name">clubpadel Form</field>
-      <field name="model">clubpadel.club</field>
+      <field name="model">ab_clubpadel.club</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
@@ -34,8 +34,8 @@
 <!--  -->
 
     <record model="ir.ui.view" id="clubpadel.fabricante_tree">
-      <field name="name">clubpadel Tree</field>
-      <field name="model">clubpadel.fabricante</field>
+      <field name="name">Fabricante Tree</field>
+      <field name="model">ab_clubpadel.fabricante</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -48,8 +48,8 @@
     </record>
 
     <record id="clubpadel.fabricante_form" model="ir.ui.view">
-      <field name="name">clubpadel Form</field>
-      <field name="model">clubpadel.fabricante</field>
+      <field name="name">Fabricante Form</field>
+      <field name="model">ab_clubpadel.fabricante</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
@@ -68,8 +68,8 @@
     <!--  -->
 
     <record model="ir.ui.view" id="clubpadel.marca_tree">
-      <field name="name">clubpadel Tree</field>
-      <field name="model">clubpadel.marca</field>
+      <field name="name">Marca Tree</field>
+      <field name="model">ab_clubpadel.marca</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -83,8 +83,8 @@
     </record>
 
     <record id="clubpadel.marca_form" model="ir.ui.view">
-      <field name="name">clubpadel Form</field>
-      <field name="model">clubpadel.marca</field>
+      <field name="name">Marca Form</field>
+      <field name="model">ab_clubpadel.marca</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
@@ -103,8 +103,8 @@
     </record>
 
     <record id="clubpadel.marca_kanban" model="ir.ui.view">
-      <field name="name">clubpadel Kanban</field>
-      <field name="model">clubpadel.marca</field>
+      <field name="name">Marca Kanban</field>
+      <field name="model">ab_clubpadel.marca</field>
       <field name="arch" type="xml">
         <kanban>
           <field name="id"/>
@@ -138,8 +138,8 @@
 <!--  -->
 
     <record model="ir.ui.view" id="clubpadel.modelo_tree">
-      <field name="name">clubpadel Tree</field>
-      <field name="model">clubpadel.modelo</field>
+      <field name="name">Modelo Tree</field>
+      <field name="model">ab_clubpadel.modelo</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
@@ -156,8 +156,8 @@
     </record>
 
     <record id="clubpadel.modelo_form" model="ir.ui.view">
-      <field name="name">clubpadel Form</field>
-      <field name="model">clubpadel.modelo</field>
+      <field name="name">Modelo Form</field>
+      <field name="model">ab_clubpadel.modelo</field>
       <field name="arch" type="xml">
         <form>
           <sheet>
@@ -178,8 +178,8 @@
     </record>
 
     <record id="clubpadel.modelo_view_search" model="ir.ui.view">
-      <field name="name">clubpadel Search</field>
-      <field name="model">clubpadel.modelo</field>
+      <field name="name">Modelo Search</field>
+      <field name="model">ab_clubpadel.modelo</field>
       <field name="arch" type="xml">
         <search string="">
           <field name="name" string="Nombre"/>
@@ -197,50 +197,50 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="clubpadel.club_listar_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.club</field>
+      <field name="name">Lista de Club's</field>
+      <field name="res_model">ab_clubpadel.club</field>
       <field name="view_mode">tree</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.club_crear_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.club</field>
+      <field name="name">Registrar un Club</field>
+      <field name="res_model">ab_clubpadel.club</field>
       <field name="view_mode">form</field>
     </record>
 
 <!--  -->
 
     <record model="ir.actions.act_window" id="clubpadel.fabricante_listar_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.fabricante</field>
+      <field name="name">Lista de Fabricantes</field>
+      <field name="res_model">ab_clubpadel.fabricante</field>
       <field name="view_mode">tree</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.fabricante_crear_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.fabricante</field>
+      <field name="name">Crear un Fabricante</field>
+      <field name="res_model">ab_clubpadel.fabricante</field>
       <field name="view_mode">form</field>
     </record>
 
 <!--  -->
 
     <record model="ir.actions.act_window" id="clubpadel.marca_listar_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.marca</field>
+      <field name="name">Listado de Marcas</field>
+      <field name="res_model">ab_clubpadel.marca</field>
       <field name="view_mode">tree</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.marca_crear_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.marca</field>
+      <field name="name">Ver/Crear Marcas</field>
+      <field name="res_model">ab_clubpadel.marca</field>
       <field name="view_mode">kanban,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="clubpadel.modelo_listar_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.modelo</field>
+      <field name="name">Modelos en venta</field>
+      <field name="res_model">ab_clubpadel.modelo</field>
       <field name="view_mode">tree</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.modelo_crear_action_window">
-      <field name="name">ClubPadel</field>
-      <field name="res_model">clubpadel.modelo</field>
+      <field name="name">Crear Modelo nuevo</field>
+      <field name="res_model">ab_clubpadel.modelo</field>
       <field name="view_mode">form</field>
     </record>
 
