@@ -3,20 +3,20 @@
     'name': "armas",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Esta se trata de una tienda family friendly para los amantes de las armas""",
 
     'description': """
-        Long description of module's purpose
+        Este módulo consiste en un historial de armas vendidas en una tienda a clientes
+
     """,
 
     'author': "Adrian CD",
-    'website': "http://www.yourcompany.com",
+    'website': "https://www.rangertienda.com/",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Armamento',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
