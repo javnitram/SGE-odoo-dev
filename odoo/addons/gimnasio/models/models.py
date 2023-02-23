@@ -52,7 +52,7 @@ class InscripcionesGimnasio(models.Model):
         ('3 meses', '3 meses'),
         ('6 meses', '6 meses'),
         ('12 meses', '12 meses')
-    ],string='tipo_inscripcion')
+    ],string='Tipo_inscripcion')
     fecha_inscripcion = fields.Date('Fecha de inscripcion',required=True)
     precio = fields.Float('Precio')
     clientesInscripcion_ids = fields.One2many('ar.gimnasio.clientes', 'inscripciones_id', string='Clientes_Inscripcion')

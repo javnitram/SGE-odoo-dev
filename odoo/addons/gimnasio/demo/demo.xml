@@ -102,6 +102,7 @@
             <field name="telefono">603458789</field>
             <field name="clases_ids"  eval="[(6,0,[ ref('clase1'), ref('clase2')])]"/>
             <field name="productos_ids" eval="[(6,0,[ ref('producto1')])]"/>
+            <field name="inscripciones_id" ref="inscripcion4"/>
           </record>
 
           <record id="cliente4" model="ar.gimnasio.clientes">

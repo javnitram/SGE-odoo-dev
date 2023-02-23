@@ -7,7 +7,7 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Modulo para gestionar el gimnasio
+        Modulo para gestionar tu propio gimnasio
     """,
 
     'author': "Alberto Ruiz",
