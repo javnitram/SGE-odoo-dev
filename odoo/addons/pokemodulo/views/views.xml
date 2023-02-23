@@ -48,6 +48,20 @@
 
 
 
+    <record model="ir.ui.view" id="pokemodulo.entrenadores">
+      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="model">ar.pokemodulo.entrenadores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+          <field name="Nombre"/>
+          <field name="campo" />
+        </tree>
+      </field>
+    </record>
+
+
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="pokemodulo.equipo1_action_window">
@@ -69,6 +83,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+
+    <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
+      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="res_model">ar.pokemodulo.entrenadores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
 
     <!-- server action to the one above -->
@@ -94,7 +114,7 @@
     <!-- menu categories -->
 
     <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
-
+    <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadoresL" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
     <!-- actions -->
 
     <menuitem name="Equipo1" id="pokemodulo.menu_1_list" parent="pokemodulo.equipo"

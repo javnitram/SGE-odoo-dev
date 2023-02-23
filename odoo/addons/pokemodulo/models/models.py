@@ -150,6 +150,19 @@ class pokemoduloEquipo3(models.Model):
 
 
 
+
+
+
+
+class pokemoduloEntrenadores(models.Model):
+     _name = 'ar.pokemodulo.entrenadores'
+     _description = 'pokemodulo_entrenadores'
+     ImagenE = fields.Image(string="Imagen Entrenador",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
+     Nombre = fields.Char(string = 'Nombre del entrenador', required=True)
+     campo = fields.Char('campo')
+
+
+
 #     name = fields.Char()
 #     value = fields.Integer()
 #     value2 = fields.Float(compute="_value_pc", store=True)
