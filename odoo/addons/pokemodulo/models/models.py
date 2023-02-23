@@ -50,6 +50,7 @@ class pokemoduloEquipo1(models.Model):
          ('17', 'Volador')
      ],string = 'Tipo2')
      
+     
 
 class pokemoduloEquipo2(models.Model):
      _name = 'ar.pokemodulo.equipo2'
@@ -159,7 +160,8 @@ class pokemoduloEntrenadores(models.Model):
      _description = 'pokemodulo_entrenadores'
      ImagenE = fields.Image(string="Imagen Entrenador",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
      Nombre = fields.Char(string = 'Nombre del entrenador', required=True)
-     campo = fields.Char('campo')
+     Equipo = fields.Many2one('ar.pokemodulo.equipo1', string='Equipo Pokemon')
+
 
 
 

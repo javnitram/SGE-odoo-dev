@@ -55,7 +55,7 @@
         <tree>
           <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
           <field name="Nombre"/>
-          <field name="campo" />
+          <field name="Equipo"/>
         </tree>
       </field>
     </record>
