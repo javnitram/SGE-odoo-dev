@@ -3,11 +3,10 @@
     'name': "Tienda de Musica",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+       Tienda de música dedicado a la compra y venta de instrumentos, tanto nuevos como de segunda mano""",
 
     'description': """
-        Long description of module's purpose
+        Tienda de música dedicado a la compra y venta de instrumentos, tanto nuevos como de segunda mano
     """,
 
     'author': "Jorge Rubio",

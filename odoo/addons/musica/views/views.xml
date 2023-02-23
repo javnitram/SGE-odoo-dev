@@ -91,6 +91,17 @@
        </form>
       </field>
     </record>
+
+    <record id="musica.instrumento_view_search" model="ir.ui.view">
+      <field name="name">Busqueda instrumento</field>
+      <field name="model">jr.tiendainstrumento.instrumento</field>
+      <field name="arch" type="xml">
+        <search>
+          <filter name = "Baratos" domain = "[('precio','&lt;=',350)]"/>
+          <filter name = "Segunda Mano" domain = "[('segundamano','=','True')]"/>
+        </search>
+      </field>
+    </record>
     
     <record model="ir.ui.view" id="musica.instrumento_kanban">
       <field name="name">Lista de instrumentos</field>
@@ -153,7 +164,7 @@
       <field name="name">Lista de instrumentos</field>
       <field name="res_model">jr.tiendainstrumento.instrumento</field>
       <!-- una accion cuando pongas tree o form, te permite que esté el boton arriba para crear el tree-->
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">kanban,tree,form,search</field>
     </record>
 
     <record model="ir.actions.act_window" id="musica.instrumento_kanban_action_window">
