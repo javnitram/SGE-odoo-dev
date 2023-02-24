@@ -8,7 +8,7 @@ class pokemoduloEquipoIndi(models.Model):
      _description = 'pokemodulo_equipoi'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
-     Poke1 =fields.One2many('ar.pokemodulo.pokemon', 'Nombre', string='Nombre del primer pokemon')
+     Poke1 =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre del primer pokemon')
 #     Poke2 = 
 #     Poke3 =
 #     Poke4 =
@@ -37,7 +37,7 @@ class pokemoduloPokemon(models.Model):
      _name = 'ar.pokemodulo.pokemon'
      _description = 'pokemodulo_pokemon'
      Imagen = fields.Image(string="Imagen",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
-     Nombre = fields.Char(string = 'Nombre de la Especie' ,required=True)
+     name = fields.Char(string = 'Nombre de la Especie' ,required=True)
      Generacion = fields.Integer('Generacion', required=True)
      Tipo1 = fields.Selection ([
          ('0','Acero'),

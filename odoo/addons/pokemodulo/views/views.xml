@@ -96,7 +96,7 @@
       <field name="arch" type="xml">
         <tree>
               <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-              <field name="Nombre"/>
+              <field name="name"/>
               <field name="Generacion"/>
               <field name="Tipo1"/>
               <field name="Tipo2" />
@@ -113,7 +113,7 @@
           <sheet>
             <group >
               <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-              <field name="Nombre"/>
+              <field name="name"/>
               <field name="Generacion"/>
             </group>  
             <group >
