@@ -9,7 +9,7 @@
 
 
             </field>
-            <field name="Nombre">Rojo</field>
+            <field name="name">Rojo</field>
 
           </record>
 

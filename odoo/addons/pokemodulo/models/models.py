@@ -3,9 +3,9 @@
 from odoo import models, fields, api
 
 
-class pokemoduloEquipo(models.Model):
-     _name = 'ar.pokemodulo.equipo'
-     _description = 'pokemodulo_equipo'
+class pokemoduloEquipoIndi(models.Model):
+     _name = 'ar.pokemodulo.equipoi'
+     _description = 'pokemodulo_equipoi'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
 #     Poke1 =
@@ -15,7 +15,24 @@ class pokemoduloEquipo(models.Model):
 #     Poke5 =
 #     Poke6 =
     
-     
+
+
+
+class pokemoduloEquipoDobles(models.Model):
+     _name = 'ar.pokemodulo.equipod'
+     _description = 'pokemodulo_equipod'
+     NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
+     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
+#     Poke1 =
+#     Poke2 = 
+#     Poke3 =
+#     Poke4 =
+#     Poke5 =
+#     Poke6 =
+ 
+
+
+
 class pokemoduloPokemon(models.Model):
      _name = 'ar.pokemodulo.pokemon'
      _description = 'pokemodulo_pokemon'

@@ -1,4 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_pokemodulo_pokemodulo_equipo,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipo,base.group_user,1,1,1,1
+access_pokemodulo_pokemodulo_equipo_individuales,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipoi,base.group_user,1,1,1,1
+access_pokemodulo_pokemodulo_equipo_dobles,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_equipod,base.group_user,1,1,1,1
 access_pokemodulo_pokemodulo_entrenadores,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_entrenadores,base.group_user,1,1,1,1
 access_pokemodulo_pokemodulo_pokemon,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_pokemon,base.group_user,1,1,1,1
