@@ -39,7 +39,6 @@
         <tree>
           <field name="name"/>
           <field name="NombreEntrenador"/>
-          <field name="Pokemones"/>
         </tree>
       </field>
     </record>
@@ -54,6 +53,7 @@
             <group >
               <field name="name" />
               <field name="NombreEntrenador"/>
+              <field name="Pokemones"/>
             </group>  
           </sheet>
         </form>
@@ -84,6 +84,7 @@
               <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
               <field name="name"/>
               <field name="EquiposI"/>
+              <field name="EquiposD"/>
             </group>  
           </sheet>
         </form>
