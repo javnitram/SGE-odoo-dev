@@ -8,7 +8,7 @@ class pokemoduloEquipoIndi(models.Model):
      _description = 'pokemodulo_equipoi'
      name = fields.Char(string = 'Nombre de Equipo' ,required=True, help='Inserte el nombre del equipo')
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador', required=True, help='Inserte el popietario del equipo')
-     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons', required=True, help='Inserte a los pokemons, si no hay, crealos')
+     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Pokemons para el equipo', required=True, help='Inserte a los pokemons, si no hay, crealos')
 
     
 
@@ -19,7 +19,7 @@ class pokemoduloEquipoDobles(models.Model):
      _description = 'pokemodulo_equipod'
      name = fields.Char(string = 'Nombre de Equipo' ,required=True, help='Inserte el nombre del equipo')
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador' ,required=True, help='Inserte el popietario del equipo')
-     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons',required=True, help='Inserte a los pokemons, si no hay, crealos')
+     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Pokemons para el equipo',required=True, help='Inserte a los pokemons, si no hay, crealos')
 
  
 
@@ -28,7 +28,7 @@ class pokemoduloEquipoDobles(models.Model):
 class pokemoduloPokemon(models.Model):
      _name = 'ar.pokemodulo.pokemon'
      _description = 'pokemodulo_pokemon'
-     Imagen = fields.Image(string="Imagen Pokémon",store=True,relation="res.partner",help="Insertar Imagen", required=True, help='Pon aqui la imagen de la especie del pokémon')
+     Imagen = fields.Image(string="Imagen Pokémon",store=True,relation="res.partner",help="Insertar Imagen", required=True)
      name = fields.Char(string = 'Nombre de la Especie' ,required=True, help='Inserte el nombre de la especie')
      Generacion = fields.Integer('Generacion', required=True, help='Inserte su generacion, ejemplo: 1 , 2 , 3 , 4 , etc...')
      Tipo1 = fields.Selection ([

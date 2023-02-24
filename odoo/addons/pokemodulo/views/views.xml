@@ -3,7 +3,7 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="pokemodulo.equiposi">
-      <field name="name">Pokemodulo Equipo Individuales</field>
+      <field name="name">Equipos Individuales</field>
       <field name="model">ar.pokemodulo.equipoi</field>
       <field name="arch" type="xml">
         <tree>
@@ -16,7 +16,7 @@
 
 
     <record model="ir.ui.view" id="pokemodulo.equiposi_tree">
-      <field name="name">Pokemodulo Equipo Individuales</field>
+      <field name="name">Vista del Equipo Individuales</field>
       <field name="model">ar.pokemodulo.equipoi</field>
       <field name="arch" type="xml">
         <form>
@@ -33,7 +33,7 @@
 
 <!--##########################################################################################-->
     <record model="ir.ui.view" id="pokemodulo.equiposd">
-      <field name="name">Pokemodulo Equipo Dobles</field>
+      <field name="name">Equipos Dobles</field>
       <field name="model">ar.pokemodulo.equipod</field>
       <field name="arch" type="xml">
         <tree>
@@ -45,7 +45,7 @@
 
 
     <record model="ir.ui.view" id="pokemodulo.equiposd_tree">
-      <field name="name">Pokemodulo Equipo Dobles</field>
+      <field name="name">Vista del Equipo Dobles</field>
       <field name="model">ar.pokemodulo.equipod</field>
       <field name="arch" type="xml">
         <form>
@@ -63,7 +63,7 @@
 
 <!--##########################################################################################-->
     <record model="ir.ui.view" id="pokemodulo.entrenadores_tree">
-      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="name">Entrenadores</field>
       <field name="model">ar.pokemodulo.entrenadores</field>
       <field name="arch" type="xml">
         <tree>
@@ -75,7 +75,7 @@
 
 
     <record model="ir.ui.view" id="pokemodulo.entrenadores">
-      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="name">Vista del Entrenador</field>
       <field name="model">ar.pokemodulo.entrenadores</field>
       <field name="arch" type="xml">
         <form>
@@ -94,7 +94,7 @@
 
 <!--##########################################################################################-->
     <record model="ir.ui.view" id="pokemodulo.pokemon_tree">
-      <field name="name">Pokemodulo Pokemon</field>
+      <field name="name">Pokemons</field>
       <field name="model">ar.pokemodulo.pokemon</field>
       <field name="arch" type="xml">
         <tree>
@@ -109,7 +109,7 @@
 
 
     <record model="ir.ui.view" id="pokemodulo.pokemon">
-      <field name="name">Pokemodulo Pokemon</field>
+      <field name="name">Vista del Pokemon</field>
       <field name="model">ar.pokemodulo.pokemon</field>
       <field name="arch" type="xml">
         <form>
@@ -136,27 +136,27 @@
 
 
     <record model="ir.actions.act_window" id="pokemodulo.equipo_indi_action_window">
-      <field name="name">Pokemodulo Equipo Indi</field>
+      <field name="name">Equipos Individuales</field>
       <field name="res_model">ar.pokemodulo.equipoi</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="pokemodulo.equipo_doble_action_window">
-      <field name="name">Pokemodulo Equipo Doble</field>
+      <field name="name">Equipos Dobles</field>
       <field name="res_model">ar.pokemodulo.equipod</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
-      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="name">Entrenadores</field>
       <field name="res_model">ar.pokemodulo.entrenadores</field>
       <field name="view_mode">tree,form</field>
     </record>
 
 
     <record model="ir.actions.act_window" id="pokemodulo.pokemon_action_window">
-      <field name="name">Pokemodulo Pokemon</field>
+      <field name="name">Pokemons</field>
       <field name="res_model">ar.pokemodulo.pokemon</field>
       <field name="view_mode">tree,form</field>
     </record>
