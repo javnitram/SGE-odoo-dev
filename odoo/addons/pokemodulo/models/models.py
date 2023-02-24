@@ -8,7 +8,7 @@ class pokemoduloEquipoIndi(models.Model):
      _description = 'pokemodulo_equipoi'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
-#     Poke1 =
+     Poke1 =fields.One2many('ar.pokemodulo.pokemon', 'Nombre', string='Nombre del primer pokemon')
 #     Poke2 = 
 #     Poke3 =
 #     Poke4 =

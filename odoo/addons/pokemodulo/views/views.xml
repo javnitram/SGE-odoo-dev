@@ -9,12 +9,6 @@
         <tree>
           <field name="NombreEquipo"/>
           <field name="NombreEntrenador"/>
- <!--          <field name="Poke1"/>
-          <field name="Poke2" />
-          <field name="Poke3"/>
-          <field name="Poke4" />
-          <field name="Poke5"/>
-          <field name="Poke6" />-->
         </tree>
       </field>
     </record>
@@ -28,12 +22,6 @@
         <tree>
           <field name="NombreEquipo"/>
           <field name="NombreEntrenador"/>
- <!--          <field name="Poke1"/>
-          <field name="Poke2" />
-          <field name="Poke3"/>
-          <field name="Poke4" />
-          <field name="Poke5"/>
-          <field name="Poke6" />-->
         </tree>
       </field>
     </record>
@@ -50,8 +38,8 @@
       </field>
     </record>
 
-<!--
-    <record model="ir.ui.view" id="pokemodulo.pokemon">
+
+    <record model="ir.ui.view" id="pokemodulo.pokemon_tree">
       <field name="name">Pokemodulo Pokemon</field>
       <field name="model">ar.pokemodulo.pokemon</field>
       <field name="arch" type="xml">
@@ -64,7 +52,7 @@
         </tree>
       </field>
     </record>
--->
+
 
     <record model="ir.ui.view" id="pokemodulo.pokemon">
       <field name="name">Pokemodulo Pokemon</field>
