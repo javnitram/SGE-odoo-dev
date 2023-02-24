@@ -1,20 +1,27 @@
 <odoo>
   <data>
-    <record id="computer_repairments_action_window" model="ir.actions.act_window">
-      <field name="name">Reparaciones</field>
-      <field name="res_model">ws.repairment</field>
-      <field name="view_mode">tree,form</field>
+    <record id="repairments_action" model="ir.actions.act_window">
+      <field name="name">Repairments</field>
+      <field name="res_model">ws.repairments</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
 
-    <record id="repairments" model="ir.ui.view">
-      <field name="name">ws.computer_repairment.repairment.view</field>
-      <field name="model">ws.repairment</field>
+    <record id="repairments_tree_view" model="ir.ui.view">
+      <field name="name">computer_repairment.tree</field>
+      <field name="model">ws.repairments</field>
       <field name="arch" type="xml">
-        <form string="Repairment Form">
-          <field name="repair_status"/>
-          <field name="start_date"/>
-        </form>
+        <tree>
+          <field name="repair_status" string="Repairment status"/>
+          <field name="start_date" string="Start date"/>
+          <field name="completion_date" string="Finish date"/>
+        </tree>
       </field>
+    </record>
+
+    <record id="technicians_action" model="ir.actions.act_window">
+      <field name="name">Technicians</field>
+      <field name="res_model">ws.technicians</field>
+      <field name="view_mode">form,kanban</field>
     </record>
 
     <!-- actions opening views on models -->
@@ -41,23 +48,6 @@
       </field>
     </record>
 -->
-
-    
-  <menuitem id="computer_repairments" name="Reparaciones" sequence="10"/>
-
-  <menuitem
-    id="reparaciones_menu"
-    name="Lista de reparaciones"
-    action="computer_repairments_action_window"
-    parent="computer_repairments"
-    sequence="10"/>
-
-  <menuitem
-  id="clientes_menu"
-  name="Clientes"
-  action="computer_repairments_action_window"
-  parent="computer_repairments"
-  sequence="10"/>
  
 <!--
     <menuitem name="Menu 1" id="computer_repair_shop.menu_1" parent="computer_repair_shop.menu_root"/>

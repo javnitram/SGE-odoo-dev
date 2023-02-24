@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <menuitem id="repairments_root" name="Repairments" sequence="10"/>
+
+        <menuitem
+            id="repairments_menuitem"
+            name="Repairments"
+            action="repairments_action"
+            parent="repairments_root"
+            sequence="10"/>
+
+        <menuitem
+            id="technicians_menuitem"
+            name="Technicians"
+            action="technicians_action"
+            parent="repairments_root"
+            sequence="9"/>   
+
+        <menuitem
+            id="parts_menuitem"
+            name="Parts"
+            action="repairments_action"
+            parent="repairments_root"
+            sequence="9"/>  
+
+        <menuitem
+            id="clients_menu"
+            name="Clients"
+            action="repairments_action"
+            parent="repairments_root"
+            sequence="10"/>
+    </data>
+</odoo>
