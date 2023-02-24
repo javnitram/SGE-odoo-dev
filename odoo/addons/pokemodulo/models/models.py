@@ -7,7 +7,7 @@ class pokemoduloEquipo(models.Model):
      _name = 'ar.pokemodulo.equipo'
      _description = 'pokemodulo_equipo'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
-#     NombreEntrenador = 
+     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
 #     Poke1 =
 #     Poke2 = 
 #     Poke3 =
@@ -68,8 +68,7 @@ class pokemoduloEntrenadores(models.Model):
      _name = 'ar.pokemodulo.entrenadores'
      _description = 'pokemodulo_entrenadores'
      ImagenE = fields.Image(string="Imagen Entrenador",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
-     Nombre = fields.Char(string = 'Nombre del entrenador', required=True)
-
+     name = fields.Char(string = 'Nombre del entrenador', required=True)
 
 
 

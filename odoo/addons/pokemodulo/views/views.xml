@@ -8,8 +8,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="NombreEquipo"/>
-<!--      <field name="NombreEntrenador"/>
-          <field name="Poke1"/>
+          <field name="NombreEntrenador"/>
+ <!--          <field name="Poke1"/>
           <field name="Poke2" />
           <field name="Poke3"/>
           <field name="Poke4" />
@@ -25,7 +25,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
-          <field name="Nombre"/>
+          <field name="name"/>
         </tree>
       </field>
     </record>
