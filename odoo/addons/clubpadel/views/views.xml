@@ -119,7 +119,7 @@
             <t t-name="kanban-box">
               <div class="oe_kanban_global_click">
                 <div class="o_kanban_image">
-                  <img t-att-src="kanban_image('clubpadel.marca', 'imagen', record.id.raw_value)"/>
+                  <img t-att-src="kanban_image('ab_clubpadel.marca', 'imagen', record.id.raw_value)"/>
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
