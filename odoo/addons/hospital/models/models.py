@@ -9,7 +9,8 @@ class HospitalDoctores(models.Model):
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")
     date=fields.Date(string="Fecha de nacimiento")
     tlf=fields.Integer(string="Teléfono")
-    especialidad=fields.Selection([('0','Cirugía'),('1','General'),('2','Traumatología'),('3','Oftalmología')],string = "Especialidad",help="Introduce la especialidad")
+    especialidad=fields.Selection([('0','Cirugía'),('1','General'),('2','Traumatología'),
+    ('3','Oftalmología')],string = "Especialidad",help="Introduce la especialidad")
     pacientes_ids = fields.One2many('gs.hospital.pacientes', 'doctor_id', string='Pacientes del doctor')
 
 class HospitalPacientes(models.Model):
@@ -23,7 +24,9 @@ class HospitalPacientes(models.Model):
     history=fields.Char(string="Historia",required=True,help="Introduce la razón de visita al hospital")
     alergias=fields.Char(string="Alergias",help="Posible alergia a medicamentos")
     doctor_id = fields.Many2one('gs.hospital.doctores', string='Doctor')
-    
+    enfermero_ids = fields.Many2many('gs.hospital.enfermeros', string='enfermero')
+    medicinas_ids = fields.Many2many('gs.hospital.medicinas', string='medicinas')
+
 class HospitalEnfermeros(models.Model):
     _name="gs.hospital.enfermeros"
     dni=fields.Char(string="DNI",required=True)
