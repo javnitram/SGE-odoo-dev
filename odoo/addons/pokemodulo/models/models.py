@@ -6,7 +6,7 @@ from odoo import models, fields, api
 class pokemoduloEquipoIndi(models.Model):
      _name = 'ar.pokemodulo.equipoi'
      _description = 'pokemodulo_equipoi'
-     NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
+     name = fields.Char(string = 'Nombre de Equipo' ,required=True)
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador', required=True)
      Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons', required=True)
 
@@ -17,7 +17,7 @@ class pokemoduloEquipoIndi(models.Model):
 class pokemoduloEquipoDobles(models.Model):
      _name = 'ar.pokemodulo.equipod'
      _description = 'pokemodulo_equipod'
-     NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
+     name = fields.Char(string = 'Nombre de Equipo' ,required=True)
      NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador' ,required=True)
      Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons',required=True)
 
@@ -78,6 +78,7 @@ class pokemoduloEntrenadores(models.Model):
      _description = 'pokemodulo_entrenadores'
      ImagenE = fields.Image(string="Imagen Entrenador",store=True,relation="res.partner",help="Seleccionar imagen aquí", required=True)
      name = fields.Char(string = 'Nombre del entrenador', required=True)
+     EquiposI = fields.One2many('ar.pokemodulo.equipoi', 'NombreEntrenador' , string='Equipo Indi' )
 
 
 

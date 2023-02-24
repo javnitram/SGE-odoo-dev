@@ -7,7 +7,7 @@
       <field name="model">ar.pokemodulo.equipoi</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="NombreEquipo"/>
+          <field name="name"/>
           <field name="NombreEntrenador"/>
         </tree>
       </field>
@@ -22,7 +22,7 @@
         <form>
           <sheet>
             <group >
-              <field name="NombreEquipo" />
+              <field name="name" />
               <field name="NombreEntrenador"/>
               <field name="Pokemones"/>
             </group>  
@@ -37,7 +37,7 @@
       <field name="model">ar.pokemodulo.equipod</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="NombreEquipo"/>
+          <field name="name"/>
           <field name="NombreEntrenador"/>
           <field name="Pokemones"/>
         </tree>
@@ -52,7 +52,7 @@
         <form>
           <sheet>
             <group >
-              <field name="NombreEquipo" />
+              <field name="name" />
               <field name="NombreEntrenador"/>
             </group>  
           </sheet>
@@ -83,6 +83,7 @@
             <group >
               <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
               <field name="name"/>
+              <field name="EquiposI"/>
             </group>  
           </sheet>
         </form>
