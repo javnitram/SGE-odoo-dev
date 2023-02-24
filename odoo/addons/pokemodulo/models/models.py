@@ -7,13 +7,9 @@ class pokemoduloEquipoIndi(models.Model):
      _name = 'ar.pokemodulo.equipoi'
      _description = 'pokemodulo_equipoi'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
-     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
-     Poke1 =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre del primer pokemon')
-#     Poke2 = 
-#     Poke3 =
-#     Poke4 =
-#     Poke5 =
-#     Poke6 =
+     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador', required=True)
+     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons', required=True)
+
     
 
 
@@ -22,13 +18,9 @@ class pokemoduloEquipoDobles(models.Model):
      _name = 'ar.pokemodulo.equipod'
      _description = 'pokemodulo_equipod'
      NombreEquipo = fields.Char(string = 'Nombre de Equipo' ,required=True)
-     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador')
-#     Poke1 =
-#     Poke2 = 
-#     Poke3 =
-#     Poke4 =
-#     Poke5 =
-#     Poke6 =
+     NombreEntrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Nombre del entrenador' ,required=True)
+     Pokemones =fields.Many2many('ar.pokemodulo.pokemon', string='Nombre de los pokemons',required=True)
+
  
 
 

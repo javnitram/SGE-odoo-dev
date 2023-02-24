@@ -7,7 +7,9 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        The first module of Alonso
+        Primer modulo de Alonso Rivas Alcobendas,
+        consisten en la gestión y creación de equipos 
+        sencillos y de entrenadores de pokemon
     """,
 
     'author': "Rivas Alcobendas Alonso",

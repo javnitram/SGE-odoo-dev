@@ -24,7 +24,7 @@
             <group >
               <field name="NombreEquipo" />
               <field name="NombreEntrenador"/>
-              <field name="Poke1"/>
+              <field name="Pokemones"/>
             </group>  
           </sheet>
         </form>
@@ -39,6 +39,7 @@
         <tree>
           <field name="NombreEquipo"/>
           <field name="NombreEntrenador"/>
+          <field name="Pokemones"/>
         </tree>
       </field>
     </record>
