@@ -15,6 +15,23 @@
 
 
 
+    <record model="ir.ui.view" id="pokemodulo.equiposi_tree">
+      <field name="name">Pokemodulo Equipo Individuales</field>
+      <field name="model">ar.pokemodulo.equipoi</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="NombreEquipo" />
+              <field name="NombreEntrenador"/>
+              <field name="Poke1"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--##########################################################################################-->
     <record model="ir.ui.view" id="pokemodulo.equiposd">
       <field name="name">Pokemodulo Equipo Dobles</field>
       <field name="model">ar.pokemodulo.equipod</field>
@@ -27,7 +44,24 @@
     </record>
 
 
-    <record model="ir.ui.view" id="pokemodulo.entrenadores">
+    <record model="ir.ui.view" id="pokemodulo.equiposd_tree">
+      <field name="name">Pokemodulo Equipo Dobles</field>
+      <field name="model">ar.pokemodulo.equipod</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="NombreEquipo" />
+              <field name="NombreEntrenador"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!--##########################################################################################-->
+    <record model="ir.ui.view" id="pokemodulo.entrenadores_tree">
       <field name="name">Pokemodulo Entrenadores</field>
       <field name="model">ar.pokemodulo.entrenadores</field>
       <field name="arch" type="xml">
@@ -39,6 +73,23 @@
     </record>
 
 
+    <record model="ir.ui.view" id="pokemodulo.entrenadores">
+      <field name="name">Pokemodulo Entrenadores</field>
+      <field name="model">ar.pokemodulo.entrenadores</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!--##########################################################################################-->
     <record model="ir.ui.view" id="pokemodulo.pokemon_tree">
       <field name="name">Pokemodulo Pokemon</field>
       <field name="model">ar.pokemodulo.pokemon</field>
