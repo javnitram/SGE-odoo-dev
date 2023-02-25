@@ -10,6 +10,8 @@
           <field name="fecha" />
           <field name="artistas_ids" />
           <field name="recinto_id" />
+          <field name="precio_base" />
+          <field name="dinero_recaudado" />
         </tree>
       </field>
     </record>
@@ -46,12 +48,25 @@
       <field name="arch" type="xml">
         <tree>
           <field name="concierto_id" />
+          <field name="cliente_id" />
+          <field name="zona" />
           <field name="precio" />
         </tree>
       </field>
     </record>
 
-    <!-- forms definition -->
+    <record model="ir.ui.view" id="conciertos.cliente_list">
+      <field name="name">conciertos.cliente.list</field>
+      <field name="model">sa.conciertos.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" />
+          <field name="email" />
+        </tree>
+      </field>
+    </record>
+
+    <!-- form views definition -->
 
     <record model="ir.ui.view" id="conciertos.concierto_form">
       <field name="name">conciertos.concierto.form</field>
@@ -64,6 +79,8 @@
               <field name="fecha" />
               <field name="artistas_ids" />
               <field name="recinto_id" />
+              <field name="precio_base" />
+              <field name="dinero_recaudado" />
             </group>
           </sheet>
         </form>
@@ -112,7 +129,24 @@
           <sheet>
             <group>
               <field name="concierto_id" />
+              <field name="cliente_id" />
+              <field name="zona" />
               <field name="precio" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="conciertos.cliente_form">
+      <field name="name">conciertos.cliente.form</field>
+      <field name="model">sa.conciertos.cliente</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="name" />
+              <field name="email" />
             </group>
           </sheet>
         </form>
@@ -141,8 +175,14 @@
     </record>
 
     <record model="ir.actions.act_window" id="conciertos.entrada_action_window">
-      <field name="name">Registro de entradas</field>
+      <field name="name">Entradas vendidas</field>
       <field name="res_model">sa.conciertos.entrada</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="conciertos.cliente_action_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">sa.conciertos.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -155,7 +195,7 @@
     <menuitem name="Conciertos" id="conciertos.menu_conciertos" parent="conciertos.menu_root" />
     <menuitem name="Artistas" id="conciertos.menu_artistas" parent="conciertos.menu_root" />
     <menuitem name="Recintos" id="conciertos.menu_recintos" parent="conciertos.menu_root" />
-    <menuitem name="Entradas" id="conciertos.menu_entradas" parent="conciertos.menu_root" />
+    <menuitem name="Venta de entradas" id="conciertos.menu_entradas" parent="conciertos.menu_root" />
 
     <!-- actions -->
 
@@ -168,8 +208,11 @@
     <menuitem name="Recintos" id="conciertos.menu_recintos_list" parent="conciertos.menu_recintos"
       action="conciertos.recinto_action_window" />
     
-    <menuitem name="Entradas" id="conciertos.menu_entradas_list" parent="conciertos.menu_entradas"
+    <menuitem name="Entradas vendidas" id="conciertos.menu_entradas_list" parent="conciertos.menu_entradas"
       action="conciertos.entrada_action_window" />
+    
+    <menuitem name="Clientes" id="conciertos.menu_clientes_list" parent="conciertos.menu_entradas"
+      action="conciertos.cliente_action_window" />
     
   </data>
 </odoo>
