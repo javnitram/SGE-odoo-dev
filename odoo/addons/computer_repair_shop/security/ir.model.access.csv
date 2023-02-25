@@ -8,3 +8,4 @@ access_permission_6,Access to cpu model,model_ws_cpu,base.group_user,1,1,1,1
 access_permission_7,Access to gpu model,model_ws_gpu,base.group_user,1,1,1,1
 access_permission_8,Access to psu model,model_ws_psu,base.group_user,1,1,1,1
 access_permission_9,Access to chassis model,model_ws_chassis,base.group_user,1,1,1,1
+access_permission_10,Access to computers model,model_ws_computers,base.group_user,1,1,1,1
