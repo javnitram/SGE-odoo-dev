@@ -1,6 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_cine_modulo_empleado,cine_modulo.empleado,model_cinema_empleado,base.group_user,1,1,1,1
-access_cine_modulo_pelicula,cine_modulo.pelicula,model_cinema_pelicula,base.group_user,1,1,1,1
-access_cine_modulo_distribuidora,cine_modulo.distribuidora,model_cinema_distribuidora,base.group_user,1,1,1,1
-access_cine_modulo_cliente,cine_modulo.cliente,model_cinema_cliente,base.group_user,1,1,1,1
-access_cine_modulo_sesion,cine_modulo.sesion,model_cinema_sesion,base.group_user,1,1,1,1
+access_cine_modulo_empleado,cine_modulo.empleado,model_jd_cinema_empleado,base.group_user,1,1,1,1
+access_cine_modulo_pelicula,cine_modulo.pelicula,model_jd_cinema_pelicula,base.group_user,1,1,1,1
+access_cine_modulo_distribuidora,cine_modulo.distribuidora,model_jd_cinema_distribuidora,base.group_user,1,1,1,1
+access_cine_modulo_cliente,cine_modulo.cliente,model_jd_cinema_cliente,base.group_user,1,1,1,1
+access_cine_modulo_sesion,cine_modulo.sesion,model_jd_cinema_sesion,base.group_user,1,1,1,1
+

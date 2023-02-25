@@ -3,35 +3,65 @@
     <!--Empleados-->
     <record model="ir.ui.view" id="cine_modulo.empleado">
       <field name="name">Empleados</field>
-      <field name="model">cinema.empleado</field>
+      <field name="model">jd_cinema.empleado</field>
       <field name="arch" type="xml">
         <tree>
           <field name="dni" />
-          <field name="nombre" />
+          <field name="nombre"/>
           <field name="apellidos" />
-          <field name="telefono" />
-          <field name="puesto" />
+          <field name="puesto"/>
+          <field name="telefono" widget="phone" />
+          
         </tree>
       </field>
     </record>
+        <record model="ir.ui.view" id="cine_modulo.empleado_form">
+      <field name="name">Empleados</field>
+      <field name="model">jd_cinema.empleado</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="dni" />
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="puesto"/>
+          <field name="telefono" widget="phone"/>
+          
+        </form>
+      </field>
+    </record>
     <!--Cliente-->
-    <record model="ir.ui.view" id="cine_modulo.cliente">
+    <record model="ir.ui.view" id="cine_modulo.cliente_tree">
       <field name="name">Clientes</field>
-      <field name="model">cinema.cliente</field>
+      <field name="model">jd_cinema.cliente</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name" />
           <field name="nombre" />
           <field name="apellidos" />
-          <field name="telefono" />
           <field name="cod_postal" />
+          <field name="empleado_ids" />
+           <field name="telefono" widget="phone" />
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="cine_modulo.cliente">
+      <field name="name">Clientes</field>
+      <field name="model">jd_cinema.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name" />
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="telefono" widget="phone" />
+          <field name="cod_postal" />
+          <field name="empleado_ids" />
+        </form>
+      </field>
+    </record>
     <!--Peliculas-->
-    <record model="ir.ui.view" id="cine_modulo.pelicula">
+    <record model="ir.ui.view" id="cine_modulo.pelicula_tree">
       <field name="name">Pelicula</field>
-      <field name="model">cinema.pelicula</field>
+      <field name="model">jd_cinema.pelicula</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name" />
@@ -39,13 +69,28 @@
           <field name="sinopsis" />
           <field name="duracion" />
           <field name="fecha_estreno" />
+          <field name="cartelera" widget="image"/>
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="cine_modulo.pelicula">
+      <field name="name">Pelicula</field>
+      <field name="model">jd_cinema.pelicula</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name" />
+          <field name="nombre" />
+          <field name="sinopsis" />
+          <field name="duracion" />
+          <field name="fecha_estreno" />
+          <field name="cartelera" widget="image"/>
+        </form>
+      </field>
+    </record>
     <!--Distribuidora-->
-    <record model="ir.ui.view" id="cine_modulo.distribuidora">
+    <record model="ir.ui.view" id="cine_modulo.distribuidora_tree">
       <field name="name">Distribuidora</field>
-      <field name="model">cinema.distribuidora</field>
+      <field name="model">jd_cinema.distribuidora</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name" />
@@ -53,10 +98,20 @@
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="cine_modulo.distribuidora">
+      <field name="name">Distribuidora</field>
+      <field name="model">jd_cinema.distribuidora</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="name" />
+          <field name="nombre" />
+        </form>
+      </field>
+    </record>
     <!--Sesiones-->
-    <record model="ir.ui.view" id="cine_modulo.sesion">
+    <record model="ir.ui.view" id="cine_modulo.sesion_tree">
       <field name="name">Sesion</field>
-      <field name="model">cinema.sesion</field>
+      <field name="model">jd_cinema.sesion</field>
       <field name="arch" type="xml">
         <tree>
           <field name="numero_sala" />
@@ -65,44 +120,55 @@
         </tree>
       </field>
     </record>
+    <record model="ir.ui.view" id="cine_modulo.sesion">
+      <field name="name">Sesion</field>
+      <field name="model">jd_cinema.sesion</field>
+      <field name="arch" type="xml">
+        <form>
+          <field name="numero_sala" />
+          <field name="pelicula" />
+          <field name="fecha_sesion" />
+        </form>
+      </field>
+    </record>
     <!--Acciones_empleado-->
     <record model="ir.actions.act_window" id="cine_modulo.empleados_accion">
       <field name="name">Empleado</field>
-      <field name="res_model">cinema.empleado</field>
+      <field name="res_model">jd_cinema.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_cliente-->
     <record model="ir.actions.act_window" id="cine_modulo.clientes_accion">
       <field name="name">Cliente</field>
-      <field name="res_model">cinema.cliente</field>
+      <field name="res_model">jd_cinema.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_peliculas-->
     <record model="ir.actions.act_window" id="cine_modulo.peliculas_accion">
       <field name="name">Peliculas</field>
-      <field name="res_model">cinema.pelicula</field>
+      <field name="res_model">jd_cinema.pelicula</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Aciones_distribuidoras-->
     <record model="ir.actions.act_window" id="cine_modulo.distribuidoras_accion">
       <field name="name">Distribuidora</field>
-      <field name="res_model">cinema.distribuidora</field>
+      <field name="res_model">jd_cinema.distribuidora</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--Acciones_sesiones-->
     <record model="ir.actions.act_window" id="cine_modulo.sesiones_accion">
       <field name="name">Sesiones disponibles</field>
-      <field name="res_model">cinema.sesion</field>
+      <field name="res_model">jd_cinema.sesion</field>
       <field name="view_mode">tree,form</field>
     </record>
     <!--MenuItems-->
     <menuitem id="cine_modulo.menu_root" name="Cine"/>
-    <menuitem id="cine_modulo.empleados_menu"  name="Empleados" parent="cine_modulo.menu_root" action="cine_modulo.empleados_accion"/>
-    <menuitem id="cine_modulo.clientes_menu" name="Clientes" parent="cine_modulo.menu_root" action="cine_modulo.clientes_accion"/>
+    <menuitem id="cine_modulo.usuarios" name="Usuarios" parent="cine_modulo.menu_root" sequence="1"/>
+    <menuitem id="cine_modulo.empleados_menu"  name="Empleados" parent="cine_modulo.usuarios" action="cine_modulo.empleados_accion" sequence="1"/>
+    <menuitem id="cine_modulo.clientes_menu" name="Clientes" parent="cine_modulo.usuarios" action="cine_modulo.clientes_accion"/>
     <menuitem id="cine_modulo.peliculas_menu" name="Peliculas" parent="cine_modulo.menu_root" action="cine_modulo.peliculas_accion"/>
     <menuitem id="cine_modulo.sesiones_menu" name="Sesiones" parent="cine_modulo.menu_root" action="cine_modulo.sesiones_accion"/>
     <menuitem id="cine_modulo.distribuidora_menu" name="Distribuidora" parent="cine_modulo.menu_root" action="cine_modulo.distribuidoras_accion"/>
-    <!--MenuAcciones-->
-    
+  
   </data>
 </odoo>
