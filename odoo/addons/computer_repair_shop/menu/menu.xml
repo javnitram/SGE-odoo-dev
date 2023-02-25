@@ -19,14 +19,13 @@
         <menuitem
             id="clients_menu"
             name="Clients"
-            action="repairments_action"
+            action="clients_action"
             parent="repairments_root"
             sequence="3"/>
             
         <menuitem
             id="parts_menuitem"
             name="Parts"
-            action="repairments_action"
             parent="repairments_root"
             sequence="4"/>  
     </data>

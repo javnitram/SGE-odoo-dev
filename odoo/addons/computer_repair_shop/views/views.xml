@@ -18,6 +18,21 @@
       </field>
     </record>
 
+    <record id="repairments_view_form" model="ir.ui.view">
+      <field name="name">repairment_view_form</field>
+      <field name="model">ws.repairments</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="repair_status" string="Repairment status"/>
+            <field name="start_date" string="Start date"/>
+            <field name="completion_date" string="Completion date"/>
+            <field name="labor_cost" string="Labor cost"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
     <record id="technicians_action" model="ir.actions.act_window">
       <field name="name">Technicians</field>
       <field name="res_model">ws.technicians</field>
@@ -58,42 +73,39 @@
       </field>
     </record>
 
-
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="computer_repair_shop.action_window">
-      <field name="name">computer_repair_shop window</field>
-      <field name="res_model">computer_repair_shop.computer_repair_shop</field>
+    <record id="clients_action" model="ir.actions.act_window">
+      <field name="name">Clients</field>
+      <field name="res_model">ws.clients</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="computer_repair_shop.action_server">
-      <field name="name">computer_repair_shop server</field>
-      <field name="model_id" ref="model_computer_repair_shop_computer_repair_shop"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record id="clients_view_tree" model="ir.ui.view">
+      <field name="name">clients_view_tree</field>
+      <field name="model">ws.clients</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name" string="Nombre"/>
+          <field name="phone" string="Phone"/>
+          <field name="email" string="Email"/>
+        </tree>
       </field>
     </record>
--->
- 
-<!--
-    <menuitem name="Menu 1" id="computer_repair_shop.menu_1" parent="computer_repair_shop.menu_root"/>
-    <menuitem name="Menu 2" id="computer_repair_shop.menu_2" parent="computer_repair_shop.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="computer_repair_shop.menu_1_list" parent="computer_repair_shop.menu_1"
-              action="computer_repair_shop.action_window"/>
-    <menuitem name="Server to list" id="computer_repair_shop" parent="computer_repair_shop.menu_2"
-              action="computer_repair_shop.action_server"/>
--->
+
+    <record id="clients_view_form" model="ir.ui.view">
+      <field name="name">clients_view_form</field>
+      <field name="model">ws.clients</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="name" string="Name"/>
+              <field name="phone" string="Phone"/>
+              <field name="email" string="Email"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
   </data>
 </odoo>
