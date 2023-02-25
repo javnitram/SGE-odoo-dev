@@ -14,11 +14,24 @@
             <kanban>
                 <field name="id"/>
                 <field name="photo"/>
+                <field name="name"/>
+                <field name="socket"/>
+                <field name="size"/>
+                <field name="chipset"/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
-                        <div class="o_kanban_image d-none d-md-block"
-                            t-attf-style="background-image:url('#{kanban_image('ws.motherboards', 'photo', record.id.raw_value, placeholder)}'"/>
+                            <div class="o_kanban_image d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('ws.motherboards', 'photo', record.id.raw_value, placeholder)}'"/>
+                            <div class="oe_kanban_details">
+                              <ul>
+                                  <li>
+                                      <h3 style="text-align: center;"><field name="name"/></h3>
+                                      <h5 style="text-align: center;"><field name="socket"/></h5>
+                                      <h5 style="text-align: center;"><field name="size"/></h5>
+                                      <h5 style="text-align: center;"><field name="chipset"/></h5>
+                                  </li>
+                              </ul>
+                          </div>
                         </div>
                     </t>
                 </templates>
@@ -34,7 +47,10 @@
                 <group>
                     <group>
                         <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
-                        <field name="name" required="1"/>
+                        <field name="name" string="Name" required="1"/>
+                        <field name="socket" string="Socket" required="1"/>
+                        <field name="size" string="Size" required="1"/>
+                        <field name="chipset" string="Chipset" required="1"/>
                     </group>
                 </group>
             </form>

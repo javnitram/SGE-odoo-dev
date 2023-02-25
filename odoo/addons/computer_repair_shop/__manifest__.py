@@ -39,6 +39,7 @@
 
     # only loaded in demonstration mode
     'demo': [
+        'demo/motherboards_demodata.xml',
         'demo/technicians_demodata.xml',
         'demo/clients_demodata.xml',
     ],

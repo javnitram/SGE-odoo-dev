@@ -14,9 +14,9 @@ class Clients(models.Model):
 class Technicians(models.Model):
     _name = "ws.technicians"
     _description = "Technician Model"
-
     name = fields.Char('name')
     photo = fields.Image('photo')
+    repairments_ids = fields.Many2many('ws.repairments', string='repairments')
 
 
 class Repairments(models.Model):
@@ -36,6 +36,7 @@ class Repairments(models.Model):
     cost = fields.Float('cost')
     computer_id = fields.Many2one('ws.computers', string='computer')
     issue_description = fields.Text('issue_description')
+    technicians_ids = fields.Many2many('ws.technicians', string='technicians')
 
 
 class Computers(models.Model):
@@ -62,7 +63,6 @@ class Motherboards(models.Model):
     ], string='size')
     socket = fields.Char('socket')
     chipset = fields.Char('chipset')
-    description = fields.Text('description')
 
 
 class RAM(models.Model):
