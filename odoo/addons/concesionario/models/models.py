@@ -8,6 +8,7 @@ class ConcesionarioPedidos(models.Model):
     name = fields.Char('Nombre',required=True)
     descripcion = fields.Char('Descripcion')
     facturas_id = fields.Many2one('dhm.concesionario.facturas', string='Factura')
+    clientes_id = fields.Many2one('dhm.concesionario.clientes', string='Clientes')
 
 class ConcesionarioVehiculos(models.Model):
     _name = 'dhm.concesionario.vehiculos'
@@ -24,20 +25,17 @@ class ConcesionarioVehiculos(models.Model):
     matricula = fields.Integer('Matricula',required=True)
     clientes_ids = fields.Many2many('dhm.concesionario.clientes', string='Clientes')
 
-
 class ConcesionarioClientes(models.Model):
     _name = 'dhm.concesionario.clientes'
     _description = 'Clientes'
-    name = fields.Integer('Dni',required=True)
+    name = fields.Char('Dni',required=True)
     nombre = fields.Char('Nombre',required=True,help='Introduzca el nombre')
     apellidos = fields.Char('Apellidos',required=True,help='Introduzca el apellido')
-    vehiculos_ids = fields.Many2many('dhm.concesionario.vehiculos', string='Vehiculos')
-
+    pedidos_ids = fields.One2many('dhm.concesionario.pedidos', 'clientes_id', string='Pedidos')
 
 class ConcesionarioFacturas(models.Model):
     _name = 'dhm.concesionario.facturas'
     _description = 'Facturas'
-    name = fields.Integer('Factura',required=True)
+    name = fields.Char('Factura',required=True)
     cantidad = fields.Integer('Cantidad',required=True)
-    precio = fields.Integer('Precio',required=True)
-    pedidos_ids = fields.One2many('dhm.concesionario.pedidos', 'facturas_id', string='Pedidos')    
+    precio = fields.Integer('Precio',required=True)  

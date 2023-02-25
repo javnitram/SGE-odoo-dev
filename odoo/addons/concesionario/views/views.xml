@@ -125,11 +125,10 @@
               <field name="name"/>
               <field name="nombre"/>
               <field name="apellidos"/>
-              <field name="vehiculos_ids">
+              <field name="pedidos_ids">
                 <tree>
                   <field name="name"/>
-                  <field name="modelo"/>
-                  <field name="matricula"/>
+                  <field name="descripcion"/>
                 </tree>
               </field>
             </group>
@@ -160,12 +159,6 @@
               <field name="name"/>
               <field name="cantidad"/>
               <field name="precio"/>
-              <field name="pedidos_ids">
-                <tree>
-                  <field name="name" />
-                  <field name="descripcion" />
-                </tree>
-              </field>
             </group>
           </sheet>
         </form>
@@ -206,7 +199,7 @@
     <menuitem name="Clientes" id="concesionario.menu_clientes" parent="concesionario.menu_root"/>
     <menuitem name="Vehiculos" id="concesionario.menu_vehiculos" parent="concesionario.menu_root"/>
     <menuitem name="Facturas" id="concesionario.menu_facturas" parent="concesionario.menu_root"/>
-   
+    
     <!-- actions -->
     <menuitem name="Lista pedidos" id="concesionario.menu_pedidos_list" parent="concesionario.menu_pedidos"
               action="concesionario.action_window_pedidos"/>
