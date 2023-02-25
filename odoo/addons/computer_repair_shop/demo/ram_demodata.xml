@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+        <record id="ram0" model="ws.ram">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/crucial2x16.jpg"/>
+            <field name="name">Corsair Vengeance 2x16</field>
+            <field name="capacity">32</field>
+        </record>
+        
+        <record id="ram1" model="ws.ram">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/crucial2x8.jpg"/>
+            <field name="name">Crucial 2x8</field>
+            <field name="capacity">16</field>
+        </record>
+    </data>
+</odoo>

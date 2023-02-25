@@ -1,8 +1,35 @@
 <odoo>
     <data>
         <record id="motherboard0" model="ws.motherboards">
+        <field name="photo" type="base64" file="computer_repair_shop/static/img/msi-x570-a.jpg"/>
             <field name="name">MSI X570 A</field>
-            <field name="photo" type="base64" file="computer_repair_shop/static/img/msi-x570-a.jpg"/>
+            <field name="size">atx</field>
+            <field name="socket">AM4</field>
+            <field name="chipset">X570</field>
+        </record>
+    </data>
+</odoo>
+
+<odoo>
+    <data>
+        <record id="motherboard1" model="ws.motherboards">
+        <field name="photo" type="base64" file="computer_repair_shop/static/img/asus-b550-a.jpg"/>
+            <field name="name">ASUS B550 A</field>
+            <field name="size">atx</field>
+            <field name="socket">AM4</field>
+            <field name="chipset">B550</field>
+        </record>
+    </data>
+</odoo>
+
+<odoo>
+    <data>
+        <record id="motherboard2" model="ws.motherboards">
+        <field name="photo" type="base64" file="computer_repair_shop/static/img/asrock-b550b-steel-legend.jpg"/>
+            <field name="name">Asrock B550 Steel Legend</field>
+            <field name="size">atx</field>
+            <field name="socket">AM4</field>
+            <field name="chipset">B550</field>
         </record>
     </data>
 </odoo>
