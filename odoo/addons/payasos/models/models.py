@@ -19,7 +19,7 @@ class payasos(models.Model):
         ('5', 'naranja'),
     ], string='Color de nariz', required=True, default=0)
     tarifa = fields.Float('tarifa', required=True)
-    #id_manager = fields.Many2one('dg.managers', string='id')
+    manager_id = fields.Many2one('dg.payasos.managers', string='Manager')
 
 class managers(models.Model):
     _name = 'dg.payasos.managers'
@@ -27,12 +27,13 @@ class managers(models.Model):
 
     name = fields.Char('Nombre', required=True)
     annos = fields.Integer('Años en la empresa', required=True)
-
+    payasos_ids = fields.One2many('dg.payasos.payasos', 'manager_id', string='Payasos manejados')
 class fiestas(models.Model):
     _name = 'dg.payasos.fiestas'
     _description = 'dg.payasos.fiestas'
 
     description = fields.Text('Tipo de fiesta', help='Cumpleaños, fin de curso...', required=True)
+    cliente_id = fields.Many2one('dg.payasos.clientes', string='Organizador')
     fecha = fields.Date('Fecha', required=True)
     direccion = fields.Char('Dirección', required=True)
     hora_comienzo = fields.Float('Hora de comienzo')
@@ -50,7 +51,8 @@ class clientes(models.Model):
     dni = fields.Char('DNI', required=True)
     name = fields.Char('Nombre', required=True)
     edad = fields.Integer('Edad')
-    
+    fiestas_ids = fields.One2many('dg.payasos.fiestas', 'cliente_id', string='Fiestas organizadas')
+
 #
 #  @api.depends('value')
 #   def _value_pc(self):

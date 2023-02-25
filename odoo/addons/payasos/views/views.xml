@@ -12,6 +12,7 @@
           <field name="edad"/>
           <field name="color_nariz"/>
           <field name="tarifa"/>
+          <field name="manager_id"/>
         </tree>
       </field>
     </record>
@@ -28,6 +29,7 @@
             <field name="edad"/>
             <field name="color_nariz"/>
             <field name="tarifa"/>
+            <field name="manager_id"/>
           </group>
         </form>
       </field>
@@ -39,6 +41,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="description"/>
+          <field name="cliente_id"/>
           <field name="fecha"/>
           <field name="direccion"/>
           <field name="hora_comienzo" widget="float_time"/>
@@ -54,6 +57,7 @@
         <form>
           <group>
             <field name="description"/>
+            <field name="cliente_id"/>
             <field name="fecha"/>
             <field name="direccion"/>
             <field name="hora_comienzo" widget="float_time"/>
@@ -82,6 +86,15 @@
           <group>
             <field name="name"/>
             <field name="annos"/>
+            <field name="payasos_ids">
+              <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="edad"/>
+                <field name="color_nariz"/>
+                <field name="tarifa"/>
+              </tree>
+            </field>
           </group>
         </form>
       </field>
@@ -93,8 +106,8 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="edad"/>
           <field name="dni"/>
+          <field name="edad"/>
         </tree>
       </field>
     </record>
@@ -107,8 +120,17 @@
         <form>
           <group>
             <field name="name"/>
-            <field name="edad"/>
             <field name="dni"/>
+            <field name="edad"/>
+            <field name="fiestas_ids">
+              <tree>
+                <field name="description"/>
+                <field name="fecha"/>
+                <field name="direccion"/>
+                <field name="hora_comienzo" widget="float_time"/>
+                <field name="hora_fin" widget="float_time"/>
+              </tree>
+            </field>
           </group>
         </form>
       </field>
@@ -116,14 +138,14 @@
 
     <!-- actions opening views on models -->
 
-    <record id="payasos_fiestas_action_window" model="ir.actions.act_window">
-      <field name="name">FIESTAS</field>
-      <field name="res_model">dg.payasos.fiestas</field>
-      <field name="view_mode">tree,form</field>
-    </record>
     <record id="payasos_payasos_action_window" model="ir.actions.act_window">
       <field name="name">PAYASOS</field>
       <field name="res_model">dg.payasos.payasos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="payasos_fiestas_action_window" model="ir.actions.act_window">
+      <field name="name">FIESTAS</field>
+      <field name="res_model">dg.payasos.fiestas</field>
       <field name="view_mode">tree,form</field>
     </record>
     <record id="payasos_managers_action_window" model="ir.actions.act_window">
