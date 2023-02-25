@@ -1,28 +1,142 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="payasos.list">
-      <field name="name">payasos list</field>
-      <field name="model">payasos.payasos</field>
+    <!-- explicit list view definition-->
+
+    <record model="ir.ui.view" id="payasos_payasos_tree">
+      <field name="name">payasos.payasos.tree</field>
+      <field name="model">dg.payasos.payasos</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="description"/>
+          <field name="edad"/>
+          <field name="color_nariz"/>
+          <field name="tarifa"/>
         </tree>
       </field>
     </record>
--->
+
+    <record model="ir.ui.view" id="payasos_payasos_form">
+      <field name="name">payasos.payasos.form</field>
+      <field name="model">dg.payasos.payasos</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="edad"/>
+            <field name="color_nariz"/>
+            <field name="tarifa"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_fiestas_tree">
+      <field name="name">payasos.fiestas.tree</field>
+      <field name="model">dg.payasos.fiestas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="description"/>
+          <field name="fecha"/>
+          <field name="direccion"/>
+          <field name="hora_comienzo" widget="float_time"/>
+          <field name="hora_fin" widget="float_time"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_fiestas_form">
+      <field name="name">payasos.fiestas.form</field>
+      <field name="model">dg.payasos.fiestas</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="description"/>
+            <field name="fecha"/>
+            <field name="direccion"/>
+            <field name="hora_comienzo" widget="float_time"/>
+            <field name="hora_fin" widget="float_time"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_managers_tree">
+      <field name="name">payasos.managers.tree</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="annos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_managers_form">
+      <field name="name">payasos.managers.form</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="annos"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_clientes_tree">
+      <field name="name">payasos.clientes.tree</field>
+      <field name="model">dg.payasos.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="dni"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_clientes_form">
+      <field name="name">payasos.clientes.form</field>
+      <field name="model">dg.payasos.clientes</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="edad"/>
+            <field name="dni"/>
+          </group>
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="payasos.action_window">
-      <field name="name">payasos window</field>
-      <field name="res_model">payasos.payasos</field>
+
+    <record id="payasos_fiestas_action_window" model="ir.actions.act_window">
+      <field name="name">FIESTAS</field>
+      <field name="res_model">dg.payasos.fiestas</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+    <record id="payasos_payasos_action_window" model="ir.actions.act_window">
+      <field name="name">PAYASOS</field>
+      <field name="res_model">dg.payasos.payasos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="payasos_managers_action_window" model="ir.actions.act_window">
+      <field name="name">MANAGERS</field>
+      <field name="res_model">dg.payasos.managers</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="payasos_clientes_action_window" model="ir.actions.act_window">
+      <field name="name">CLIENTES</field>
+      <field name="res_model">dg.payasos.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +155,26 @@
 -->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="payasos" id="payasos.menu_root"/>
--->
+
+    <menuitem name="PayasOS" id="payasos_menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="payasos.menu_1" parent="payasos.menu_root"/>
-    <menuitem name="Menu 2" id="payasos.menu_2" parent="payasos.menu_root"/>
--->
+
+    <menuitem name="Payasos" id="payasos_payasos_menu" parent="payasos_menu_root"
+              action="payasos_payasos_action_window"/>
+    <menuitem name="Fiestas" id="payasos_fiestas_menu" parent="payasos_menu_root" 
+              action="payasos_fiestas_action_window"/>
+    <menuitem name="Managers" id="payasos_managers_menu" parent="payasos_menu_root" 
+              action="payasos_managers_action_window"/>
+    <menuitem name="Clientes" id="payasos_clientes_menu" parent="payasos_menu_root"
+              action="payasos_clientes_action_window"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="payasos.menu_1_list" parent="payasos.menu_1"
-              action="payasos.action_window"/>
-    <menuitem name="Server to list" id="payasos" parent="payasos.menu_2"
-              action="payasos.action_server"/>
--->
+
+    <!--<menuitem name="Vista de fiestas" id="payasos_fiestas_menu" parent="payasos_fiestas_submenu"
+              action="payasos_fiestas_action_window"/>
+    <menuitem name="Vista de payasos" id="payasos_payasos_menu" parent="payasos_payasos_submenu"
+              action="payasos_payasos_action_window"/>-->
+
   </data>
 </odoo>
