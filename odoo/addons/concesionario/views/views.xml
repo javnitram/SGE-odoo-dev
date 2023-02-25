@@ -1,60 +1,150 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="concesionario.list">
-      <field name="name">Concesionario list</field>
-      <field name="model">concesionario.concesionario</field>
+
+    <record model="ir.ui.view" id="concesionario.coches">
+      <field name="name">Coches</field>
+      <field name="model">concesionario.coches</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="matricula"></field>
+          <field name="marca"></field>
+          <field name="modelo"></field>
+          <field name="cv"></field>
+          <field name="color"></field>
+          <field name="estado"></field>
+
         </tree>
       </field>
     </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="concesionario.action_window">
-      <field name="name">Concesionario window</field>
-      <field name="res_model">concesionario.concesionario</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
+    <!-- Añadir coche-->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="concesionario.action_server">
-      <field name="name">Concesionario server</field>
-      <field name="model_id" ref="model_concesionario_concesionario"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
+    <record model="ir.ui.view" id="concesionario.coches_annadir">
+      <field name="name">CochesAñadir</field>
+      <field name="model">concesionario.coches_annadir</field>
+      <field name="arch" type="xml">
+        <form string="Introduzca el datos del coche">
+          <sheet>
+            <group>
+              <field name="matricula"></field>
+              <field name="marca"></field>
+              <field name="modelo"></field>
+              <field name="cv"></field>
+              <field name="color"></field>
+              <field name="estado"></field>
+            </group>
+          </sheet>
+        </form>
       </field>
     </record>
--->
+
+  
+
+    <record model="ir.ui.view" id="concesionario.clientes">
+      <field name="name">Clientes</field>
+      <field name="model">concesionario.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"></field>
+          <field name="apellidos"></field>
+          <field name="direccion"></field>
+          <field name="telefono"></field>
+          <field name="matricula" />
+        </tree>
+      </field>
+    </record>
+<!---->
+    <record model="ir.ui.view" id="concesionario.empleados">
+      <field name="name">Empleados</field>
+      <field name="model">concesionario.empleados</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre"></field>
+          <field name="apellidos"></field>
+          <field name="nrovendidos"></field>
+          <field name="salario"></field>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="concesionario.mecanicos">
+      <field name="name">Mecanicos</field>
+      <field name="model">concesionario.mecanicos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nombre" />
+          <field name="apellidos" />
+        </tree>
+      </field>
+    </record>
+
+    
+
+    <!-- Vista tipo de coche, cuelga de coche y hay dos tipos vendidos, reparando, o alquilados
+        Esta vista va a ser una kanban en la que el empleado gestiona los coches del concesionario
+      <record model="ir.ui.view" id="concesionario.tipos">
+      <field name="name">Tipo</field>
+      <field name="model">concesionario.tipos</field>
+      <field name="arch" type="xml">
+        <tree>
+        </tree>
+      </field>
+    </record>
+    -->
+
+    <!-- actions opening views on models -->
+  <!-- -->
+    <record model="ir.actions.act_window" id="concesionario.coches_action_window">
+      <field name="name">Coches</field>
+      <field name="res_model">concesionario.coches</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="concesionario.coches_annadir_action_window">
+      <field name="name">Coches</field>
+      <field name="res_model">concesionario.coches_annadir</field>
+      <field name="view_mode">form</field>
+    </record>
+    <record model="ir.actions.act_window" id="concesionario.empleados_action_window">
+      <field name="name">Empleados</field>
+      <field name="res_model">concesionario.empleados</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="concesionario.clientes_action_window">
+      <field name="name">Clientes</field>
+      <field name="res_model">concesionario.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="concesionario.mecanicos_action_window">
+      <field name="name">Mecanicos</field>
+      <field name="res_model">concesionario.mecanicos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- Top menu item -->
-<!--
+<!-- -->
     <menuitem name="Concesionario" id="concesionario.menu_root"/>
--->
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="concesionario.menu_1" parent="concesionario.menu_root"/>
-    <menuitem name="Menu 2" id="concesionario.menu_2" parent="concesionario.menu_root"/>
--->
+
+
+   <!-- <menuitem id="model_name_menu" name="name" sequence="10"/> -->
+
+    <menuitem name="Coches" id="concesionario.coches_menu" parent="concesionario.menu_root" />
+    <menuitem name="Empleados" id="concesionario.empleados_menu" parent="concesionario.menu_root"  action="concesionario.empleados_action_window"/>
+    <menuitem name="Clientes" id="concesionario.clientes_menu" parent="concesionario.menu_root" action="concesionario.clientes_action_window"/>
+    <menuitem name="Mecanicos" id="concesionario.mecanicos_menu" parent="concesionario.menu_root" action="concesionario.mecanicos_action_window"/>
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="concesionario.menu_1_list" parent="concesionario.menu_1"
-              action="concesionario.action_window"/>
-    <menuitem name="Server to list" id="concesionario" parent="concesionario.menu_2"
-              action="concesionario.action_server"/>
--->
+   <!-- <menuitem id="model_name_menu" name="name" action="action_id" groups="groups_id" parent="parent_id" sequence="10"/>-->
+    <menuitem name="Visualizar Coches" id="concesionario.coches_visualizar_menu" parent="concesionario.coches_menu"
+              action="concesionario.coches_action_window"/>
+    <menuitem name="Añadir Coches" id="concesionario.coches_annadir_menu" parent="concesionario.coches_menu"
+              action="concesionario.coches_annadir_action_window"/>
+    
+    <!--<menuitem name="Server to list" id="concesionario.gestion_coches_menu" parent="concesionario.empleados_menu"
+             />
+     #   action="concesionario.coches_action_window" -->
   </data>
 </odoo>
