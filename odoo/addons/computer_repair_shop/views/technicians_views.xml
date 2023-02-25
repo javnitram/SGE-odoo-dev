@@ -22,7 +22,7 @@
                           <div class="oe_kanban_details">
                               <ul>
                                   <li>
-                                      <field name="name"/>
+                                      <h2 style="text-align: center;"><field name="name"/></h2>
                                   </li>
                               </ul>
                           </div>
@@ -41,7 +41,7 @@
                 <group>
                     <group>
                         <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
-                        <field name="name"/>
+                        <field name="name" required="1"/>
                     </group>
                 </group>
             </form>

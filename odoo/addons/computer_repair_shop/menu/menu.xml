@@ -27,6 +27,49 @@
             id="parts_menuitem"
             name="Parts"
             parent="repairments_root"
-            sequence="4"/>  
+            sequence="4"/>
+
+        <menuitem
+            id="motherboards_menuitem"
+            name="Motherboards"
+            parent="parts_menuitem"
+            action="motherboards_action"
+            sequence="1"/>
+
+        <menuitem
+            id="cpu_menuitem"
+            name="CPU"
+            parent="parts_menuitem"
+            action="cpu_action"
+            sequence="2"/>
+
+        <menuitem
+            id="ram_menuitem"
+            name="RAM"
+            parent="parts_menuitem"
+            action="ram_action"
+            sequence="3"/>
+
+        <menuitem
+            id="gpu_menuitem"
+            name="GPU"
+            parent="parts_menuitem"
+            action="gpu_action"
+            sequence="4"/>
+
+        <menuitem
+            id="psu_menuitem"
+            name="PSU"
+            parent="parts_menuitem"
+            action="psu_action"
+            sequence="5"/>
+
+        <menuitem
+            id="chassis_menuitem"
+            name="Chassis"
+            parent="parts_menuitem"
+            action="chassis_action"
+            sequence="6"/>
+
     </data>
 </odoo>

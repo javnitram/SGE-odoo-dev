@@ -8,7 +8,7 @@ class Clients(models.Model):
     name = fields.Char('name')
     phone = fields.Char('phone')
     email = fields.Char('email')
-    computers_ids = fields.One2many('ws.computers', 'client_id', string='computers')
+    computers_ids = fields.One2many('ws.computers', 'client_id', string='computers_ids')
 
 
 class Technicians(models.Model):
@@ -35,6 +35,7 @@ class Repairments(models.Model):
     completion_date = fields.Date('completion_date')
     cost = fields.Float('cost')
     computer_id = fields.Many2one('ws.computers', string='computer')
+    issue_description = fields.Text('issue_description')
 
 
 class Computers(models.Model):
@@ -103,12 +104,15 @@ class PSU(models.Model):
         ('semi_modular', 'Semi modular'),
         ('full_modular', 'Full modular'),
     ], string='modular')
-    description = fields.Text('description')
 
 
 class Chassis(models.Model):
     _name = "ws.chassis"
     _description = "Chassis Model"
     name = fields.Char('name')
-    manufacturer = fields.Char('manufacturer')
-    description = fields.Text('description')
+    photo = fields.Image('photo')
+    size = fields.Selection([
+        ('atx', 'ATX'),
+        ('micro-atx', 'Micro ATX'),
+        ('mini-itx', 'Mini ITX'),
+    ], string='size')

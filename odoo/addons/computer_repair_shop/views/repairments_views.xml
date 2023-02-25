@@ -12,6 +12,7 @@
         <field name="arch" type="xml">
             <tree>
             <field name="repair_status" string="Repairment status"/>
+            <field name="computer_id" string="Computer" widget="many2one"/>
             <field name="start_date" string="Start date"/>
             <field name="completion_date" string="Finish date"/>
             </tree>
@@ -24,8 +25,8 @@
         <field name="arch" type="xml">
             <form>
             <group>
-                <field name="repair_status" string="Repairment status"/>
-                <field name="computer_id" string="Computer"/>
+                <field name="repair_status" string="Repairment status" required="1"/>
+                <field name="computer_id" string="Computer" widget="many2one" required="1"/>
                 <field name="start_date" string="Start date"/>
                 <field name="completion_date" string="Completion date"/>
                 <field name="cost" string="Cost"/>
