@@ -7,27 +7,27 @@
             name="Repairments"
             action="repairments_action"
             parent="repairments_root"
-            sequence="10"/>
+            sequence="1"/>
 
         <menuitem
             id="technicians_menuitem"
             name="Technicians"
             action="technicians_action"
             parent="repairments_root"
-            sequence="9"/>   
-
-        <menuitem
-            id="parts_menuitem"
-            name="Parts"
-            action="repairments_action"
-            parent="repairments_root"
-            sequence="9"/>  
+            sequence="2"/>   
 
         <menuitem
             id="clients_menu"
             name="Clients"
             action="repairments_action"
             parent="repairments_root"
-            sequence="10"/>
+            sequence="3"/>
+            
+        <menuitem
+            id="parts_menuitem"
+            name="Parts"
+            action="repairments_action"
+            parent="repairments_root"
+            sequence="4"/>  
     </data>
 </odoo>

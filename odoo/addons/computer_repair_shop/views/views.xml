@@ -6,8 +6,8 @@
       <field name="view_mode">tree,form,kanban</field>
     </record>
 
-    <record id="repairments_tree_view" model="ir.ui.view">
-      <field name="name">computer_repairment.tree</field>
+    <record id="repairments_view_tree" model="ir.ui.view">
+      <field name="name">repairment_view_tree</field>
       <field name="model">ws.repairments</field>
       <field name="arch" type="xml">
         <tree>
@@ -21,8 +21,43 @@
     <record id="technicians_action" model="ir.actions.act_window">
       <field name="name">Technicians</field>
       <field name="res_model">ws.technicians</field>
-      <field name="view_mode">form,kanban</field>
+      <field name="view_mode">kanban,form</field>
     </record>
+
+    <record id="technicians_view_kanban" model="ir.ui.view">
+      <field name="name">technicians_view_kanban</field>
+      <field name="model">ws.technicians</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="photo"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                <div class="o_kanban_image d-none d-md-block"
+                  t-attf-style="background-image:url('#{kanban_image('ws.technicians', 'photo', record.id.raw_value, placeholder)}'"/>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record id="technicians_view_form" model="ir.ui.view">
+      <field name="name">technicians_view_form</field>
+      <field name="model">ws.technicians</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <group>
+              <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
+              <field name="name"/>
+            </group>
+          </group>
+        </form>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 <!--
