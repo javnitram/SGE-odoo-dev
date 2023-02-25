@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_concesionario_coches,concesionario.coches,model_concesionario_coches,base.group_user,1,1,1,1
+access_concesionario_empleados,concesionario.empleados,model_concesionario_empleados,base.group_user,1,1,1,1
+access_concesionario_clientes,concesionario.clientes,model_concesionario_clientes,base.group_user,1,1,1,1
+access_concesionario_mecanicos,concesionario.mecanicos,model_concesionario_mecanicos,base.group_user,1,1,1,1
+access_concesionario_coches_annadir,concesionario.coches_añadir,model_concesionario_coches_annadir,base.group_user,1,1,1,1ocke
