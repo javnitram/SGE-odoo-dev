@@ -3,8 +3,8 @@
     'name': "hotel",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Reserva de habitación de hotel para clientes
+    """,
 
     'description': """
         Módulo que sirve para resrvar habitaciones de hotel para los clientes

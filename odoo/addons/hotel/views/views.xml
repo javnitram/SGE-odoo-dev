@@ -2,7 +2,9 @@
   <data>
     <!-- explicit list view definition -->
 
-    <!-- Vista tree y form del modelo Cliente -->
+    <!-- modelo Cliente -->
+
+    <!-- Vista tree-->
     <record id="hotel_cliente_list" model="ir.ui.view">
       <field name="name">Lista de Clientes</field>
       <field name="model">jf.hotel.cliente</field>
@@ -18,6 +20,7 @@
       </field>
     </record>
 
+    <!-- Vista form-->
     <record id="hotel_cliente_form" model="ir.ui.view">
       <field name="name">Formulario de Categorias</field>
       <field name="model">jf.hotel.cliente</field>
@@ -43,7 +46,9 @@
       </field>
     </record>
 
-    <!-- Vista tree y form del modelo reserva -->
+    <!-- modelo reserva -->
+
+    <!-- Vista tree-->
     <record id="hotel_reserva_list" model="ir.ui.view">
       <field name="name">Lista de Reservas</field>
       <field name="model">jf.hotel.reserva</field>
@@ -57,6 +62,7 @@
       </field>
     </record>
 
+    <!-- Vista form-->
     <record id="hotel_reserva_form" model="ir.ui.view">
       <field name="name">Formulario de Reservas</field>
       <field name="model">jf.hotel.reserva</field>
@@ -78,7 +84,9 @@
     </record>
 
 
-    <!-- Vista tree y form del modelo empresa -->
+    <!-- modelo empresa -->
+
+    <!-- Vista tree-->
     <record id="hotel_empresa_list" model="ir.ui.view">
       <field name="name">Lista de Empresas</field>
       <field name="model">jf.hotel.empresa</field>
@@ -95,6 +103,7 @@
       </field>
     </record>
 
+    <!-- Vista form-->
     <record id="hotel_empresa_form" model="ir.ui.view">
       <field name="name">Formulario de Empresa</field>
       <field name="model">jf.hotel.empresa</field>
@@ -122,7 +131,9 @@
     </record>
 
 
-    <!-- Vista tree y form del modelo habitaciones -->
+    <!-- modelo habitaciones -->
+
+    <!-- Vista tree-->
     <record id="hotel_habitaciones_list" model="ir.ui.view">
       <field name="name">Lista de habitaciones</field>
       <field name="model">jf.hotel.habitaciones</field>
@@ -137,6 +148,7 @@
       </field>
     </record>
 
+    <!-- Vista form-->
     <record id="hotel_habitaciones_form" model="ir.ui.view">
       <field name="name">Formulario de habitaciones</field>
       <field name="model">jf.hotel.habitaciones</field>
