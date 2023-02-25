@@ -20,15 +20,6 @@
         <field name="name">Malitos2</field>
       </record>
                 <!-- USERS-->
-      <record id="user_madeline" model="dm.ooddle.users">
-        <field name="name">Madeline</field>
-        <field name="mobile">985665134</field>
-        <field name="league">celeste</field>
-        <field name="mail">madeline@celeste.com</field>
-        <field name="points">3500</field>
-        <field name="teams_ids" eval="[Command.link(ref('team_celeste'))]"/>
-        <field name="image" type="base64" file="ooddle/static/img/madeline.jpg"/>
-      </record>   
 
       <record id="user_theo" model="dm.ooddle.users">
         <field name="name">Theo</field>
@@ -39,6 +30,16 @@
         <field name="image" type="base64" file="ooddle/static/img/theo.jpg"/>
         <field name="teams_ids" eval="[Command.link(ref('team_celeste'))]"/>
       </record> 
+      
+      <record id="user_madeline" model="dm.ooddle.users">
+        <field name="name">Madeline</field>
+        <field name="mobile">985665134</field>
+        <field name="league">celeste</field>
+        <field name="mail">madeline@celeste.com</field>
+        <field name="points">3500</field>
+        <field name="teams_ids" eval="[Command.link(ref('team_celeste'))]"/>
+        <field name="image" type="base64" file="ooddle/static/img/madeline.jpg"/>
+      </record>   
 
       <record id="user_gigachad" model="dm.ooddle.users">
         <field name="name">El Odoo</field>

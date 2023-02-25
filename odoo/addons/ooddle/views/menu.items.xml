@@ -32,6 +32,12 @@
       name="Ooddle"
       sequence="10"/>
 
+      <menuitem
+            id="ooddle_matches_courts_menu"
+            name="Matches and Courts"
+            parent="ooddle_menu_root"
+            sequence="10"/>
+
     <menuitem
         id="ooddle_users_menu"
         name="Users"
@@ -43,14 +49,14 @@
         id="ooddle_matches_menu"
         name="Matches"
         action="ooddle_matches_action_window"
-        parent="ooddle_menu_root"
+        parent="ooddle_matches_courts_menu"
         sequence="10"/>
 
     <menuitem
         id="ooddle_courts_menu"
         name="Courts"
         action="ooddle_courts_action_window"
-        parent="ooddle_menu_root"
+        parent="ooddle_matches_courts_menu"
         sequence="10"/>  
 
     <menuitem

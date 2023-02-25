@@ -6,7 +6,7 @@
         <field name="arch" type="xml">
             <form string="User Form">
             <group colspan="2" col="2">
-              <field name="image"/>
+              <field name="image" widget="image" class="oe_avatar"/>
               <field name="name"/>
               <field name="league"/>
               <field name="points"/>

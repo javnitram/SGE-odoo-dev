@@ -107,7 +107,6 @@ class Matches(models.Model):
             self.image_team1 = self.team_ids[0].image
             self.image_team2 = self.team_ids[1].image
             self.state = 'close'
-
         return super().create(vals)
    
     @api.constrains('team_ids')

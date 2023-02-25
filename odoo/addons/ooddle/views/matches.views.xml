@@ -83,6 +83,7 @@
                 <calendar date_start="time" string="Tasks" mode="month" event_limit="5"
                             hide_time="true" js_class="project_calendar" event_open_popup="true" quick_add="false" color="court">
                             <field name="name"/>
+                            <field name="team_ids"/>
                             <field name="state" invisible="1" filters ="1"/>
                 </calendar>
             </field>
