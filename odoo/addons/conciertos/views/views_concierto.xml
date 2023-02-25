@@ -1,0 +1,51 @@
+<odoo>
+    <data>
+
+        <!-- Acción que abre las vistas -->
+        <record model="ir.actions.act_window" id="conciertos.concierto_action_window">
+            <field name="name">Lista de conciertos</field>
+            <field name="res_model">sa.conciertos.concierto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tree -->
+        <record model="ir.ui.view" id="conciertos.concierto_list">
+            <field name="name">conciertos.concierto.list</field>
+            <field name="model">sa.conciertos.concierto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="fecha" />
+                    <field name="artista_principal_id" />
+                    <field name="teloneros_ids" />
+                    <field name="recinto_id" />
+                    <field name="precio_base" />
+                    <field name="dinero_recaudado" />
+                    <field name="entradas_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista form -->
+        <record model="ir.ui.view" id="conciertos.concierto_form">
+            <field name="name">conciertos.concierto.form</field>
+            <field name="model">sa.conciertos.concierto</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="fecha" />
+                            <field name="artista_principal_id" />
+                            <field name="teloneros_ids" />
+                            <field name="recinto_id" />
+                            <field name="precio_base" />
+                            <field name="dinero_recaudado" />
+                            <field name="entradas_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

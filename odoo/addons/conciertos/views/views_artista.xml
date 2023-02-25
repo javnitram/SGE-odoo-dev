@@ -1,0 +1,44 @@
+<odoo>
+    <data>
+
+        <!-- Acción que abre las vistas -->
+        <record model="ir.actions.act_window" id="conciertos.artista_action_window">
+            <field name="name">Lista de artistas</field>
+            <field name="res_model">sa.conciertos.artista</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tree -->
+        <record model="ir.ui.view" id="conciertos.artista_list">
+            <field name="name">conciertos.artista.list</field>
+            <field name="model">sa.conciertos.artista</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="foto" widget="image" width="100" />
+                    <field name="name" />
+                    <field name="conciertos_propios_ids" />
+                    <field name="otros_conciertos_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista form -->
+        <record model="ir.ui.view" id="conciertos.artista_form">
+            <field name="name">conciertos.artista.form</field>
+            <field name="model">sa.conciertos.artista</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="foto" widget="image" />
+                            <field name="name" />
+                            <field name="conciertos_propios_ids" />
+                            <field name="otros_conciertos_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

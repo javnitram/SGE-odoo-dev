@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+
+        <!-- Acción que abre las vistas -->
+        <record model="ir.actions.act_window" id="conciertos.recinto_action_window">
+            <field name="name">Lista de recintos</field>
+            <field name="res_model">sa.conciertos.recinto</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record model="ir.ui.view" id="conciertos.recinto_list">
+            <field name="name">conciertos.recinto.list</field>
+            <field name="model">sa.conciertos.recinto</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="ciudad" />
+                    <field name="pais_id" />
+                    <field name="capacidad" />
+                    <field name="conciertos_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista form -->
+        <record model="ir.ui.view" id="conciertos.recinto_form">
+            <field name="name">conciertos.recinto.form</field>
+            <field name="model">sa.conciertos.recinto</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="ciudad" />
+                            <field name="pais_id" />
+                            <field name="capacidad" />
+                            <field name="conciertos_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
