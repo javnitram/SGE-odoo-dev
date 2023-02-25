@@ -28,6 +28,7 @@ class managers(models.Model):
 
     name = fields.Char('Nombre', required=True)
     annos = fields.Integer('Años en la empresa', required=True)
+    foto = fields.Image(string="Foto",store=True,relation="res.partner",help="Agregar imagen")
     payasos_ids = fields.One2many('dg.payasos.payasos', 'manager_id', string='Payasos manejados')
 class fiestas(models.Model):
     _name = 'dg.payasos.fiestas'
@@ -39,7 +40,7 @@ class fiestas(models.Model):
     hora_comienzo = fields.Float('Hora de comienzo')
     hora_fin = fields.Float('Hora de fin')
     cliente_id = fields.Many2one('dg.payasos.clientes', string='Organizador')
-    payasos_ids = fields.Many2many('dg.payasos.payasos', string='Payasos asistentes')
+    payasos_ids = fields.Many2many('dg.payasos.payasos', string='Payasos asistentes', required=True)
 
 class clientes(models.Model):
     _name = 'dg.payasos.clientes'
