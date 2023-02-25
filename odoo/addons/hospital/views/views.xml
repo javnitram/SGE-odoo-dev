@@ -59,9 +59,50 @@
             <field name="name"/>
             <field name="cantidad"/>
             <field name="tipo"/>    
-            <field name="imagen" widget="image" options="{'size': [200, 200]}"/>
+            <field name="imagen" widget="image" options="{'size': [150, 150]}"/>
           </group>
         </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_medicinas_search_view">
+      <field name="name">hospital.medicinas.search</field>
+      <field name="model">gs.hospital.medicinas</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="nroserie" string="Número de serie"/>
+            <field name="name" string="Nombre de medicamento"/>
+            <field name="tipo" string="Tipo de medicamento"/>    
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_medicinas_kanban">
+      <field name="name">hospital.medicinas.kanban</field>
+      <field name="model">gs.hospital.medicinas</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+      <kanban>
+            <field name="nroserie"/>
+            <field name="name"/>
+            <field name="tipo"/>
+            <field name="cantidad"/>
+            <templates>
+              <t t-name="kanban-box">             
+                <div t-attf-class="oe_kanban_global_click">
+                  <div class="o_kanban_image">
+                    <img t-att-src="kanban_image('gs.hospital.medicinas','imagen',record.id.raw_value)"/>
+                  </div>
+                  <div class="oe_kanban_details">
+                    <ul>
+                      <li>Nombre: <field name="name"/></li>
+                      <li>Tipo: <field name="tipo"/></li>
+                    </ul>
+                  </div>
+                </div>
+              </t>
+            </templates>        
+      </kanban>
       </field>
     </record>
 
@@ -87,7 +128,7 @@
     <record model="ir.actions.act_window" id="hospital_medicinas_action_window">
       <field name="name">MEDICINAS</field>
       <field name="res_model">gs.hospital.medicinas</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <!-- Top menu item -->
