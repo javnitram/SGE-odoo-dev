@@ -7,6 +7,7 @@
                 <form>
                     <group>
                         <group>
+                            <field name="name" string="Name" required="1"/>
                             <field name="cpu_id" widget="many2one" string="CPU" required="1"/>
                             <field name="motherboard_id" widget="many2one" string="Motherboard" required="1"/>
                             <field name="ram_id" widget="many2one" string="RAM" required="1"/>

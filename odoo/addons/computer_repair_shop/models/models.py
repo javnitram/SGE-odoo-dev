@@ -16,7 +16,7 @@ class Technicians(models.Model):
     _description = "Technician Model"
     name = fields.Char('name')
     photo = fields.Image('photo')
-    repairments_ids = fields.Many2many('ws.repairments', string='repairments')
+    repairments_ids = fields.Many2many('ws.repairments', string='repairments_ids')
 
 
 class Repairments(models.Model):
@@ -36,12 +36,13 @@ class Repairments(models.Model):
     cost = fields.Float('cost')
     computer_id = fields.Many2one('ws.computers', string='computer')
     issue_description = fields.Text('issue_description')
-    technicians_ids = fields.Many2many('ws.technicians', string='technicians')
+    technicians_ids = fields.Many2many('ws.technicians', string='technicians_ids')
 
 
 class Computers(models.Model):
     _name = "ws.computers"
     _description = "Computer model"
+    name = fields.Char('name')
     motherboard_id = fields.Many2one('ws.motherboards', string='Motherboard')
     ram_id = fields.Many2one('ws.ram', string='RAM')
     cpu_id = fields.Many2one('ws.cpu', string='CPU')

@@ -4,35 +4,37 @@
             <field name="name">Repairments</field>
             <field name="res_model">ws.repairments</field>
             <field name="view_mode">tree,form,kanban</field>
-            </record>
+        </record>
 
         <record id="repairments_view_tree" model="ir.ui.view">
-        <field name="name">repairment_view_tree</field>
-        <field name="model">ws.repairments</field>
-        <field name="arch" type="xml">
-            <tree>
-            <field name="repair_status" string="Repairment status"/>
-            <field name="computer_id" string="Computer" widget="many2one"/>
-            <field name="start_date" string="Start date"/>
-            <field name="completion_date" string="Finish date"/>
-            </tree>
-        </field>
+            <field name="name">repairment_view_tree</field>
+            <field name="model">ws.repairments</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="repair_status" string="Repairment status"/>
+                    <field name="computer_id" string="Computer" widget="many2one"/>
+                    <field name="start_date" string="Start date"/>
+                    <field name="completion_date" string="Finish date"/>
+                    <field name="technicians_ids" string="Technicians"/>
+                </tree>
+            </field>
         </record>
 
         <record id="repairments_view_form" model="ir.ui.view">
-        <field name="name">repairment_view_form</field>
-        <field name="model">ws.repairments</field>
-        <field name="arch" type="xml">
-            <form>
-            <group>
-                <field name="repair_status" string="Repairment status" required="1"/>
-                <field name="computer_id" string="Computer" widget="many2one" required="1"/>
-                <field name="start_date" string="Start date"/>
-                <field name="completion_date" string="Completion date"/>
-                <field name="cost" string="Cost"/>
-            </group>
-            </form>
-        </field>
+            <field name="name">repairment_view_form</field>
+            <field name="model">ws.repairments</field>
+            <field name="arch" type="xml">
+                <form>
+                <group>
+                    <field name="repair_status" string="Repairment status" required="1"/>
+                    <field name="computer_id" string="Computer" widget="many2one" required="1"/>
+                    <field name="start_date" string="Start date"/>
+                    <field name="completion_date" string="Completion date"/>
+                    <field name="technicians_ids" string="Technicians"/>
+                    <field name="cost" string="Cost"/>
+                </group>
+                </form>
+            </field>
         </record>
     </data>
 </odoo>

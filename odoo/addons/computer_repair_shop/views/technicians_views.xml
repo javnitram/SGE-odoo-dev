@@ -41,7 +41,8 @@
                 <group>
                     <group>
                         <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
-                        <field name="name" required="1"/>
+                        <field name="name" string="Name" required="1"/>
+                        <field name="repairments_ids" string="Repairments"/>
                     </group>
                 </group>
             </form>

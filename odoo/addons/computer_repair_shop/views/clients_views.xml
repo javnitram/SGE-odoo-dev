@@ -15,7 +15,7 @@
                 <field name="name" string="Nombre"/>
                 <field name="phone" string="Phone"/>
                 <field name="email" string="Email"/>
-                <field name="computers_ids" widget="many2one" string="Computers"/>
+                <field name="computers_ids" string="Computers"/>
             </tree>
         </field>
     </record>
@@ -30,7 +30,7 @@
                         <field name="name" string="Name" required="1"/>
                         <field name="phone" string="Phone"/>
                         <field name="email" string="Email"/>
-                        <field name="computers_ids" widget="many2one" string="Computers"/>
+                        <field name="computers_ids" string="Computers"/>
                     </group>
                 </group>
             </form>

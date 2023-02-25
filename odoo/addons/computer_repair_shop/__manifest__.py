@@ -41,9 +41,12 @@
     'demo': [
         'demo/motherboards_demodata.xml',
         'demo/ram_demodata.xml',
-        'demo/technicians_demodata.xml',
-        'demo/clients_demodata.xml',
+        'demo/gpu_demodata.xml',
+        'demo/cpu_demodata.xml',
         'demo/psu_demodata.xml',
         'demo/chassis_demodata.xml',
+        'demo/technicians_demodata.xml',
+        'demo/clients_demodata.xml',
+        'demo/computers_demodata.xml',
     ],
 }

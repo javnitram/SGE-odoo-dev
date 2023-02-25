@@ -1,0 +1,596 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* computer_repair_shop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20230210\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-25 20:41+0000\n"
+"PO-Revision-Date: 2023-02-25 21:49+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_chassis__size__atx
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_motherboards__size__atx
+msgid "ATX"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__accepted
+msgid "Accepted"
+msgstr "Aceptado"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_form
+msgid "Architecture"
+msgstr "Arquitectura"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.cpu_action
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__cpu_id
+#: model:ir.ui.menu,name:computer_repair_shop.cpu_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "CPU"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_cpu
+msgid "CPU Model"
+msgstr "Modelo CPU"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.ram_view_form
+msgid "Capacity (In GB)"
+msgstr "Capacidad (En GB)"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.chassis_action
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__chassis_id
+#: model:ir.ui.menu,name:computer_repair_shop.chassis_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "Chassis"
+msgstr "Chasis"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_chassis
+msgid "Chassis Model"
+msgstr "Modelo chasis"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.motherboards_view_form
+msgid "Chipset"
+msgstr "Chipset"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.clients_action
+#: model:ir.ui.menu,name:computer_repair_shop.clients_menu
+msgid "Clients"
+msgstr "Clientes"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_clients
+msgid "Clients Model"
+msgstr "Modelo clientes"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__completed
+msgid "Completed"
+msgstr "Completado"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+msgid "Completion date"
+msgstr "Fecha de finalización"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_tree
+msgid "Computer"
+msgstr "Ordenador"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_computers
+msgid "Computer model"
+msgstr "Modelo ordenador"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_tree
+msgid "Computers"
+msgstr "Ordenadores"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+msgid "Cost"
+msgstr "Precio"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__create_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__create_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_form
+msgid "Die"
+msgstr "Silicio"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__display_name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__display_name
+msgid "Display Name"
+msgstr "Nombre"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_tree
+msgid "Email"
+msgstr "Email"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_tree
+msgid "Finish date"
+msgstr "Fecha de finalización"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_psu__modular__full_modular
+msgid "Full modular"
+msgstr "Totalmente modular"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_kanban
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.ram_view_kanban
+msgid "GB"
+msgstr "GB"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.gpu_action
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__gpu_id
+#: model:ir.ui.menu,name:computer_repair_shop.gpu_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "GPU"
+msgstr "GPU"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_gpu
+msgid "GPU Model"
+msgstr "Modelo GPU"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__id
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__id
+msgid "ID"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__processing
+msgid "In process"
+msgstr "En proceso"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__inspection_pending
+msgid "Inspection pending"
+msgstr "Pendiente de inspección"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments____last_update
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians____last_update
+msgid "Last Modified on"
+msgstr "Última fecha de modificación"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__write_uid
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__write_date
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__write_date
+msgid "Last Updated on"
+msgstr "Última actualización"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_chassis__size__micro-atx
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_motherboards__size__micro-atx
+msgid "Micro ATX"
+msgstr "Micro ATX"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_chassis__size__mini-itx
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_motherboards__size__mini-itx
+msgid "Mini ITX"
+msgstr "Mini ITX"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.psu_view_form
+msgid "Modular"
+msgstr "Modular"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__motherboard_id
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "Motherboard"
+msgstr "Placa base"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.motherboards_action
+#: model:ir.ui.menu,name:computer_repair_shop.motherboards_menuitem
+msgid "Motherboards"
+msgstr "Placas base"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_motherboards
+msgid "Motherboards Model"
+msgstr "Modelo placas base"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.chassis_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.motherboards_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.psu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.ram_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.technicians_view_form
+msgid "Name"
+msgstr "Nombre"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_tree
+msgid "Nombre"
+msgstr "Nombre"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_psu__modular__non_modular
+msgid "Non modular"
+msgstr "No modular"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_form
+msgid "Number of cores"
+msgstr "Número de núcleos"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.psu_action
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__psu_id
+#: model:ir.ui.menu,name:computer_repair_shop.psu_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "PSU"
+msgstr "Fuente de alimentación"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_psu
+msgid "PSU Model"
+msgstr "Modelo fuente de alimentación"
+
+#. module: computer_repair_shop
+#: model:ir.ui.menu,name:computer_repair_shop.parts_menuitem
+msgid "Parts"
+msgstr "Piezas"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.clients_view_tree
+msgid "Phone"
+msgstr "Teléfono"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.chassis_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.motherboards_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.psu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.ram_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.technicians_view_form
+msgid "Photo"
+msgstr "Foto"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.psu_view_form
+msgid "Power (In Watts)"
+msgstr "Potencia (En vatios)"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__quote
+msgid "Quote"
+msgstr "Presupuesto"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.ram_action
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__ram_id
+#: model:ir.ui.menu,name:computer_repair_shop.ram_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.computers_view_form
+msgid "RAM"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_ram
+msgid "RAM Model"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__ready
+msgid "Ready to pickup"
+msgstr "Listo para recoger"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_repairments__repair_status__rejected
+msgid "Rejected"
+msgstr "Rechazado"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_repairments
+msgid "Repair Model"
+msgstr "Modelo reparación"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_tree
+msgid "Repairment status"
+msgstr "Estado de la reparación"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.repairments_action
+#: model:ir.ui.menu,name:computer_repair_shop.repairments_menuitem
+#: model:ir.ui.menu,name:computer_repair_shop.repairments_root
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.technicians_view_form
+msgid "Repairments"
+msgstr "Reparaciones"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields.selection,name:computer_repair_shop.selection__ws_psu__modular__semi_modular
+msgid "Semi modular"
+msgstr "Semi modular"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.chassis_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.motherboards_view_form
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_kanban
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.motherboards_view_form
+msgid "Socket"
+msgstr "Socket"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_tree
+msgid "Start date"
+msgstr "Fecha de inicio"
+
+#. module: computer_repair_shop
+#: model:ir.model,name:computer_repair_shop.model_ws_technicians
+msgid "Technician Model"
+msgstr "Modelo técnicos"
+
+#. module: computer_repair_shop
+#: model:ir.actions.act_window,name:computer_repair_shop.technicians_action
+#: model:ir.ui.menu,name:computer_repair_shop.technicians_menuitem
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_form
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.repairments_view_tree
+msgid "Technicians"
+msgstr "Técnicos"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_form
+msgid "VRAM (In GB)"
+msgstr "VRAM (En GB)"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__architecture
+msgid "architecture"
+msgstr "arquitectura"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__capacity
+msgid "capacity"
+msgstr "capacidad"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__chipset
+msgid "chipset"
+msgstr "chipset"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__client_id
+msgid "client"
+msgstr "cliente"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__completion_date
+msgid "completion_date"
+msgstr "fecha de finalización"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__computer_id
+msgid "computer"
+msgstr "ordenador"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__computers_ids
+msgid "computers_ids"
+msgstr "ordenadores_ids"
+
+#. module: computer_repair_shop
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.cpu_view_kanban
+#: model_terms:ir.ui.view,arch_db:computer_repair_shop.gpu_view_kanban
+msgid "cores"
+msgstr "núcleos"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__cost
+msgid "cost"
+msgstr "precio"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__die
+msgid "die"
+msgstr "silicio"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__email
+msgid "email"
+msgstr ""
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__issue_description
+msgid "issue_description"
+msgstr "descripción del problema"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__modular
+msgid "modular"
+msgstr "modular"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_computers__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__name
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__name
+msgid "name"
+msgstr "nombre"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__number_of_cores
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__number_of_cores
+msgid "number_of_cores"
+msgstr "número de núcleos"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_clients__phone
+msgid "phone"
+msgstr "teléfono"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_ram__photo
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__photo
+msgid "photo"
+msgstr "foto"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_psu__power
+msgid "power"
+msgstr "potencia"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__repair_status
+msgid "repair_status"
+msgstr "estado de la reparación"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_technicians__repairments_ids
+msgid "repairments_ids"
+msgstr "reparaciones_ids"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_chassis__size
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__size
+msgid "size"
+msgstr "tamaño"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_cpu__socket
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_motherboards__socket
+msgid "socket"
+msgstr "socket"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__start_date
+msgid "start_date"
+msgstr "fecha de inicio"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_repairments__technicians_ids
+msgid "technicians_ids"
+msgstr "tecnicos_ids"
+
+#. module: computer_repair_shop
+#: model:ir.model.fields,field_description:computer_repair_shop.field_ws_gpu__vram
+msgid "vram"
+msgstr "vram"
