@@ -88,7 +88,7 @@
           <group>
             <field name="name"/>
             <field name="annos"/>
-            <field name="foto" widget="image" options="{'size': [300, 300]}"/>
+            <field name="foto" widget="image" options="{'size': [125, 125]}"/>
             <field name="payasos_ids">
               <tree>
                 <field name="name"/>
