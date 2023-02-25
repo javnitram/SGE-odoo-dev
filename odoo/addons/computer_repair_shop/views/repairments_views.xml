@@ -25,9 +25,10 @@
             <form>
             <group>
                 <field name="repair_status" string="Repairment status"/>
+                <field name="computer_id" string="Computer"/>
                 <field name="start_date" string="Start date"/>
                 <field name="completion_date" string="Completion date"/>
-                <field name="labor_cost" string="Labor cost"/>
+                <field name="cost" string="Cost"/>
             </group>
             </form>
         </field>
