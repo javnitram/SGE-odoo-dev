@@ -8,6 +8,7 @@ class Clients(models.Model):
     name = fields.Char('name')
     phone = fields.Char('phone')
     email = fields.Char('email')
+    computers_ids = fields.One2many('ws.computers', 'client_id', string='computers')
 
 
 class Technicians(models.Model):
@@ -32,23 +33,21 @@ class Repairments(models.Model):
     ], string='repair_status')
     start_date = fields.Date('start_date')
     completion_date = fields.Date('completion_date')
-    labor_cost = fields.Float('labor_cost')
+    cost = fields.Float('cost')
+    computer_id = fields.Many2one('ws.computers', string='computer')
 
 
-class Replacements(models.Model):
-    _name = "ws.replacements"
-    _description = "Replacement Model"
-    old_part_id = fields.Many2one('comodel_name', string='old_part')
-    new_part_id = fields.Many2one('comodel_name', string='new_part')
-
-
-class Parts(models.Model):
-    _name = "ws.parts"
-    _description = "Part Model"
-    name = fields.Char('name')
-    manufacturer = fields.Char('manufacturer')
-    price = fields.Float('price')
-
+class Computers(models.Model):
+    _name = "ws.computers"
+    _description = "Computer model"
+    motherboard_id = fields.Many2one('ws.motherboards', string='Motherboard')
+    ram_id = fields.Many2one('ws.ram', string='RAM')
+    cpu_id = fields.Many2one('ws.cpu', string='CPU')
+    gpu_id = fields.Many2one('ws.gpu', string='GPU')
+    psu_id = fields.Many2one('ws.psu', string='PSU')
+    chassis_id = fields.Many2one('ws.chassis', string='Chassis')
+    client_id = fields.Many2one('ws.clients', string='client')
+    
 
 class Motherboards(models.Model):
     _name = "ws.motherboards"
