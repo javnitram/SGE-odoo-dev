@@ -3,8 +3,6 @@
 from odoo import _, models, fields,api
 from odoo.exceptions import ValidationError
 from lxml import etree
-import base64
-
 
 
 class Users(models.Model):
@@ -54,33 +52,12 @@ class Matches(models.Model):
     court = fields.Many2one('dm.ooddle.courts','Court',required=True)
     time = fields.Date(string='Time', required=True, help= 'Indicate the date of the match')
     price = fields.Float('price')
-
-
-    
-    #def _read_image(self):
-     #   with open('default.png','rb') as img:
-      #      image = base64.b64encode(img.read())
-       # return image
-    
     image_team1 = fields.Image('image_team1')
     image_team2 = fields.Image('image_team2')
     state = fields.Selection([('open', 'Open'), ('close', 'Close'), ('playing', 'In game'), ('done', 'Finished')],
         string='Status', required=True, default = 'open',tracking=True,copy=False,group_expand='_group_expand_states')
     def _group_expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
-    
-    
-    #@api.model
-    #def fields_view_get(self, view_id=None, view_type='kanban', toolbar=False, submenu=False):
-        res = super().fields_view_get(view_id, view_type, toolbar, submenu)
-        if view_type == 'kanban':
-            doc = etree.XML(res['arch'])
-            name_field = doc.xpath("//field[@name='time']")
-            if name_field:
-                if self.image_team1 !=None:
-                    name_field[0].addnext(etree.Element('field', {'name': 'name'}))
-                    res['arch']= etree.tostring(doc, encoding='unicode')
-        return res
 
     @api.onchange('team_ids')
     def _next_state(self):
@@ -114,6 +91,18 @@ class Matches(models.Model):
         if len(self.team_ids)>2:
             raise ValidationError(_("Error there can only be two teams per game"))
      
+    
+    #@api.model
+    #def fields_view_get(self, view_id=None, view_type='kanban', toolbar=False, submenu=False):
+    #    res = super().fields_view_get(view_id, view_type, toolbar, submenu)
+    #    if view_type == 'kanban':
+    #        doc = etree.XML(res['arch'])
+    #        name_field = doc.xpath("//field[@name='time']")
+    #        if name_field:
+    #            if self.image_team1 !=None:
+    #                name_field[0].addnext(etree.Element('field', {'name': 'name'}))
+    #                res['arch']= etree.tostring(doc, encoding='unicode')
+    #    return res
 
 class Courts(models.Model):
     _name = 'dm.ooddle.courts'
