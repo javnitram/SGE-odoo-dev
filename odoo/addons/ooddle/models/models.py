@@ -9,6 +9,7 @@ import base64
 
 class Users(models.Model):
     _name = 'dm.ooddle.users'
+    _description='Users'
     name = fields.Char('Name')
     mobile = fields.Integer('Mobile', required=True)
     points = fields.Integer( 'Points', help = "Introduce los puntos que tiene el jugardor en la liga")
@@ -19,7 +20,7 @@ class Users(models.Model):
     
 class Teams(models.Model):
     _name = 'dm.ooddle.teams'
-    _description = 'Equipos'
+    _description = 'Teams'
     name = fields.Char('Name', required=True)
     users_ids = fields.Many2many('dm.ooddle.users',string='Users')
     matches_ids = fields.Many2many('dm.ooddle.matches', string='Matches')
@@ -38,19 +39,20 @@ class Teams(models.Model):
     
     #@api.onchange('image')
     #def _change_image(self):
-        if self.matches_ids:
-            for record in self.matches_ids:
-                if record.team_ids[0].id ==self.id:
-                    record.image_team1 = self.image
-                elif record.team_ids[1].id ==self.id:
-                    record.image_team2 = self.image
+        #if self.matches_ids:
+         #   for record in self.matches_ids:
+          #      if record.team_ids[0].id ==self.id:
+          #          record.image_team1 = self.image
+           #     elif record.team_ids[1].id ==self.id:
+            #        record.image_team2 = self.image
 
 class Matches(models.Model):
     _name = 'dm.ooddle.matches'
+    _description='Matches'
     name = fields.Char('Name',required=True)
     team_ids = fields.Many2many('dm.ooddle.teams',string='Teams Registered')
     court = fields.Many2one('dm.ooddle.courts','Court',required=True)
-    time = fields.Date(string='Time', required=True, help= 'indica la fecha del partido')
+    time = fields.Date(string='Time', required=True, help= 'Indicate the date of the match')
     price = fields.Float('price')
 
 
@@ -116,10 +118,11 @@ class Matches(models.Model):
 
 class Courts(models.Model):
     _name = 'dm.ooddle.courts'
+    _description='Courts'
     name = fields.Char('Name')
     match_ids = fields.One2many('dm.ooddle.matches', 'court', string='match')
-    place = fields.Char('Place', required=True, help = 'Introduce el lugar de la pista')
-    in_use = fields.Boolean( 'In use', default = False, help = 'La pista esta en uso')
+    place = fields.Char('Place', required=True, help = 'Enter the location of the court')
+    in_use = fields.Boolean( 'In use', default = False, help = 'Check if the court is in use')
 
     
 

@@ -3,10 +3,10 @@
     'name': "Ooddle",
 
     'summary': """
-        Modulo para gestionar un club de padel""",
+        Model for managing a paddle club""",
 
     'description': """
-         Modulo para gestionar un club de padel
+         Model for managing a paddle club
     """,
 
     'author': "David Millan",
@@ -16,7 +16,7 @@
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Paddle',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
