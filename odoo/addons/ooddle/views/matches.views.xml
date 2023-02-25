@@ -35,7 +35,6 @@
                 <field name="court"/>
                 <field name="time"/>
                 <field name="state" invisible = "1" />
-                <field name="duration" />
                 <field name="team_ids"/>
                 <field name="image_team1" invisible="1"/>
                 <field name="image_team2" invisible="1"/>
@@ -49,12 +48,13 @@
             <field name="name">dm.ooddle.matches.kanban</field>
             <field name="model">dm.ooddle.matches</field>
             <field name="arch" type="xml">
-                <kanban default_group_by="state"  on_create="quick_create" quick_create_view="ooddle.teams_view_form" archivable = "false" sample= "1">
+                <kanban default_group_by="state"  on_create="quick_create" quick_create_view="ooddle.matches_view_form" archivable = "false" sample= "1">
                 <field name="state" />
                 <field name="court"/>
                 <templates>
                     <t t-name="kanban-box" >
-                    <div t-attf-class="#{kanban_color(record.court.raw_value)} oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                    <div t-attf-class="#{kanban_color(record.court.raw_value)} oe_kanban_vignette oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban"
+                    style="border: 1px solid black;">
                     <div class="oe_kanban_details">
                             <h2 style="display: flex;justify-content: center;"><field name="name"/></h2>
                         <div style="display: flex;justify-content: center;">
@@ -75,13 +75,13 @@
             </field>
         </record>
 
-        <record id="view_task_calendar" model="ir.ui.view">
+        <record id="ooddle.matches_calendar" model="ir.ui.view">
             <field name="name">dm.ooddle.matches.calendar</field>
             <field name="model">dm.ooddle.matches</field>
             <field eval="2" name="priority"/>
             <field name="arch" type="xml">
                 <calendar date_start="time" string="Tasks" mode="month" event_limit="5"
-                            hide_time="true" js_class="project_calendar" event_open_popup="true" quick_add="false" date_delay="duration" color="court">
+                            hide_time="true" js_class="project_calendar" event_open_popup="true" quick_add="false" color="court">
                             <field name="name"/>
                             <field name="state" invisible="1" filters ="1"/>
                 </calendar>

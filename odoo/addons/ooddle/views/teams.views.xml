@@ -6,8 +6,8 @@
         <field name="arch" type="xml">
             <form string="Teams Form">
               <group colspan="2" col="2">
+                <field name="image" widget="image" class="oe_avatar"/>
                 <field name="name"/>
-                <field name="image"/>
                 <field name="users_ids"/>
               </group>
             </form>

@@ -1,37 +1,108 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="ooddle.ooddle">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
-  -->
-      <record id="object0" model="dm.ooddle.users">
+                  <!--TEAMS-->
+      <record id="team_malitos" model="dm.ooddle.teams">
+        <field name="image" type="base64" file="ooddle/static/img/ketchup.png"/>
+        <field name="name">Malitos</field>
+      </record> 
+     <record id="team_celeste" model="dm.ooddle.teams">
+        <field name="name">Celeste</field>
+        <field name="image" type="base64" file="ooddle/static/img/celeste.png"/>
+
+      </record> 
+      <record id="team_odoo" model="dm.ooddle.teams">
+        <field name="name">Odoo</field>
+        <field name="image" type="base64" file="ooddle/static/img/odoo.png"/>
+
+      </record> 
+      <record id="team_malitos2" model="dm.ooddle.teams">
+        <field name="image" type="base64" file="ooddle/static/img/malitos.jpg"/>
+        <field name="name">Malitos2</field>
+      </record>
+                <!-- USERS-->
+      <record id="user_madeline" model="dm.ooddle.users">
         <field name="name">Madeline</field>
         <field name="mobile">985665134</field>
         <field name="league">celeste</field>
         <field name="mail">madeline@celeste.com</field>
         <field name="points">3500</field>
+        <field name="teams_ids" eval="[Command.link(ref('team_celeste'))]"/>
+        <field name="image" type="base64" file="ooddle/static/img/madeline.jpg"/>
       </record>   
 
-         <record id="object1" model="dm.ooddle.users">
+      <record id="user_theo" model="dm.ooddle.users">
         <field name="name">Theo</field>
         <field name="mobile">104411325</field>
         <field name="league">celeste</field>
         <field name="mail">Theo@celeste.com</field>
         <field name="points">3000</field>
-
+        <field name="image" type="base64" file="ooddle/static/img/theo.jpg"/>
+        <field name="teams_ids" eval="[Command.link(ref('team_celeste'))]"/>
       </record> 
 
-      <record id="object2" model="dm.ooddle.users">
-        <field name="name">Odoo</field>
-        <field name="mobile">6666666</field>
+      <record id="user_gigachad" model="dm.ooddle.users">
+        <field name="name">El Odoo</field>
+        <field name="mobile">666666666</field>
         <field name="league">gigachad</field>
         <field name="mail">Gigachad@odoo.com</field>
         <field name="points">9999</field>
+        <field name="image" type="base64" file="ooddle/static/img/gigachad.jpg"/>
+        <field name="teams_ids" eval="[Command.link(ref('team_odoo'))]"/>
       </record> 
 
+      <record id="user_daviis" model="dm.ooddle.users">
+        <field name="name">Daviis</field>
+        <field name="mobile">602235411</field>
+        <field name="league">Problemitas</field>
+        <field name="mail">yo@yo.com</field>
+        <field name="points">9999</field>
+        <field name="image" type="base64" file="ooddle/static/img/daviis.jpeg"/>
+        <field name="teams_ids" eval="[Command.link(ref('team_malitos')), 
+        Command.link(ref('team_odoo'))]"/>
+      </record> 
 
+      <record id="user_william" model="dm.ooddle.users">
+        <field name="name">William</field>
+        <field name="mobile">602235411</field>
+        <field name="league">Problemitas</field>
+        <field name="mail">william@yo.com</field>
+        <field name="points">1239999</field>
+        <field name="image" type="base64" file="ooddle/static/img/will.png"/>
+        <field name="teams_ids" eval="[Command.link(ref('team_malitos2')), 
+        Command.link(ref('team_malitos'))]"/>
+      </record> 
 
+      <record id="user_alice" model="dm.ooddle.users">
+        <field name="name">Alice</field>
+        <field name="mobile">602235411</field>
+        <field name="league">Problemitas</field>
+        <field name="mail">alicia@yo.com</field>
+        <field name="points">99123</field>
+        <field name="image" type="base64" file="ooddle/static/img/ali.png"/>
+        <field name="teams_ids" eval="[Command.link(ref('team_malitos2'))]"/>
+      </record> 
+                  <!--COURTS-->
+      <record id="court_alcorcon" model="dm.ooddle.courts">
+        <field name="name">Pista Alcorcon</field>
+        <field name="place">Alcorcon</field>
+      </record> 
+      <record id="court_mostoles" model="dm.ooddle.courts">
+        <field name="name">Pista Mostoles</field>
+        <field name="place">Mostoles</field>
+      </record> 
+      <record id="court_leganes" model="dm.ooddle.courts">
+        <field name="name">Pista Leganes</field>
+        <field name="place">Leganes</field>
+      </record> 
+                  <!--MATCHES
+      <record id="match_final" model="dm.ooddle.matches">
+        <field name="name">Final</field>
+        <field name="team_ids" eval="[Command.link(ref('team_malitos2')),
+                Command.link(ref('team_malitos1'))]"/>
+        <field name="court" ref="court_alcorcon"/>
+        <field name="price">200</field>
+        <field name="time">2023-2-25</field>
+      </record> 
+                  -->
     </data>
 </odoo>
