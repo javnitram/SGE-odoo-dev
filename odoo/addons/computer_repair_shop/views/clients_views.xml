@@ -1,0 +1,39 @@
+<odoo>
+    <data>
+    
+    <record id="clients_action" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">ws.clients</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="clients_view_tree" model="ir.ui.view">
+        <field name="name">clients_view_tree</field>
+        <field name="model">ws.clients</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Nombre"/>
+                <field name="phone" string="Phone"/>
+                <field name="email" string="Email"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="clients_view_form" model="ir.ui.view">
+        <field name="name">clients_view_form</field>
+        <field name="model">ws.clients</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name" string="Name"/>
+                        <field name="phone" string="Phone"/>
+                        <field name="email" string="Email"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    </data>
+</odoo>
