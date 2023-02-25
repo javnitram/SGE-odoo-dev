@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-permiso1,Acceso al model reparaciones,model_ws_repairment,base.group_user,1,1,1,1
+access_permission_1,Access to repairments model,model_ws_repairments,base.group_user,1,1,1,1
+access_permission_2,Access to technicians model,model_ws_technicians,base.group_user,1,1,1,1
