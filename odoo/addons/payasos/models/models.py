@@ -11,12 +11,12 @@ class payasos(models.Model):
     description = fields.Text('Descripcion', help='Breve descripcion del payaso')
     edad = fields.Integer('Edad', required=True)
     color_nariz = fields.Selection([
-        ('0', 'rojo'),
-        ('1', 'verde'),
-        ('2', 'azul celeste'),
-        ('3', 'morado'),
-        ('4', 'amarillo'),
-        ('5', 'naranja'),
+        ('r', 'rojo'),
+        ('v', 'verde'),
+        ('ac', 'azul celeste'),
+        ('m', 'morado'),
+        ('a', 'amarillo'),
+        ('n', 'naranja'),
     ], string='Color de nariz', required=True, default=0)
     tarifa = fields.Float('tarifa', required=True)
     manager_id = fields.Many2one('dg.payasos.managers', string='Manager')

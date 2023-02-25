@@ -1,30 +1,70 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="payasos.payasos">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+    <data noupdate = "0">
+          <record id="payasos_managers_demo_1" model="dg.payasos.managers">
+            <field name="name">Badeline</field>
+            <field name="annos">4</field>
+            <field name="foto" type="base64" file="payasos/static/demo/badeline.png"/>
           </record>
 
-          <record id="object1" model="payasos.payasos">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="payasos_managers_demo_2" model="dg.payasos.managers">
+            <field name="name">Theo</field>
+            <field name="annos">6</field>
+            <field name="foto" type="base64" file="payasos/static/demo/theo.jpg"/>
           </record>
 
-          <record id="object2" model="payasos.payasos">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+
+          <record id="payasos_payasos_demo_1" model="dg.payasos.payasos">
+            <field name="name">Fofito</field>
+            <field name="description">Gran payaso, sigue siendo gracioso</field>
+            <field name="edad">73</field>
+            <field name="color_nariz">a</field>
+            <field name="tarifa">35.00</field>
+            <field name="manager_id" ref="payasos_managers_demo_2"/>
+          </record>
+  
+          <record id="payasos_payasos_demo_2" model="dg.payasos.payasos">
+            <field name="name">Ronald McDonald</field>
+            <field name="description">Le gustan las hamburguesas</field>
+            <field name="edad">60</field>
+            <field name="color_nariz">r</field>
+            <field name="tarifa">49.95</field>
+            <field name="manager_id" ref="payasos_managers_demo_1"/>
           </record>
 
-          <record id="object3" model="payasos.payasos">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="payasos_payasos_demo_3" model="dg.payasos.payasos">
+            <field name="name">Krusty</field>
+            <field name="description">Payaso amarillo, tiene un mono</field>
+            <field name="edad">53</field>
+            <field name="color_nariz">r</field>
+            <field name="tarifa">25.00</field>
+            <field name="manager_id" ref="payasos_managers_demo_1"/>
           </record>
 
-          <record id="object4" model="payasos.payasos">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+
+          <record id="payasos_clientes_demo_1" model="dg.payasos.clientes">
+            <field name="name">Paco</field>
+            <field name="dni">68450649G</field>
+            <field name="edad">44</field>
           </record>
--->
+
+          <record id="payasos_clientes_demo_2" model="dg.payasos.clientes">
+            <field name="name">Alba</field>
+            <field name="dni">36411562D</field>
+            <field name="edad">36</field>
+          </record>
+
+
+          <record id="payasos_fiestas_demo_1" model="dg.payasos.fiestas">
+            <field name="description">Fiesta de cumpleaños infantil</field>
+            <field name="cliente_id" ref="payasos_clientes_demo_2"/>
+            <field name="fecha">2023-03-06</field>
+            <field name="direccion">C. de Ríos Rosas, 48, 28003 Madrid</field>
+            <field name="hora_comienzo">16.00</field>
+            <field name="hora_fin">18.00</field>
+            <field name="payasos_ids" eval="[
+                    Command.link(ref('payasos_payasos_demo_3')),
+                    Command.link(ref('payasos_payasos_demo_1'))
+                  ]"/>
+          </record>
     </data>
 </odoo>
