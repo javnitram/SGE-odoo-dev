@@ -84,7 +84,7 @@
       <field name="model">wb.golosy.camion</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="name" string="Matricula"/>
           <field name="productos"/>
           <field name="empleado_id" string="Conductor"/>
         </tree>
@@ -137,7 +137,8 @@
         <form>
           <sheet>
             <group>
-              <field name="imagen" widget='image' class='oe_avatar oe_right' options="{'size':[200,250]}"/>
+              <field name="imagen" widget='image' class='oe_avatar oe_right' 
+              options="{'size':[200,250]}"/>
               <group>
                 <field name="name"/>
                 <field name="dni"/>
@@ -205,9 +206,10 @@
         <search>
           <field name="name" string="Nombre empleado"/>
           <field name="dni" string="DNI empleado"/>
-          <filter name="Recluta" domain="[('mesestrabajados', '&lt;=', '12')]"/>
+          <!-- 
+            <filter name="Recluta" domain="[('mesestrabajados', '&lt;=', '12')]"/>
           <filter name="Veterano" domain="[('mesestrabajados', '&gt;', '12')]"/>
-          
+          -->
         </search>
       </field>
     </record>
@@ -216,7 +218,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="golosy_golosinas_action_window">
-      <field name="name">Golosinas</field>
+      <field name="name">Productos</field>
       <field name="res_model">wb.golosy.golosinas</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -228,7 +230,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="golosy_camion_action_window">
-      <field name="name">Camion</field>
+      <field name="name">Envios</field>
       <field name="res_model">wb.golosy.camion</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -239,31 +241,13 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="golosy.action_server">
-      <field name="name">Golosy server</field>
-      <field name="model_id" ref="model_golosy_golosy"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
     <!-- Top menu item -->
 
     <menuitem name="Golosy" id="golosy_menu_root"/>
 
     <!-- menu categories -->
 
-    <menuitem name="Golosinas"
+    <menuitem name="Productos"
     id="golosy_golosinas_menu_1" 
     parent="golosy_menu_root"/>
 
@@ -280,7 +264,7 @@
     parent="golosy_menu_root"/>
     <!-- actions -->
 
-    <menuitem name="Lista de golosinas" id="golosy_lista_golosinas" parent="golosy_golosinas_menu_1"
+    <menuitem name="Lista de productos" id="golosy_lista_golosinas" parent="golosy_golosinas_menu_1"
               action="golosy_golosinas_action_window"/>
 
     <menuitem name="Lista de categorias" id="golosy_lista_categorias" parent="golosy_categorias_menu_2"
@@ -292,9 +276,5 @@
     <menuitem name="Lista de empleados" id="golosy_lista_empleados" parent="golosy_empleados_menu_4"
               action="golosy_empleados_action_window"/>
 
-<!--              
-    <menuitem name="Server to list" id="golosy" parent="golosy.menu_2"
-              action="golosy.action_server"/>
--->
   </data>
 </odoo>
