@@ -18,7 +18,7 @@
             <field name="name">dm.ooddle.courts.tree</field>
             <field name="model">dm.ooddle.courts</field>
             <field name="arch" type="xml">
-                <tree string="Pista">
+                <tree string="Court">
                     <field name="name"/>
                     <field name="place"/>
                     <field name="match_ids"/>

@@ -5,25 +5,24 @@
 
     <!--Actions-->
     <record id="ooddle_users_action_window" model="ir.actions.act_window">
-          <field name="name">Usuarios</field>
+          <field name="name">Users</field>
           <field name="res_model">dm.ooddle.users</field>
           <field name="view_mode">kanban,tree,form</field>
     </record>  
 
     <record id="ooddle_matches_action_window" model="ir.actions.act_window">
-          <field name="name">Partidos</field>
+          <field name="name">Matches</field>
           <field name="res_model">dm.ooddle.matches</field>
           <field name="view_mode">kanban,tree,calendar,form</field>
     </record>  
-
     <record id="ooddle_courts_action_window" model="ir.actions.act_window">
-          <field name="name">Pistas</field>
+          <field name="name">Courts</field>
           <field name="res_model">dm.ooddle.courts</field>
           <field name="view_mode">tree,form</field>
     </record>    
 
     <record id="ooddle_teams_action_window" model="ir.actions.act_window">
-          <field name="name">Equipos</field>
+          <field name="name">Teams</field>
           <field name="res_model">dm.ooddle.teams</field>
           <field name="view_mode">tree,form</field>
     </record>  

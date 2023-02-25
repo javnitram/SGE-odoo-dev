@@ -5,10 +5,11 @@
         <field name="model">dm.ooddle.teams</field>
         <field name="arch" type="xml">
             <form string="Teams Form">
-            <group colspan="2" col="2">
-              <field name="name"/>
-              <field name="users_ids"/>
-            </group>
+              <group colspan="2" col="2">
+                <field name="name"/>
+                <field name="image"/>
+                <field name="users_ids"/>
+              </group>
             </form>
         </field>
     </record>

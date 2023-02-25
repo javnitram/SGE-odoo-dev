@@ -2,6 +2,10 @@
 
 from odoo import _, models, fields,api
 from odoo.exceptions import ValidationError
+from lxml import etree
+import base64
+
+
 
 class Users(models.Model):
     _name = 'dm.ooddle.users'
@@ -19,17 +23,29 @@ class Teams(models.Model):
     name = fields.Char('Name')
     users_ids = fields.One2many('dm.ooddle.users', 'team_id', string='Users')
     matches_ids = fields.Many2many('dm.ooddle.matches', string='Matches')
+    image = fields.Image('image')
     @api.model_create_single
     def create(self, vals):
-        if len(vals.get('users_ids'))>2:
-            raise ValidationError(_("Error solo puede haber dos jugadores por equipo"))
+        if vals.get('users_ids'):
+            if len(vals.get('users_ids'))>2:
+                raise ValidationError(_("Error solo puede haber dos jugadores por equipo"))
         return super().create(vals)
-    
+        
     def write(self, vals):
-        if len(vals.get('users_ids'))>2:
-            raise ValidationError(_("Error solo puede haber dos jugadores por equipo"))
+        if vals.get('users_ids'):
+            if len(vals.get('users_ids'))>2:
+                raise ValidationError(_("Error solo puede haber dos jugadores por equipo"))
         return super().write(vals)
     
+    @api.onchange('image')
+    def _next_state(self):
+        if self.matches_ids:
+            for record in self.matches_ids:
+                if record.team_ids[0].id ==self.id:
+                    record.image_team1 = self.image
+                elif record.team_ids[1].id ==self.id:
+                    record.image_team2 = self.image
+
 class Matches(models.Model):
     _name = 'dm.ooddle.matches'
     name = fields.Char('Name',required=True)
@@ -37,17 +53,48 @@ class Matches(models.Model):
     court = fields.Many2one('dm.ooddle.courts','Court',required=True)
     time = fields.Datetime(string='Time', required=True, help= 'indica la fecha del partido')
     price = fields.Float('price')
+    duration = fields.Float('duration')
+
+    
+    #def _read_image(self):
+     #   with open('default.png','rb') as img:
+      #      image = base64.b64encode(img.read())
+       # return image
+    
+    image_team1 = fields.Image('image_team1')
+    image_team2 = fields.Image('image_team2')
     state = fields.Selection([('open', 'Abierto'), ('close', 'Cerrado'), ('playing', 'En juego'), ('done', 'Finalizado')],
         string='Status', required=True, default = 'open',tracking=True,copy=False,group_expand='_group_expand_states')
 
     def _group_expand_states(self, states, domain, order):
         return [key for key, val in type(self).state.selection]
     
+    
+    #@api.model
+    #def fields_view_get(self, view_id=None, view_type='kanban', toolbar=False, submenu=False):
+        res = super().fields_view_get(view_id, view_type, toolbar, submenu)
+        if view_type == 'kanban':
+            doc = etree.XML(res['arch'])
+            name_field = doc.xpath("//field[@name='time']")
+            if name_field:
+                if self.image_team1 !=None:
+                    name_field[0].addnext(etree.Element('field', {'name': 'name'}))
+                    res['arch']= etree.tostring(doc, encoding='unicode')
+        return res
+
     @api.onchange('team_ids')
     def _next_state(self):
+        if len(self.team_ids) ==1:
+            self.image_team1 = self.team_ids[0].image
+            self.image_team2 = None
         if len(self.team_ids) == 2:
+            self.image_team2 = self.team_ids[1].image
             self.state = 'close'
-            
+        if len(self.team_ids) == 0:
+            self.image_team1 = None
+            self.image_team2 = None
+        
+      
     @api.constrains('team_ids')
     def _more_than_two(self):
         if len(self.team_ids)>2:
@@ -60,3 +107,6 @@ class Courts(models.Model):
     match_ids = fields.One2many('dm.ooddle.matches', 'court', string='match')
     place = fields.Char('Place', required=True, help = 'Introduce el lugar de la pista')
     in_use = fields.Boolean( 'In use', default = False, help = 'La pista esta en uso')
+
+    
+

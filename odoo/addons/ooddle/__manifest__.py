@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "ooddle",
+    'name': "Ooddle",
 
     'summary': """
         Modulo para gestionar un club de padel""",

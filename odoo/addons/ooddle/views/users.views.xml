@@ -10,8 +10,8 @@
               <field name="name"/>
               <field name="league"/>
               <field name="points"/>
-              <field name="mobile" />
-              <field name="mail"/>
+              <field name="mobile" widget="phone"/>
+              <field name="mail" widget="email"/>
             </group>
             </form>
         </field>
@@ -22,11 +22,11 @@
         <field name="model">dm.ooddle.users</field>
         <field name="arch" type="xml">
             <tree string="Users">
-             <field name="name"/>
+              <field name="name" avatar_field="image"/>
               <field name="league"/>
               <field name="points"/>
-              <field name="mobile" />
-              <field name="mail"/>
+              <field name="mobile" widget="phone"/>
+              <field name="mail" widget="email"/>
             </tree>
         </field>
     </record>
@@ -44,9 +44,9 @@
               <div class="oe_kanban_details" style= "padding-left: 10px; ">
                 <!-- Title and data -->
                 <h4><field name="name"/></h4>
-                <br>Liga: <field name="league"/></br>
+                <br>League: <field name="league"/></br>
                 <ul>
-                  <li>Puntos: <field name="points"/></li>
+                  <li>Points: <field name="points"/></li>
                   <li>E-mail: <field name="mail"/></li>
                 </ul>
               </div>
