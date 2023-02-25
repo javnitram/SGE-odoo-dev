@@ -20,6 +20,7 @@ class payasos(models.Model):
     ], string='Color de nariz', required=True, default=0)
     tarifa = fields.Float('tarifa', required=True)
     manager_id = fields.Many2one('dg.payasos.managers', string='Manager')
+    fiestas_ids = fields.Many2many('dg.payasos.fiestas', string='Fiestas asistidas')
 
 class managers(models.Model):
     _name = 'dg.payasos.managers'
@@ -33,11 +34,12 @@ class fiestas(models.Model):
     _description = 'dg.payasos.fiestas'
 
     description = fields.Text('Tipo de fiesta', help='Cumpleaños, fin de curso...', required=True)
-    cliente_id = fields.Many2one('dg.payasos.clientes', string='Organizador')
     fecha = fields.Date('Fecha', required=True)
     direccion = fields.Char('Dirección', required=True)
     hora_comienzo = fields.Float('Hora de comienzo')
     hora_fin = fields.Float('Hora de fin')
+    cliente_id = fields.Many2one('dg.payasos.clientes', string='Organizador')
+    payasos_ids = fields.Many2many('dg.payasos.payasos', string='Payasos asistentes')
 
 class clientes(models.Model):
     _name = 'dg.payasos.clientes'

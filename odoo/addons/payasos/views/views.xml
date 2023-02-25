@@ -30,6 +30,7 @@
             <field name="color_nariz"/>
             <field name="tarifa"/>
             <field name="manager_id"/>
+            <field name="fiestas_ids" options="{'no_create': True}"/>
           </group>
         </form>
       </field>
@@ -62,6 +63,7 @@
             <field name="direccion"/>
             <field name="hora_comienzo" widget="float_time"/>
             <field name="hora_fin" widget="float_time"/>
+            <field name="payasos_ids" options="{'no_create': True}"/>
           </group>
         </form>
       </field>
@@ -182,21 +184,18 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Payasos" id="payasos_payasos_menu" parent="payasos_menu_root"
-              action="payasos_payasos_action_window"/>
+    <menuitem name="Empleados" id="payasos_empleados_menu" parent="payasos_menu_root"/>
     <menuitem name="Fiestas" id="payasos_fiestas_menu" parent="payasos_menu_root" 
               action="payasos_fiestas_action_window"/>
-    <menuitem name="Managers" id="payasos_managers_menu" parent="payasos_menu_root" 
-              action="payasos_managers_action_window"/>
     <menuitem name="Clientes" id="payasos_clientes_menu" parent="payasos_menu_root"
               action="payasos_clientes_action_window"/>
 
     <!-- actions -->
 
-    <!--<menuitem name="Vista de fiestas" id="payasos_fiestas_menu" parent="payasos_fiestas_submenu"
-              action="payasos_fiestas_action_window"/>
-    <menuitem name="Vista de payasos" id="payasos_payasos_menu" parent="payasos_payasos_submenu"
-              action="payasos_payasos_action_window"/>-->
+    <menuitem name="Payasos" id="payasos_payasos_submenu" parent="payasos_empleados_menu"
+              action="payasos_payasos_action_window"/>
+    <menuitem name="Managers" id="payasos_managers_submenu" parent="payasos_empleados_menu"
+              action="payasos_managers_action_window"/>
 
   </data>
 </odoo>
