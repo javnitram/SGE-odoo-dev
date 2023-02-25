@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import models, concierto, entrada
+from . import models, concierto, entrada, recinto

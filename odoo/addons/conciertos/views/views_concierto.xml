@@ -14,13 +14,16 @@
             <field name="model">sa.conciertos.concierto</field>
             <field name="arch" type="xml">
                 <tree>
+                    <field name="name" />
                     <field name="fecha" />
+                    <field name="recinto_id" />
                     <field name="artista_principal_id" />
                     <field name="teloneros_ids" />
-                    <field name="recinto_id" />
                     <field name="precio_base" />
+                    <field name="currency_id" />
+                    <field name="entradas_vendidas" />
+                    <field name="entradas_disponibles" />
                     <field name="dinero_recaudado" />
-                    <field name="entradas_ids" />
                 </tree>
             </field>
         </record>
@@ -30,17 +33,25 @@
             <field name="name">conciertos.concierto.form</field>
             <field name="model">sa.conciertos.concierto</field>
             <field name="arch" type="xml">
-                <form string="">
+                <form>
                     <sheet>
-                        <group>
+                        <group colspan="2" col="4">
                             <field name="name" />
                             <field name="fecha" />
                             <field name="artista_principal_id" />
-                            <field name="teloneros_ids" />
                             <field name="recinto_id" />
+                        </group>
+                        <group colspan="2" col="1">
+                            <field name="teloneros_ids" />
+                        </group>
+                        <group colspan="2" col="4">
                             <field name="precio_base" />
+                            <field name="entradas_vendidas" />
+                            <field name="currency_id" />
+                            <field name="entradas_disponibles" />
+                        </group>
+                        <group colspan="2" col="2">
                             <field name="dinero_recaudado" />
-                            <field name="entradas_ids" />
                         </group>
                     </sheet>
                 </form>

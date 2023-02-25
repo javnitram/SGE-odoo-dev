@@ -24,8 +24,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
+        'views/views_artista.xml',
+        'views/views_cliente.xml',
+        'views/views_concierto.xml',
+        'views/views_entrada.xml',
+        'views/views_recinto.xml',
+        'views/menus.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

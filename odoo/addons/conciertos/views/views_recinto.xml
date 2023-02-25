@@ -17,6 +17,7 @@
                     <field name="ciudad" />
                     <field name="pais_id" />
                     <field name="capacidad" />
+                    <field name="currency_id" />
                     <field name="conciertos_ids" />
                 </tree>
             </field>
@@ -34,6 +35,7 @@
                             <field name="ciudad" />
                             <field name="pais_id" />
                             <field name="capacidad" />
+                            <field name="currency_id" />
                             <field name="conciertos_ids" />
                         </group>
                     </sheet>
