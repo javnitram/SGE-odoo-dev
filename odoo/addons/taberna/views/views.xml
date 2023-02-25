@@ -153,6 +153,7 @@
           <field name="total_pedido"/>
           <field name="id_empleado"/>
           <field name="id_cliente"/>
+          <field name="id_bebida" ref="demo_bebida"/>
         </tree>
       </field>
     </record>
@@ -169,7 +170,7 @@
               <field name="total_pedido"/>
               <field name="id_empleado"/>
               <field name="id_cliente"/>
-              <field name="id_bebida"/>
+              <field name="id_bebida" ref="demo_bebidas"/>
             </group>
           </sheet>
         </form>
@@ -199,9 +200,9 @@
                     <li>ID Pedido: <field name="id_pedidos"/></li>
                     <li>Cantidad: <field name="cantidad"/></li>
                     <li>Total Pedido: <field name="total_pedido"/></li>
-                    <li>ID Empleado: <field name="id_empleado"/></li>
-                    <li>ID Cliente: <field name="id_cliente"/></li>
-                    <li>ID Bebida: <field name="id_bebida"/></li>
+                    <li>Nombre Empleado: <field name="id_empleado"/></li>
+                    <li>Nombre Cliente: <field name="id_cliente"/></li>
+                    <li>Nombre Bebida: <field name="id_bebida"/></li>
                   </ul>
                 </div>
               </div>

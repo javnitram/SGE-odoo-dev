@@ -58,30 +58,14 @@ class TabernaPedidos(models.Model):
     _description = 'jm.taberna.pedidos'
     id_pedidos = fields.Integer('ID pedido', required=True)
     name = fields.Char('Nombre')
-    cantidad = fields.Integer('Cantidad:')
+    cantidad = fields.Integer('Cantidad')
     total_pedido = fields.Integer(string='Total pedido', compute='_calcular_total_pedido', store=True)
     id_empleado = fields.Many2one('jm.taberna.empleados', string='Nombre de empleado')
     id_cliente = fields.Many2one('jm.taberna.clientes', string='Nombre de cliente')
-    id_bebida = fields.Many2many('jm.taberna.bebidas', string='ID de bebida')
+    id_bebida = fields.Many2many('jm.taberna.bebidas', string='Información de la bebida')
 
     @api.depends('id_bebida.precio','cantidad')
     def _calcular_total_pedido(self):
         for record in self:
             for bebida in record.id_bebida:
                 record.total_pedido = record.cantidad * bebida.precio
-
-# classpaisuired
-# salario = fields.Float('salario')=Truern, re, requ, required=Trueired=Trueq
-# tipo = fields.Char('tipo', required=True)uired=Truea(models., required=TrueModel):
-#     _name = 'taberna.taberna'
-#     _description = 'taberna.taberna'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100

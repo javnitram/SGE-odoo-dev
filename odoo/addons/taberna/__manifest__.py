@@ -3,13 +3,14 @@
     'name': "Taberna",
 
     'summary': """
-        Gestor de taberna medieval""",
+        Gestor de taberna medieval.""",
 
     'description': """
-        Gestor de taberna medieval
+        Gestor de taberna medieval que permite el control de los datos de la taberna, 
+        sus empleados, bebidas disponibles, clientes y los pedidos realizados.
     """,
 
-    'author': "Javier MH",
+    'author': "Javier Marín Hernández",
     'website': "https://acortar.link/kxKBoP",
 
     # Categories can be used to filter modules in modules listing
