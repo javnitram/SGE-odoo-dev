@@ -15,7 +15,7 @@ class Technicians(models.Model):
     _description = "Technician Model"
 
     name = fields.Char('name')
-    photo = fields.Image('photo', max_width=512, max_height=512)
+    photo = fields.Image('photo')
 
 
 class Repairments(models.Model):
