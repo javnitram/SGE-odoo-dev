@@ -7,10 +7,10 @@
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Gestion de una empresa de payasos a domicilio, con clientes y ubicaciones de fiestas.
     """,
 
-    'author': "My Company",
+    'author': "Daniel Gonzalez",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -27,10 +27,9 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-         'demo/demo.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
-       
+       'demo/demo.xml',
     ],
 }

@@ -1,5 +1,5 @@
 <odoo>
-    <data noupdate = "0">
+    <data noupdate = "1">
           <record id="payasos_managers_demo_1" model="dg.payasos.managers">
             <field name="name">Badeline</field>
             <field name="annos">4</field>
