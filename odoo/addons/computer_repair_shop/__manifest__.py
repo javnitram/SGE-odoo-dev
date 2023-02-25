@@ -27,12 +27,15 @@
         'security/ir.model.access.csv',
         'views/repairments_views.xml',
         'views/clients_views.xml',
+        'views/motherboards_views.xml',
         'views/technicians_views.xml',
         'views/templates.xml',
         'menu/menu.xml',
     ],
+
     # only loaded in demonstration mode
     'demo': [
-        'demo/demo.xml',
+        'demo/technicians_demodata.xml',
+        'demo/clients_demodata.xml',
     ],
 }
