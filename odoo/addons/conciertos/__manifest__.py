@@ -6,7 +6,7 @@
         Módulo de gestión de conciertos, artistas, recintos y venta de entradas""",
 
     'description': """
-        Long description of module's purpose
+        La finalidad de este módulo es poder controlar toda la información relevante a conciertos junta en un solo módulo, pensado para una empresa de gestión de tickets/entradas, que gestione entradas para conciertos de muchos artistas y en recintos de todo el mundo.
     """,
 
     'author': 'Samuel Amaro',
