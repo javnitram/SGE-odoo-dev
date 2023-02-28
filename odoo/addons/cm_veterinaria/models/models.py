@@ -64,23 +64,3 @@ class VeterinariaSalas(models.Model):
     _description = 'veterinaria.salas'
     name = fields.Char('Room',required=True)
     veterinarian_ids = fields.One2many('cm.veterinaria.veterinario', 'room_id', string='Employee')
-
-    #vaccinated = fields.Selection([
-   #    ('0', 'Yes'),
-    #   ('1', 'Pending')
-   # ], string='Vaccinated',required=True)
-   # vaccineDate = fields.Date('Vaccine Date')
-
-# class cm_veterinaria(models.Model):
-#     _name = 'cm_veterinaria.cm_veterinaria'
-#     _description = 'cm_veterinaria.cm_veterinaria'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
