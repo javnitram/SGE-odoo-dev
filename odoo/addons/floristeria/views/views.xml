@@ -1,7 +1,5 @@
 <odoo>
   <data>
-    <!-- Top menu item -->
-    <menuitem name="Floristeria" id="floristeria.menu_root" action="floristeria.hf_floristeria_flower_action_window"/>
     
     <!-- Manager -->
 
@@ -44,9 +42,6 @@
       <field name="res_model">hf_floristeria_manager</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-    <menuitem name="Encargados" id="floristeria.menu_manager" parent="floristeria.menu_root"
-    action="floristeria.hf_floristeria_manager_action_window"/>
 
     <!-- Flower -->
 
@@ -161,7 +156,7 @@
     <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_action_window">
       <field name="name">Flores</field>
       <field name="res_model">hf_floristeria_flower</field>
-      <field name="view_mode">kanban,tree,form</field>
+      <field name="view_mode">tree,kanban,form</field>
     </record>
 
     <!-- Specie -->
@@ -358,9 +353,15 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <!-- Top menu item -->
+    <menuitem name="Floristeria" id="floristeria.menu_root" action="floristeria.hf_floristeria_flower_action_window"/>
+
     <!-- top menu items -->
     <menuitem name="Flores" id="floristeria.menu_flower" parent="floristeria.menu_root"/>
     
+    <menuitem name="Encargados" id="floristeria.menu_manager" parent="floristeria.menu_root"
+    action="floristeria.hf_floristeria_manager_action_window"/>
+
     <!-- flower submenu items -->
     <menuitem name="Especies" id="floristeria.menu_specie" parent="floristeria.menu_flower"
     action="floristeria.hf_floristeria_specie_action_window"/>
@@ -373,6 +374,7 @@
 
     <menuitem name="Macetas" id="floristeria.submenu_flower_pot" parent="floristeria.menu_flower"
     action="floristeria.hf_floristeria_flower_pot_action_window"/>
+
 
   </data>
 </odoo>

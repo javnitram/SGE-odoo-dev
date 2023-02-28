@@ -2,13 +2,12 @@
 {
     'name': "Floristeria",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Módulo para gestionar una floristería""",
 
-    'description': """
-        Long description of module's purpose
-    """,
+    'description': """Este módulo incorpora funciones para poder gestionar una floristería.
+        Clasificar flores según su especie. 
+        Crear ramos de flores y macetas.
+        Gestionar los encargados""",
 
     'author': "Hector Fernandez Ruiz",
     'website': "http://www.yourcompany.com",
