@@ -191,18 +191,8 @@
 
     <!-- server action to the one above -->
 <!--
-    <record model="ir.actions.server" id="tienda_musica.action_server">
-      <field name="name">tienda_musica server</field>
-      <field name="model_id" ref="model_tienda_musica_tienda_musica"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
+
+  
 -->
 
     <!-- Top menu item -->
@@ -211,7 +201,7 @@
 
     <!-- menu categories -->
 
-    <!--menuitem name="Menu 1" id="tienda_musica.menu_1" parent="tienda_musica.menu_root"/-->
+    <!---->
 
     <!-- actions -->
 
