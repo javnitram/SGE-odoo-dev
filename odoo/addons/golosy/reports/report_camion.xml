@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+          id="golosy_report_camion"
+          model="wb.golosy.camion"
+          string="Albarán"
+          name="golosy.report_camion_view"
+          file="golosy.report_camion_view"
+          report_type="qweb-html"/>
+
+        <template id="golosy.report_camion_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">    
+                <t t-foreach="docs" t-as="camion">
+                    <div class="page">
+                        <h2 t-field="camion.name"/>
+                        <div>
+                            <strong>Conductor:</strong>
+                            <span t-field="camion.empleado_id"/>
+                        </div>
+                        <div>
+                            <strong>Productos totales:</strong>
+                            <span t-field="camion.productos"/>
+                        </div>
+                        <div>
+                            <strong>Lista de productos:</strong>
+                            <span t-field="camion.golosinas2_ids"/>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+        </template>
+        
+    
+    </data>
+    
+
+</odoo>

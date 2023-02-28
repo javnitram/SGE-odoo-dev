@@ -58,16 +58,3 @@ class Empleados(models.Model):
                     antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
                     total_meses = (int((fecha_hoy - antiguedad).days/30))
                     empl.mesestrabajados = total_meses
-                    
-                    
-     #mesestrabajados = fields.Char('Meses de trabajo en la empresa', compute="_mesestrabajados")
-     
-     #def _mesestrabajados(self):
-     #     fecha_hoy = datetime.date.today()
-     #     for empl in self:
-     #          if empl.antiguedad:
-     #               antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
-     #               total_meses = str(int((fecha_hoy - antiguedad).days/30))
-     #               empl.mesestrabajados = total_meses
-     #          else:
-     #               empl.mesestrabajados = "no hay registro"
