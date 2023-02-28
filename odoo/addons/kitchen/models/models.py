@@ -44,9 +44,7 @@ class CocinaCliente(models.Model):
     ], string='Turno')
     partida_implicada_ids = fields.Many2many('fr.cocina.partida', string='Partida implicada')
 
-# class kitchen(models.Model):
-#     _name = 'kitchen.kitchen'
-#     _description = 'kitchen.kitchen'
+
 
 #     name = fields.Char()
 #     value = fields.Integer()
