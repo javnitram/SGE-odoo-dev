@@ -26,7 +26,7 @@ class GranjaCliente(models.Model):
     direccion = fields.Char('Direccion',help='Introduce la direccion del cliente')
     description = fields.Text('Descripcion',help='Introduce la descipcion del cliente')
     imagen = fields.Image('Imagen',help='Introduce la imagen del cliente')
-    pedido_id = fields.One2many('rh.granja.pedido', 'cliente_ids', string='Pedido')
+    pedido_ids = fields.One2many('rh.granja.pedido', 'cliente_id', string='Pedido')
 
 
 class GranjaEspecie(models.Model):
@@ -44,6 +44,6 @@ class GranjaPedido(models.Model):
     name = fields.Char('Nombre')
     fecha_entrega = fields.Date('FechaEntrega')
     description = fields.Text('Descripcion',help='Introduce la descipcion del cliente')
-    cliente_ids = fields.Many2one('rh.granja.cliente', string='Cliente')
+    cliente_id = fields.Many2one('rh.granja.cliente', string='Cliente')
     producto_ids = fields.Many2many('rh.granja.producto', string='Producto')
 

@@ -80,7 +80,7 @@
             <field name="direccion">Calle cualquiera, num 13, Mostoles, Madrid, España</field>
             <field name="description">Es Marco</field>
             <field name="imagen" type="base64" file="granja/static/img/marco.jpg"/>
-            <field name="pedido_id" eval="[Command.link(ref('pedido_1'))]"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_1'))]"/>
           </record>
 
           <record id="cliente_2" model="rh.granja.cliente">
@@ -89,7 +89,7 @@
             <field name="direccion">Calle cualquiera, num 21, Muret, Occitania, Francia</field>
             <field name="description">Es Teresa</field>
             <field name="imagen" type="base64" file="granja/static/img/teresa.jpg"/>
-            <field name="pedido_id" eval="[Command.link(ref('pedido_2'))]"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_2'))]"/>
           </record>
 
           <record id="cliente_3" model="rh.granja.cliente">
@@ -98,7 +98,7 @@
             <field name="direccion">Calle cualquiera, num 5, Alicante, Comu Valenciana, España</field>
             <field name="description">Es Felipe</field>
             <field name="imagen" type="base64" file="granja/static/img/felipe.jpg"/>
-            <field name="pedido_id" eval="[Command.link(ref('pedido_3'))]"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_3'))]"/>
           </record>
     
     </data>

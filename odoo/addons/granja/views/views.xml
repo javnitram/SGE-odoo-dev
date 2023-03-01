@@ -46,7 +46,7 @@
           <field name="direccion"/>
           <field name="description"/>
           <field name="imagen"/>
-          <field name="pedido_id"/>
+          <field name="pedido_ids"/>
         </tree>
       </field>
     </record>
@@ -62,7 +62,7 @@
             <field name="direccion"/>
             <field name="description"/>
             <field name="imagen" widget="image"/>
-            <field name="pedido_id"/>
+            <field name="pedido_ids"/>
           </group>
         </form>
       </field>
@@ -106,7 +106,7 @@
           <field name="name"/>
           <field name="fecha_entrega"/>
           <field name="description"/>
-          <field name="cliente_ids"/>
+          <field name="cliente_id"/>
           <field name="producto_ids"/>
         </tree>
       </field>
@@ -121,7 +121,7 @@
             <field name="name"/>
             <field name="fecha_entrega"/>
             <field name="description"/>
-            <field name="cliente_ids"/>
+            <field name="cliente_id"/>
             <field name="producto_ids"/>
           </group>
         </form>
