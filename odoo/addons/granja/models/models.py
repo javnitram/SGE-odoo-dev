@@ -26,7 +26,7 @@ class GranjaCliente(models.Model):
     direccion = fields.Char('Direccion',help='Introduce la direccion del cliente')
     description = fields.Text('Descripcion',help='Introduce la descipcion del cliente')
     imagen = fields.Image('Imagen',help='Introduce la imagen del cliente')
-    pedido_ids = fields.One2many('rh.granja.pedido', 'cliente_ids', string='Pedido')
+    pedido_id = fields.One2many('rh.granja.pedido', 'cliente_ids', string='Pedido')
 
 
 class GranjaEspecie(models.Model):
@@ -47,17 +47,3 @@ class GranjaPedido(models.Model):
     cliente_ids = fields.Many2one('rh.granja.cliente', string='Cliente')
     producto_ids = fields.Many2many('rh.granja.producto', string='Producto')
 
-
-# class ricardohl(models.Model):
-#     _name = 'ricardohl.ricardohl'
-#     _description = 'ricardohl.ricardohl'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100

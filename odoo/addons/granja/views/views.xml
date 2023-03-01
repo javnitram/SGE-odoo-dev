@@ -46,7 +46,7 @@
           <field name="direccion"/>
           <field name="description"/>
           <field name="imagen"/>
-          <field name="pedido_ids"/>
+          <field name="pedido_id"/>
         </tree>
       </field>
     </record>
@@ -62,13 +62,12 @@
             <field name="direccion"/>
             <field name="description"/>
             <field name="imagen" widget="image"/>
-            <field name="pedido_ids"/>
+            <field name="pedido_id"/>
           </group>
         </form>
       </field>
     </record>
 
-    
     <!--Especies-->
     <record model="ir.ui.view" id="granja.especie_list">
       <field name="name">Lista Especies</field>
@@ -97,7 +96,6 @@
         </form>
       </field>
     </record>
-
 
     <!--Pedidos-->
     <record model="ir.ui.view" id="granja.pedido_list">
@@ -130,9 +128,7 @@
       </field>
     </record>
 
-
     <!-- actions opening views on models -->
-
     <record model="ir.actions.act_window" id="granja.producto_action_window">
       <field name="name">Granja Productos</field>
       <field name="res_model">rh.granja.producto</field>
@@ -157,34 +153,14 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="granja.action_server">
-      <field name="name">granja server</field>
-      <field name="model_id" ref="model_granja_granja"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
     <!-- Top menu item -->
-
     <menuitem name="Granja" id="granja.menu_root"/>
 
     <!-- menu categories -->
-
     <menuitem name="Producto" id="granja.producto" parent="granja.menu_root"/>
     <menuitem name="Cliente" id="granja.cliente" parent="granja.menu_root"/>
 
     <!-- actions -->
-
     <menuitem name="Listar Productos" id="granja.producto_list" parent="granja.producto"
               action="granja.producto_action_window"/>
     <menuitem name="Listar Clientes" id="granja.cliente_list" parent="granja.cliente"
@@ -193,9 +169,6 @@
               action="granja.especie_action_window"/>
     <menuitem name="Listar Pedidos" id="granja.pedido_list" parent="granja.cliente"
               action="granja.pedido_action_window"/>
-
-<!--<menuitem name="Server to list" id="granja" parent="granja.menu_2"
-              action="granja.action_server"/>-->  
 
   </data>
 </odoo>
