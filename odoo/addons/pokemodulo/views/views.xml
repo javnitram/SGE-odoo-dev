@@ -85,6 +85,7 @@
               <field name="name"/>
               <field name="EquiposI"/>
               <field name="EquiposD"/>
+              <field name="Region" />
             </group>  
           </sheet>
         </form>
@@ -128,6 +129,45 @@
       </field>
     </record>
 
+<!--##########################################################################################-->
+
+
+    <record model="ir.ui.view" id="pokemodulo.region_tree">
+      <field name="name">Regiones</field>
+      <field name="model">ar.pokemodulo.region</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="Mapa" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+              <field name="Tamanyo"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.region">
+      <field name="name">Vista del Regiones</field>
+      <field name="model">ar.pokemodulo.region</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="Mapa" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+            </group>  
+            <group >
+              <field name="name"/>
+              <field name="Tamanyo"/>
+            </group>
+            <group >
+              <field name="Entenadores" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
 
 
     <!-- actions opening views on models -->
@@ -161,6 +201,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="pokemodulo.region_action_window">
+      <field name="name">Regiones</field>
+      <field name="res_model">ar.pokemodulo.region</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
 
     <!-- server action to the one above -->
 <!--
@@ -188,8 +234,10 @@
     <menuitem name="Lista Equipos Individuales" id="pokemodulo.equipo_individuales" parent="pokemodulo.equipo" action="pokemodulo.equipo_indi_action_window"/>
     <menuitem name="Lista Equipos Dobles" id="pokemodulo.equipo_double" parent="pokemodulo.equipo" action="pokemodulo.equipo_doble_action_window"/>
   
+  
     <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadoresL" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
     <menuitem name="Lista Pokemon" id="pokemodulo.pokemonL" parent="pokemodulo.menu_root" action="pokemodulo.pokemon_action_window"/>
+    <menuitem name="Lista Regiones" id="pokemodulo.regionesL" parent="pokemodulo.menu_root" action="pokemodulo.region_action_window"/>
     <!-- actions -->
 
 

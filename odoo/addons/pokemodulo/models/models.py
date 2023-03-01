@@ -80,7 +80,16 @@ class pokemoduloEntrenadores(models.Model):
      name = fields.Char(string = 'Nombre del entrenador', required=True, help='Insertar nombre del entrenador')
      EquiposI = fields.One2many('ar.pokemodulo.equipoi', 'NombreEntrenador' , string='Equipo Individuales' )
      EquiposD = fields.One2many('ar.pokemodulo.equipod', 'NombreEntrenador' , string='Equipo Dobles' )
+     Region = fields.Many2one('ar.pokemodulo.region', string='Lugar de Nacimiento', help='Inserte el nombre de una region')
 
+
+class pokemoduloRegion(models.Model):
+     _name ='ar.pokemodulo.region'
+     _description ='pokemodulo_region'
+     Mapa = fields.Image(string="Mapa de la Región",store=True,relation="res.partner",help="Seleccionar la imagen de la región aquí", required=True)
+     name = fields.Char(string = 'Nombre de la region', required=True, help='Inserta nombre de la región')
+     Tamanyo = fields.Float(string='Tamaño de la region', required=True, help='Insetar el tamaño de la región' )
+     Entenadores = fields.One2many('ar.pokemodulo.entrenadores', 'Region', string='Lista de entrenadores de esa region')
 
 #     name = fields.Char()
 #     value = fields.Integer()
