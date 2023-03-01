@@ -1,0 +1,289 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller.vehiculos">
+      <field name="name">taller.list</field>
+      <field name="model">ig.taller.vehiculos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="matricula"/>
+          <field name="tipo"/>
+          <field name="color"/>
+        </tree>
+      </field>
+    </record>
+    <record id="taller.vehiculos_form" model="ir.ui.view">
+      <field name="name">taller.vehiculos.form</field>
+      <field name="model">ig.taller.vehiculos</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />  
+              <field name="color" /> 
+              <field name="image" widget="image"/>
+              <field name="matricula"/>
+              <field name="tipo"/>  
+              <field name="cliente_id"/>
+              <field name="recambios_ids">
+                <tree>
+                  <field name="name"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="taller.action_window1">
+      <field name="name">Vehiculos</field>
+      <field name="res_model">ig.taller.vehiculos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Taller" id="taller.menu_root"/>
+    <!-- menu categories -->
+
+    <menuitem name="Vehiculos" id="taller.menu_1" parent="taller.menu_root" action="taller.action_window1"/>
+  
+
+    <!-- actions-->
+
+    
+  </data>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller.recambios">
+      <field name="name">taller.list</field>
+      <field name="model">ig.taller.recambios</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="cantidad"/>
+          <field name="estado"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="taller.recambios_form" model="ir.ui.view">
+      <field name="name">taller.recambios.form</field>
+      <field name="model">ig.taller.recambios</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />  
+              <field name="cantidad" /> 
+              <field name="estado"/>
+              <field name="proveedores_ids">
+                <tree>
+                  <field name="name"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="taller.action_window2">
+      <field name="name">taller Recambios</field>
+      <field name="res_model">ig.taller.recambios</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Taller" id="taller.menu_root"/>
+    <!-- menu categories -->
+
+    <menuitem name="Recambios" id="taller.menu_2" parent="taller.menu_root" action="taller.action_window2"/>
+
+
+    <!-- actions -->
+
+  </data>
+
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller.clientes">
+      <field name="name">taller.list</field>
+      <field name="model">ig.taller.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="dni"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="taller.clientes_form" model="ir.ui.view">
+      <field name="name">taller.clientes.form</field>
+      <field name="model">ig.taller.clientes</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />  
+              <field name="dni" /> 
+              <field name="telefono"/>
+              <field name="Vehiculos_id">
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="taller.action_window3">
+      <field name="name">taller Clientes</field>
+      <field name="res_model">ig.taller.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Taller" id="taller.menu_root"/>
+    <!-- menu categories -->
+
+    <menuitem name="Clientes" id="taller.menu_3" parent="taller.menu_root" action="taller.action_window3"/>
+
+
+    <!-- actions -->
+
+  </data>
+
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="taller.proveedores">
+      <field name="name">taller.list</field>
+      <field name="model">ig.taller.proveedores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="telefono"/>
+          <field name="localidad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="taller.proveedores_form" model="ir.ui.view">
+      <field name="name">taller.proveedores.form</field>
+      <field name="model">ig.taller.proveedores</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name" />  
+              <field name="telefono" /> 
+              <field name="localidad"/>
+              <field name="recambios_ids">
+                <tree>
+                  <field name="name"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="taller.action_window4">
+      <field name="name">taller Proveedores</field>
+      <field name="res_model">ig.taller.proveedores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="taller.action_server">
+      <field name="name">taller server</field>
+      <field name="model_id" ref="model_taller_taller"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Taller" id="taller.menu_root"/>
+    <!-- menu categories -->
+
+    <menuitem name="Proveedores" id="taller.menu_4" parent="taller.menu_root" action="taller.action_window4"/>
+
+
+    <!-- actions -->
+
+  </data>
+</odoo>

@@ -44,17 +44,3 @@ class Cliente(models.Model):
       letra = self.name[0]
       if letra != letra.upper():
          raise ValidationError("La primera letra debe estar en mayuscula")
-
-# class tallerbmx(models.Model):
-#     _name = 'tallerbmx.tallerbmx'
-#     _description = 'tallerbmx.tallerbmx'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100

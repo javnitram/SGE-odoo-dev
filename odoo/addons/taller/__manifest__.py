@@ -1,17 +1,16 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Talleres Ibra",
+    'name': "taller",
 
     'summary': """
-        Taller de bicicletas, en el se podrán registrar los clientes con sus bicletas
-        y los empleados encargados en su reparación. Tambien habrá una traza de piezas disponibles
-        En este taller se podrán arreglar bicicletas de mountain, bmx y dirt.""",
+        Short (1 phrase/line) summary of the module's purpose, used as
+        subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Taller de Bicicletas
+        Long description of module's purpose
     """,
 
-    'author': "Ibra",
+    'author': "My Company",
     'website': "http://www.yourcompany.com",
 
     # Categories can be used to filter modules in modules listing
@@ -25,7 +24,7 @@
 
     # always loaded
     'data': [
-        'security/ir.model.access.csv',
+       'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
     ],

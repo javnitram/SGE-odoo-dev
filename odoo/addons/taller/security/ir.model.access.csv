@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ig.taller_vehiculos,Acceso taller vehiculos,model_ig_taller_vehiculos,base.group_user,1,1,1,1
+access_ig.taller_recambios,Acceso taller recambios,model_ig_taller_recambios,base.group_user,1,1,1,1
+access_ig.taller_clientes,Acceso taller clientes,model_ig_taller_clientes,base.group_user,1,1,1,1
+access_ig.taller_proveedores,Acceso taller proveedores,model_ig_taller_proveedores,base.group_user,1,1,1,1

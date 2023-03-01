@@ -148,45 +148,28 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="tallerbmx_action_window_1">
-      <field name="name">Taller Bicicletas</field>
+      <field name="name">Bicicletas</field>
       <field name="res_model">ias.tallerbmx.bicicleta</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="tallerbmx_action_window_2">
-      <field name="name">Taller Bicicletas</field>
+      <field name="name">Empleados</field>
       <field name="res_model">ias.tallerbmx.empleado</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="tallerbmx_action_window_3">
-      <field name="name">Taller Bicicletas</field>
+      <field name="name">Piezas</field>
       <field name="res_model">ias.tallerbmx.pieza</field>
       <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="tallerbmx_action_window_4">
-      <field name="name">Taller Bicicletas</field>
+      <field name="name">Clientes</field>
       <field name="res_model">ias.tallerbmx.cliente</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-    
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="tallerbmx.action_server">
-      <field name="name">tallerbmx server</field>
-      <field name="model_id" ref="model_tallerbmx_tallerbmx"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
 
