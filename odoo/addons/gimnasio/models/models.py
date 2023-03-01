@@ -1,23 +1,3 @@
-# -*- coding: utf-8 -*-
-
-# from odoo import models, fields, api
-
-
-# class gimnasio(models.Model):
-#     _name = 'gimnasio.gimnasio'
-#     _description = 'gimnasio.gimnasio'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
-
-
 from odoo import models,api,fields
 
 
@@ -66,5 +46,4 @@ class ProductosGimnasio(models.Model):
     imagen = fields.Image('Imagen',store=True,relation="res.partner")
     disponibilidad = fields.Boolean('Disponibilidad',default=True)
     descripcion = fields.Char('Descripcion')
-    clientesProductos_ids = fields.Many2many('ar.gimnasio.clientes', string='Clientes_productos')
-    
+    clientesProductos_ids = fields.Many2many('ar.gimnasio.clientes', string='Clientes_productos')  
