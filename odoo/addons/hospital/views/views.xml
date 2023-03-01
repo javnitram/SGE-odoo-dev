@@ -82,21 +82,24 @@
       <field name="model">gs.hospital.medicinas</field>
       <field name="type">kanban</field>
       <field name="arch" type="xml">
-      <kanban>
+      <kanban>            
             <field name="nroserie"/>
-            <field name="name"/>
+            <field name="name"/>                       
+            <field name="imagen"/>
             <field name="tipo"/>
-            <field name="cantidad"/>
             <templates>
               <t t-name="kanban-box">             
-                <div t-attf-class="oe_kanban_global_click">
-                  <div class="o_kanban_image">
-                    <img t-att-src="kanban_image('gs.hospital.medicinas','imagen',record.id.raw_value)"/>
-                  </div>
+                <div t-attf-class="oe_kanban_global_click">                  
+                  <div class="o_kanban_image">             
+                    <t t-if="record.imagen.raw_value">       
+                      <img t-att-src="kanban_image('gs.hospital.medicinas','imagen',record.imagen.id_value)"/>                    
+                    </t>
+                  </div>                  
                   <div class="oe_kanban_details">
-                    <ul>
-                      <li>Nombre: <field name="name"/></li>
-                      <li>Tipo: <field name="tipo"/></li>
+                    <ul>                      
+                      <li>Número de serie: <field name="nroserie"/></li>
+                      <li>Nombre: <field name="name"/></li>  
+                      <li>Tipo: <field name="tipo"/></li>                                                      
                     </ul>
                   </div>
                 </div>
