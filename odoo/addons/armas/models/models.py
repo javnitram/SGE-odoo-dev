@@ -1,22 +1,5 @@
 # -*- coding: utf-8 -*-
 
-# from odoo import models, fields, api
-
-
-# class armas(models.Model):
-#     _name = 'armas.armas'
-#     _description = 'armas.armas'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
-
 from odoo import models,api,fields
 
 
@@ -35,10 +18,6 @@ class Armas(models.Model):
     camuflaje_id = fields.Many2one('ac.camuflajes.armas', string='Camuflaje')
     accesorios_ids = fields.Many2many('ac.accesorios.armas', string='Accesorios del arma')
     clientes_ids = fields.Many2many('ac.clientes.tienda', string='Cliente')
-    
-    
-    
-
 
 class accesoriosArmas(models.Model):
     _name = 'ac.accesorios.armas'
@@ -50,9 +29,6 @@ class accesoriosArmas(models.Model):
     disponibilidad = fields.Boolean('Disponibilidad:')
     arma_ids = fields.Many2many('ac.armas.categoria', string='Arma que lo tiene')
     imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
-    
-    
-
 
 class camuflajesArmas(models.Model):
     _name = 'ac.camuflajes.armas'
@@ -63,8 +39,6 @@ class camuflajesArmas(models.Model):
     referencia = fields.Char('Referencia:')
     disponibilidad = fields.Boolean('Disponibilidad:')
     camuflajes_ids = fields.One2many('ac.armas.categoria', 'camuflaje_id', string='Camuflajes')
-    
-
 
 class clientes(models.Model):
     _name = 'ac.clientes.tienda'
@@ -76,6 +50,3 @@ class clientes(models.Model):
     direccion = fields.Char('Dirección:')
     arma_ids = fields.Many2many('ac.armas.categoria', string='Arma')
     imagen = fields.Image('Imagen del arma', store=True, relation="res.partner")
-        
-        
-        
