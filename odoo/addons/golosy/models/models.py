@@ -36,8 +36,12 @@ class Camion(models.Model):
      name = fields.Char('Matricula', required=True, help='Matricula del camión')
      golosinas2_ids = fields.Many2many('wb.golosy.golosinas', string='Productos a enviar')
      empleado_id = fields.Many2one("wb.golosy.empleados",string="Conductor",required=True,ondelete="cascade")
-     productos = fields.Integer('Productos')#compute="_productoscamion")
+     productos = fields.Integer('Productos', compute="_productoscamion", store=True)
      
+     @api.depends('golosinas2_ids')
+     def _productoscamion(self):
+          for rec in self:	
+               rec.productos = len(rec.golosinas2_ids)
 
 class Empleados(models.Model):
      _name = 'wb.golosy.empleados'

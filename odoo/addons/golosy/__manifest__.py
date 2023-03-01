@@ -23,7 +23,8 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'reports/report_camion.xml'
+        'report/report_camion.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
