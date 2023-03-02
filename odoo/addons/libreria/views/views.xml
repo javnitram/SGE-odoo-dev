@@ -25,6 +25,27 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="libreria.libro_form">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.libro</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="estado"/>
+            <field name="segunda_mano"/>
+            <field name="categoria_id"/>
+            <field name="autores_ids">
+              <tree>
+                <field name="name"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="libreria.autor_list">
       <field name="name">Libros</field>
       <field name="model">jm.libreria.autor</field>

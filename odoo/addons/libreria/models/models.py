@@ -7,6 +7,13 @@ class LibreriaCategoria(models.Model):
     _name = 'jm.libreria.categoria'
     _description = 'Categoría de libros'
     name = fields.Char('Nombre')
+    libros_ids = fields.One2many('jm.libreria.libro', 'categoria_id', string='Libros de la categoría')
+    field_name_ids = fields.One2many('comodel_name', 'inverse_field_name', string='field_name')
+    total_libros_categoria = fields.Char(compute='_calculo_total_libros_categoria', string='Total libros')
+    
+    @api.depends('')
+    def _calculo_total_libros_categoria(self):
+        pass
 
 class LibreriaLibro(models.Model):
     _name = 'jm.libreria.libro'
@@ -20,6 +27,7 @@ class LibreriaLibro(models.Model):
         ('2', 'Malo')
     ], string='Estado')
     categoria_id = fields.Many2one('jm.libreria.categoria', string='Categoría')
+    pais_publicacion_id = fields.Many2one('res.country', string='País de publicación')
     autores_ids = fields.Many2many('jm.libreria.autor', string='Autores')
     
 class LibreriaAutor(models.Model):
@@ -28,6 +36,7 @@ class LibreriaAutor(models.Model):
     name = fields.Char('Autor', required=True, help='Introduce el nombre del autor')
     fec_nacimiento = fields.Date('Fecha de nacimiento')
     pais_id = fields.Many2one('res.country', string='País')
+    libros_ids = fields.Many2many('jm.libreria.libro', string='Libros')
     
 
 # class libreria(models.Model):

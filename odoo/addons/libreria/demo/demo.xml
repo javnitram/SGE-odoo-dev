@@ -8,7 +8,7 @@
           <record id="libro_africanus" model="jm.libreria.libro">
             <field name="name">Africanus</field>
             <field name="precio">20</field>
-            <field name="categoria_id" ref="categoria_historica"/>
+            <field name="categoria_id" ref="categoria_historica"/>z
           </record>
 
           <record id="autor_posteguillo" model="jm.libreria.autor">
