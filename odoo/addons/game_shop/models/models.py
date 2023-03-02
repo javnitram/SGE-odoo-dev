@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
-
+from odoo.exceptions import ValidationError
 
 class game_shop_tienda(models.Model):
     _name = 'sb_game_shop.tienda'
@@ -15,7 +15,7 @@ class game_shop_tienda(models.Model):
 class game_shop_videojuego(models.Model):
     _name = 'sb_game_shop.videojuego'
     _description = 'Videojuego'
-    name = fields.Char(string="Nombre",required=True,help="Introduce el nombre de el videojuego")
+    name = fields.Char(string="Nombre",help="Introduce el nombre de el videojuego")
     pegi= fields.Integer(string="Pegi",required=True,default=3,help="Introduce la edad minima para poder jugar al juego")
     precio = fields.Float(string="Precio Unitario",required=True,help="Introduce el precio del videojuego")    
     digital = fields.Boolean(string="Digital")
@@ -33,11 +33,14 @@ class game_shop_videojuego(models.Model):
                 i.precio_iva = (i.precio-5)*1.21
             else:
                 i.precio_iva = i.precio*1.21
+    #Esta constraint tiene 3 argumentos ('nombre de la constraint', 'definición de la constraint y el campo que afecta', 'mensaje por pantalla')
+    _sql_constraints = [('unique_name','unique (name)','Este videojuego ya existe intentelo con otro')]
+   
 
 class game_shop_distribuidor(models.Model):
     _name = 'sb_game_shop.distribuidor'
     _description = 'Distribuidor'
-    name = fields.Char(string="Nombre", required=True,help="Introduce el nombre del distribuidor")
+    name = fields.Char(string="Nombre",required=True,help="Introduce el nombre del distribuidor")
     pais_id = fields.Many2one('res.country', string='Pais')
     provincia_id = fields.Many2one('res.country.state', string='Provincia')
     videojuegos_ids = fields.One2many('sb_game_shop.videojuego', 'distribuidor_id', string="Juegos que son distribuidos")
@@ -45,7 +48,12 @@ class game_shop_distribuidor(models.Model):
 class game_shop_almacen(models.Model):
     _name = 'sb_game_shop.almacen'
     _description = 'Almacen juegos'
-    name = fields.Char(string = "Almacen",required=True,help="Introduce el nombre del almacen",default="almacen")
+    name = fields.Char(string = "Almacen",help="Introduce el nombre del almacen",default="almacen")
     provincia_id = fields.Many2one('res.country.state', string='Provincia')
     calle = fields.Char(string="Calle", help="Introduce el nombre de la calle")
     tiendas_ids = fields.One2many('sb_game_shop.tienda', 'almacen_id', string="Tiendas a la que suminsitra")
+    @api.constrains('name')
+    def _checkNombre(self):
+        if not self.name:
+            raise ValidationError("Debes escribir el nombre del almacen.")
+        
