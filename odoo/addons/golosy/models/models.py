@@ -26,7 +26,7 @@ class categorias(models.Model):
      tipo = fields.Selection([
         ('0', 'Dulce'),
         ('1', 'Salado')
-     ], string='Tipo de la categoria')
+     ], required=True,string='Tipo de la categoria')
      golosinas_ids = fields.One2many('wb.golosy.golosinas', 'categoria_id', string='Golosinas')
      
 class Camion(models.Model):

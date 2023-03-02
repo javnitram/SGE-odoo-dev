@@ -108,6 +108,7 @@
                   <field name="name"/>
                   <field name="precio"/>
                   <field name="description"/>
+                  <field name="cantidad"/>
                 </tree>
               </field>
             </group>
