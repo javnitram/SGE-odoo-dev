@@ -1,0 +1,66 @@
+<odoo>
+<data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="yf_disco_list">
+      <field name="name">disco.disco</field>
+      <field name="model">yf.discos.disco</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="artista_id"/>
+          <field name="discografica_id"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="yf_disco_form">
+        <field name="name">disco.disco</field>
+        <field name="model">yf.discos.disco</field>
+        <field name="arch" type="xml">
+          <form>
+              <sheet>
+                <group colspan="2" col="2">
+                    <field name='image' widget="image" class="yf.disco.disco" />
+                    <field name="name"/>
+                    <field name="precio"/>
+                    <field name="artista_id"/>
+                    <field name="discografica_id"/>
+                </group> 
+            </sheet>   
+          </form>
+        </field>
+      </record>
+    
+
+
+    <!-- actions opening views on models -->
+
+    
+
+    <record model="ir.actions.act_window" id="modulo_intento.action_window13">
+      <field name="name">Discos</field>
+      <field name="res_model">yf.discos.disco</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="modulo_intento.action_window14">
+        <field name="name">Discos</field>
+        <field name="res_model">yf.discos.disco</field>
+        <field name="view_mode">form</field>
+      </record>
+
+
+    
+    <!-- Top menu item -->
+
+    
+
+    <!-- menu categories -->
+    <menuitem name="Discos" id="modulo_intento.menu_13" parent="modulo_intento.menu_root"/>
+    
+    <menuitem name="Tree" id="modulo_intento.menu_14" parent="modulo_intento.menu_13"
+              action="modulo_intento.action_window13"/>
+    <menuitem name="Form" id="modulo_intento.menu_15" parent="modulo_intento.menu_13"
+              action="modulo_intento.action_window14"/>
+  </data>
+  </odoo>
