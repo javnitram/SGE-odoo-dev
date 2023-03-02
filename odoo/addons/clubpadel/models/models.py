@@ -9,7 +9,7 @@ class ClubPadelClub(models.Model):
     _name = "ab_clubpadel.club"
     _description = "Nombre del Club"
     _translate = "True"
-    nombre = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
+    name = fields.Char(string="Club",required=True,help="Introduce el nombre del club.")
     pais_id = fields.Many2one('res.country', string='Pais')
     provincia_id = fields.Many2one('res.country.state', string='Provincia')
     marcas_ids = fields.Many2many('ab_clubpadel.marca', string='Marcas del club')
@@ -57,18 +57,3 @@ class ClubPadelModelo(models.Model):
                 i.precio_final = i.precio/2
             else:
                 i.precio_final = i.precio
-
-    
-# class clubpadel(models.Model):
-#     _name = 'clubpadel.clubpadel'
-#     _description = 'clubpadel.clubpadel'
-
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100

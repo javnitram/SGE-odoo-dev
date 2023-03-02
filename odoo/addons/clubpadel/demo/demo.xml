@@ -2,25 +2,25 @@
     <data>
 
           <record id="club_1" model="ab_clubpadel.club">
-            <field name="nombre">AlphaPadel</field>
+            <field name="name">AlphaPadel</field>
             <field name="pais_id" ref="base.es"/>
             <!-- <field name="provincia_id" ref="base.es.M"/> -->
           </record>
 
           <record id="club_2" model="ab_clubpadel.club">
-            <field name="nombre">Dreamfit</field>
+            <field name="name">Dreamfit</field>
             <field name="pais_id" ref="base.es"/>
             <!-- <field name="provincia_id" ref="base.m"/> -->
           </record>
 
           <record id="club_3" model="ab_clubpadel.club">
-            <field name="nombre">NovaPadel</field>
+            <field name="name">NovaPadel</field>
             <field name="pais_id" ref="base.es"/>
             <!-- <field name="provincia_id" ref="base.m"/> -->
           </record>
 
           <record id="club_4" model="ab_clubpadel.club">
-            <field name="nombre">Padel2.0</field>
+            <field name="name">Padel2.0</field>
             <field name="pais_id" ref="base.es"/>
             <!-- <field name="provincia_id" ref="base.m"/> -->
           </record>

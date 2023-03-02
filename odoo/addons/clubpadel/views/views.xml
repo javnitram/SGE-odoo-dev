@@ -6,7 +6,7 @@
       <field name="model">ab_clubpadel.club</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="nombre"/>
+          <field name="name"/>
           <field name="pais_id"/>
           <field name="provincia_id"/>
           <field name="marcas_ids"/>
@@ -21,10 +21,16 @@
         <form>
           <sheet>
             <group>
-              <field name="nombre"/>
+              <field name="name"/>
               <field name="pais_id"/>
               <field name="provincia_id"/>
-              <field name="marcas_ids"/>
+              <field name="marcas_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
             </group>
           </sheet>
         </form>
@@ -58,7 +64,13 @@
               <field name="fecha_salida"/>
               <field name="pais_id"/>
               <field name="provincia_id"/>
-              <field name="marcas_ids"/>
+              <field name="marcas_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
             </group>
           </sheet>
         </form>
@@ -93,9 +105,26 @@
               <field name="imagen" widget="image"/>
               <field name="fecha"/>
               <field name="gama"/>
-              <field name="fabricante_id"/>
-              <field name="models_ids"/>
-              <field name="clubes_ids"/>
+              <field name="fabricante_id">
+                <tree>
+                  <field name="name"/>
+                  <field name="fecha_salida"/>
+                </tree>
+              </field>
+              <field name="models_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="versiones"/>
+                  <field name="forma"/>
+                  <field name="precio_final"/>
+                </tree>
+              </field>
+              <field name="clubes_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="pais_id"/>
+                </tree>
+              </field>
             </group>
           </sheet>
         </form>
@@ -113,7 +142,13 @@
           <field name="fecha"/>
           <field name="gama"/>
           <field name="fabricante_id"/>
-          <field name="models_ids"/>
+          <field name="models_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="versiones"/>
+                  <field name="forma"/>
+                </tree>
+              </field>
           <field name="clubes_ids"/>
           <templates>
             <t t-name="kanban-box">
@@ -123,7 +158,7 @@
                 </div>
                 <div class="oe_kanban_details">
                   <ul>
-                    <li>Nombre: <field name="name" /> </li>
+                    <li style="font-weight: bold;">Nombre: <field name="name" /> </li>
                     <li>Gama: <field name="gama" /> </li>
                     <li>Fabricante: <field name="fabricante_id" /> </li>
                   </ul>
@@ -143,13 +178,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
-          <field name="precio"/>
+          <field name="marca_id"/>
           <field name="versiones"/>
           <field name="forma"/>
-          <field name="fecha"/>
-          <field name="segmano"/>
           <field name="estado"/>
-          <field name="marca_id"/>
+          <field name="segmano"/>
           <field name="precio_final"/>
         </tree>
       </field>
@@ -169,7 +202,13 @@
               <field name="fecha"/>
               <field name="segmano"/>
               <field name="estado"/>
-              <field name="marca_id"/>
+              <field name="marca_id">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
               <field name="precio_final"/>
             </group>
           </sheet>
@@ -188,8 +227,8 @@
           <field name="versiones" string="Versiones"/>
           <field name="forma" string="Forma"/>
           <field name="estado" string="Estado"/>
-          <filter name="Baratas" domain="[('precio','&lt;=',150)]"/>
-          <filter name="Estado" domain="[('estado','=','Nuevo')]"/>
+          <filter name="Baratas" domain="[('precio_final','&lt;=',200)]"/>
+          <filter name="Estado" domain="[('estado','=',0)]"/>
         </search>
       </field>
     </record>
@@ -199,7 +238,7 @@
     <record model="ir.actions.act_window" id="clubpadel.club_listar_action_window">
       <field name="name">Lista de Club's</field>
       <field name="res_model">ab_clubpadel.club</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.club_crear_action_window">
       <field name="name">Registrar un Club</field>
@@ -212,7 +251,7 @@
     <record model="ir.actions.act_window" id="clubpadel.fabricante_listar_action_window">
       <field name="name">Lista de Fabricantes</field>
       <field name="res_model">ab_clubpadel.fabricante</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.fabricante_crear_action_window">
       <field name="name">Crear un Fabricante</field>
@@ -225,7 +264,7 @@
     <record model="ir.actions.act_window" id="clubpadel.marca_listar_action_window">
       <field name="name">Listado de Marcas</field>
       <field name="res_model">ab_clubpadel.marca</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.marca_crear_action_window">
       <field name="name">Ver/Crear Marcas</field>
@@ -236,7 +275,7 @@
     <record model="ir.actions.act_window" id="clubpadel.modelo_listar_action_window">
       <field name="name">Modelos en venta</field>
       <field name="res_model">ab_clubpadel.modelo</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
     <record model="ir.actions.act_window" id="clubpadel.modelo_crear_action_window">
       <field name="name">Crear Modelo nuevo</field>
@@ -246,20 +285,7 @@
 
 
     <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="clubpadel.action_server">
-      <field name="name">clubpadel server</field>
-      <field name="model_id" ref="model_clubpadel_clubpadel"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+
 
     <!-- Top menu item -->
 

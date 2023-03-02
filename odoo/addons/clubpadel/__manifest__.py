@@ -3,7 +3,7 @@
     'name': "clubpadel",
 
     'summary': """
-        Un maravilloso club de padel :D""",
+        Un módulo que te ayuda a ver los clubes, marcas en colaboración y sus respectivas palas.""",
 
     'description': """
         Long description of module's purpose
