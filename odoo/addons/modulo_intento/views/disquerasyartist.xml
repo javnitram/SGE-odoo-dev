@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+      <!-- explicit list view definition -->
+  
+      <record model="ir.ui.view" id="yf_disqueraart_tree">
+        <field name="name">disqueras.artistas.tree</field>
+        <field name="model">yf.disquera.artista</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="artistas_id"/>
+            <field name="disqueras_id"/>
+              <field name="anhocolaboracion"/>
+          </tree>
+        </field>
+      </record>
+      <record model="ir.ui.view" id="yf_disqueraart_form">
+        <field name="name">dsiqueras.artistas.form</field>
+        <field name="model">yf.disquera.artista</field>
+        <field name="arch" type="xml">
+          <form>
+            <group colspan="2" col="2">
+              <field name="artistas_id"/>
+              <field name="disqueras_id"/>
+              <field name="anhocolaboracion"/>
+          </group>
+          </form>
+        </field>
+      </record>
+  
+      <!-- actions opening views on models -->
+  
+      <record model="ir.actions.act_window" id="modulo_intento.action_window101">
+        <field name="name">Disqueras y Artistas</field>
+        <field name="res_model">yf.disquera.artista</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+      <record model="ir.actions.act_window" id="modulo_intento.action_window111">
+        <field name="name">Disqueras y Artistas</field>
+        <field name="res_model">yf.disquera.artista</field>
+        <field name="view_mode">form</field>
+      </record>
+  
+      <!-- Top menu item -->
+  
+      <!-- <menuitem name="Tienda Discos" id="modulo_intento.menu_root"/> -->
+  
+      <!-- menu categories -->
+  
+      <menuitem name="Disqueras y Artistas" id="modulo_intento.menu_alto" parent="modulo_intento.menu_root"/>
+  
+      <!-- actions -->
+  
+      <menuitem name="Tree" id="modulo_intento.menu_101_list" parent="modulo_intento.menu_alto"
+                action="modulo_intento.action_window101"/>
+      <menuitem name="Form" id="modulo_intento.menu_111_list" parent="modulo_intento.menu_alto"
+                action="modulo_intento.action_window111"/>
+     -->
+  
+    </data>
+  </odoo>

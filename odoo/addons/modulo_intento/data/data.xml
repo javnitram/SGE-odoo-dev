@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+
+          <record id="Nirvana" model="yf.disco.artista">
+            <field name="name">Nirvana</field>
+            <field name="anhofundacion">1987</field>
+          </record>
+
+          <record id="Switchfoot" model="yf.disco.artista">
+            <field name="name">Switchfoot</field>
+            <field name="anhofundacion">1996</field>
+          </record>
+
+          <record id="RBE" model="yf.disco.artista">
+            <field name="name">Reel Big Fish</field>
+            <field name="anhofundacion">1992</field>
+          </record>
+          
+          <record id="Manneskin" model="yf.disco.artista">
+            <field name="name">Manneskin</field>
+            <field name="anhofundacion">2016</field>
+          </record>
+
+          <record id="rock" model="yf.discos.genero">
+            <field name="name">Rock</field>
+          </record>
+
+          <record id="pop" model="yf.discos.genero">
+            <field name="name">Pop</field>
+          </record>
+
+          <record id="punk" model="yf.discos.genero">
+            <field name="name">Punk</field>
+          </record>
+
+          <record id="ska" model="yf.discos.genero">
+            <field name="name">Ska</field>
+          </record>
+
+
+<!-- 
+          <record id="object1" model="modulo_intento.modulo_intento">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="modulo_intento.modulo_intento">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="modulo_intento.modulo_intento">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="modulo_intento.modulo_intento">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record> -->
+
+    </data>
+</odoo>
