@@ -53,7 +53,7 @@
       <field name="name">game_shop.videojuego.view.kanban</field>
       <field name="model">sb_game_shop.videojuego</field>
       <field name="arch" type="xml">
-        <kanban>
+        <kanban default_group_by="distribuidor_id">
           <field name="id"/>
           <field name="name"/>
           <field name="precio"/>
