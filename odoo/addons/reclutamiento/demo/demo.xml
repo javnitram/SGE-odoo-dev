@@ -1280,7 +1280,7 @@
             KPQXGSW3zIFR+4RzEloamLuXV4ls7+CBYfsjghgOCcNCh7Yme5LC5aVQQPEAAo8meUM4FoGJRau9
             pmz3myIUHE26RMoBhm3S1Q0R669T9E3wx29G7CELEH5gSABQQ9OfRAuyUcOidSPTZ76NP4AEm3pt
             1AMejwOgHMhx0NwDIkY5hAUVNDo2miAtiFxmnTE2J+ubfGa5omx0/9k=</field>  
-            <field name="nombre">Aureliano</field>
+            <field name="name">Aureliano</field>
             <field name="edad">34</field>
    
           </record>
@@ -1324,7 +1324,14 @@
             <field name="municion">1</field>
             <field name="alcance">100</field>
             
-          </record>>
+          </record>
+          <record id="campana_1" model="ac.reclutamiento.campana">
+            <field name="nombre">Conquista de la Galia</field>
+            <field name="fecha_inicio">2002-3-23</field>
+            <field name="pais_id" ref="base.fr"></field>
+
+
+          </record>
 
 
 

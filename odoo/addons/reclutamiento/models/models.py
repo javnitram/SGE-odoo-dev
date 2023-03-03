@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 from odoo import models, fields, api
 
@@ -16,7 +16,7 @@ class general(models.Model):
     _name = 'ac.reclutamiento.general'
     _description = 'ac.reclutamiento.general'
     imagen= fields.Image(string="imagen",store=True,relation="res.partner",help="Inserte la imagen aqui")
-    nombre = fields.Char()
+    name = fields.Char(string="nombre del general")
     edad= fields.Integer() 
     ejercitos_gestionados = fields.One2many('ac.reclutamiento.ejercito', 'nombre', string='ejercitos_gesionados')
   
@@ -44,7 +44,7 @@ class infanteria_proyectiles(models.Model):
         ('2','Flechas'),
         ('3','Jabalinas')
     ], string='municion')
-    ##poner valor por defecto
+  
     alcance= fields.Integer()
     
 
@@ -71,7 +71,7 @@ class artilleria(models.Model):
         ('1', 'piedra'),
         ('2','virote')
     ], string='municion')    
-    ##poner valor por defecto
+ 
     alcance= fields.Integer()
     
 
@@ -82,11 +82,3 @@ class campana(models.Model):
     pais_id = fields.Many2one('res.country', string='Pais')
     fecha_inicio= fields.Date()
     ejercitos = fields.Many2many('ac.reclutamiento.ejercito', string='Ejercitos que participan')
-    
-    ##poner valor por defecto
-    
-
-   ## @api.depends('value')
-    ##def _value_pc(self):
-        ##for record in self:
-            ##record.value2 = float(record.value) / 100
