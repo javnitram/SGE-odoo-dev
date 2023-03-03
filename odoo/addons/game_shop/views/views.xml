@@ -1,6 +1,5 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
     <!-- Vistas tienda -->
     <record model="ir.ui.view" id="game_shop.tienda_list">
       <field name="name">game_shop.tienda.view.tree</field>
@@ -134,6 +133,19 @@
       </field>
     </record>
 
+    <record id="game_shop.videojuego_view_graph" model="ir.ui.view">
+      <field name="name">game_shop.videojuego.view.graph</field>
+      <field name="model">sb_game_shop.videojuego</field>
+      <field name="arch" type="xml">
+        <graph string="Gráfico de videojuegos" type="bar">
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="distribuidor_id"/>
+          <field name="tiendas_ids"/>
+        </graph>
+      </field>
+    </record>
+
     <!-- Vistas distribuidor -->
 
     <record id="game_shop.distribuidor_list" model="ir.ui.view">
@@ -183,7 +195,7 @@
      <record model="ir.actions.act_window" id="game_shop.videojuego_action_window">
       <field name="name">Videojuegos</field>
       <field name="res_model">sb_game_shop.videojuego</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,graph</field>
     </record>
 
     <!-- Action view para dar de alta un Videojuego -->
