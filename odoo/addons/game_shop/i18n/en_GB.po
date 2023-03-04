@@ -1,0 +1,343 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* game_shop
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20221005\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-21 08:10+0000\n"
+"PO-Revision-Date: 2023-02-21 09:25+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.almacen_action_window
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__name
+#: model:ir.ui.menu,name:game_shop.menu_almacen
+#: model:ir.ui.menu,name:game_shop.menu_almacen_vista
+msgid "Almacen"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__almacen_id
+msgid "Almacen de la tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model,name:game_shop.model_game_shop_almacen
+msgid "Almacen juegos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.videojuego_action_window_alta
+#: model:ir.ui.menu,name:game_shop.menu_videojuegos_alta
+msgid "Alta Videojuego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.tienda_action_window_alta
+msgid "Alta tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.ui.menu,name:game_shop.menu_tiendas_alta
+msgid "Alta tiendas"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__calle
+msgid "Calle"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__create_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__create_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__create_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__create_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__create_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__create_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__digital
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Digital"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__display_name
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__display_name
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__display_name
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.distribuidor_action_window
+#: model:ir.model,name:game_shop.model_game_shop_distribuidor
+#: model:ir.ui.menu,name:game_shop.menu_distribuidor
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Distribuidor"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__distribuidor_id
+msgid "Distribuidor del juego"
+msgstr ""
+
+#. module: game_shop
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_kanban
+msgid "Distribuidor:"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__estado
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Estado"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__horario
+msgid "Horario"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__id
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__id
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__id
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__id
+msgid "ID"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__imagen
+msgid "Imagen"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_tienda__horario
+msgid "Introduce el horario de la tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_videojuego__name
+msgid "Introduce el nombre de el videojuego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_almacen__calle
+msgid "Introduce el nombre de la calle"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_tienda__name
+msgid "Introduce el nombre de la tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_almacen__name
+msgid "Introduce el nombre del almacen"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_distribuidor__name
+msgid "Introduce el nombre del distribuidor"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_videojuego__precio
+msgid "Introduce el precio del videojuego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_videojuego__pegi
+msgid "Introduce la edad minima para poder jugar al juego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_tienda__ubicacion
+msgid "Introduce la ubicación de la tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__videojuegos_ids
+msgid "Juegos que son distribuidos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen____last_update
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor____last_update
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda____last_update
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__write_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__write_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__write_uid
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__write_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__write_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__write_date
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.ui.menu,name:game_shop.menu_distribuidor_vista
+msgid "Marca"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__name
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__name
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__name
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Nombre"
+msgstr ""
+
+#. module: game_shop
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_kanban
+msgid "Nombre:"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields.selection,name:game_shop.selection__game_shop_videojuego__estado__0
+msgid "Nuevo"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__pais_id
+msgid "Pais"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__pegi
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Pegi"
+msgstr ""
+
+#. module: game_shop
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_kanban
+msgid "Pegi:"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__precio
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Precio"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,help:game_shop.field_game_shop_videojuego__precio_iva
+msgid "Precio calculado con el IVA"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__precio_iva
+msgid "Precio con IVA"
+msgstr ""
+
+#. module: game_shop
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_kanban
+msgid "Precio:"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__provincia_id
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_distribuidor__provincia_id
+msgid "Provincia"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields.selection,name:game_shop.selection__game_shop_videojuego__estado__1
+msgid "Seminuevo"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.tienda_action_window
+#: model:ir.ui.menu,name:game_shop.menu_tienda
+#: model_terms:ir.ui.view,arch_db:game_shop.videojuego_view_search
+msgid "Tienda"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model,name:game_shop.model_game_shop_tienda
+msgid "Tienda de videojuegos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.ui.menu,name:game_shop.menu_root
+msgid "Tienda videojuegos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_almacen__tiendas_ids
+msgid "Tiendas a la que suminsitra"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_videojuego__tiendas_ids
+msgid "Tiendas disponibles"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__ubicacion
+msgid "Ubicación"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields.selection,name:game_shop.selection__game_shop_videojuego__estado__2
+msgid "Usado"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.videojuego_action_window_ver
+msgid "Ver videojuego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model,name:game_shop.model_game_shop_videojuego
+#: model:ir.ui.menu,name:game_shop.menu_videojuego
+msgid "Videojuego"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.actions.act_window,name:game_shop.videojuego_action_window
+#: model:ir.ui.menu,name:game_shop.menu_videojuegos_ver
+msgid "Videojuegos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.model.fields,field_description:game_shop.field_game_shop_tienda__videojuegos_ids
+msgid "Videojuegos disponibles"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.ui.menu,name:game_shop.menu_videojuegos_vista
+msgid "Vista Videojuegos"
+msgstr ""
+
+#. module: game_shop
+#: model:ir.ui.menu,name:game_shop.menu_tiendas_vista
+msgid "Vista tiendas"
+msgstr ""
