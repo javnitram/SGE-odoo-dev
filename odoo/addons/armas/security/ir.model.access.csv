@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_armas_categoria,armas.armas,model_ac_armas_categoria,base.group_user,1,1,1,1
+access_accesorios_armas,armas.accesorios,model_ac_accesorios_armas,base.group_user,1,1,1,1
+access_camuflajes_armas,armas.camuflajes,model_ac_camuflajes_armas,base.group_user,1,1,1,1
+access_clientes_tienda,armas.clientes,model_ac_clientes_tienda,base.group_user,1,1,1,1

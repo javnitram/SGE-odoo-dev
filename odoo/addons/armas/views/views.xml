@@ -1,0 +1,192 @@
+<odoo>
+  <data>
+    <!-- Vistas de lista -->
+
+    <record model="ir.ui.view" id="armas.list">
+      <field name="name">Lista de armas</field>
+      <field name="model">ac.armas.categoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="referencia"/>
+          <field name="categoria"/>
+          <field name="disponibilidad"/>
+          <field name="camuflaje_id"/>
+          <field name="accesorios_ids"/>
+          <field name="clientes_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="armas.accesorios_list">
+      <field name="name">Lista de accesorios</field>
+      <field name="model">ac.accesorios.armas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="referencia"/>
+          <field name="disponibilidad"/>
+          <field name="arma_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="armas.camuflajes_list">
+      <field name="name">Lista de camuflajes</field>
+      <field name="model">ac.camuflajes.armas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="referencia"/>
+          <field name="disponibilidad"/>
+          <field name="camuflajes_ids" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="armas.clientes_list">
+      <field name="name">Lista de clientes</field>
+      <field name="model">ac.clientes.tienda</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="telefono"/>
+          <field name="fecha_nacimiento"/>
+          <field name="direccion"/>
+          <field name="arma_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vistas de formulario -->
+
+    <record id="armas_view_form" model="ir.ui.view">
+      <field name="name">Creación de armas</field>
+      <field name="model">ac.armas.categoria</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="categoria"/>
+              <field name="disponibilidad"/>
+              <field name="camuflaje_id"/>
+              <field name="accesorios_ids"/>
+              <field name="clientes_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="accesorios_view_form" model="ir.ui.view">
+      <field name="name">Accesorios del arma</field>
+      <field name="model">ac.accesorios.armas</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="disponibilidad"/>
+              <field name="arma_ids" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="camuflajes_view_form" model="ir.ui.view">
+      <field name="name">Camuflajes del arma</field>
+      <field name="model">ac.camuflajes.armas</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="referencia"/>
+              <field name="disponibilidad"/>
+              <field name="camuflajes_ids" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="clientes_view_form" model="ir.ui.view">
+      <field name="name">Clientes de la tienda</field>
+      <field name="model">ac.clientes.tienda</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="imagen" widget="image" class="oe_avatar oe_left" options="{'size':[265,300]}"/>
+              <field name="name"/>
+              <field name="telefono"/>
+              <field name="fecha_nacimiento"/>
+              <field name="direccion"/>
+              <field name="arma_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="armas.action_window">
+      <field name="name">Lista de armas</field>
+      <field name="res_model">ac.armas.categoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="armas.accesorios_action_window">
+      <field name="name">Lista de accesorios</field>
+      <field name="res_model">ac.accesorios.armas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="armas.camuflajes_action_window">
+      <field name="name">Lista de camuflajes</field>
+      <field name="res_model">ac.camuflajes.armas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="armas.clientes_action_window">
+      <field name="name">Lista de clientes</field>
+      <field name="res_model">ac.clientes.tienda</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Armería" id="armas.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Armas" id="armas.arma" parent="armas.menu_root"/>
+    <menuitem name="Accesorios" id="armas.accesorios" parent="armas.menu_root"/>
+    <menuitem name="Camuflajes" id="armas.camuflajes" parent="armas.menu_root"/>
+    <menuitem name="Clientes" id="armas.clientes" parent="armas.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Selección de armas" id="armas.menuArmas" parent="armas.arma"
+              action="armas.action_window"/>
+    <menuitem name="Selección de accesorios" id="armas.menuAccesorios" parent="armas.accesorios"
+              action="armas.accesorios_action_window"/>
+    <menuitem name="Selección de camuflajes" id="armas.menuCamuflajes" parent="armas.camuflajes"
+              action="armas.camuflajes_action_window"/>
+    <menuitem name="Selección de clientes" id="armas.menuClientes" parent="armas.clientes"
+              action="armas.clientes_action_window"/>
+  </data>
+</odoo>
