@@ -69,6 +69,7 @@
         <tree>
           <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
           <field name="name"/>
+          <field name="Region"/>
         </tree>
       </field>
     </record>
@@ -159,9 +160,9 @@
               <field name="name"/>
               <field name="Tamanyo"/>
             </group>
-            <group >
+<!--             <group >
               <field name="Entenadores" />
-            </group>
+            </group> -->
           </sheet>
         </form>
       </field>

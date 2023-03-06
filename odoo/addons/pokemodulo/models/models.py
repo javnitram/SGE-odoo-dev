@@ -89,7 +89,7 @@ class pokemoduloRegion(models.Model):
      Mapa = fields.Image(string="Mapa de la Región",store=True,relation="res.partner",help="Seleccionar la imagen de la región aquí", required=True)
      name = fields.Char(string = 'Nombre de la region', required=True, help='Inserta nombre de la región')
      Tamanyo = fields.Float(string='Tamaño de la region', required=True, help='Insetar el tamaño de la región' )
-     Entenadores = fields.One2many('ar.pokemodulo.entrenadores', 'Region', string='Lista de entrenadores de esa region')
+#     Entenadores = fields.One2many('ar.pokemodulo.entrenadores', 'Region', string='Lista de entrenadores de esa region')
 
 #     name = fields.Char()
 #     value = fields.Integer()
