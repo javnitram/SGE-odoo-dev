@@ -3,16 +3,24 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="libreria.categoria_list">
+<<<<<<< HEAD
       <field name="name">Lista de categorías</field>
+=======
+      <field name="name">Categorías</field>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
       <field name="model">jm.libreria.categoria</field>
       <field name="arch" type="xml">
         <tree>
           <field name="name"/>
+<<<<<<< HEAD
           <field name="description"/>
+=======
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
         </tree>
       </field>
     </record>
 
+<<<<<<< HEAD
     <record model="ir.ui.view" id="libreria.autor_list">
       <field name="name">Lista de autores</field>
       <field name="model">jm.libreria.autor</field>
@@ -21,10 +29,22 @@
           <field name="name"/>
           <field name="fecha"/>
           <field name="pais_id"/>
+=======
+    <record model="ir.ui.view" id="libreria.libro_list">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.libro</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="estado"/>
+          <field name="categoria_id"/>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
         </tree>
       </field>
     </record>
 
+<<<<<<< HEAD
     <record model="ir.ui.view" id="libreria.libro_list">
       <field name="name">Lista de libros</field>
       <field name="model">jm.libreria.libro</field>
@@ -35,26 +55,70 @@
           <field name="ejemplares"/>
           <field name="segunda_mano"/>
           <field name="categoria_id"/>
+=======
+    <record model="ir.ui.view" id="libreria.libro_form">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.libro</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="estado"/>
+            <field name="segunda_mano"/>
+            <field name="categoria_id"/>
+            <field name="autores_ids">
+              <tree>
+                <field name="name"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria.autor_list">
+      <field name="name">Libros</field>
+      <field name="model">jm.libreria.autor</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fec_nacimiento"/>
+          <field name="pais_id"/>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
         </tree>
       </field>
     </record>
 
     <!-- actions opening views on models -->
+<<<<<<< HEAD
 
     <record model="ir.actions.act_window" id="libreria.categoria_action_window">
       <field name="name">Lista de categoría</field>
+=======
+    <record model="ir.actions.act_window" id="libreria.categoria_action_window">
+      <field name="name">Categorías</field>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
       <field name="res_model">jm.libreria.categoria</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="libreria.libro_action_window">
+<<<<<<< HEAD
       <field name="name">Lista de libros</field>
+=======
+      <field name="name">Libros</field>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
       <field name="res_model">jm.libreria.libro</field>
       <field name="view_mode">tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="libreria.autor_action_window">
+<<<<<<< HEAD
       <field name="name">Lista de autor</field>
+=======
+      <field name="name">Autores</field>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
       <field name="res_model">jm.libreria.autor</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -63,6 +127,7 @@
     <menuitem name="Librería" id="libreria.menu_root"/>
 
     <!-- menu categories -->
+<<<<<<< HEAD
 
     <menuitem name="Categoría" id="libreria.categoria" parent="libreria.menu_root"/>
     <menuitem name="Libro" id="libreria.libro" parent="libreria.menu_root"/>
@@ -75,6 +140,19 @@
               action="libreria.autor_action_window"/>
     <menuitem name="Listar Libros" id="libreria.menu_3_list" parent="libreria.libro"
               action="libreria.libro_action_window"/>
+=======
+    <menuitem name="Categoría" id="libreria.menu_categoria" parent="libreria.menu_root"/>
+    <menuitem name="Libros" id="libreria.menu_libros" parent="libreria.menu_root"/>
+    <menuitem name="Autores" id="libreria.menu_autores" parent="libreria.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Categorías" id="libreria.categoria_menu_lista_categorias" parent="libreria.menu_categoria"
+              action="libreria.categoria_action_window"/>
+    <menuitem name="Libros" id="libreria.categoria_menu_lista_libros" parent="libreria.menu_libros"
+              action="libreria.libro_action_window"/>
+    <menuitem name="Autores" id="libreria.categoria_menu_lista_autores" parent="libreria.menu_autores"
+              action="libreria.autor_action_window"/>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
 
   </data>
 </odoo>

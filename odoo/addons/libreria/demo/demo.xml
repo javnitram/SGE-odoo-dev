@@ -1,5 +1,6 @@
 <odoo>
     <data>
+<<<<<<< HEAD
           <record id="categoria_historica" model="jm.libreria.categoria">
             <field name="name">Histórica</field>
             <field name="description">Novela histórica</field>
@@ -11,11 +12,26 @@
             <field name="segunda_mano">False</field>
             <field name="estado">0</field>
             <field name="categoria_id" ref="categoria_historica"/>
+=======
+
+          <record id="categoria_historica" model="jm.libreria.categoria">
+            <field name="name">Histórica</field>
+          </record>
+
+          <record id="libro_africanus" model="jm.libreria.libro">
+            <field name="name">Africanus</field>
+            <field name="precio">20</field>
+            <field name="categoria_id" ref="categoria_historica"/>z
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
           </record>
 
           <record id="autor_posteguillo" model="jm.libreria.autor">
             <field name="name">Santiago Posteguillo</field>
+<<<<<<< HEAD
             <field name="fecha">1967-01-01</field>
+=======
+            <field name="fec_nacimiento">1967-01-01</field>
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
             <field name="pais_id" ref="base.es"/>
           </record>
 <!--

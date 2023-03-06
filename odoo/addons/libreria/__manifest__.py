@@ -10,8 +10,13 @@
         Long description of module's purpose
     """,
 
+<<<<<<< HEAD
     'author': "Profe",
     'website': "https://site.educa.madrid.org/ies.elcanaveral.mostoles/",
+=======
+    'author': "My Company",
+    'website': "http://www.yourcompany.com",
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/15.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -32,5 +37,8 @@
     'demo': [
         'demo/demo.xml',
     ],
+<<<<<<< HEAD
     'application': True
+=======
+>>>>>>> ff821938758c0a4298fbccc1c7352ee046627224
 }
