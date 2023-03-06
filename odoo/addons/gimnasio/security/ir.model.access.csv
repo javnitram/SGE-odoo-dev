@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gimnasio_clientes,Permisos de acceso para uun grupo general de Clientes,model_ar_gimnasio_clientes,base.group_user,1,1,1,1
+access_gimnasio_clases,Permisos de acceso para un grupo general de Clases,model_ar_gimnasio_clases,base.group_user,1,1,1,1
+access_gimnasio_inscripciones,Permisos de acceso para un grupo general de Inscripciones,model_ar_gimnasio_inscripciones,base.group_user,1,1,1,1
+access_gimnasio_productos,Permisos de acceso para un grupo general de Productos,model_ar_gimnasio_productos,base.group_user,1,1,1,1
