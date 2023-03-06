@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_jm_taberna_informacion,taberna.taberna,model_jm_taberna_informacion,base.group_user,1,1,1,1
+access_jm_taberna_empleados,taberna.taberna,model_jm_taberna_empleados,base.group_user,1,1,1,1
+access_jm_taberna_pedidos,taberna.taberna,model_jm_taberna_pedidos,base.group_user,1,1,1,1
+access_jm_taberna_clientes,taberna.taberna,model_jm_taberna_clientes,base.group_user,1,1,1,1
+access_jm_taberna_bebidas,taberna.taberna,model_jm_taberna_bebidas,base.group_user,1,1,1,1
