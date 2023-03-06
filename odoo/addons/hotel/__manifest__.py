@@ -25,7 +25,10 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/reservaView.xml',
+        'views/clienteView.xml',
+        'views/habitacionView.xml',
+        'views/empresaView.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
