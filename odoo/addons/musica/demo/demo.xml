@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+
+  
+          <record id="cliente1" model="jr.tiendainstrumento.cliente">
+            <field name="name">Roberto Perez</field>
+            <field name="dni">451845710O</field>
+            <field name="fecha_nacimiento">1990-07-10</field>
+            <field name="phone">7777</field>
+             
+          </record>
+
+          <record id="cliente2" model="jr.tiendainstrumento.cliente">
+            <field name="name">Paula Vazquez</field>
+            <field name="dni">952510531U</field>
+            <field name="fecha_nacimiento">1995-12-09</field>
+            <field name="phone">683927454</field>
+             
+          </record>
+
+          <record id="cliente3" model="jr.tiendainstrumento.cliente">
+            <field name="name">Manolo Garcia</field>
+            <field name="dni">57373574P</field>
+            <field name="fecha_nacimiento">1987-01-23</field>
+            <field name="phone">62346234</field>
+             
+          </record>
+
+           <record id="categoria1" model="jr.tiendainstrumento.categoria">
+            <field name="name">Ukelele</field>
+            
+           </record>
+
+           <record id="categoria2" model="jr.tiendainstrumento.categoria">
+            <field name="name">Saxofon</field>
+            
+           </record>
+
+           <record id="categoria3" model="jr.tiendainstrumento.categoria">
+            <field name="name">Contrabajo</field>
+            
+           </record>
+
+         
+
+           
+<!--
+          <record id="object1" model="musica.musica">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="musica.musica">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="musica.musica">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="musica.musica">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
+    </data>
+</odoo>
