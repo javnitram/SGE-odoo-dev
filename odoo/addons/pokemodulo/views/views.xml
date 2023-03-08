@@ -204,7 +204,7 @@
 
 
 
-    <record model="ir.ui.view" id="vista_kanban_victorias" >
+<!--     <record model="ir.ui.view" id="vista_kanban_victorias" >
       <field name="name">Registro de Combates</field>
       <field name="model">ar.pokemodulo.victorias</field>
       <field name="arch" type="xml">
@@ -231,7 +231,7 @@
        </kanban>
       </field>
     </record>
-
+ -->
 
 
     <!-- actions opening views on models -->
