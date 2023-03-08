@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ab_clinica_dental_clinica_dental,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_clinica_dental,base.group_user,1,1,1,1
+access_ab_clinica_dental_paciente,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_paciente,base.group_user,1,1,1,1
+access_ab_clinica_dental_cita_dental,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_cita_dental,base.group_user,1,1,1,1
+access_ab_clinica_dental_profesional_dental,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_profesional_dental,base.group_user,1,1,1,1
+access_ab_clinica_dental_tratamiento,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_tratamiento,base.group_user,1,1,1,1
+access_ab_clinica_dental_tratamiento_linea,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_tratamiento_linea,base.group_user,1,1,1,1
+access_ab_clinica_dental_seguro_medico,ab.clinica_dental.clinica_dental,model_ab_clinica_dental_seguro_medico,base.group_user,1,1,1,1
