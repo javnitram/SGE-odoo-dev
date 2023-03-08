@@ -169,7 +169,7 @@
 
 <!--##########################################################################################-->
 
-    <record model="ir.ui.view" id="ar.pokemodulo.victorias_tree">
+    <record model="ir.ui.view" id="pokemodulo.victorias_tree">
       <field name="name">Registro de Combates</field>
       <field name="model">ar.pokemodulo.victorias</field>
       <field name="arch" type="xml">
@@ -190,11 +190,11 @@
       <field name="arch" type="xml">
         <form>
           <sheet>
-            <group >
+            <group>
               <field name="Entrenador" />
               <field name="Victorias"/>
               <field name="Derrotas"/>
-              <field name="Total"/>
+              <field name="Total"/> 
             </group>  
           </sheet>
         </form>

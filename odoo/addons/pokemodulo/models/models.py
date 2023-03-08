@@ -96,10 +96,10 @@ class pokemoduloVictorias(models.Model):
      Entrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Entrenador', help='Elige el nombre del entenador', required=True)
      Victorias = fields.Integer(string='Numero de victorias', required=True, help='Insetar victorias del entrenador')
      Derrotas = fields.Integer(string='Numero de derrotas', required=True, help='Insetar derrotas del entrenador')
-     Total = fields.Integer(string='Resultado de las Batallas',  help='Resultado de las Victorias y de las Derrotas', compute='resultados_batallas',store = True)
-
+     Total = fields.Integer(string='Resultado de las Batallas',  help='Resultado de las Victorias y de las Derrotas', compute='_resultados_batallas',store = True)
 
      @api.depends('Victorias','Derrotas')
-     def resultados_batallas(self):
+     def _resultados_batallas(self):
          for record in self:
              record.Total = record.Victorias - record.Derrotas
+
