@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class HospitalDoctores(models.Model):
     _name="gs.hospital.doctores"
+    _description = 'gs.hospital.doctores'
     dni=fields.Char(string="DNI",required=True)
     name=fields.Char(string ="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")
@@ -16,6 +17,7 @@ class HospitalDoctores(models.Model):
     
 class HospitalPacientes(models.Model):
     _name="gs.hospital.pacientes"
+    _description = 'gs.hospital.pacientes'
     dni=fields.Char(string="DNI",required=True)
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string="Apellido",required=True,help="Introduce el apellido")
@@ -30,6 +32,7 @@ class HospitalPacientes(models.Model):
 
 class HospitalEnfermeros(models.Model):
     _name="gs.hospital.enfermeros"
+    _description = 'gs.hospital.enfermeros'
     dni=fields.Char(string="DNI",required=True)
     name=fields.Char(string ="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")    
@@ -40,6 +43,7 @@ class HospitalEnfermeros(models.Model):
 
 class HospitalMedicinas(models.Model):
     _name="gs.hospital.medicinas"
+    _description = 'gs.hospital.medicinas'
     nroserie=fields.Char(string="Número de serie",required=True)
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
     cantidad=fields.Integer(string="Cantidad", required=True)
