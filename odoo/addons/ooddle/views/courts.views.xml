@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="ooddle.courts_view_form" model="ir.ui.view">
+                <field name="name">dm.ooddle.courts.form</field>
+                <field name="model">dm.ooddle.courts</field>
+                <field name="arch" type="xml">
+                    <form string="Courts Form">
+                    <group colspan="1" col="2">
+                      <field name="name"/>
+                      <field name="place"/>
+                    </group>
+                    </form>
+                </field>
+        </record>   
+
+        <record id="ooddle.courts_view_tree" model="ir.ui.view">
+            <field name="name">dm.ooddle.courts.tree</field>
+            <field name="model">dm.ooddle.courts</field>
+            <field name="arch" type="xml">
+                <tree string="Court">
+                    <field name="name"/>
+                    <field name="place"/>
+                    <field name="match_ids"/>
+                    <field name="in_use"/>
+                </tree>
+            </field>
+        </record>         
+        </data>
+</odoo>
