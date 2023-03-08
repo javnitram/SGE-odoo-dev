@@ -44,10 +44,41 @@
             </field>
         </record>
 
+        <!-- Vista Kanban -->
+        <record id="hotel_cliente_kanban" model="ir.ui.view">
+            <field name="name">Kanban Clientes</field>
+            <field name="model">jf.hotel.cliente</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="id"/>
+                    <field name="imagen"/>
+                    <field name="name"/>
+                    <field name="apellidos"/>
+                    <field name="empresa_id" />
+                    <templates>
+                        <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="o_kanban_image">
+                                <img t-att-src="kanban_image('jf.hotel.cliente','imagen', record.id.raw_value)"/> 
+                            </div>
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>Nombre: <field name="name"/></li>
+                                    <li>Apellidos: <field name="apellidos"/></li>
+                                    <li>Empresa: <field name="empresa_id"/></li>
+                                </ul>
+                            </div>
+                        </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
         <record id="hotel.cliente_action_window" model="ir.actions.act_window">
             <field name="name">Clientes</field>
             <field name="res_model">jf.hotel.cliente</field>
-            <field name="view_mode">tree,form</field>
+            <field name="view_mode">tree,form,kanban</field>
         </record>
 
         <menuitem name="Hotel" id="hotel.menu_root"/>
