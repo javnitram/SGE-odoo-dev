@@ -80,6 +80,34 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="payasos_managers_kanban">
+      <field name="name">payasos.managers.kanban</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="annos"/>
+          <field name="foto"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_image" style="display: inline-block">
+                  <img t-att-src="kanban_image('dg.payasos.managers', 'foto', record.id.raw_value)" style="width:64px;height:64px"/>
+                </div>
+                <div class="oe_kanban_details" style="display: inline-block;width: 250px">
+                  <ul>
+                    <li style="font-size: large;font-weight: bold">Nombre: <field name="name"/></li>
+                    <li style="font-size: small">Años: <field name="annos"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="payasos_managers_form">
       <field name="name">payasos.managers.form</field>
       <field name="model">dg.payasos.managers</field>
@@ -154,30 +182,13 @@
     <record id="payasos_managers_action_window" model="ir.actions.act_window">
       <field name="name">MANAGERS</field>
       <field name="res_model">dg.payasos.managers</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
     <record id="payasos_clientes_action_window" model="ir.actions.act_window">
       <field name="name">CLIENTES</field>
       <field name="res_model">dg.payasos.clientes</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="payasos.action_server">
-      <field name="name">payasos server</field>
-      <field name="model_id" ref="model_payasos_payasos"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
 
     <!-- Top menu item -->
 
