@@ -1,7 +1,5 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-
     <record model="ir.ui.view" id="pokemodulo.equiposi">
       <field name="name">Equipos Individuales</field>
       <field name="model">ar.pokemodulo.equipoi</field>
@@ -204,7 +202,7 @@
     </record>
 
 
-
+<!-- Intento de hacer una vista kanban -->
 
 <!--     <record model="ir.ui.view" id="vista_kanban_victorias" >
       <field name="name">Registro de Combates</field>
@@ -235,10 +233,7 @@
     </record>
  -->
 
-
-    <!-- actions opening views on models -->
-
-
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 
 
     <record model="ir.actions.act_window" id="pokemodulo.equipo_indi_action_window">
@@ -280,12 +275,12 @@
     </record>
 
 
-
-    <!-- Top menu item -->
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+ 
 
     <menuitem name="Pokemodulo" id="pokemodulo.menu_root"/>
 
-    <!-- menu categories -->
+   
 
     <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
     <menuitem name="Lista Equipos Individuales" id="pokemodulo.equipo_individuales" parent="pokemodulo.equipo" action="pokemodulo.equipo_indi_action_window"/>
@@ -296,13 +291,7 @@
     <menuitem name="Lista Pokemon" id="pokemodulo.pokemonL" parent="pokemodulo.menu_root" action="pokemodulo.pokemon_action_window"/>
     <menuitem name="Lista Regiones" id="pokemodulo.regionesL" parent="pokemodulo.menu_root" action="pokemodulo.region_action_window"/>
     <menuitem name="Registro Combates" id="pokemodulo.victoriasL" parent="pokemodulo.menu_root" action="pokemodulo.victorias_action_window"/>
-    <!-- actions -->
+  
 
-
-
-
-   <!-- <menuitem name="Server to list" id="pokemodulo" parent="pokemodulo.menu_2"
-              action="pokemodulo.action_server"/>
--->
   </data>
 </odoo>
