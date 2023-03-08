@@ -29,6 +29,12 @@
           </record>
 
 
+          <record id="Historial" model="ar.pokemodulo.victorias">
+            <field name="Entrenador" ref="Entrenador1" />
+            <field name="Victorias">10</field>
+            <field name="Derrotas">4</field>
+          </record>
+
 
     </data>
 </odoo>

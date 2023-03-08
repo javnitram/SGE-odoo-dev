@@ -94,12 +94,18 @@ class pokemoduloVictorias(models.Model):
      _name= 'ar.pokemodulo.victorias'
      _description ='pokemodulo.victorias'
      Entrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Entrenador', help='Elige el nombre del entenador', required=True)
-     Victorias = fields.Integer(string='Numero de victorias', required=True, help='Insetar victorias del entrenador')
-     Derrotas = fields.Integer(string='Numero de derrotas', required=True, help='Insetar derrotas del entrenador')
+     Victorias = fields.Integer(string='Numero de Victorias Totales', required=True, help='Victorias del entrenador' ,default="1")
+     Derrotas = fields.Integer(string='Numero de Derrotas Totales', required=True, help='Derrotas del entrenador' ,default="1")
      Total = fields.Integer(string='Resultado de las Batallas',  help='Resultado de las Victorias y de las Derrotas', compute='_resultados_batallas',store = True)
+     Media = fields.Float(string='Media de Victorias las Batallas (%)',  help='Porcentaje de Victorias en las Batallas', compute='_media_batallas',store = True)
 
      @api.depends('Victorias','Derrotas')
      def _resultados_batallas(self):
          for record in self:
              record.Total = record.Victorias - record.Derrotas
+
+     @api.depends('Victorias','Derrotas')
+     def _media_batallas(self):
+         for record in self:
+             record.Media = (record.Victorias / (record.Victorias +  record.Derrotas ) ) *100
 

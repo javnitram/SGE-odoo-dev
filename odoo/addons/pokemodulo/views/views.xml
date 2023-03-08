@@ -178,6 +178,7 @@
           <field name="Victorias"/>
           <field name="Derrotas"/>
           <field name="Total"/>
+          <field name="Media"/>
         </tree>
       </field>
     </record>
@@ -195,6 +196,7 @@
               <field name="Victorias"/>
               <field name="Derrotas"/>
               <field name="Total"/> 
+              <field name="Media"/>
             </group>  
           </sheet>
         </form>
