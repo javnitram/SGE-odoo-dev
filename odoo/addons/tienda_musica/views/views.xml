@@ -132,7 +132,7 @@
         </tree>
       </field>
     </record>
-        
+
     <record model="ir.ui.view" id="tienda_musica.cancion_form">
       <field name="name">tienda_musica.cancion.form</field>
       <field name="model">irc.tienda_musica.cancion</field>
@@ -149,7 +149,7 @@
       </field>
     </record>
 
-    <record model="ir.ui.view" id="tienda_musica.cancion.kanban">
+    <record model="ir.ui.view" id="tienda_musica.cancion_kanban">
       <field name="name">tienda_musica.cancion.kanban</field>
       <field name="model">irc.tienda_musica.cancion</field>
       <field name="type">kanban</field>
