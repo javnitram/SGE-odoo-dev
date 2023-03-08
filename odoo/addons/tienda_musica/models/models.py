@@ -3,6 +3,8 @@
 # from odoo import models, fields, api
 from odoo import models, fields, api
 
+from odoo.exceptions import ValidationError
+
 class TiendaMusicaCategoria(models.Model):
     _name = "irc.tienda_musica.categoria"
     name = fields.Char(string="Nombre",required=True,help="Introduce el nombre de la categoria")
@@ -48,6 +50,10 @@ class TiendaMusicaCancion(models.Model):
         relation="res.partner",
         help="Seleccionar imagen aquí"
     )
+    @api.constrains("artista")
+    def check_name(self):
+        if not self.artista:
+            raise ValidationError("No has indicado el artista de esta cancion")
     
 # class tienda_musica(models.Model):
 #     _name = 'tienda_musica.tienda_musica'
