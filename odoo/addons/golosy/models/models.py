@@ -3,6 +3,8 @@ import datetime
 
 from odoo import models, fields, api
 
+from odoo.exceptions import ValidationError
+
 
 class golosinas(models.Model):
      _name = 'wb.golosy.golosinas'
@@ -17,6 +19,7 @@ class golosinas(models.Model):
                                     help='Aqui indicamos la categoria a la que pertemece')
      
      imagen = fields.Image(string='Imagen', help='Imagen representativa')
+     
      
 class categorias(models.Model):
      _name = 'wb.golosy.categoria'
@@ -62,3 +65,23 @@ class Empleados(models.Model):
                     antiguedad = fields.Datetime.to_datetime(empl.antiguedad).date()
                     total_meses = (int((fecha_hoy - antiguedad).days/30))
                     empl.mesestrabajados = total_meses
+                    
+     @api.constrains('dni')
+     def check_dni(self):
+          for record in self:
+            dni = record.dni
+            if len(dni) != 9:
+                raise ValidationError('El DNI debe tener 9 caracteres.')
+            if not dni[:-1].isdigit():
+                raise ValidationError('Los primeros 8 caracteres deben ser dígitos.')
+            if not dni[-1].isalpha():
+                raise ValidationError('El último caracter debe ser una letra.')
+           
+     @api.constrains('telefono')
+     def check_num(self):
+          for record in self:
+            num = str(record.telefono)
+            if len(num) != 9:
+                raise ValidationError('El número de teléfono debe tener 9 dígitos.')
+            if not num.isdigit():
+                raise ValidationError('Solo se permiten numeros.')
