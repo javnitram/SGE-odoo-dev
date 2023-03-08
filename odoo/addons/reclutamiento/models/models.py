@@ -9,7 +9,7 @@ class ejercito(models.Model):
     nombre = fields.Char()
     unidades= fields.Integer()
     campanas = fields.Many2many('ac.reclutamiento.campana', string='Campañas en las que participan')
-    general = fields.Many2one('ac.reclutamiento.general', string='nombre')
+    general = fields.Many2one('ac.reclutamiento.general', string='General que lo gestiona')
   
 
 class general(models.Model):
@@ -18,7 +18,7 @@ class general(models.Model):
     imagen= fields.Image(string="imagen",store=True,relation="res.partner",help="Inserte la imagen aqui")
     name = fields.Char(string="nombre del general")
     edad= fields.Integer() 
-    ejercitos_gestionados = fields.One2many('ac.reclutamiento.ejercito', 'nombre', string='ejercitos_gesionados')
+    ejercitos_gestionados = fields.One2many('ac.reclutamiento.ejercito', inverse_name='general', string='ejercitos_gesionados')
   
   
 
@@ -44,8 +44,12 @@ class infanteria_proyectiles(models.Model):
         ('2','Flechas'),
         ('3','Jabalinas')
     ], string='municion')
-  
     alcance= fields.Integer()
+    alcanceEnPies=fields.Float(string="Alcance en pies ",compute="_alcanceEnPies", store=True)
+    @api.depends('alcance')
+    def _alcanceEnPies(self):
+        for i in self:
+            i.alcanceEnPies=i.alcance*3.3
     
 
 
@@ -60,6 +64,8 @@ class undiades_motadas(models.Model):
         ('3','Elefante')
     ], string='monturas')
     velocidad= fields.Integer()
+    
+
 
     
 class artilleria(models.Model):
@@ -71,8 +77,12 @@ class artilleria(models.Model):
         ('1', 'piedra'),
         ('2','virote')
     ], string='municion')    
- 
     alcance= fields.Integer()
+    alcanceEnPies=fields.Float(string="Alcance en pies ",compute="_alcanceEnPies", store=True)
+    @api.depends('alcance')
+    def _alcanceEnPies(self):
+        for i in self:
+            i.alcanceEnPies=i.alcance*3.3
     
 
 class campana(models.Model):
@@ -81,4 +91,4 @@ class campana(models.Model):
     nombre = fields.Char()
     pais_id = fields.Many2one('res.country', string='Pais')
     fecha_inicio= fields.Date()
-    ejercitos = fields.Many2many('ac.reclutamiento.ejercito', string='Ejercitos que participan')
+    ejercitos = fields.Many2many(comodel_name='ac.reclutamiento.ejercito', string='Ejercitos que participan')

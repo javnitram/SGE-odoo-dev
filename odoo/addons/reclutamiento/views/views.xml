@@ -23,20 +23,33 @@
     </record>
 
 
-     
-            <record model="ir.ui.view" id="reclutamiento.infanteria_cac_list">
-              <field name="name">reclutamiento infanteria cac</field>
-              <field name="model">ac.reclutamiento.infanteria.cac</field>
-              <field name="arch" type="xml">
-                <tree>
-                  <field name="nombre"/>
-                  <field name="descripcion"/>
-                  <field name="armadura"/>
-                </tree>
-              </field>
-            </record>
-        
+<record id="infanteria_cac_form_view" model="ir.ui.view">
+        <field name="name">infanteria.cac.form</field>
+        <field name="model">ac.reclutamiento.infanteria.cac</field>
+        <field name="arch" type="xml">
+            <form string="Infanteria CAC">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="armadura"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
+    <record id="infanteria_cac_tree_view" model="ir.ui.view">
+        <field name="name">infanteria.cac.tree</field>
+        <field name="model">ac.reclutamiento.infanteria.cac</field>
+        <field name="arch" type="xml">
+            <tree string="Infanteria CAC">
+                <field name="nombre"/>
+                <field name="descripcion"/>
+                <field name="armadura"/>
+            </tree>
+        </field>
+    </record>
 
 
     <record model="ir.actions.act_window" id="reclutamiento.infanteria_action_window">
@@ -46,16 +59,16 @@
     </record>
 
 
+
     <record model="ir.ui.view" id="reclutamiento.general_list">
       <field name="name">reclutamiento general</field>
       <field name="model">ac.reclutamiento.general</field>
       <field name="arch" type="xml">
-      
         <form >
          <group colspan="4" >
           <field name="imagen" widget="image" class="oe_avatar_oe_left" options="{'size':[50,50]}"/>
           <field name="name"/>
-     
+
           <field name="edad"/>
           <field name="ejercitos_gestionados"/>
          </group>
@@ -63,6 +76,20 @@
        
         </form>
       </field>
+    </record>
+
+  
+    <record id="general_tree_view" model="ir.ui.view">
+        <field name="name">general.tree</field>
+        <field name="model">ac.reclutamiento.general</field>
+        <field name="arch" type="xml">
+            <tree string="General">
+                <field name="imagen" widget="image" class="oe_avatar_oe_left" options="{'size':[50,50]}"/>
+                <field name="name"/>
+                <field name="edad"/>
+                <field name="ejercitos_gestionados"/>
+            </tree>
+        </field>
     </record>
 
 
@@ -116,6 +143,24 @@
 </record>
 
 
+<record id="infanteria_montada_form_view" model="ir.ui.view">
+        <field name="name">infanteria.montada.form</field>
+        <field name="model">ac.reclutamiento.unidades.montadas</field>
+        <field name="arch" type="xml">
+            <form string="Unidades montadas">
+                <sheet>
+                    <group>
+                        <field name="nombre"/>
+                        <field name="descripcion"/>
+                        <field name="monturas"/>
+                        <field name="velocidad"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
 
 
 <record model="ir.actions.act_window" id="reclutamiento.unidades_montadas_window">
@@ -142,8 +187,6 @@
     </tree>
   </field>
 </record>
-
-
 
 
 <record model="ir.actions.act_window" id="reclutamiento.campana_window">
