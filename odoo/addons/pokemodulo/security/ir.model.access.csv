@@ -4,3 +4,4 @@ access_pokemodulo_pokemodulo_equipo_dobles,Reglas acceso grupo general Pokemon,m
 access_pokemodulo_pokemodulo_entrenadores,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_entrenadores,base.group_user,1,1,1,1
 access_pokemodulo_pokemodulo_pokemon,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_pokemon,base.group_user,1,1,1,1
 access_pokemodulo_pokemodulo_region,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_region,base.group_user,1,1,1,1
+access_pokemodulo_pokemodulo_victorias,Reglas acceso grupo general Pokemon,model_ar_pokemodulo_victorias,base.group_user,1,1,1,1

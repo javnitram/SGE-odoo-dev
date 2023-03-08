@@ -99,7 +99,7 @@ class pokemoduloVictorias(models.Model):
      Total = fields.Integer(string='Resultado de las Batallas',  help='Resultado de las Victorias y de las Derrotas', compute='resultados_batallas',store = True)
 
 
-     @api.depends('value')
+     @api.depends('Victorias','Derrotas')
      def resultados_batallas(self):
          for record in self:
              record.Total = record.Victorias - record.Derrotas
