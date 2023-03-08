@@ -1,0 +1,94 @@
+<odoo>
+    <data>
+        <!--VISTA PACIENTES-->
+    <record model="ir.ui.view" id="hospital_pacientes_tree">
+      <field name="name">PACIENTES</field>
+      <field name="model">gs.hospital.pacientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="sexo"/>
+          <field name="date"/>
+          <field name="tlf"/>
+          <field name="history"/>
+          <field name="alergias"/>
+          <field name="doctor_id">
+              <tree>
+                <field name="name"/>
+              </tree>
+            </field>
+          <field name="enfermero_ids">
+              <tree>
+                <field name="name"/>
+                <field name="sexo"/>
+              </tree>
+            </field>
+          <field name="medicinas_ids">
+            <tree>
+              <field name="name"/>
+              <field name="cantidad"/>
+              <field name="tipo"/>
+            </tree>
+          </field>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_pacientes_form">
+      <field name="name">PACIENTES</field>
+      <field name="model">gs.hospital.pacientes</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="4" col="2">
+            <field name="dni"/>
+            <field name="name"/>
+            <field name="surname"/>
+            <field name="sexo"/>
+            <field name="date"/>
+            <field name="tlf"/>
+            <field name="history"/>
+            <field name="alergias"/>
+            <field name="doctor_id">
+              <tree>
+                <field name="name"/>
+              </tree>
+            </field>
+            <field name="enfermero_ids">
+              <tree>
+                <field name="name"/>
+                <field name="sexo"/>
+              </tree>
+            </field>
+            <field name="medicinas_ids">
+              <tree>
+                <field name="name"/>
+                <field name="cantidad"/>
+                <field name="tipo"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_pacientes_search_view">
+      <field name="name">hospital.pacientes.search</field>
+      <field name="model">gs.hospital.pacientes</field>
+      <field name="arch" type="xml">
+        <search>
+            <field name="dni" string="DNI"/>
+            <field name="name" string="Nombre del paciente"/>
+            <field name="history" string="Historia del paciente"/>    
+        </search>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_pacientes_action_window">
+      <field name="name">PACIENTES</field>
+      <field name="res_model">gs.hospital.pacientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    </data>
+</odoo>

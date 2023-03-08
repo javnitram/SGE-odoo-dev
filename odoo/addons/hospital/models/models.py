@@ -9,10 +9,11 @@ class HospitalDoctores(models.Model):
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")
     date=fields.Date(string="Fecha de nacimiento")
     tlf=fields.Integer(string="Teléfono")
-    especialidad=fields.Selection([('0','Cirugía'),('1','General'),('2','Traumatología'),
-    ('3','Oftalmología')],string = "Especialidad",help="Introduce la especialidad")
+    especialidad=fields.Selection([('0','Infectología y nefrología'),('1','Inmunología'),('2','Oncología'),
+    ('3','General')],string = "Especialidad",help="Introduce la especialidad")
+    imagen = fields.Image(string="Imagen",store=True)
     pacientes_ids = fields.One2many('gs.hospital.pacientes', 'doctor_id', string='Pacientes')
-
+    
 class HospitalPacientes(models.Model):
     _name="gs.hospital.pacientes"
     dni=fields.Char(string="DNI",required=True)
@@ -32,14 +33,16 @@ class HospitalEnfermeros(models.Model):
     dni=fields.Char(string="DNI",required=True)
     name=fields.Char(string ="Nombre",required=True,help="Introduce el nombre")
     surname=fields.Char(string = "Apellido",required=True,help="Introduce el apellido")    
+    sexo=fields.Selection([('0','Masculino'),('1','Femenino')],string="Sexo",required=True)
     date=fields.Date(string="Fecha de nacimiento")
     tlf=fields.Integer(string="Teléfono")
+    pacientes_ids = fields.Many2many('gs.hospital.pacientes',string='Pacientes');
 
 class HospitalMedicinas(models.Model):
     _name="gs.hospital.medicinas"
     nroserie=fields.Char(string="Número de serie",required=True)
     name=fields.Char(string="Nombre",required=True,help="Introduce el nombre")
-    cantidad=fields.Integer(int="Cantidad", required=True)
-    tipo=fields.Selection([('0','Analgésicos y antipiréticos'),('1','Antibióticos betalactámicos'),('2','Inhibidores de la angiotensina')],string = "Tipo de medicamento")
-    imagen = fields.Image(string="Imagen",store=True,relation="res.partner")
-    
+    cantidad=fields.Integer(string="Cantidad", required=True)
+    tipo=fields.Selection([('0','Analgésicos y antipiréticos'),('1','Antibióticos betalactámicos'),
+                           ('2','Inhibidores de la angiotensina')],string = "Tipo de medicamento")
+    imagen = fields.Image(string="Imagen",store=True)

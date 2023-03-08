@@ -1,0 +1,53 @@
+<odoo>
+  <data>
+    <!-- ACTIONS -->
+    <record model="ir.actions.act_window" id="hospital_doctores_action_window">
+      <field name="name">DOCTORES</field>
+      <field name="res_model">gs.hospital.doctores</field>
+      <field name="view_mode">kanban,form,tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_pacientes_action_window">
+      <field name="name">PACIENTES</field>
+      <field name="res_model">gs.hospital.pacientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_enfermeros_action_window">
+      <field name="name">ENFERMEROS</field>
+      <field name="res_model">gs.hospital.enfermeros</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_medicinas_action_window">
+      <field name="name">MEDICINAS</field>
+      <field name="res_model">gs.hospital.medicinas</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Hospital" id="hospital_menu_root"/>
+
+    <!-- menu categories -->
+    <!-- actions -->
+    <menuitem name="Doctores" 
+      id="hospital_doctores_menu" 
+      parent="hospital_menu_root"
+      action="hospital_doctores_action_window"/>
+
+    <menuitem name="Pacientes" 
+      id="hospital_pacientes_menu" 
+      parent="hospital_doctores_menu"
+      action="hospital_pacientes_action_window"/>
+
+    <menuitem name="Enfermeros" 
+      id="hospital_enfermeros_menu" 
+      parent="hospital_doctores_menu"
+      action="hospital_enfermeros_action_window"/>
+
+    <menuitem name="Medicinas" 
+      id="hospital_medicinas_menu" 
+      parent="hospital_menu_root"
+      action="hospital_medicinas_action_window"/>
+  </data>
+</odoo>

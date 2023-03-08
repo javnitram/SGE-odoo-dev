@@ -9,7 +9,7 @@
     """,
 
     'author': "Gilzan",
-    'website': "http://www.hospitalesperanza.com",
+    'website': "http://www.hospitalaesperanza.com",
     
     'category': 'SGE23',
     'version': '0.1',
@@ -20,8 +20,12 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/views_actions.xml',
         'views/templates.xml',
+        'views/views_pacientes.xml',
+        'views/views_doctores.xml',
+        'views/views_enfermeros.xml',
+        'views/views_medicinas.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
