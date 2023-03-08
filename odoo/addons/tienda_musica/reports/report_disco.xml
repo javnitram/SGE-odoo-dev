@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <report
+            id="tienda_musica.report_disco"
+            model="irc.tienda_musica.disco"
+            string="informe disco"
+            name="tienda_musica.report_disco_view"
+            file="tienda_musica.report_disco_view"
+            report_type="qweb-html"/>
+
+        <template id="tienda_musica.report_disco_view">
+            <t t-call="web.html_container">
+                <t t-call="web.external_layout">
+                    <t t-foreach="docs" t-as="disco">
+                            <div class="page">
+                                <h2 t-field="disco.name"/>
+                                <div>
+                                    <strong>Precio:</strong>
+                                    <span t-field="dico.precio"/>
+                                </div>
+                                <div>
+                                    <strong>Ejemplares:</strong>
+                                    <span t-field="disco.ejemplares"/>
+                                </div>
+                                <div>
+                                    <strong>Estado:</strong>
+                                    <span t-field="disco.estado"/>
+                                </div>
+                            </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+    </data>
+</odoo>

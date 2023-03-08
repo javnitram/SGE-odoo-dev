@@ -132,7 +132,7 @@
         </tree>
       </field>
     </record>
-
+        
     <record model="ir.ui.view" id="tienda_musica.cancion_form">
       <field name="name">tienda_musica.cancion.form</field>
       <field name="model">irc.tienda_musica.cancion</field>
@@ -146,6 +146,32 @@
             <field name="disco_id"/>
           </group>
         </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="tienda_musica.cancion.kanban">
+      <field name="name">tienda_musica.cancion.kanban</field>
+      <field name="model">irc.tienda_musica.cancion</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+      <kanban default_group_by="artista">
+        <field name="name"/>
+        <field name="artista"/>
+        <field name="disco_id"/>
+        <templates>
+          <t t-name="kanban-box">
+            <div class="oe_kanban_global_click">
+              <div class="oe_kanban_details">
+                <ul>
+                  <li>Nombre: <field name="name"/></li>
+                  <li>Artista: <field name="artista"/></li>
+                  <li>Disco: <field name="disco_id"/></li>
+                </ul>
+              </div>
+            </div>
+          </t>
+        </templates>
+      </kanban>
       </field>
     </record>
 
@@ -172,19 +198,19 @@
     <record model="ir.actions.act_window" id="tienda_musica.action_window_cancion">
       <field name="name">CANCION</field>
       <field name="res_model">irc.tienda_musica.cancion</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="tienda_musica.action_window_inglesa">
       <field name="name">INGLESA</field>
       <field name="res_model">irc.tienda_musica.cancion</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
     <record model="ir.actions.act_window" id="tienda_musica.action_window_hispana">
       <field name="name">ESPAÑOLA</field>
       <field name="res_model">irc.tienda_musica.cancion</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,tree,form</field>
     </record>
 
 

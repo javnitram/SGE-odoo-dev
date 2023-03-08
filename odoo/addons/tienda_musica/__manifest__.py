@@ -25,6 +25,7 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'reports/report_disco.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
