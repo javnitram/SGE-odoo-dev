@@ -95,15 +95,6 @@
         <field name="name">Pista Leganes</field>
         <field name="place">Leganes</field>
       </record> 
-                  <!--MATCHES
-      <record id="match_final" model="dm.ooddle.matches">
-        <field name="name">Final</field>
-        <field name="team_ids" eval="[Command.link(ref('team_malitos2')),
-                Command.link(ref('team_malitos1'))]"/>
-        <field name="court" ref="court_alcorcon"/>
-        <field name="price">200</field>
-        <field name="time">2023-2-25</field>
-      </record> 
-                  -->
+
     </data>
 </odoo>

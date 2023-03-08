@@ -35,14 +35,6 @@ class Teams(models.Model):
         if len(self.users_ids)>2:
             raise ValidationError(_("Error there can only be two users per team"))
     
-    #@api.onchange('image')
-    #def _change_image(self):
-        #if self.matches_ids:
-         #   for record in self.matches_ids:
-          #      if record.team_ids[0].id ==self.id:
-          #          record.image_team1 = self.image
-           #     elif record.team_ids[1].id ==self.id:
-            #        record.image_team2 = self.image
 
 class Matches(models.Model):
     _name = 'dm.ooddle.matches'
@@ -91,19 +83,7 @@ class Matches(models.Model):
         if len(self.team_ids)>2:
             raise ValidationError(_("Error there can only be two teams per game"))
      
-    
-    #@api.model
-    #def fields_view_get(self, view_id=None, view_type='kanban', toolbar=False, submenu=False):
-    #    res = super().fields_view_get(view_id, view_type, toolbar, submenu)
-    #    if view_type == 'kanban':
-    #        doc = etree.XML(res['arch'])
-    #        name_field = doc.xpath("//field[@name='time']")
-    #        if name_field:
-    #            if self.image_team1 !=None:
-    #                name_field[0].addnext(etree.Element('field', {'name': 'name'}))
-    #                res['arch']= etree.tostring(doc, encoding='unicode')
-    #    return res
-
+     
 class Courts(models.Model):
     _name = 'dm.ooddle.courts'
     _description='Courts'
