@@ -207,10 +207,6 @@
         <search>
           <field name="name" string="Nombre empleado"/>
           <field name="dni" string="DNI empleado"/>
-          <!-- 
-            <filter name="Recluta" domain="[('mesestrabajados', '&lt;=', '12')]"/>
-          <filter name="Veterano" domain="[('mesestrabajados', '&gt;', '12')]"/>
-          -->
         </search>
       </field>
     </record>
