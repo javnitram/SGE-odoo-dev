@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "payasos",
+    'name': "Payasos",
 
     'summary': """
         Payasos a domicilio
@@ -21,7 +21,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',
     ],
     'demo': [
        'demo/demo.xml',
