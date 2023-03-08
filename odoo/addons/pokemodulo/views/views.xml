@@ -202,6 +202,38 @@
     </record>
 
 
+
+
+    <record model="ir.ui.view" id="vista_kanban_victorias" >
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="Entrenador" />
+          <field name="Victorias"/>
+          <field name="Derrotas"/>
+          <field name="Total"/> 
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('ar.pokemodulo.victorias','Entrenador', record.id.raw_value)"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>Entrenador: <field name="Entrenador"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
+      </field>
+    </record>
+
+
+
     <!-- actions opening views on models -->
 
 
