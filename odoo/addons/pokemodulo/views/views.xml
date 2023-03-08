@@ -160,15 +160,46 @@
               <field name="name"/>
               <field name="Tamanyo"/>
             </group>
-<!--             <group >
-              <field name="Entenadores" />
-            </group> -->
           </sheet>
         </form>
       </field>
     </record>
 
 
+
+<!--##########################################################################################-->
+
+    <record model="ir.ui.view" id="ar.pokemodulo.victorias_tree">
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Entrenador" />
+          <field name="Victorias"/>
+          <field name="Derrotas"/>
+          <field name="Total"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.victorias">
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="Entrenador" />
+              <field name="Victorias"/>
+              <field name="Derrotas"/>
+              <field name="Total"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
 
 
     <!-- actions opening views on models -->
@@ -208,22 +239,13 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="pokemodulo.action_server">
-      <field name="name">Pokemodulo server</field>
-      <field name="model_id" ref="model_pokemodulo_pokemodulo"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
+    <record model="ir.actions.act_window" id="pokemodulo.victorias_action_window">
+      <field name="name">Victorias</field>
+      <field name="res_model">ar.pokemodulo.victorias</field>
+      <field name="view_mode">tree,form</field>
     </record>
--->
+
+
 
     <!-- Top menu item -->
 
@@ -239,6 +261,7 @@
     <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadoresL" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
     <menuitem name="Lista Pokemon" id="pokemodulo.pokemonL" parent="pokemodulo.menu_root" action="pokemodulo.pokemon_action_window"/>
     <menuitem name="Lista Regiones" id="pokemodulo.regionesL" parent="pokemodulo.menu_root" action="pokemodulo.region_action_window"/>
+    <menuitem name="Registro Combates" id="pokemodulo.victoriasL" parent="pokemodulo.menu_root" action="pokemodulo.victorias_action_window"/>
     <!-- actions -->
 
 

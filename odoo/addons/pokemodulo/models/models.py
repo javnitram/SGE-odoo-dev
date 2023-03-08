@@ -78,7 +78,7 @@ class pokemoduloRegion(models.Model):
      Mapa = fields.Image(string="Mapa de la Región",store=True,relation="res.partner",help="Seleccionar la imagen de la región aquí", required=True)
      name = fields.Char(string = 'Nombre de la region', required=True, help='Inserta nombre de la región')
      Tamanyo = fields.Float(string='Tamaño de la region', required=True, help='Insetar el tamaño de la región' )
-#     Entenadores = fields.One2many('ar.pokemodulo.entrenadores', 'Region', string='Lista de entrenadores de esa region')
+
 
 class pokemoduloEntrenadores(models.Model):
      _name = 'ar.pokemodulo.entrenadores'
@@ -90,14 +90,16 @@ class pokemoduloEntrenadores(models.Model):
      Region = fields.Many2one('ar.pokemodulo.region', string='Lugar de Nacimiento', help='Inserte el nombre de una region')
 
 
+class pokemoduloVictorias(models.Model):
+     _name= 'ar.pokemodulo.victorias'
+     _description ='pokemodulo.victorias'
+     Entrenador = fields.Many2one('ar.pokemodulo.entrenadores', string='Entrenador', help='Elige el nombre del entenador', required=True)
+     Victorias = fields.Integer(string='Numero de victorias', required=True, help='Insetar victorias del entrenador')
+     Derrotas = fields.Integer(string='Numero de derrotas', required=True, help='Insetar derrotas del entrenador')
+     Total = fields.Integer(string='Resultado de las Batallas',  help='Resultado de las Victorias y de las Derrotas', compute='resultados_batallas',store = True)
 
 
-#     name = fields.Char()
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+     @api.depends('value')
+     def resultados_batallas(self):
+         for record in self:
+             record.Total = record.Victorias - record.Derrotas
