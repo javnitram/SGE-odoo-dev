@@ -1,0 +1,348 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* golosy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20221005\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-03-08 18:31+0000\n"
+"PO-Revision-Date: 2023-03-08 20:11+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__camiones_ids
+msgid " camion"
+msgstr " truck"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__categoria_id
+msgid "Aqui indicamos la categoria a la que pertemece"
+msgstr "Here we indicate the category it belongs to"
+
+#. module: golosy
+#: model:ir.model,name:golosy.model_wb_golosy_camion
+msgid "Camion envio a domicilio"
+msgstr "Truck home delivery"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__cantidad
+msgid "Cantidad"
+msgstr "Number of units"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__cantidad
+msgid "Cantidad stock del producto"
+msgstr "Quantity of product in stock"
+
+#. module: golosy
+#: model:ir.actions.act_window,name:golosy.golosy_categoria_action_window
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__name
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_golosinas_search
+msgid "Categoria"
+msgstr "Category"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_categorias_menu_2
+msgid "Categorias"
+msgstr "Categories"
+
+#. module: golosy
+#: model:ir.model,name:golosy.model_wb_golosy_categoria
+msgid "Categorias de las golosinas"
+msgstr "Candy categories"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__categoria_id
+msgid "Categoría"
+msgstr "Category"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__empleado_id
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_camion_tree
+msgid "Conductor"
+msgstr "Driver"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__create_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__create_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__create_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__create_uid
+msgid "Created by"
+msgstr "Created by"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__create_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__create_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__create_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__create_date
+msgid "Created on"
+msgstr "Created on"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__dni
+msgid "DNI"
+msgstr "DNI"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_empleados__dni
+msgid "DNI del empleado"
+msgstr "DNI of the employee"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_empleados_search
+msgid "DNI empleado"
+msgstr "Employee DNI"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__description
+msgid "Description"
+msgstr "Description"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__display_name
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__display_name
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__display_name
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__display_name
+msgid "Display Name"
+msgstr "Display Name"
+
+#. module: golosy
+#: model:ir.model.fields.selection,name:golosy.selection__wb_golosy_categoria__tipo__0
+msgid "Dulce"
+msgstr "Sweet"
+
+#. module: golosy
+#: model:ir.actions.act_window,name:golosy.golosy_empleados_action_window
+#: model:ir.ui.menu,name:golosy.golosy_empleados_menu_4
+msgid "Empleados"
+msgstr "Employees"
+
+#. module: golosy
+#: model:ir.model,name:golosy.model_wb_golosy_empleados
+msgid "Empleados de golosy"
+msgstr "Golosy's employees"
+
+#. module: golosy
+#: model:ir.actions.act_window,name:golosy.golosy_camion_action_window
+msgid "Envios"
+msgstr "Shipping"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__antiguedad
+msgid "Fecha de incorporacion"
+msgstr "Incorporation date"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_empleados__antiguedad
+msgid "Fecha de primer dia de trabajo"
+msgstr "Date of first day of work"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__golosinas_ids
+msgid "Golosinas"
+msgstr "Candies"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_menu_root
+msgid "Golosy"
+msgstr "Golosy"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__id
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__id
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__id
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__id
+msgid "ID"
+msgstr "ID"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__imagen
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__imagen
+msgid "Imagen"
+msgstr "Image"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_empleados__imagen
+msgid "Imagen del empleado"
+msgstr "Employee Image"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__imagen
+msgid "Imagen representativa"
+msgstr "Representative image"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion____last_update
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria____last_update
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados____last_update
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas____last_update
+msgid "Last Modified on"
+msgstr "Last Modified on"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__write_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__write_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__write_uid
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__write_uid
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__write_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__write_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__write_date
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__write_date
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_lista_camion
+msgid "Lista de camiones"
+msgstr "Truck list"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_lista_categorias
+msgid "Lista de categorias"
+msgstr "Category list"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_lista_empleados
+msgid "Lista de empleados"
+msgstr "Employee list"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_lista_golosinas
+msgid "Lista de productos"
+msgstr "Product list"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__name
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_camion_tree
+msgid "Matricula"
+msgstr "License plate"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_camion_search
+msgid "Matricula del camion"
+msgstr "Truck license plate"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_camion__name
+msgid "Matricula del camión"
+msgstr "Truck license plate"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__mesestrabajados
+msgid "Meses de trabajo en la empresa"
+msgstr "Months of work in the company"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__name
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__name
+msgid "Nombre"
+msgstr "Name"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_categoria_search
+msgid "Nombre categoria"
+msgstr "Name of category"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_categoria__name
+msgid "Nombre de la categoria"
+msgstr "Name of category"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__name
+msgid "Nombre de la producto"
+msgstr "Name of product"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_empleados__name
+msgid "Nombre del empleado"
+msgstr "Employee name"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_empleados_search
+msgid "Nombre empleado"
+msgstr "Employee name"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_golosinas_search
+msgid "Nombre golosina"
+msgstr "Name candy"
+
+#. module: golosy
+#: model:ir.model,name:golosy.model_wb_golosy_golosinas
+msgid "Nombre y lista de productos"
+msgstr "Name and product list"
+
+#. module: golosy
+#: model:ir.ui.menu,name:golosy.golosy_camiones_menu_3
+msgid "Pedidos"
+msgstr "Orders"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__precio
+msgid "Precio"
+msgstr "Price"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__precio
+msgid "Precio del producto"
+msgstr "Product price"
+
+#. module: golosy
+#: model_terms:ir.ui.view,arch_db:golosy.golosy_golosinas_search
+msgid "Precio golosina"
+msgstr "Price candy"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_golosinas__active
+msgid "Producto en almacen o tienda"
+msgstr "Product in warehouse or store"
+
+#. module: golosy
+#: model:ir.actions.act_window,name:golosy.golosy_golosinas_action_window
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__productos
+#: model:ir.ui.menu,name:golosy.golosy_golosinas_menu_1
+msgid "Productos"
+msgstr "Products"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_camion__golosinas2_ids
+msgid "Productos a enviar"
+msgstr "Products to be shipped"
+
+#. module: golosy
+#: model:ir.model.fields.selection,name:golosy.selection__wb_golosy_categoria__tipo__1
+msgid "Salado"
+msgstr "Salty"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_empleados__telefono
+msgid "Telèfono"
+msgstr "Phone"
+
+#. module: golosy
+#: model:ir.model.fields,help:golosy.field_wb_golosy_empleados__telefono
+msgid "Telèfono del empleado"
+msgstr "Employee phone number"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_categoria__tipo
+msgid "Tipo de la categoria"
+msgstr "Category type"
+
+#. module: golosy
+#: model:ir.model.fields,field_description:golosy.field_wb_golosy_golosinas__active
+msgid "¿Esta colocada en la tienda?"
+msgstr "Is it placed in the store?"

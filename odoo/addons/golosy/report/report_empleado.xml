@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+          id="golosy_report_empleados"
+          model="wb.golosy.empleados"
+          string="Ficha del empleado"
+          name="golosy.report_empleados_view"
+          file="golosy.report_empleados_view"
+          report_type="qweb-html"/>
+
+        <template id="golosy.report_empleados_view">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">    
+                <t t-foreach="docs" t-as="empleados">
+                    <div class="page">
+                        <h2>Ficha del empleado</h2>
+                        <br/>
+                        <table>
+                            <tr>
+                                <td>
+                                    <strong>Nombre:</strong>
+                                    <span t-field="empleados.name"/>
+                                    <br/>
+                                    
+                                    
+                                    
+                                </td>
+                                <td style="padding-left:80px" rowspan="4">
+                                    <img t-if="empleados.imagen" align="center" style="max-height:150pt;max-widht:185pt;" t-att-src="image_data_uri(empleados.imagen)" alt="Imagen del empleado"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>DNI:</strong>
+                                    <span t-field="empleados.dni"/>
+                                    <br/>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <strong>Teléfono:</strong>
+                                    <span t-field="empleados.telefono"/>
+                                    <br/>
+                                </td>
+                                
+                            </tr>
+                            <tr>
+                                <td>
+                                    <table border="1" cellspacing="5" cellpadding="5" class="default">
+                                    <tr>
+                                      <th><strong>Fecha de incorporación</strong></th>
+                                      <th><strong>Meses trabajados</strong></th>
+                                    </tr>
+                                    <tr>
+                                      <td><span t-field="empleados.antiguedad"/></td>
+                                      <td><span t-field="empleados.mesestrabajados"/></td>
+                                    </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        
+                    </div>
+                </t>
+            </t>
+        </t>
+        </template>
+    </data>
+</odoo>

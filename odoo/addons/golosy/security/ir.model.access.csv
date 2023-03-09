@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_golosy_golosinas,Acceso a golosinas,model_wb_golosy_golosinas,base.group_user,1,1,1,1
+access_golosy_categorias,Acceso a categoria de golosinas,model_wb_golosy_categoria,base.group_user,1,1,1,1
+access_golosy_camion,Acceso a envio por camion,model_wb_golosy_camion,base.group_user,1,1,1,1
+access_golosy_empleados,Acceos a empleados,model_wb_golosy_empleados,base.group_user,1,1,1,1
+,,,,,,,
