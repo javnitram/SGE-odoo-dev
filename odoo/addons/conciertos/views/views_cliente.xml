@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+
+        <!-- Acción que abre las vistas -->
+        <record model="ir.actions.act_window" id="conciertos.cliente_action_window">
+            <field name="name">Clientes</field>
+            <field name="res_model">sa.conciertos.cliente</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tree -->
+        <record model="ir.ui.view" id="conciertos.cliente_list">
+            <field name="name">conciertos.cliente.list</field>
+            <field name="model">sa.conciertos.cliente</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name" />
+                    <field name="email" />
+                    <field name="entradas_ids" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista form -->
+        <record model="ir.ui.view" id="conciertos.cliente_form">
+            <field name="name">conciertos.cliente.form</field>
+            <field name="model">sa.conciertos.cliente</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="email" />
+                            <field name="entradas_ids" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

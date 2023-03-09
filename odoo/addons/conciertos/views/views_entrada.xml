@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <!-- Acción que abre las vistas -->
+        <record model="ir.actions.act_window" id="conciertos.entrada_action_window">
+            <field name="name">Entradas vendidas</field>
+            <field name="res_model">sa.conciertos.entrada</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- Vista tree -->
+        <record model="ir.ui.view" id="conciertos.entrada_list">
+            <field name="name">conciertos.entrada.list</field>
+            <field name="model">sa.conciertos.entrada</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="concierto_id" />
+                    <field name="num_entrada" />
+                    <field name="cliente_id" />
+                    <field name="zona" />
+                    <field name="precio" />
+                    <field name="currency_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista form -->
+        <record model="ir.ui.view" id="conciertos.entrada_form">
+            <field name="name">conciertos.entrada.form</field>
+            <field name="model">sa.conciertos.entrada</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="concierto_id" />
+                            <field name="num_entrada" />
+                            <field name="cliente_id" />
+                            <field name="zona" />
+                            <field name="precio" />
+                            <field name="currency_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>
