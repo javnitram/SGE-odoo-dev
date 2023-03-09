@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_veterinaria_mascotas,Acceso Mascotas,model_cm_veterinaria_mascotas,base.group_user,1,1,1,1
+access_mascotas_vacunas,Acceso Vacunas,model_cm_veterinaria_vacunas,base.group_user,1,1,1,1
+access_veterinaria_veterinario,Acceso Veterinarios,model_cm_veterinaria_veterinario,base.group_user,1,1,1,1
+access_veterinaria_cliente,Acceso Clientes,model_cm_veterinaria_cliente,base.group_user,1,1,1,1
+access_veterinaria_salas,Acceso Salas,model_cm_veterinaria_salas,base.group_user,1,1,1,1

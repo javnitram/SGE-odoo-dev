@@ -1,0 +1,252 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="cm_veterinaria.pets_tree">
+      <field name="name">pets tree</field>
+      <field name="model">cm.veterinaria.mascotas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="petNum"/>
+          <field name="race"/>
+          <field name="owner_id"/>
+          <field name="veterinarianName_id"/>
+          <field name="healthInsurance"/>
+          <field name="registrationDate"/>
+          <field name="vaccinesDone_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.pets_form" model="ir.ui.view">
+      <field name="name">Pets Form</field>
+      <field name="model">cm.veterinaria.mascotas</field>
+      <field name="arch" type="xml">
+        <form string="Pets Form">
+          <sheet>
+            <group>
+              <field name="fotoPet" widget="image" class="oe_left oe_avatar"/>
+              <field name="name"/>
+              <field name="petNum"/>
+              <field name="race"/>
+            </group>
+            <group>
+              <field name="owner_id"/>
+              <field name="veterinarianName_id"/>
+              <field name="healthInsurance"/> 
+            </group>
+            <group>
+              <field name="registrationDate"/>
+              <field name="vaccinesDone_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.pets_kanban" model="ir.ui.view">
+      <field name="name">Pets Kanban</field>
+      <field name="model">cm.veterinaria.mascotas</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="fotoPet"/>
+          <field name="name"/>
+          <field name="petNum"/>
+          <field name="race"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('cm.veterinaria.mascotas','fotoPet',record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>Name: <field name="name"/></li>
+                    <li>Pet Number: <field name="petNum"/></li>
+                    <li>Race: <field name="race"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="cm_veterinaria.vaccines_tree">
+      <field name="name">vaccines tree</field>
+      <field name="model">cm.veterinaria.vacunas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="animalTree"/>
+          <field name="weekToVaccinate"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.vaccines_form" model="ir.ui.view">
+      <field name="name">vaccines form</field>
+      <field name="model">cm.veterinaria.vacunas</field>
+      <field name="arch" type="xml">
+        <form string="Vaccines Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="animalTree"/>
+              <field name="weekToVaccinate"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cm_veterinaria.employees_tree">
+      <field name="name">employees tree</field>
+      <field name="model">cm.veterinaria.veterinario</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="empnum"/>
+          <field name="room_id"/>
+          <field name="category"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.employees_form" model="ir.ui.view">
+      <field name="name">employees form</field>
+      <field name="model">cm.veterinaria.veterinario</field>
+      <field name="arch" type="xml">
+        <form string="Employees Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="empnum"/>
+              <field name="room_id"/>
+              <field name="category"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cm_veterinaria.clients">
+      <field name="name">clients tree</field>
+      <field name="model">cm.veterinaria.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="clientNum"/>
+          <field name="clientRegistrationDate"/>
+          <field name="numberOfPets"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.clients_form" model="ir.ui.view">
+      <field name="name">clients form</field>
+      <field name="model">cm.veterinaria.cliente</field>
+      <field name="arch" type="xml">
+        <form string="Clients Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="clientNum"/>
+              <field name="clientRegistrationDate"/>
+              <field name="numberOfPets"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="cm_veterinaria.rooms">
+      <field name="name">rooms tree</field>
+      <field name="model">cm.veterinaria.salas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="veterinarian_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="cm_veterinaria.rooms_form" model="ir.ui.view">
+      <field name="name">rooms form</field>
+      <field name="model">cm.veterinaria.salas</field>
+      <field name="arch" type="xml">
+        <form string="Rooms Form">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="veterinarian_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="cm_veterinaria.mascotas">
+      <field name="name">Pets</field>
+      <field name="res_model">cm.veterinaria.mascotas</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cm_veterinaria.vacunas">
+      <field name="name">Vaccines</field>
+      <field name="res_model">cm.veterinaria.vacunas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cm_veterinaria.veterinario">
+      <field name="name">Veterinarians</field>
+      <field name="res_model">cm.veterinaria.veterinario</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cm_veterinaria.cliente">
+      <field name="name">Owners</field>
+      <field name="res_model">cm.veterinaria.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="cm_veterinaria.salas">
+      <field name="name">Rooms</field>
+      <field name="res_model">cm.veterinaria.salas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Veterinaria" id="cm_veterinaria.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Customers Data" id="cm_veterinaria.clientes" parent="cm_veterinaria.menu_root"/>
+    <menuitem name="Company Information" id="cm_veterinaria.info" parent="cm_veterinaria.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Pets" id="cm_veterinaria.pets_list" parent="cm_veterinaria.clientes"
+              action="cm_veterinaria.mascotas"/>
+
+    <menuitem name="Vaccines" id="cm_veterinaria.vaccines_list" parent="cm_veterinaria.clientes"
+              action="cm_veterinaria.vacunas"/>
+
+    <menuitem name="Owners" id="cm_veterinaria.owner_list" parent="cm_veterinaria.clientes"
+              action="cm_veterinaria.cliente"/>
+
+    <menuitem name="Employees" id="cm_veterinaria.employees_list" parent="cm_veterinaria.info"
+              action="cm_veterinaria.veterinario"/>
+
+    <menuitem name="Rooms" id="cm_veterinaria.rooms_list" parent="cm_veterinaria.info"
+              action="cm_veterinaria.salas"/>
+
+</data>   
+</odoo>
