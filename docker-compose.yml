@@ -13,11 +13,11 @@ services:
       - ${PWD}/postgres:/var/lib/postgresql/data/pgdata
     ports:
       # <Puerto expuesto> : < Puerto dentro del container>
-      # Solo para desarrollo. Comentar en produccion
+      # Solo para desarrollo. Comentar en produccionfas
       - '5432:5432'
     expose:
       # Abre el puerto 5432 en el container al exterior sin tocar nada de la configuración del postgresql
-      # Solo para desarrollo. Comentar en produccion
+      # Solo para desarrollo. Comentar en produccion KKK
       - '5432'
   odoo:
     image: odoo:15.0

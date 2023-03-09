@@ -1,0 +1,297 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="pokemodulo.equiposi">
+      <field name="name">Equipos Individuales</field>
+      <field name="model">ar.pokemodulo.equipoi</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="NombreEntrenador"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.equiposi_tree">
+      <field name="name">Vista del Equipo Individuales</field>
+      <field name="model">ar.pokemodulo.equipoi</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="name" />
+              <field name="NombreEntrenador"/>
+              <field name="Pokemones"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--##########################################################################################-->
+    <record model="ir.ui.view" id="pokemodulo.equiposd">
+      <field name="name">Equipos Dobles</field>
+      <field name="model">ar.pokemodulo.equipod</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="NombreEntrenador"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="pokemodulo.equiposd_tree">
+      <field name="name">Vista del Equipo Dobles</field>
+      <field name="model">ar.pokemodulo.equipod</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="name" />
+              <field name="NombreEntrenador"/>
+              <field name="Pokemones"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!--##########################################################################################-->
+    <record model="ir.ui.view" id="pokemodulo.entrenadores_tree">
+      <field name="name">Entrenadores</field>
+      <field name="model">ar.pokemodulo.entrenadores</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+          <field name="name"/>
+          <field name="Region"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="pokemodulo.entrenadores">
+      <field name="name">Vista del Entrenador</field>
+      <field name="model">ar.pokemodulo.entrenadores</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="ImagenE" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+              <field name="EquiposI"/>
+              <field name="EquiposD"/>
+              <field name="Region" />
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!--##########################################################################################-->
+    <record model="ir.ui.view" id="pokemodulo.pokemon_tree">
+      <field name="name">Pokemons</field>
+      <field name="model">ar.pokemodulo.pokemon</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+              <field name="Generacion"/>
+              <field name="Tipo1"/>
+              <field name="Tipo2" />
+        </tree>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="pokemodulo.pokemon">
+      <field name="name">Vista del Pokemon</field>
+      <field name="model">ar.pokemodulo.pokemon</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="Imagen" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+              <field name="Generacion"/>
+            </group>  
+            <group >
+              <field name="Tipo1"/>
+              <field name="Tipo2" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--##########################################################################################-->
+
+
+    <record model="ir.ui.view" id="pokemodulo.region_tree">
+      <field name="name">Regiones</field>
+      <field name="model">ar.pokemodulo.region</field>
+      <field name="arch" type="xml">
+        <tree>
+              <field name="Mapa" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+              <field name="name"/>
+              <field name="Tamanyo"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.region">
+      <field name="name">Vista del Regiones</field>
+      <field name="model">ar.pokemodulo.region</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group >
+              <field name="Mapa" widget="image" class="oe_right oe_avatar" options="{'size':[265,300]}"  />
+            </group>  
+            <group >
+              <field name="name"/>
+              <field name="Tamanyo"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+
+<!--##########################################################################################-->
+
+    <record model="ir.ui.view" id="pokemodulo.victorias_tree">
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="Entrenador" />
+          <field name="Victorias"/>
+          <field name="Derrotas"/>
+          <field name="Total"/>
+          <field name="Media"/>
+        </tree>
+      </field>
+    </record>
+
+
+
+    <record model="ir.ui.view" id="pokemodulo.victorias">
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="Entrenador" />
+              <field name="Victorias"/>
+              <field name="Derrotas"/>
+              <field name="Total"/> 
+              <field name="Media"/>
+            </group>  
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+<!-- Intento de hacer una vista kanban -->
+
+<!--     <record model="ir.ui.view" id="vista_kanban_victorias" >
+      <field name="name">Registro de Combates</field>
+      <field name="model">ar.pokemodulo.victorias</field>
+      <field name="arch" type="xml">
+      <kanban>
+          <field name="id"/>
+          <field name="Entrenador" />
+          <field name="Victorias"/>
+          <field name="Derrotas"/>
+          <field name="Total"/> 
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('ar.pokemodulo.victorias','Entrenador', record.id.raw_value)"/> 
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li>Entrenador: <field name="Entrenador"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+       </kanban>
+      </field>
+    </record>
+ -->
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+
+
+    <record model="ir.actions.act_window" id="pokemodulo.equipo_indi_action_window">
+      <field name="name">Equipos Individuales</field>
+      <field name="res_model">ar.pokemodulo.equipoi</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="pokemodulo.equipo_doble_action_window">
+      <field name="name">Equipos Dobles</field>
+      <field name="res_model">ar.pokemodulo.equipod</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="pokemodulo.entrenadores_action_window">
+      <field name="name">Entrenadores</field>
+      <field name="res_model">ar.pokemodulo.entrenadores</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="pokemodulo.pokemon_action_window">
+      <field name="name">Pokemons</field>
+      <field name="res_model">ar.pokemodulo.pokemon</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="pokemodulo.region_action_window">
+      <field name="name">Regiones</field>
+      <field name="res_model">ar.pokemodulo.region</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="pokemodulo.victorias_action_window">
+      <field name="name">Victorias</field>
+      <field name="res_model">ar.pokemodulo.victorias</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+<!-- @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
+ 
+
+    <menuitem name="Pokemodulo" id="pokemodulo.menu_root"/>
+
+   
+
+    <menuitem name="Lista Equipos" id="pokemodulo.equipo" parent="pokemodulo.menu_root"/>
+    <menuitem name="Lista Equipos Individuales" id="pokemodulo.equipo_individuales" parent="pokemodulo.equipo" action="pokemodulo.equipo_indi_action_window"/>
+    <menuitem name="Lista Equipos Dobles" id="pokemodulo.equipo_double" parent="pokemodulo.equipo" action="pokemodulo.equipo_doble_action_window"/>
+  
+  
+    <menuitem name="Lista Entrenadores" id="pokemodulo.entrenadoresL" parent="pokemodulo.menu_root" action="pokemodulo.entrenadores_action_window"/>
+    <menuitem name="Lista Pokemon" id="pokemodulo.pokemonL" parent="pokemodulo.menu_root" action="pokemodulo.pokemon_action_window"/>
+    <menuitem name="Lista Regiones" id="pokemodulo.regionesL" parent="pokemodulo.menu_root" action="pokemodulo.region_action_window"/>
+    <menuitem name="Registro Combates" id="pokemodulo.victoriasL" parent="pokemodulo.menu_root" action="pokemodulo.victorias_action_window"/>
+  
+
+  </data>
+</odoo>
