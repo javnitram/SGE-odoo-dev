@@ -1,0 +1,59 @@
+<odoo>
+  <data>
+    <!-- modelo habitaciones -->
+
+    <!-- Vista tree-->
+    <record id="hotel_habitaciones_list" model="ir.ui.view">
+      <field name="name">Lista de habitaciones</field>
+      <field name="model">jf.hotel.habitaciones</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="plazas"/>
+          <field name="precio"/>
+          <field name="planta"/>
+          <field name="estado"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Vista form-->
+    <record id="hotel_habitaciones_form" model="ir.ui.view">
+      <field name="name">Formulario de habitaciones</field>
+      <field name="model">jf.hotel.habitaciones</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="4">
+              <field name="name"/>
+              <field name="plazas"/>
+              <field name="precio"/>
+              <field name="planta"/>
+              <field name="estado"/>
+            </group>
+            <group colspan="2" col="2">
+              <field name="reserva_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record id="hotel.habitaciones_action_window" model="ir.actions.act_window">
+      <field name="name">Habitaciones</field>
+      <field name="res_model">jf.hotel.habitaciones</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Hotel" id="hotel.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Habitaciones" id="hotel.habitaciones" parent="hotel.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Listar Habitaciones" id="hotel.menu_4_list" parent="hotel.habitaciones"
+              action="hotel.habitaciones_action_window"/>  
+  </data>
+</odoo>

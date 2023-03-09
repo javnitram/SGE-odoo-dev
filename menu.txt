@@ -1,5 +1,8 @@
 nano menu.txt			# Documenta o crea nuevas opciones según tus necesidades
 ./set-permissions.sh		# Permisos de acceso completo para buena ejecución y migración
+docker-compose up		#
+docker-compose up -d		#
+docker-compose down		#
 git clean -xfd	# Forzar borrado de ficheros sin seguimiento (untracked) e ignorados (ignored)
 git reset --hard HEAD	# Descartar cambios desde último commit
 tar --exclude='*.tgz' -czf app_$(date +%F_%H-%M)_${HOSTNAME}.tgz * .git*	# Comprime todo el entorno en tgz con marca temporal

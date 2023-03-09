@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <!-- modelo reserva -->
+
+        <!-- Vista tree-->
+        <record id="hotel_reserva_list" model="ir.ui.view">
+        <field name="name">Lista de Reservas</field>
+        <field name="model">jf.hotel.reserva</field>
+        <field name="arch" type="xml">
+            <tree>
+            <field name="cliente_id"/>
+            <field name="fecha_inicio"/>
+            <field name="fecha_final"/>
+            <field name="precio_total"/>
+            </tree>
+        </field>
+        </record>
+
+        <!-- Vista form-->
+        <record id="hotel_reserva_form" model="ir.ui.view">
+            <field name="name">Formulario de Reservas</field>
+            <field name="model">jf.hotel.reserva</field>
+            <field name="arch" type="xml">
+                <form>
+                <sheet>
+                    <group colspan="2" col="4">
+                    <field name="cliente_id"/>
+                    <field name="fecha_inicio"/>
+                    <field name="fecha_final"/>
+                    <field name="precio_total"/>
+                    </group>
+                    <group colspan="2" col="2">
+                    <field name="habitacion_ids"/>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="hotel.reserva_action_window" model="ir.actions.act_window">
+            <field name="name">Reservas</field>
+            <field name="res_model">jf.hotel.reserva</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Hotel" id="hotel.menu_root"/>
+
+        <menuitem name="Reservas" id="hotel.reserva" parent="hotel.menu_root"/> 
+
+        <menuitem name="Listar Reservas" id="hotel.menu_2_list" parent="hotel.reserva"
+            action="hotel.reserva_action_window"/>
+    </data>
+</odoo>
