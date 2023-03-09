@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_floristeria_manager,floristeria.manager,model_hf_floristeria_manager,base.group_user,1,1,1,1
+access_floristeria_flower,floristeria.flowers,model_hf_floristeria_flower,base.group_user,1,1,1,1
+access_floristeria_specie,floristeria.specie,model_hf_floristeria_specie,base.group_user,1,1,1,1
+access_floristeria_bouquet,floristeria.bouquet,model_hf_floristeria_bouquet,base.group_user,1,1,1,1
+access_floristeria_flower_pot,floristeria.flower_pot,model_hf_floristeria_flower_pot,base.group_user,1,1,1,1

@@ -1,0 +1,380 @@
+<odoo>
+  <data>
+    
+    <!-- Manager -->
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="floristeria.manager_tree">
+      <field name="name">manager.view.tree</field>
+      <field name="model">hf_floristeria_manager</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="bouquet_ids"/>
+          <field name="flower_pot_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Manager form view -->
+
+    <record id="hf_floristeria_manager_view_form" model="ir.ui.view">
+      <field name="name">hf_floristeria_manager.view.form</field>
+      <field name="model">hf_floristeria_manager</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+            </group>
+            <group>
+              <field name="bouquet_ids"/>
+              <field name="flower_pot_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_manager_action_window">
+      <field name="name">Encargados</field>
+      <field name="res_model">hf_floristeria_manager</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Flower -->
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="floristeria.flower_tree">
+      <field name="name">flower.view.tree</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="scientific_name"/>
+          <field name="specie_id"/>
+          <field name="main_color"/>
+          <field name="bouquet_ids"/>
+          <field name="flower_pot_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Flower form view -->
+
+    <record id="hf_floristeria_flower_view_form" model="ir.ui.view">
+      <field name="name">flower.view.form</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="arch" type="xml">
+        <form string="Formulario Flor">
+          <sheet>
+            <group>
+              <group>
+                <field name="flower_image" widget="image"/>
+              </group>  
+              <group>
+                <field name="name"/>
+                <field name="scientific_name"/>
+                <field name="specie_id"/>
+                <separator/>
+                <field name="main_color"/>
+                <separator/>
+                <field name="subgroup_gim"/>
+                <field name="subgroup_ang"/>
+              </group>
+            </group>
+            <group>
+              <group>
+                <field name="bouquet_ids"/>
+              </group>
+              <group>
+                <field name="flower_pot_ids"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Flower kanban view -->
+
+    <record id="hf_floristeria_flower_view_kanban" model="ir.ui.view">
+      <field name="name">hf_floristeria_flower.view.kanban</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban default_group_by="specie_id">
+          <field name="id"/>
+          <field name="name"/>
+          <field name="scientific_name"/>
+          <field name="specie_id"/>
+          <field name="flower_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_card oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('hf_floristeria_flower','flower_image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li><strong class="o_kanban_record_title">Nombre: <field name="name"/></strong></li>
+                    <li>Nombre científico: <field name="scientific_name"/></li>
+                    <li>Especie: <field name="specie_id"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Flower search view -->
+
+    <record id="hf_floristeria_flower_view_search" model="ir.ui.view">
+      <field name="name">hf_floristeria_flower.view.search</field>
+      <field name="model">hf_floristeria_flower</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="scientific_name" string="Nombre científico"/>
+          <field name="specie_id" string="Especie"/>
+          <field name="main_color" string="Color predominante"/>
+          <group expand="0" string="Group By">
+            <filter string="Ramo de flores" name="bouquet_ids" context="{'group_by': 'bouquet_ids'}"/>
+            <filter string="Especie" name="specie_id" context="{'group_by': 'specie_id'}"/>
+            <filter string="Color predominante" name="main_color" context="{'group_by': 'main_color'}"/>
+            <filter string="Subgrupo de las gimnospermas" name="subgroup_gim" context="{'group_by': 'subgroup_gim'}"/>
+            <filter string="Subgrupo de las angiospermas" name="subgroup_ang" context="{'group_by': 'subgroup_ang'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_action_window">
+      <field name="name">Flores</field>
+      <field name="res_model">hf_floristeria_flower</field>
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <!-- Specie -->
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="floristeria.hf_floristeria_specie_tree">
+      <field name="name">specie.view.tree</field>
+      <field name="model">hf_floristeria_specie</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="hf_floristeria_specie_view_form" model="ir.ui.view">
+      <field name="name">specie.view.form</field>
+      <field name="model">hf_floristeria_specie</field>
+      <field name="arch" type="xml">
+        <form string="Formulario especies">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <separtator/>
+              </group>
+              <field name="flower_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_specie_action_window">
+      <field name="name">Especies</field>
+      <field name="res_model">hf_floristeria_specie</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Bouquet -->
+
+    <record model="ir.ui.view" id="floristeria.bouquet_tree">
+      <field name="name">bouquet.view.tree</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="size"/>
+          <field name="price"/>
+          <field name="flower_ids"/>
+          <field name="manager_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Bouquet form view -->
+
+    <record id="hf_floristeria_bouquet_view_form" model="ir.ui.view">
+      <field name="name">bouquet.view.form</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="arch" type="xml">
+        <form string="Formulario Ramo de Flores">
+          <sheet>
+            <group>
+              <group>
+                <field name="bouquet_image" widget="image"/>
+              </group>  
+              <group>
+                <field name="name"/>
+                <field name="size"/>
+                <field name="price"/>
+                <field name="manager_id"/>
+              </group>
+              <separator/>
+              <field name="flower_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- Bouquet kanban view -->
+
+    <record id="hf_floristeria_bouquet_view_kanban" model="ir.ui.view">
+      <field name="name">hf_floristeria_bouquet.view.kanban</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="type">kanban</field>
+      <field name="arch" type="xml">
+        <kanban default_group_by="size">
+          <field name="id"/>
+          <field name="name"/>
+          <field name="size"/>
+          <field name="bouquet_image"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div t-attf-class="oe_kanban_card oe_kanban_global_click"
+                style="
+                  display: flex;
+                ">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('hf_floristeria_bouquet','bouquet_image', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details" 
+                  style="padding: 1rem; display: grid; justify-content: space-between;">
+                  <div class="o_kanban_record_title"
+                    style="grid-column: 1 / span 2; grid-row: 1;">
+                    <field name="name"/>
+                  </div>
+                  <div style="grid-column: 2; grid-row: 1;">
+                    <field name="price"/>€
+                  </div>
+                  <div style="grid-column: 1 / 2; grid-row: 3; ">
+                    <field name="size"/>
+                  </div>
+                  <div style=" grid-column: 2 / 3; grid-row: 3; font-style: italic;">
+                    <field name="manager_id"/>
+                  </div>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <!-- Bouquet search view -->
+
+    <record id="hf_floristeria_flower_view_search" model="ir.ui.view">
+      <field name="name">hf_floristeria_bouquet.view.search</field>
+      <field name="model">hf_floristeria_bouquet</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name" string="Título"/>
+          <field name="size" string="Tamaño"/>
+          <field name="flower_ids" string="Flores"/>
+          <field name="manager_id" string="Encargado"/>
+          <group expand="0" string="Group By">
+            <filter string="Tamaño" name="size" context="{'group_by': 'size'}"/>
+            <filter string="Flores" name="flower_ids" context="{'group_by': 'flower_ids'}"/>
+            <filter string="Encargado" name="manager_id" context="{'group_by': 'manager_id'}"/>
+          </group>
+        </search>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_bouquet_action_window">
+      <field name="name">Ramos de flores</field>
+      <field name="res_model">hf_floristeria_bouquet</field>
+      <field name="view_mode">tree,kanban,form</field>
+    </record>
+
+    <!-- Flower Pot -->
+
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="floristeria.flower_pot_tree">
+      <field name="name">flower_pot.view.tree</field>
+      <field name="model">hf_floristeria_flower_pot</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="size"/>
+          <field name="flower_ids"/>
+          <field name="manager_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- Flower Pot form view -->
+
+    <record id="hf_floristeria_flower_pot_view_form" model="ir.ui.view">
+      <field name="name">flower_pot.view.form</field>
+      <field name="model">hf_floristeria_flower_pot</field>
+      <field name="arch" type="xml">
+        <form string="Formulario Macetas">
+          <sheet>
+            <group>
+              <group>
+                <field name="name"/>
+                <field name="size"/>
+                <field name="manager_id"/>
+              </group>
+              <separator/>
+              <field name="flower_ids"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="floristeria.hf_floristeria_flower_pot_action_window">
+      <field name="name">Macetas</field>
+      <field name="res_model">hf_floristeria_flower_pot</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Floristeria" id="floristeria.menu_root" action="floristeria.hf_floristeria_flower_action_window"/>
+
+    <!-- top menu items -->
+    <menuitem name="Flores" id="floristeria.menu_flower" parent="floristeria.menu_root"/>
+    
+    <menuitem name="Encargados" id="floristeria.menu_manager" parent="floristeria.menu_root"
+    action="floristeria.hf_floristeria_manager_action_window"/>
+
+    <!-- flower submenu items -->
+    <menuitem name="Especies" id="floristeria.menu_specie" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_specie_action_window"/>
+
+    <menuitem name="Flores" id="floristeria.submenu_flower" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_flower_action_window"/>
+    
+    <menuitem name="Ramos de flores" id="floristeria.submenu_bouquet" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_bouquet_action_window"/>
+
+    <menuitem name="Macetas" id="floristeria.submenu_flower_pot" parent="floristeria.menu_flower"
+    action="floristeria.hf_floristeria_flower_pot_action_window"/>
+
+
+  </data>
+</odoo>
