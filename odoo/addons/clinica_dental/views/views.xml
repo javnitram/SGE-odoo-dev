@@ -1,0 +1,310 @@
+<odoo>
+  <data>
+ <record model="ir.ui.view" id="clinica_dental.list">
+      <field name="name">ClinicaDental list</field>
+      <field name="model">ab.clinica_dental.clinica_dental</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+ <!-- Vista para el modelo paciente -->
+
+    <record model="ir.ui.view" id="paciente_list">
+      <field name="name">Paciente list</field>
+      <field name="model">ab.clinica_dental.paciente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="apellido"/>
+          <field name="fecha_nacimiento"/>
+          <field name="telefono"/>
+          <field name="correo_electronico"/>
+        </tree>
+      </field>
+    </record>
+
+  <!-- Vista para el modelo Cita dental -->
+
+  <record id="view_cita_dental_kanban" model="ir.ui.view">
+    <field name="name">ab.clinica_dental.cita_dental.kanban</field>
+    <field name="model">ab.clinica_dental.cita_dental</field>
+    <field name="arch" type="xml">
+        <kanban default_group_by="estado">
+            <field name="paciente_id"/>
+            <field name="profesional_dental_id"/>
+            <field name="fecha_hora"/>
+            <field name="procedimiento"/>
+            <field name="precio"/>
+            <field name="estado"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.estado.raw_value)} oe_kanban_global_click">
+                        <div class="oe_kanban_content" >
+                            <div>
+                                <strong>Paciente:</strong>
+                                <span t-esc="record.paciente_id.value"/>
+                            </div>
+                            <div>
+                                <strong>Profesional:</strong>
+                                <span t-esc="record.profesional_dental_id.value"/>
+                            </div>
+                            <div>
+                                <strong>Fecha y hora:</strong>
+                                <span t-esc="record.fecha_hora.value"/>
+                            </div>
+                            <div>
+                                <strong>Procedimiento:</strong>
+                                <span t-esc="record.procedimiento.value"/>
+                            </div>
+                            <div>
+                                <strong>Precio:</strong>
+                                <span t-esc="record.precio.value"/>
+                            </div>
+                        </div>
+                        <div class="oe_clear"></div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+
+
+
+  <!-- Vista para el modelo ProfesionalDental -->
+
+    <record model="ir.ui.view" id="profesional_dental_list">
+      <field name="name">ProfesionalDental list</field>
+      <field name="model">ab.clinica_dental.profesional_dental</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="image" widget="image" class="oe_avatar_oe_left" options="{'size':[80,80]}"/>
+              <field name="name"/>
+              <field name="apellido"/>
+              <field name="fecha_ingreso"/>
+              <field name="especialidad"/>
+              <field name="telefono"/>
+              <field name="correo_electronico"/>
+          </tree>
+      </field>
+    </record>
+
+
+<!-- Vista para el modelo Tratamiento -->
+
+    <record model="ir.ui.view" id="tratamiento_tree_view">
+        <field name="name">Tratamiento Tree View</field>
+        <field name="model">ab.clinica_dental.tratamiento</field>
+        <field name="arch" type="xml">
+            <tree create="false">
+                <field name="paciente_id"/>
+                <field name="profesional_dental_id"/>
+                <field name="fecha_inicio"/>
+                <field name="fecha_fin"/>
+                <field name="descripcion"/>
+                <field name="costo_total"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="tratamiento_form_view">
+      <field name="name">Tratamiento Form View</field>
+      <field name="model">ab.clinica_dental.tratamiento</field>
+      <field name="arch" type="xml">
+          <form>
+              <sheet>
+                  <group>
+                      <field name="paciente_id"/>
+                      <field name="profesional_dental_id"/>
+                      <field name="fecha_inicio"/>
+                      <field name="fecha_fin"/>
+                      <field name="descripcion"/>
+                      <field name="costo_total"/>
+                  </group>
+                  <notebook>
+                      <page string="Líneas del tratamiento">
+                          <field name="linea_ids">
+                              <tree editable="bottom">
+                                  <field name="procedimiento"/>
+                                  <field name="precio"/>
+                              </tree>
+                              <form>
+                                  <group>
+                                      <field name="procedimiento"/>
+                                      <field name="precio"/>
+                                  </group>
+                              </form>
+                          </field>
+                      </page>
+                  </notebook>
+              </sheet>
+          </form>
+      </field>
+  </record>
+
+
+
+  <!-- Vista para el modelo TratamientoLinea -->
+  <record model="ir.ui.view" id="tratamiento_linea_tree_view">
+      <field name="name">TratamientoLinea Tree View</field>
+      <field name="model">ab.clinica_dental.tratamiento.linea</field>
+      <field name="arch" type="xml">
+          <tree create="false">
+              <field name="procedimiento"/>
+              <field name="precio"/>
+          </tree>
+      </field>
+  </record>
+
+
+<!-- Vista para el modelo Seguro Medico -->
+
+    <record model="ir.ui.view" id="seguro_medico_form_view">
+      <field name="name">Seguros médicos</field>
+      <field name="model">ab.clinica_dental.seguro_medico</field>
+      <field name="arch" type="xml">
+        <form string="Seguros médicos">
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="descripcion"/>
+            </group>
+            <notebook>
+              <page string="Pacientes">
+                <field name="pacientes_ids" widget="many2many_tags"/>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<record model="ir.ui.view" id="seguro_medico_tree_view">
+    <field name="name">Seguros médicos - Vista de lista</field>
+    <field name="model">ab.clinica_dental.seguro_medico</field>
+    <field name="arch" type="xml">
+        <tree string="Seguros médicos" create="false">
+            <field name="name"/>
+            <field name="descripcion"/>
+            <field name="pacientes_ids"/>
+        </tree>
+    </field>
+</record>
+
+
+
+  <!-- Acciones -->
+
+    <record model="ir.actions.act_window" id="clinica_dental.action_window">
+      <field name="name">ClinicaDental</field>
+      <field name="res_model">ab.clinica_dental.clinica_dental</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="paciente_action_window">
+      <field name="name">Paciente</field>
+      <field name="res_model">ab.clinica_dental.paciente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+<!-- Acciones Cita Dental(Kanban)-->
+    <record model="ir.actions.act_window" id="action_cita_dental">
+    <field name="name">Citas dentales</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">ab.clinica_dental.cita_dental</field>
+    <field name="view_mode">kanban,tree,form</field>
+</record>
+<!-- Accion Profesional Dental-->
+    <record model="ir.actions.act_window" id="profesional_dental_action_window">
+        <field name="name">Profesional Dental</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ab.clinica_dental.profesional_dental</field>
+        <field name="view_mode">tree,form</field>
+    </record>   
+
+<!-- Acciones Tratamiento-->
+    <record model="ir.actions.act_window" id="action_tratamiento_tree">
+      <field name="name">Tratamientos</field>
+      <field name="res_model">ab.clinica_dental.tratamiento</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_tratamiento_form">
+      <field name="name">Tratamiento</field>
+      <field name="res_model">ab.clinica_dental.tratamiento</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_tratamiento_linea_tree">
+      <field name="name">Líneas de tratamiento</field>
+      <field name="res_model">ab.clinica_dental.tratamiento.linea</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+<!-- Acciones Seguro Medico-->
+    <record model="ir.actions.act_window" id="action_seguro_medico_form">
+      <field name="name">Seguro médico</field>
+      <field name="res_model">ab.clinica_dental.seguro_medico</field>
+      <field name="view_mode">form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_seguro_medico_tree_view">
+    <field name="name">Seguros médicos</field>
+    <field name="res_model">ab.clinica_dental.seguro_medico</field>
+    <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="clinica_dental.action_server">
+      <field name="name">clinica_dental server</field>
+      <field name="model_id" ref="model_ab_clinica_dental_clinica_dental"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!--Menu Padre-->
+
+    <menuitem name="ClinicaDental" id="clinica_dental.menu_root"/>
+
+
+       <!--Categorias-->
+
+    <menuitem name="Pacientes" id="clinica_dental.menu_3" parent="clinica_dental.menu_root" action="paciente_action_window"/>
+    <menuitem name="Cita" id="clinica_dental.menu_4" parent="clinica_dental.menu_root" action="action_cita_dental"/>
+    <menuitem name="Profesional" id="clinica_dental.menu_5" parent="clinica_dental.menu_root" action="profesional_dental_action_window"/>
+    <menuitem name="Tratamientos" id="clinica_dental.menu_tratamiento" parent="clinica_dental.menu_root" action="action_tratamiento_form"/>
+    <menuitem name="Líneas de Tratamiento" id="clinica_dental.menu_tratamiento_linea" parent="clinica_dental.menu_root"/>
+    <menuitem name="Seguros Médicos" id="clinica_dental.menu_seguro_medico" parent="clinica_dental.menu_root" />
+
+    <!-- Acciones -->
+
+
+    <menuitem name="Crear" id="clinica_dental.seguro_medico_formulario" parent="clinica_dental.menu_seguro_medico"
+                  action="action_seguro_medico_form"/>
+    <menuitem name="Mostrar" id="clinica_dental.seguro_medico_arbol" parent="clinica_dental.menu_seguro_medico"
+                  action="action_seguro_medico_tree_view"/>
+
+    <menuitem name="Crear" id="clinica_dental.tratamiento_formulario" parent="clinica_dental.menu_tratamiento"
+                  action="action_tratamiento_form"/>
+    <menuitem name="Mostrar" id="clinica_dental.tratamiento_formulario_arbol" parent="clinica_dental.menu_tratamiento"
+                  action="action_tratamiento_tree"/>
+
+    <menuitem name="Mostrar" id="clinica_dental.tratamiento_linea_arbol" parent="clinica_dental.menu_tratamiento_linea"
+                  action="action_tratamiento_linea_tree"/>  
+
+  </data>
+</odoo>
