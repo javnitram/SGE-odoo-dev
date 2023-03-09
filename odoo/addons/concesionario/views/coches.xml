@@ -1,0 +1,122 @@
+<odoo>
+    <data>
+
+        <!--tree coches-->
+        <record model="ir.ui.view" id="concesionario.coches_tree">
+            <field name="name">concesionario.coches.tree</field>
+            <field name="model">concesionario.coches</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="matricula"></field>
+                    <field name="marca"></field>
+                    <field name="modelo"></field>
+                    <field name="cv"></field>
+                    <field name="color"></field>
+                    <field name="estado"></field>
+                    <field name="imagen" />
+                </tree>
+            </field>
+        </record>
+        <!--form coches-->
+        <record id="concesionario_coches_form" model="ir.ui.view">
+            <field name="name">concesionario.coches.form</field>
+            <field name="model">concesionario.coches</field>
+            <field name="arch" type="xml">
+                <form string="Ingresar nuevo coche en el concesionario">
+                    <sheet>
+                        <group name="name" string="Características">
+                            <field name="matricula"></field>
+                            <field name="marca"></field>
+                            <field name="modelo"></field>
+                            <field name="cv"></field>
+                            <field name="color"></field>
+                            <field name="estado"></field>
+                            <field name="empleados_ids" />
+                            <field name="imagen" />
+                        </group>
+                    </sheet>
+
+                </form>
+            </field>
+        </record>
+        <!--kanban coches-->
+
+        <record id="concesionario_coches_kanban" model="ir.ui.view">
+            <field name="name">concesionario.coches.kanban</field>
+            <field name="model">concesionario.coches</field>
+            <field name="arch" type="xml">
+                <kanban>
+                <field name="imagen" />
+                <field name="matricula" ></field>
+                <field name="marca"  ></field>
+                <field name="modelo"  ></field>
+                <field name="cv"  ></field>
+              
+                    <templates>
+                        <t t-name="kanban-box">
+                        <!-- <t t-foreach="coches" t-as="variable">
+                            
+                        </t> -->
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="o_kanban_image">
+                                    <img alt="Avatar" t-att-src="imagen"/>
+                                </div>
+                                <div class="oe_kanban_details">
+                                    <ul>
+                                        <li class="mb4">
+                                            <strong>Matricula:</strong><field name="matricula"></field>
+                                        </li>
+                                        <li>
+                                            <strong>Marca:</strong><field name="marca"></field>
+                                        </li>
+                                            <strong>Modelo:</strong><field name="modelo"></field>
+                                        <li>
+                                        </li>
+                                        <li>
+                                            <strong>Potencia:</strong><field name="cv"></field>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        <!--search coches-->
+        <record id="concesionario_coches_search" model="ir.ui.view">
+            <field name="name">concesionario.coches.search</field>
+            <field name="model">concesionario.coches</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="marca" string="Marca coches"/>
+                    <field name="modelo" string="Modelo coches"/>
+                    <field name="matricula" string="Matricula coche"/>
+                </search>
+            </field>
+        </record>
+
+        
+
+        <!--Action window-->
+        <record model="ir.actions.act_window" id="concesionario.coches_action_window_tree">
+        <field name="name">Coches</field>
+        <field name="res_model">concesionario.coches</field>
+        <field name="view_mode">tree</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="concesionario.coches_action_window_form">
+        <field name="name">Coches</field>
+        <field name="res_model">concesionario.coches</field>
+        <field name="view_mode">form</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="concesionario.coches_action_window_kanban">
+        <field name="name">Coches</field>
+        <field name="res_model">concesionario.coches</field>
+        <field name="view_mode">kanban</field>
+        </record>
+        
+    </data>
+</odoo>

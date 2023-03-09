@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+    
+        <record id="concesionario.coches_a_reparar_tree" model="ir.ui.view">
+            <field name="name">concesionario.coches_a_reparar.tree</field>
+            <field name="model">concesionario.coches_a_reparar</field>
+            <field name="arch" type="xml">
+                <tree >
+                    <field name="id_mecanico" />
+                    <field name="nombre_mecanico" />
+                    <field name="matricula_coche" />
+                    <field name="modelo_coche" />
+                    <field name="fecha_incial_reparacion" />
+                    <field name="fecha_final_reparacion" />
+                    <field name="coste_reparacion" />
+                </tree>
+            </field>
+        </record>
+    
+    </data>
+    <record id="concesionario.coches_a_reparar_action_window" model="ir.actions.act_window">
+        <field name="name">Reparaciones</field>
+        <field name="res_model">concesionario.coches_a_reparar</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>
