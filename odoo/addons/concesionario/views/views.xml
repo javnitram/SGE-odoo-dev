@@ -2,11 +2,35 @@
   <data>
     <!-- explicit list view definition -->
 
+    <!--Kanban estado coche-->
+    <!-- <record id="concesionario.coches_kanban" model="ir.ui.view">
+      <field name="name">concesionario.coches.kanban</field>
+      <field name="model">concesionario.coches</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <templates>                        
+
+            <t t-name="kanban-box">                            
+              <div t-attf-class="oe_kanban_global_click">                                
+                <div>                                    
+                  <button><t t-esc="#"/> Request  </button>                              
+                  <field name="matricula" />
+                  <field name="marca" />
+                  <field name="modelo" />
+                  <field name="cv" />
+                </div>                            
+              </div>                       
+            </t>                   
+          </templates>    
+        </kanban>
+      </field>
+    </record> -->
+
     <record model="ir.ui.view" id="concesionario.coches">
       <field name="name">Coches</field>
       <field name="model">concesionario.coches</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree >
           <field name="matricula"></field>
           <field name="marca"></field>
           <field name="modelo"></field>
@@ -19,25 +43,27 @@
     </record>
 
     <!-- Añadir coche-->
-
+<!-- 
     <record model="ir.ui.view" id="concesionario.coches_annadir">
       <field name="name">CochesAñadir</field>
       <field name="model">concesionario.coches_annadir</field>
       <field name="arch" type="xml">
         <form string="Introduzca el datos del coche">
-          <sheet>
+          <sheet name="campos" string="Datos" >
             <group>
               <field name="matricula"></field>
               <field name="marca"></field>
               <field name="modelo"></field>
-              <field name="cv"></field>
+            </group>
+            <group >
+               <field name="cv"></field>
               <field name="color"></field>
               <field name="estado"></field>
             </group>
           </sheet>
         </form>
       </field>
-    </record>
+    </record> -->
 
   
 
@@ -79,32 +105,19 @@
       </field>
     </record>
 
-    
-
-    <!-- Vista tipo de coche, cuelga de coche y hay dos tipos vendidos, reparando, o alquilados
-        Esta vista va a ser una kanban en la que el empleado gestiona los coches del concesionario
-      <record model="ir.ui.view" id="concesionario.tipos">
-      <field name="name">Tipo</field>
-      <field name="model">concesionario.tipos</field>
-      <field name="arch" type="xml">
-        <tree>
-        </tree>
-      </field>
-    </record>
-    -->
-
-    <!-- actions opening views on models -->
-  <!-- -->
+ 
+  <!-- Action windows-->
+   
     <record model="ir.actions.act_window" id="concesionario.coches_action_window">
       <field name="name">Coches</field>
       <field name="res_model">concesionario.coches</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">tree,form,kanban</field>
     </record>
-    <record model="ir.actions.act_window" id="concesionario.coches_annadir_action_window">
+    <!-- <record model="ir.actions.act_window" id="concesionario.coches_annadir_action_window">
       <field name="name">Coches</field>
       <field name="res_model">concesionario.coches_annadir</field>
       <field name="view_mode">form</field>
-    </record>
+    </record> -->
     <record model="ir.actions.act_window" id="concesionario.empleados_action_window">
       <field name="name">Empleados</field>
       <field name="res_model">concesionario.empleados</field>
