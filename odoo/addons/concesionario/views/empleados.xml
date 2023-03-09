@@ -4,7 +4,7 @@
 <data>
 
     <record model="ir.ui.view" id="concesionario.empleados_tree">
-      <field name="name">Empleados.tree</field>
+      <field name="name">Empleados</field>
       <field name="model">concesionario.empleados</field>
       <field name="arch" type="xml">
         <tree>
@@ -16,7 +16,7 @@
       </field>
     </record>
 <record id="concesionario.empleados_kanban" model="ir.ui.view">
-  <field name="name">Empleados.kanban</field>
+  <field name="name">Empleados</field>
   <field name="model">concesionario.empleados</field>
   <field name="arch" type="xml">
     <kanban>

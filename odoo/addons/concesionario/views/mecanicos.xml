@@ -35,11 +35,17 @@
     </record>
     
   <!-- Action windows-->
-    <record model="ir.actions.act_window" id="concesionario.mecanicos_action_window">
+    <record model="ir.actions.act_window" id="concesionario.mecanicos_action_window_tree">
       <field name="name">Mecanicos</field>
       <field name="res_model">concesionario.mecanicos</field>
-      <field name="view_mode">tree</field>
+      <field name="view_mode">tree,form</field>
     </record>
+    <record model="ir.actions.act_window" id="concesionario.mecanicos_action_window_form">
+      <field name="name">Mecanicos</field>
+      <field name="res_model">concesionario.mecanicos</field>
+      <field name="view_mode">form</field>
+    </record>
+
 </data>
 
 

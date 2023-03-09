@@ -25,15 +25,15 @@
     <!--clientes-->
 
     <!--empleados-->
-    <menuitem name="Listar empleados" id="concesionario.empleado_listar_menu" parent="concesionario.coches_menu"
-              action="concesionario.empleado_action_window_tree"/>
-    <menuitem name="Visualizar coches" id="concesionario.empleado_visualizar_menu" parent="concesionario.coches_menu"
-              action="concesionario.empleado_action_window_kanban"/>
+    <menuitem name="Listar empleados" id="concesionario.empleado_listar_menu" parent="concesionario.empleados_menu"
+              action="concesionario.empleados_action_window_tree"/>
+    <menuitem name="Visualizar coches" id="concesionario.empleado_visualizar_menu" parent="concesionario.empleados_menu"
+              action="concesionario.empleados_action_window_kanban"/>
     <!--mecanicos-->
-    <menuitem name="Listar mecanicos" id="concesionario.mecanico_listar_menu" parent="concesionario.coches_menu"
-              action="concesionario.mecanico_action_window_tree"/>
-    <menuitem name="Annadir mecanicos" id="concesionario.mecanico_annadir_menu" parent="concesionario.coches_menu"
-              action="concesionario.mecanico_action_window_form"/>
+    <menuitem name="Listar mecanicos" id="concesionario.mecanico_listar_menu" parent="concesionario.mecanicos_menu"
+              action="concesionario.mecanicos_action_window_tree"/>
+    <menuitem name="Annadir mecanicos" id="concesionario.mecanico_annadir_menu" parent="concesionario.mecanicos_menu"
+              action="concesionario.mecanicos_action_window_form"/>
 
   </data>
 </odoo>
