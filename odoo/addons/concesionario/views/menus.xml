@@ -1,0 +1,39 @@
+<odoo>
+  <data> 
+    
+    <!-- Top menu item -->
+
+    <menuitem name="Concesionario" id="concesionario.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Coches" id="concesionario.coches_menu" parent="concesionario.menu_root" />
+    <menuitem name="Empleados" id="concesionario.empleados_menu" parent="concesionario.menu_root"  />
+    <menuitem name="Clientes" id="concesionario.clientes_menu" parent="concesionario.menu_root" action="concesionario.clientes_action_window"/>
+    <menuitem name="Mecanicos" id="concesionario.mecanicos_menu" parent="concesionario.menu_root" />
+    <menuitem  name="Reparaciones" id="concesionario.coches_a_reparar_menu" parent="concesionario.menu_root" action="concesionario.coches_a_reparar_action_window"/>
+
+    <!-- submenus-->
+
+    <!--coches-->
+    <menuitem name="Listar coches" id="concesionario.coches_listar_menu" parent="concesionario.coches_menu"
+              action="concesionario.coches_action_window_tree"/>
+    <menuitem name="Annadir coches" id="concesionario.coches_annadir_menu" parent="concesionario.coches_menu"
+              action="concesionario.coches_action_window_form"/>
+    <menuitem name="Visualizar coches" id="concesionario.coches_visualizar_menu" parent="concesionario.coches_menu"
+              action="concesionario.coches_action_window_kanban"/>
+    <!--clientes-->
+
+    <!--empleados-->
+    <menuitem name="Listar empleados" id="concesionario.empleado_listar_menu" parent="concesionario.coches_menu"
+              action="concesionario.empleado_action_window_tree"/>
+    <menuitem name="Visualizar coches" id="concesionario.empleado_visualizar_menu" parent="concesionario.coches_menu"
+              action="concesionario.empleado_action_window_kanban"/>
+    <!--mecanicos-->
+    <menuitem name="Listar mecanicos" id="concesionario.mecanico_listar_menu" parent="concesionario.coches_menu"
+              action="concesionario.mecanico_action_window_tree"/>
+    <menuitem name="Annadir mecanicos" id="concesionario.mecanico_annadir_menu" parent="concesionario.coches_menu"
+              action="concesionario.mecanico_action_window_form"/>
+
+  </data>
+</odoo>

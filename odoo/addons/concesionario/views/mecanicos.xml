@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+<data>
+
+     <record model="ir.ui.view" id="concesionario.mecanicos_tree">
+      <field name="name">concesionario.mecanicos.tree</field>
+      <field name="model">concesionario.mecanicos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id_mecanico" />
+          <field name="nombre" />
+          <field name="apellidos" />
+          <field name="numero_reparaciones" />
+          <field name="salario" />
+        </tree>
+      </field>
+    </record>
+    <record id="concesionario.mecanicos_from" model="ir.ui.view">
+      <field name="name">concesionario.mecanicos.form</field>
+      <field name="model">concesionario.mecanicos</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <sheet>
+            <group>
+              <field name="id_mecanico" />
+            <field name="nombre" />
+            <field name="apellidos" />
+            <field name="numero_reparaciones" />
+            <field name="salario" />
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+    
+  <!-- Action windows-->
+    <record model="ir.actions.act_window" id="concesionario.mecanicos_action_window">
+      <field name="name">Mecanicos</field>
+      <field name="res_model">concesionario.mecanicos</field>
+      <field name="view_mode">tree</field>
+    </record>
+</data>
+
+
+</odoo>

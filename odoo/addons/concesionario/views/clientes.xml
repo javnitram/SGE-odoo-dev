@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data >
+    
+           
+        <record model="ir.ui.view" id="concesionario.clientes">
+        <field name="name">Clientes</field>
+        <field name="model">concesionario.clientes</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"></field>
+                <field name="apellidos"></field>
+                <field name="direccion"></field>
+                <field name="telefono"></field>
+                <field name="matricula"></field>
+            </tree>
+        </field>
+        </record>
+  <!-- Action windows-->
+        <record model="ir.actions.act_window" id="concesionario.clientes_action_window">
+            <field name="name">Clientes</field>
+            <field name="res_model">concesionario.clientes</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+    
+
+</odoo>

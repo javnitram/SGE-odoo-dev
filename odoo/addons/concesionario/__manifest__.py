@@ -23,8 +23,13 @@
 
     # always loaded
     'data': [
+        'views/coches.xml',
+        'views/clientes.xml',
+        'views/empleados.xml',
+        'views/mecanicos.xml',
+        'views/cochesareparar.xml',
         'security/ir.model.access.csv',
-        'views/views.xml',
+        'views/menus.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode
