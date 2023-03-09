@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_dg_payasos_payasos,acceso a dg.payasos,model_dg_payasos_payasos,base.group_user,1,1,1,1
+access_dg_payasos_managers,acceso a dg.managers,model_dg_payasos_managers,base.group_user,1,1,1,1
+access_dg_payasos_fiestas,acceso a dg.fiestas,model_dg_payasos_fiestas,base.group_user,1,1,1,1
+access_dg_payasos_clientes,acceso a dg.clientes,model_dg_payasos_clientes,base.group_user,1,1,1,1

@@ -1,0 +1,213 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition-->
+
+    <record model="ir.ui.view" id="payasos_payasos_tree">
+      <field name="name">payasos.payasos.tree</field>
+      <field name="model">dg.payasos.payasos</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="edad"/>
+          <field name="color_nariz"/>
+          <field name="tarifa"/>
+          <field name="manager_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_payasos_form">
+      <field name="name">payasos.payasos.form</field>
+      <field name="model">dg.payasos.payasos</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="edad"/>
+            <field name="color_nariz"/>
+            <field name="tarifa"/>
+            <field name="manager_id"/>
+            <field name="fiestas_ids" options="{'no_create': True}"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_fiestas_tree">
+      <field name="name">payasos.fiestas.tree</field>
+      <field name="model">dg.payasos.fiestas</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="description"/>
+          <field name="cliente_id"/>
+          <field name="fecha"/>
+          <field name="direccion"/>
+          <field name="hora_comienzo" widget="float_time"/>
+          <field name="hora_fin" widget="float_time"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_fiestas_form">
+      <field name="name">payasos.fiestas.form</field>
+      <field name="model">dg.payasos.fiestas</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="description"/>
+            <field name="cliente_id"/>
+            <field name="fecha"/>
+            <field name="direccion"/>
+            <field name="hora_comienzo" widget="float_time"/>
+            <field name="hora_fin" widget="float_time"/>
+            <field name="payasos_ids" options="{'no_create': True}"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_managers_tree">
+      <field name="name">payasos.managers.tree</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="annos"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_managers_kanban">
+      <field name="name">payasos.managers.kanban</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="annos"/>
+          <field name="foto"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="oe_kanban_image" style="display: inline-block">
+                  <img t-att-src="kanban_image('dg.payasos.managers', 'foto', record.id.raw_value)" style="width:64px;height:64px"/>
+                </div>
+                <div class="oe_kanban_details" style="display: inline-block;width: 250px">
+                  <ul>
+                    <li style="font-size: large;font-weight: bold">Nombre: <field name="name"/></li>
+                    <li style="font-size: small">Años: <field name="annos"/></li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_managers_form">
+      <field name="name">payasos.managers.form</field>
+      <field name="model">dg.payasos.managers</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="annos"/>
+            <field name="foto" widget="image" options="{'size': [125, 125]}"/>
+            <field name="payasos_ids">
+              <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="edad"/>
+                <field name="color_nariz"/>
+                <field name="tarifa"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_clientes_tree">
+      <field name="name">payasos.clientes.tree</field>
+      <field name="model">dg.payasos.clientes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="dni"/>
+          <field name="edad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="payasos_clientes_form">
+      <field name="name">payasos.clientes.form</field>
+      <field name="model">dg.payasos.clientes</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="dni"/>
+            <field name="edad"/>
+            <field name="fiestas_ids">
+              <tree>
+                <field name="description"/>
+                <field name="fecha"/>
+                <field name="direccion"/>
+                <field name="hora_comienzo" widget="float_time"/>
+                <field name="hora_fin" widget="float_time"/>
+              </tree>
+            </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record id="payasos_payasos_action_window" model="ir.actions.act_window">
+      <field name="name">PAYASOS</field>
+      <field name="res_model">dg.payasos.payasos</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="payasos_fiestas_action_window" model="ir.actions.act_window">
+      <field name="name">FIESTAS</field>
+      <field name="res_model">dg.payasos.fiestas</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record id="payasos_managers_action_window" model="ir.actions.act_window">
+      <field name="name">MANAGERS</field>
+      <field name="res_model">dg.payasos.managers</field>
+      <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <record id="payasos_clientes_action_window" model="ir.actions.act_window">
+      <field name="name">CLIENTES</field>
+      <field name="res_model">dg.payasos.clientes</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="Payasos" id="payasos_menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Empleados" id="payasos_empleados_menu" parent="payasos_menu_root"/>
+    <menuitem name="Fiestas" id="payasos_fiestas_menu" parent="payasos_menu_root" 
+              action="payasos_fiestas_action_window"/>
+    <menuitem name="Clientes" id="payasos_clientes_menu" parent="payasos_menu_root"
+              action="payasos_clientes_action_window"/>
+
+    <!-- actions -->
+
+    <menuitem name="Payasos" id="payasos_payasos_submenu" parent="payasos_empleados_menu"
+              action="payasos_payasos_action_window"/>
+    <menuitem name="Managers" id="payasos_managers_submenu" parent="payasos_empleados_menu"
+              action="payasos_managers_action_window"/>
+
+  </data>
+</odoo>
