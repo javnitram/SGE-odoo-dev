@@ -1,0 +1,36 @@
+<odoo>
+    <data>           
+      <record id="paciente0" model="gs.hospital.pacientes">
+        <field name="dni">65432567V</field>
+        <field name="name">Roberto</field>
+        <field name="surname">Martínez</field>
+        <field name="sexo">0</field>
+        <field name="date">1990-10-10</field>
+        <field name="tlf">669356598</field>
+        <field name="history">Dolor abdominal</field>
+        <field name="alergias">No</field>           
+      </record>
+
+      <record id="paciente1" model="gs.hospital.pacientes">
+        <field name="dni">56985250C</field>
+        <field name="name">Luisa</field>
+        <field name="surname">Gómez</field>
+        <field name="sexo">1</field>
+        <field name="date">1995-02-10</field>
+        <field name="tlf">667584525</field>
+        <field name="history">Fractura</field>
+        <field name="alergias">Penicilina</field>
+      </record>
+
+      <record id="paciente2" model="gs.hospital.pacientes">
+        <field name="dni">59963252F</field>
+        <field name="name">Marta</field>
+        <field name="surname">Rivera</field>
+        <field name="sexo">1</field>
+        <field name="date">2002-07-01</field>
+        <field name="tlf">911586978</field>
+        <field name="history">Traumatismo craneoencefálico</field>
+        <field name="alergias">Amoxicilina</field>
+      </record>
+    </data>
+</odoo>

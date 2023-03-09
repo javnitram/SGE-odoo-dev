@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hospital_doctores,Reglas de acceso de doctores,model_gs_hospital_doctores,base.group_user,1,1,1,1
+access_hospital_pacientes,Reglas de acceso de pacientes,model_gs_hospital_pacientes,base.group_user,1,1,1,1
+access_hospital_enfermeros,Reglas de acceso de enfermeros,model_gs_hospital_enfermeros,base.group_user,1,1,1,1
+access_hospital_medicinas,Reglas de acceso de medicinas,model_gs_hospital_medicinas,base.group_user,1,1,1,1

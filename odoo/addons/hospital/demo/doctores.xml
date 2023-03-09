@@ -1,0 +1,33 @@
+<odoo>
+    <data>  
+      <record id="doctor0" model="gs.hospital.doctores">
+        <field name="dni">123456789</field>
+        <field name="name">Gregory</field>
+        <field name="surname">House</field>
+        <field name="date">1984-11-05</field>
+        <field name="tlf">665896526</field>
+        <field name="especialidad">0</field>
+        <field name="imagen" type="base64" file="hospital/static/description/house.jpg"/>
+      </record>
+
+      <record id="doctor1" model="gs.hospital.doctores">
+        <field name="dni">987654321</field>
+        <field name="name">Allison</field>
+        <field name="surname">Cameron</field>
+        <field name="date">1986-09-07</field>
+        <field name="tlf">667859636</field>
+        <field name="especialidad">1</field>
+        <field name="imagen" type="base64" file="hospital/static/description/cameron.jpg"/>
+      </record>
+
+      <record id="doctor2" model="gs.hospital.doctores">
+        <field name="dni">123498765</field>
+        <field name="name">James</field>
+        <field name="surname">Wilson</field>
+        <field name="date">1980-05-12</field>
+        <field name="tlf">665859878</field>
+        <field name="especialidad">2</field>
+        <field name="imagen" type="base64" file="hospital/static/description/wilson.jpg"/>
+      </record>          
+    </data>
+</odoo>

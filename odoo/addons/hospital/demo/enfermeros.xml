@@ -1,0 +1,30 @@
+<odoo>
+    <data>  
+        <record id="enfermero0" model="gs.hospital.enfermeros">
+            <field name="dni">56985252V</field>
+            <field name="name">Theodore</field>
+            <field name="surname">Bagwell</field>
+            <field name="sexo">0</field>
+            <field name="date">1976-08-12</field>
+            <field name="tlf">669853652</field>            
+        </record>
+
+        <record id="enfermero1" model="gs.hospital.enfermeros">
+            <field name="dni">7885252V</field>
+            <field name="name">Lincoln Jr</field>
+            <field name="surname">Burrows</field>
+            <field name="sexo">0</field>
+            <field name="date">1992-12-12</field>
+            <field name="tlf">911853652</field>            
+        </record>
+
+        <record id="enfermero2" model="gs.hospital.enfermeros">
+            <field name="dni">59982525V</field>
+            <field name="name">Verónica</field>
+            <field name="surname">Donovan</field>
+            <field name="sexo">1</field>
+            <field name="date">1976-08-12</field>
+            <field name="tlf">669853652</field>            
+        </record>
+    </data>
+</odoo>

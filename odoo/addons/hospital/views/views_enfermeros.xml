@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <!--VISTA DE ENFERMEROS-->
+    <record model="ir.ui.view" id="hospital_enfermeros_form">
+      <field name="name">ENFERMEROS</field>
+      <field name="model">gs.hospital.enfermeros</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="dni"/>
+            <field name="name"/>
+            <field name="surname"/>
+            <field name="sexo"/>
+            <field name="date"/>
+            <field name="tlf"/>
+            <field name="pacientes_ids">
+              <tree>
+                <field name="name"/>
+                <field name="history"/>
+                <field name="alergias"/>
+              </tree>
+          </field>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_enfermeros_tree">
+      <field name="name">ENFERMEROS</field>
+      <field name="model">gs.hospital.enfermeros</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="dni"/>
+          <field name="name"/>
+          <field name="surname"/>
+          <field name="sexo"/>
+          <field name="date"/>
+          <field name="tlf"/>
+          <field name="pacientes_ids">
+            <tree>
+              <field name="name"/>
+              <field name="history"/>
+              <field name="alergias"/>
+            </tree>
+          </field>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hospital_enfermeros_action_window">
+      <field name="name">ENFERMEROS</field>
+      <field name="res_model">gs.hospital.enfermeros</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    </data>
+</odoo>
