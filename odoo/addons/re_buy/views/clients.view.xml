@@ -1,0 +1,34 @@
+<odoo>
+  <data>
+      <record id="rebuy_view_clients_tree" model="ir.ui.view">
+        <field name="name">am.rebuy.clients.view.tree</field>
+        <field name="model">am.rebuy.clients</field>
+        <field name="arch" type="xml">
+          <tree string="">
+            <field name="name"></field>
+            <field name="client_fidelity_number"></field>
+            <field name="client_product_sold"></field>
+            <field name="client_product_bought"></field>
+            <field name="client_reservation"></field>
+          </tree>
+        </field>
+      </record>
+      <record id="rebuy_view_clients_form" model="ir.ui.view">
+        <field name="name">rebuy.view.clients.form</field>
+        <field name="model">am.rebuy.clients</field>
+        <field name="arch" type="xml">
+          <form string="">
+            <sheet>
+              <group colspan="2" col="2">
+                <field name="name"></field>
+                <field name="client_fidelity_number"></field>
+                <field name="client_product_sold"></field>
+                <field name="client_product_bought"></field>
+                <field name="client_reservation"></field>
+              </group>
+            </sheet>
+          </form>
+        </field>
+      </record>
+  </data>
+</odoo>

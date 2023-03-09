@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Actions-->
+    <record id="rebuy_products_tree" model="ir.actions.act_window">
+        <field name="name">Summary</field>
+        <field name="res_model">am.rebuy.products</field>
+        <field name="view_mode">tree,form</field>
+    </record> 
+
+    <record id="rebuy_products_kanban" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">am.rebuy.products</field>
+        <field name="view_mode">kanban,form</field>
+    </record> 
+
+    <record id="rebuy_stock_sold_graph" model="ir.actions.act_window">
+        <field name="name">Graph</field>
+        <field name="res_model">am.rebuy.stock_sold</field>
+        <field name="view_mode">graph</field>
+    </record> 
+
+    <record id="rebuy_client_kanban" model="ir.actions.act_window">
+        <field name="name">Dashboard</field>
+        <field name="res_model">am.rebuy.client_products</field>
+        <field name="view_mode">kanban,form</field>
+    </record> 
+
+    <record id="rebuy_client_product_tree" model="ir.actions.act_window">
+        <field name="name">Client Product Summary</field>
+        <field name="res_model">am.rebuy.client_products</field>
+        <field name="view_mode">tree,form</field>
+    </record> 
+
+    <record id="rebuy_employee_tree" model="ir.actions.act_window">
+        <field name="name">Employees</field>
+        <field name="res_model">am.rebuy.employees</field>
+        <field name="view_mode">tree,form</field>
+    </record> 
+
+    <record id="rebuy_client_tree" model="ir.actions.act_window">
+        <field name="name">Clients</field>
+        <field name="res_model">am.rebuy.clients</field>
+        <field name="view_mode">tree,form</field>
+    </record> 
+
+    <menuitem
+        id="rebuy_menu_root"
+        name="reBuy"
+        sequence="10"/>
+    <menuitem
+        id="rebuy_products"
+        name="Products"
+        parent="rebuy_menu_root"
+        sequence="1"/>
+    <menuitem
+        id="rebuy_menu_products_tree"
+        name="Summary"
+        action="rebuy_products_tree"
+        parent="rebuy_products"/>
+    <menuitem
+        id="rebuy_menu_products_kanban"
+        name="Dashboard"
+        action="rebuy_products_kanban"
+        parent="rebuy_products"/>
+    <menuitem
+        id="rebuy_menu_stock_sold_kanban"
+        name="Graph"
+        action="rebuy_stock_sold_graph"
+        parent="rebuy_products"/>
+    <menuitem
+        id="rebuy_menu_client_products"
+        name="Coming Products"
+        parent="rebuy_menu_root"/>
+    <menuitem
+        id="rebuy_menu_client_products_tree"
+        name="Summary"
+        action="rebuy_client_product_tree"
+        parent="rebuy_menu_client_products"/>
+    <menuitem
+        id="rebuy_menu_client_products_kanban"
+        name="Dashboard"
+        action="rebuy_client_kanban"
+        parent="rebuy_menu_client_products"/>
+    <menuitem
+        id="rebuy_menu_employees"
+        name="Employees"
+        action="rebuy_employee_tree"
+        parent="rebuy_menu_root"/>
+    <menuitem
+        id="rebuy_menu_clients"
+        name="Clients"
+        action="rebuy_client_tree"
+        parent="rebuy_menu_root"/>
+  </data>
+</odoo>
