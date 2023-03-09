@@ -1,0 +1,323 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="clubpadel.club_tree">
+      <field name="name">clubpadel Tree</field>
+      <field name="model">ab_clubpadel.club</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="pais_id"/>
+          <field name="provincia_id"/>
+          <field name="marcas_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="clubpadel.club_form">
+      <field name="name">clubpadel Form</field>
+      <field name="model">ab_clubpadel.club</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="pais_id"/>
+              <field name="provincia_id"/>
+              <field name="marcas_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+<!--  -->
+
+    <record model="ir.ui.view" id="clubpadel.fabricante_tree">
+      <field name="name">Fabricante Tree</field>
+      <field name="model">ab_clubpadel.fabricante</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha_salida"/>
+          <field name="pais_id"/>
+          <field name="provincia_id"/>
+          <field name="marcas_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="clubpadel.fabricante_form" model="ir.ui.view">
+      <field name="name">Fabricante Form</field>
+      <field name="model">ab_clubpadel.fabricante</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="fecha_salida"/>
+              <field name="pais_id"/>
+              <field name="provincia_id"/>
+              <field name="marcas_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!--  -->
+
+    <record model="ir.ui.view" id="clubpadel.marca_tree">
+      <field name="name">Marca Tree</field>
+      <field name="model">ab_clubpadel.marca</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha"/>
+          <field name="gama"/>
+          <field name="fabricante_id"/>
+          <field name="models_ids"/>
+          <field name="clubes_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="clubpadel.marca_form" model="ir.ui.view">
+      <field name="name">Marca Form</field>
+      <field name="model">ab_clubpadel.marca</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <field name="name"/>
+              <field name="imagen" widget="image"/>
+              <field name="fecha"/>
+              <field name="gama"/>
+              <field name="fabricante_id">
+                <tree>
+                  <field name="name"/>
+                  <field name="fecha_salida"/>
+                </tree>
+              </field>
+              <field name="models_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="versiones"/>
+                  <field name="forma"/>
+                  <field name="precio_final"/>
+                </tree>
+              </field>
+              <field name="clubes_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="pais_id"/>
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="clubpadel.marca_kanban" model="ir.ui.view">
+      <field name="name">Marca Kanban</field>
+      <field name="model">ab_clubpadel.marca</field>
+      <field name="arch" type="xml">
+        <kanban>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="imagen" widget="image"/>
+          <field name="fecha"/>
+          <field name="gama"/>
+          <field name="fabricante_id"/>
+          <field name="models_ids">
+                <tree>
+                  <field name="name"/>
+                  <field name="versiones"/>
+                  <field name="forma"/>
+                </tree>
+              </field>
+          <field name="clubes_ids"/>
+          <templates>
+            <t t-name="kanban-box">
+              <div class="oe_kanban_global_click">
+                <div class="o_kanban_image">
+                  <img t-att-src="kanban_image('ab_clubpadel.marca', 'imagen', record.id.raw_value)"/>
+                </div>
+                <div class="oe_kanban_details">
+                  <ul>
+                    <li style="font-weight: bold;">Nombre: <field name="name" /> </li>
+                    <li>Gama: <field name="gama" /> </li>
+                    <li>Fabricante: <field name="fabricante_id" /> </li>
+                  </ul>
+                </div>
+              </div>
+            </t>
+          </templates>
+        </kanban>
+      </field>
+    </record>
+
+<!--  -->
+
+    <record model="ir.ui.view" id="clubpadel.modelo_tree">
+      <field name="name">Modelo Tree</field>
+      <field name="model">ab_clubpadel.modelo</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="marca_id"/>
+          <field name="versiones"/>
+          <field name="forma"/>
+          <field name="estado"/>
+          <field name="segmano"/>
+          <field name="precio_final"/>
+        </tree>
+      </field>
+    </record>
+
+    <record id="clubpadel.modelo_form" model="ir.ui.view">
+      <field name="name">Modelo Form</field>
+      <field name="model">ab_clubpadel.modelo</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group colspan="2" col="2">
+              <field name="name"/>
+              <field name="precio"/>
+              <field name="versiones"/>
+              <field name="forma"/>
+              <field name="fecha"/>
+              <field name="segmano"/>
+              <field name="estado"/>
+              <field name="marca_id">
+                <tree>
+                  <field name="name"/>
+                  <field name="gama"/>
+                  <field name="fabricante_id"/>
+                </tree>
+              </field>
+              <field name="precio_final"/>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record id="clubpadel.modelo_view_search" model="ir.ui.view">
+      <field name="name">Modelo Search</field>
+      <field name="model">ab_clubpadel.modelo</field>
+      <field name="arch" type="xml">
+        <search string="">
+          <field name="name" string="Nombre"/>
+          <field name="marca_id" string="Marca"/>
+          <field name="precio" string="Precio"/>
+          <field name="versiones" string="Versiones"/>
+          <field name="forma" string="Forma"/>
+          <field name="estado" string="Estado"/>
+          <filter name="Baratas" domain="[('precio_final','&lt;=',200)]"/>
+          <filter name="Estado" domain="[('estado','=',0)]"/>
+        </search>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="clubpadel.club_listar_action_window">
+      <field name="name">Lista de Club's</field>
+      <field name="res_model">ab_clubpadel.club</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="clubpadel.club_crear_action_window">
+      <field name="name">Registrar un Club</field>
+      <field name="res_model">ab_clubpadel.club</field>
+      <field name="view_mode">form</field>
+    </record>
+
+<!--  -->
+
+    <record model="ir.actions.act_window" id="clubpadel.fabricante_listar_action_window">
+      <field name="name">Lista de Fabricantes</field>
+      <field name="res_model">ab_clubpadel.fabricante</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="clubpadel.fabricante_crear_action_window">
+      <field name="name">Crear un Fabricante</field>
+      <field name="res_model">ab_clubpadel.fabricante</field>
+      <field name="view_mode">form</field>
+    </record>
+
+<!--  -->
+
+    <record model="ir.actions.act_window" id="clubpadel.marca_listar_action_window">
+      <field name="name">Listado de Marcas</field>
+      <field name="res_model">ab_clubpadel.marca</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="clubpadel.marca_crear_action_window">
+      <field name="name">Ver/Crear Marcas</field>
+      <field name="res_model">ab_clubpadel.marca</field>
+      <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="clubpadel.modelo_listar_action_window">
+      <field name="name">Modelos en venta</field>
+      <field name="res_model">ab_clubpadel.modelo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <record model="ir.actions.act_window" id="clubpadel.modelo_crear_action_window">
+      <field name="name">Crear Modelo nuevo</field>
+      <field name="res_model">ab_clubpadel.modelo</field>
+      <field name="view_mode">form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="ClubPadel" id="clubpadel.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Club" id="clubpadel.menu_club" parent="clubpadel.menu_root"/>
+    <menuitem name="Fabricante" id="clubpadel.menu_fabricante" parent="clubpadel.menu_root"/>
+    <menuitem name="Marca" id="clubpadel.menu_marca" parent="clubpadel.menu_root"/>
+    <menuitem name="Modelo" id="clubpadel.menu_modelo" parent="clubpadel.menu_root"/>
+    
+    <!-- actions -->
+
+    <menuitem name="Listar Clubes" id="clubpadel.menu_listar_clubes" parent="clubpadel.menu_club"
+              action="clubpadel.club_listar_action_window"/>
+    <menuitem name="Crear Clubes" id="clubpadel.menu_crear_clubes" parent="clubpadel.menu_club"
+              action="clubpadel.club_crear_action_window"/>
+
+    <menuitem name="Listar Fabricantes" id="clubpadel.menu_listar_fabricantes" parent="clubpadel.menu_fabricante"
+              action="clubpadel.fabricante_listar_action_window"/>
+    <menuitem name="Crear Fabricantes" id="clubpadel.menu_crear_fabricantes" parent="clubpadel.menu_fabricante"
+              action="clubpadel.fabricante_crear_action_window"/>
+
+    <menuitem name="Listar Marcas" id="clubpadel.menu_listar_marcas" parent="clubpadel.menu_marca"
+              action="clubpadel.marca_listar_action_window"/>
+    <menuitem name="Crear Marcas" id="clubpadel.menu_crear_marcas" parent="clubpadel.menu_marca"
+              action="clubpadel.marca_crear_action_window"/>
+
+    <menuitem name="Listar Modelos" id="clubpadel.menu_listar_modelos" parent="clubpadel.menu_modelo"
+              action="clubpadel.modelo_listar_action_window"/>
+    <menuitem name="Crear Modelos" id="clubpadel.menu_crear_modelos" parent="clubpadel.menu_modelo"
+              action="clubpadel.modelo_crear_action_window"/>
+  </data>
+
+</odoo>

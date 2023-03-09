@@ -1,0 +1,327 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* clubpadel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0-20221012\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-16 12:32+0000\n"
+"PO-Revision-Date: 2023-02-16 12:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__versiones__2
+msgid "Blanda"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__nombre
+#: model:ir.ui.menu,name:clubpadel.menu_club
+msgid "Club"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.actions.act_window,name:clubpadel.club_crear_action_window
+#: model:ir.actions.act_window,name:clubpadel.club_listar_action_window
+#: model:ir.actions.act_window,name:clubpadel.fabricante_crear_action_window
+#: model:ir.actions.act_window,name:clubpadel.fabricante_listar_action_window
+#: model:ir.actions.act_window,name:clubpadel.marca_crear_action_window
+#: model:ir.actions.act_window,name:clubpadel.marca_listar_action_window
+#: model:ir.actions.act_window,name:clubpadel.modelo_crear_action_window
+#: model:ir.actions.act_window,name:clubpadel.modelo_listar_action_window
+#: model:ir.ui.menu,name:clubpadel.menu_root
+msgid "ClubPadel"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__clubes_ids
+msgid "Clubes de la marca"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_crear_clubes
+msgid "Crear Clubes"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_crear_fabricantes
+msgid "Crear Fabricantes"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_crear_marcas
+msgid "Crear Marcas"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_crear_modelos
+msgid "Crear Modelos"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__create_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__create_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__create_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__create_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__create_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__create_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__forma__1
+msgid "Diamante"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__display_name
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__display_name
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__display_name
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__versiones__0
+msgid "Dura"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__estado
+msgid "Estado"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__name
+#: model:ir.ui.menu,name:clubpadel.menu_fabricante
+msgid "Fabricante"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__fabricante_id
+msgid "Fabricante de la marca"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model,name:clubpadel.model_clubpadel_fabricante
+msgid "Fabricante de la pala"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__fecha
+msgid "Fecha de creación"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__fecha_salida
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__fecha
+msgid "Fecha de salida"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__forma
+msgid "Forma"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__gama
+msgid "Gama"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,help:clubpadel.field_clubpadel_marca__gama
+msgid "Gama de la marca."
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__forma__0
+msgid "Gota"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__versiones__1
+msgid "Hibrida"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__id
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__id
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__id
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__id
+msgid "ID"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__imagen
+msgid "Imagen"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,help:clubpadel.field_clubpadel_fabricante__name
+msgid "Introduce el fabricante de la pala"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,help:clubpadel.field_clubpadel_modelo__name
+msgid "Introduce el modelo de la pala"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,help:clubpadel.field_clubpadel_marca__name
+msgid "Introduce el nombre de la marca"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,help:clubpadel.field_clubpadel_club__nombre
+msgid "Introduce el nombre del club."
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club____last_update
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante____last_update
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca____last_update
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__write_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__write_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__write_uid
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__write_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__write_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__write_date
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_listar_clubes
+msgid "Listar Clubes"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_listar_fabricantes
+msgid "Listar Fabricantes"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_listar_marcas
+msgid "Listar Marcas"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.ui.menu,name:clubpadel.menu_listar_modelos
+msgid "Listar Modelos"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__estado__2
+msgid "Malo"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__name
+#: model:ir.ui.menu,name:clubpadel.menu_marca
+msgid "Marca"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model,name:clubpadel.model_clubpadel_marca
+msgid "Marca de la pala"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__marca_id
+msgid "Marca del modelo"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__marcas_ids
+msgid "Marcas del club"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__marcas_ids
+msgid "Marcas del fabricante"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__name
+#: model:ir.ui.menu,name:clubpadel.menu_modelo
+msgid "Modelo"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model,name:clubpadel.model_clubpadel_modelo
+msgid "Modelo de la pala"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_marca__models_ids
+msgid "Modelos de la marca"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model,name:clubpadel.model_clubpadel_club
+msgid "Nombre del Club"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__estado__0
+msgid "Nuevo"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__pais_id
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__pais_id
+msgid "Pais"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__precio
+msgid "Precio"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_club__provincia_id
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_fabricante__provincia_id
+msgid "Provincia"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__forma__2
+msgid "Redonda"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields.selection,name:clubpadel.selection__clubpadel_modelo__estado__1
+msgid "Regular"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__segmano
+msgid "Segunda mano"
+msgstr ""
+
+#. module: clubpadel
+#: model:ir.model.fields,field_description:clubpadel.field_clubpadel_modelo__versiones
+msgid "Version"
+msgstr ""
