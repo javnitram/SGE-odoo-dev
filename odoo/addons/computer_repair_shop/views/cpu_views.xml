@@ -1,0 +1,61 @@
+<odoo>
+    <data>
+    
+    <record id="cpu_action" model="ir.actions.act_window">
+        <field name="name">CPU</field>
+        <field name="res_model">ws.cpu</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="cpu_view_kanban" model="ir.ui.view">
+        <field name="name">cpu_view_kanban</field>
+        <field name="model">ws.cpu</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="photo"/>
+                <field name="name"/>
+                <field name="socket"/>
+                <field name="architecture"/>
+                <field name="number_of_cores"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <div class="o_kanban_image d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('ws.cpu', 'photo', record.id.raw_value, placeholder)}'"/>
+                            <div class="oe_kanban_details">
+                              <ul>
+                                  <li>
+                                      <h3 style="text-align: center;"><field name="name"/></h3>
+                                      <h5 style="text-align: center;">Socket <field name="socket"/></h5>
+                                      <h5 style="text-align: center;"><field name="architecture"/></h5>
+                                      <h5 style="text-align: center;"><field name="number_of_cores"/> cores</h5>
+                                  </li>
+                              </ul>
+                          </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="cpu_view_form" model="ir.ui.view">
+        <field name="name">cpu_view_form</field>
+        <field name="model">ws.cpu</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
+                        <field name="name" string="Name" required="1"/>
+                        <field name="socket" string="Socket" required="1"/>
+                        <field name="architecture" string="Architecture" required="1"/>
+                        <field name="number_of_cores" string="Number of cores" required="1"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    </data>
+</odoo>

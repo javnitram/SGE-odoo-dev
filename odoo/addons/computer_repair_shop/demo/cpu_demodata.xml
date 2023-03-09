@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="cpu0" model="ws.cpu">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/5800X.jpg"/>
+            <field name="name">AMD Ryzen 7 5800X</field>
+            <field name="socket">AM4</field>
+            <field name="architecture">Zen 3</field>
+            <field name="number_of_cores">8</field>
+        </record>
+        
+        <record id="cpu1" model="ws.cpu">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/5600X.jpg"/>
+            <field name="name">AMD Ryzen 7 5600X</field>
+            <field name="socket">AM4</field>
+            <field name="architecture">Zen 3</field>
+            <field name="number_of_cores">6</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,23 @@
+<odoo>
+    <data>
+        <record id="computers_view_form" model="ir.ui.view">
+            <field name="name">computers_view_form</field>
+            <field name="model">ws.computers</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name" string="Name" required="1"/>
+                            <field name="cpu_id" widget="many2one" string="CPU" required="1"/>
+                            <field name="motherboard_id" widget="many2one" string="Motherboard" required="1"/>
+                            <field name="ram_id" widget="many2one" string="RAM" required="1"/>
+                            <field name="gpu_id" widget="many2one" string="GPU"/>
+                            <field name="psu_id" widget="many2one" string="PSU"/>
+                            <field name="chassis_id" widget="many2one" string="Chassis"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

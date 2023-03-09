@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="gpu0" model="ws.gpu">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/6800xt.jpg"/>
+            <field name="name">AMD Radeon 6800XT</field>
+            <field name="die">Navi21</field>
+            <field name="number_of_cores">4608</field>
+            <field name="vram">16</field>
+        </record>
+        
+        <record id="gpu1" model="ws.gpu">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/1080ti.jpg"/>
+            <field name="name">Nvidia Geforce 1080Ti</field>
+            <field name="die">GP102</field>
+            <field name="number_of_cores">3854</field>
+            <field name="vram">11</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <record id="psu0" model="ws.psu">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/rm750x.jpg"/>
+            <field name="name">Corsair RM 750 X</field>
+            <field name="power">750</field>
+            <field name="modular">full_modular</field>
+        </record>
+    </data>
+</odoo>

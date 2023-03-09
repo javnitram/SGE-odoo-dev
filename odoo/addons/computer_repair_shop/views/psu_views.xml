@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+    
+    <record id="psu_action" model="ir.actions.act_window">
+        <field name="name">PSU</field>
+        <field name="res_model">ws.psu</field>
+        <field name="view_mode">kanban,form</field>
+    </record>
+
+    <record id="psu_view_kanban" model="ir.ui.view">
+        <field name="name">psu_view_kanban</field>
+        <field name="model">ws.psu</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="photo"/>
+                <field name="name"/>
+                <field name="power"/>
+                <field name="modular"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click o_kanban_record_has_image_fill">
+                            <div class="o_kanban_image d-none d-md-block" t-attf-style="background-image:url('#{kanban_image('ws.psu', 'photo', record.id.raw_value, placeholder)}'"/>
+                            <div class="oe_kanban_details">
+                              <ul>
+                                  <li>
+                                      <h3 style="text-align: center;"><field name="name"/></h3>
+                                      <h5 style="text-align: center;"><field name="power"/>W</h5>
+                                      <h5 style="text-align: center;"><field name="modular"/></h5>
+                                  </li>
+                              </ul>
+                          </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="psu_view_form" model="ir.ui.view">
+        <field name="name">psu_view_form</field>
+        <field name="model">ws.psu</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="photo" class="oe_avatar" widget="image" string="Photo"/>
+                        <field name="name" string="Name" required="1"/>
+                        <field name="power" string="Power (In Watts)" required="1"/>
+                        <field name="modular" string="Modular" required="1"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    </data>
+</odoo>

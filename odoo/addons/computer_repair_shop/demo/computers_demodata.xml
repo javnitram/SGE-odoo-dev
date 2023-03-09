@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="computer0" model="ws.computers">
+            <field name="name">Noel: Ryzen 7 5800X 32GB RAM</field>
+            <field name="motherboard_id" ref="motherboard0"/>
+            <field name="ram_id" ref="motherboard0"/>
+            <field name="cpu_id" ref="cpu0"/>
+            <field name="gpu_id" ref="gpu0"/>
+            <field name="psu_id" ref="psu0"/>
+            <field name="chassis_id" ref="chassis0"/>
+            <field name="client_id" ref="client0"/>
+        </record>
+    </data>
+</odoo>

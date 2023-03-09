@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <record id="chassis0" model="ws.chassis">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/p500a.jpg"/>
+            <field name="name">Phanteks P500A</field>
+            <field name="size">atx</field>
+        </record>
+    </data>
+</odoo>

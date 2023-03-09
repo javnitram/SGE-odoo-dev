@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_permission_1,Access to repairments model,model_ws_repairments,base.group_user,1,1,1,1
+access_permission_2,Access to technicians model,model_ws_technicians,base.group_user,1,1,1,1
+access_permission_3,Access to clients model,model_ws_clients,base.group_user,1,1,1,1
+access_permission_4,Access to motherboards model,model_ws_motherboards,base.group_user,1,1,1,1
+access_permission_5,Access to ram model,model_ws_ram,base.group_user,1,1,1,1
+access_permission_6,Access to cpu model,model_ws_cpu,base.group_user,1,1,1,1
+access_permission_7,Access to gpu model,model_ws_gpu,base.group_user,1,1,1,1
+access_permission_8,Access to psu model,model_ws_psu,base.group_user,1,1,1,1
+access_permission_9,Access to chassis model,model_ws_chassis,base.group_user,1,1,1,1
+access_permission_10,Access to computers model,model_ws_computers,base.group_user,1,1,1,1

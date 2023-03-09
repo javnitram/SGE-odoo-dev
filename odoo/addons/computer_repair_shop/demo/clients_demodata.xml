@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record id="client0" model="ws.clients">
+            <field name="name">Noel</field>
+            <field name="phone">12345678</field>
+            <field name="email">noel@exokgames.com</field>
+        </record>
+
+        <record id="client1" model="ws.clients">
+            <field name="name">Maddy</field>
+            <field name="phone">12345678</field>
+            <field name="email">maddy@exokgames.com</field>
+        </record>
+
+        <record id="client2" model="ws.clients">
+            <field name="name">Amora</field>
+            <field name="phone">12345678</field>
+            <field name="email">amora@exokgames.com</field>
+        </record>
+
+        <record id="client3" model="ws.clients">
+            <field name="name">Lena</field>
+            <field name="phone">12345678</field>
+            <field name="email">lena@exokgames.com</field>
+        </record>
+
+        <record id="client4" model="ws.clients">
+            <field name="name">Heidi</field>
+            <field name="phone">12345678</field>
+            <field name="email">heidi@exokgames.com</field>
+        </record>
+        <record id="client5" model="ws.clients">
+            <field name="name">Pedro</field>
+            <field name="phone">12345678</field>
+            <field name="email">pedro@exokgames.com</field>
+        </record>
+    </data>
+</odoo>

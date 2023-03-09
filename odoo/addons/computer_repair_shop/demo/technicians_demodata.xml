@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="technician0" model="ws.technicians">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/madeline.jpg"/>
+            <field name="name">Madeline</field>
+        </record>
+        
+        <record id="technician1" model="ws.technicians">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/theo.jpg"/>
+            <field name="name">Theo</field>
+        </record>
+
+        <record id="technician2" model="ws.technicians">
+            <field name="photo" type="base64" file="computer_repair_shop/static/img/grandma.jpg"/>
+            <field name="name">Grandma</field>
+        </record>
+    </data>
+</odoo>
