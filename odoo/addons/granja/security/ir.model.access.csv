@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_granja_producto,Reglas de acceso del grupo general,model_rh_granja_producto,base.group_user,1,1,1,1
+access_granja_cliente,Reglas de acceso del grupo general,model_rh_granja_cliente,base.group_user,1,1,1,1
+access_granja_especie,Reglas de acceso del grupo general,model_rh_granja_especie,base.group_user,1,1,1,1
+access_granja_pedido,Reglas de acceso del grupo general,model_rh_granja_pedido,base.group_user,1,1,1,1

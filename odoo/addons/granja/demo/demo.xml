@@ -1,0 +1,105 @@
+<odoo>
+    <data>
+    
+        <!--Especies-->
+          <record id="especie_trigo" model="rh.granja.especie">
+            <field name="name">Trigo</field>
+            <field name="nombre_cien">Triticum</field>
+            <field name="description">El término trigo (Triticum) designa al conjunto de cereales, tanto cultivados como silvestres, que pertenecen al género Triticum; se trata de plantas anuales de la familia de las gramíneas, ampliamente cultivadas en todo el mundo. La palabra designa tanto a la planta como a sus semillas comestibles, tal como ocurre con los nombres de otros cereales.</field>
+            <field name="imagen" type="base64" file="granja/static/img/trigo.jpg"/>
+          </record>
+
+          <record id="especie_trufa" model="rh.granja.especie">
+            <field name="name">Trufa</field>
+            <field name="nombre_cien">Tuber</field>
+            <field name="description">La trufa es el cuerpo fructífero de un hongo ascomiceto subterráneo, predominantemente una de las muchas especies del género Tuber. Además de Tuber, muchos otros géneros de hongos se clasifican como trufas, incluidos Geopora, Peziza, Choiromyces, Leucangium y más de cien más. Estos géneros pertenecen a la clase Pezizomycetes y al orden Pezizales. Varios basidiomicetos similares a trufas están excluidos de Pezizales, incluidos Rhizopogon y Glomus, así como también algunos ascomicetos como Elaphomycetaceae que pertenecen a la clase Eurotiomycetes. Las trufas son hongos ectomicorrízicos, por lo que generalmente se encuentran en estrecha asociación con las raíces de los árboles. La dispersión de esporas se logra a través de los fungívoros, animales que comen hongos. Estos hongos tienen importantes funciones ecológicas en el ciclo de nutrientes y la tolerancia a la sequía.</field>
+            <field name="imagen" type="base64" file="granja/static/img/trufa.jpg"/>
+          </record>
+
+          <record id="especie_cerdo" model="rh.granja.especie">
+            <field name="name">Cerdo</field>
+            <field name="nombre_cien">Sus scrofa domesticus</field>
+            <field name="description">El cerdo (Sus scrofa domesticus), también denominado chancho, cochino, gorrino, marrano, porcino o puerco, es una subespecie de mamífero artiodáctilo de la familia Suidae. Es un animal doméstico usado en la alimentación humana por muchos pueblos. Su nombre científico es Sus scrofa ssp. domestica, aunque algunos autores lo denominan Sus domesticus o Sus domestica, reservando Sus scrofa para el jabalí.</field>
+            <field name="imagen" type="base64" file="granja/static/img/cerdo.jpg"/>
+          </record>
+
+        <!--Productos-->
+        <record id="producto_chorizo" model="rh.granja.producto">
+            <field name="name">Chorizo</field>
+            <field name="precio">6</field>
+            <field name="description">Es chorizo</field>
+            <field name="tipo">animal</field>
+            <field name="imagen" type="base64" file="granja/static/img/chorizo.jpg"/>
+            <field name="especie_ids" eval="[Command.link(ref('especie_cerdo'))]"/>
+          </record>
+
+          <record id="producto_harina" model="rh.granja.producto">
+            <field name="name">Harina</field>
+            <field name="precio">5</field>
+            <field name="description">Es harina</field>
+            <field name="tipo">vegetal</field>
+            <field name="imagen" type="base64" file="granja/static/img/harina.jpg"/>
+            <field name="especie_ids" eval="[Command.link(ref('especie_trigo'))]"/>
+          </record>
+
+          <record id="producto_trufa" model="rh.granja.producto">
+            <field name="name">Trufa</field>
+            <field name="precio">10</field>
+            <field name="description">Es trufa</field>
+            <field name="tipo">hongo</field>
+            <field name="imagen" type="base64" file="granja/static/img/trufa.jpg"/>
+            <field name="especie_ids" eval="[Command.link(ref('especie_trufa'))]"/>
+          </record>
+
+        <!--Pedidos-->
+          <record id="pedido_1" model="rh.granja.pedido">
+            <field name="name">Pedido1</field>
+            <field name="fecha_entrega">1939-04-01</field>
+            <field name="description">Es un pedido de harina</field>
+            <field name="producto_ids" eval="[Command.link(ref('producto_harina'))]"/>
+          </record>
+
+          <record id="pedido_2" model="rh.granja.pedido">
+            <field name="name">Pedido2</field>
+            <field name="fecha_entrega">2003-03-03</field>
+            <field name="description">Es un pedido de trufas</field>
+            <field name="producto_ids" eval="[Command.link(ref('producto_trufa'))]"/>
+          </record>
+
+          <record id="pedido_3" model="rh.granja.pedido">
+            <field name="name">Pedido3</field>
+            <field name="fecha_entrega">2002-07-18</field>
+            <field name="description">Es un pedido de chorizos</field>
+            <field name="producto_ids" eval="[Command.link(ref('producto_chorizo'))]"/>
+          </record>
+
+          <!--Clientes-->
+          <record id="cliente_1" model="rh.granja.cliente">
+            <field name="name">Marco</field>
+            <field name="correo">cliente1@cliente.com</field>
+            <field name="direccion">Calle cualquiera, num 13, Mostoles, Madrid, España</field>
+            <field name="description">Es Marco</field>
+            <field name="imagen" type="base64" file="granja/static/img/marco.jpg"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_1'))]"/>
+          </record>
+
+          <record id="cliente_2" model="rh.granja.cliente">
+            <field name="name">Teresa</field>
+            <field name="correo">cliente2@cliente.com</field>
+            <field name="direccion">Calle cualquiera, num 21, Muret, Occitania, Francia</field>
+            <field name="description">Es Teresa</field>
+            <field name="imagen" type="base64" file="granja/static/img/teresa.jpg"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_2'))]"/>
+          </record>
+
+          <record id="cliente_3" model="rh.granja.cliente">
+            <field name="name">Felipe</field>
+            <field name="correo">cliente3@cliente.com</field>
+            <field name="direccion">Calle cualquiera, num 5, Alicante, Comu Valenciana, España</field>
+            <field name="description">Es Felipe</field>
+            <field name="imagen" type="base64" file="granja/static/img/felipe.jpg"/>
+            <field name="pedido_ids" eval="[Command.link(ref('pedido_3'))]"/>
+          </record>
+    
+    </data>
+</odoo>

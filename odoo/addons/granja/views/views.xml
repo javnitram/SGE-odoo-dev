@@ -1,0 +1,174 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!--Productos-->
+    <record model="ir.ui.view" id="granja.producto_list">
+      <field name="name">Lista Productos</field>
+      <field name="model">rh.granja.producto</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="precio"/>
+          <field name="description"/>
+          <field name="tipo"/>
+          <field name="imagen"/>
+          <field name="especie_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="granja.producto_form">
+      <field name="name">Formulario Productos</field>
+      <field name="model">rh.granja.producto</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="precio"/>
+            <field name="description"/>
+            <field name="tipo" widget="radio"/>
+            <field name="imagen" widget="image"/>
+            <field name="especie_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--Clientes-->
+    <record model="ir.ui.view" id="granja.cliente_list">
+      <field name="name">Lista Clientes</field>
+      <field name="model">rh.granja.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="correo"/>
+          <field name="direccion"/>
+          <field name="description"/>
+          <field name="imagen"/>
+          <field name="pedido_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="granja.cliente_form">
+      <field name="name">Formulario Clientes</field>
+      <field name="model">rh.granja.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="correo"/>
+            <field name="direccion"/>
+            <field name="description"/>
+            <field name="imagen" widget="image"/>
+            <field name="pedido_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--Especies-->
+    <record model="ir.ui.view" id="granja.especie_list">
+      <field name="name">Lista Especies</field>
+      <field name="model">rh.granja.especie</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre_cien"/>
+          <field name="description"/>
+          <field name="imagen" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="granja.especie_form">
+      <field name="name">Formulario Especies</field>
+      <field name="model">rh.granja.especie</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="nombre_cien"/>
+            <field name="description"/>
+            <field name="imagen" widget="image"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--Pedidos-->
+    <record model="ir.ui.view" id="granja.pedido_list">
+      <field name="name">Lista Pedidos</field>
+      <field name="model">rh.granja.pedido</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="fecha_entrega"/>
+          <field name="description"/>
+          <field name="cliente_id"/>
+          <field name="producto_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="granja.pedido_form">
+      <field name="name">Formulario Pedidos</field>
+      <field name="model">rh.granja.pedido</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="fecha_entrega"/>
+            <field name="description"/>
+            <field name="cliente_id"/>
+            <field name="producto_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="granja.producto_action_window">
+      <field name="name">Granja Productos</field>
+      <field name="res_model">rh.granja.producto</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="granja.cliente_action_window">
+      <field name="name">Granja Clientes</field>
+      <field name="res_model">rh.granja.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="granja.especie_action_window">
+      <field name="name">Granja Especies</field>
+      <field name="res_model">rh.granja.especie</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="granja.pedido_action_window">
+      <field name="name">Granja Pedidos</field>
+      <field name="res_model">rh.granja.pedido</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="Granja" id="granja.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Producto" id="granja.producto" parent="granja.menu_root"/>
+    <menuitem name="Cliente" id="granja.cliente" parent="granja.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Listar Productos" id="granja.producto_list" parent="granja.producto"
+              action="granja.producto_action_window"/>
+    <menuitem name="Listar Clientes" id="granja.cliente_list" parent="granja.cliente"
+              action="granja.cliente_action_window"/>
+    <menuitem name="Listar Especies" id="granja.especie_list" parent="granja.producto"
+              action="granja.especie_action_window"/>
+    <menuitem name="Listar Pedidos" id="granja.pedido_list" parent="granja.cliente"
+              action="granja.pedido_action_window"/>
+
+  </data>
+</odoo>
