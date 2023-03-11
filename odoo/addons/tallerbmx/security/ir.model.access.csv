@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_tallerbmx_bicicleta,Bicicletas a Reparar,model_ias_tallerbmx_bicicleta,base.group_user,1,1,1,1
+access_tallerbmx_empleado,Empleados,model_ias_tallerbmx_empleado,base.group_user,1,1,1,1
+access_tallerbmx_pieza,Piezas,model_ias_tallerbmx_pieza,base.group_user,1,1,1,1
+access_tallerbmx_cliente,Clientes,model_ias_tallerbmx_cliente,base.group_user,1,1,1,1
