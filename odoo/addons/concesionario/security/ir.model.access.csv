@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_concesionario_pedidos,concesionario.concesionario,model_dhm_concesionario_pedidos,base.group_user,1,1,1,1
+access_concesionario_vehiculos,concesionario.concesionario,model_dhm_concesionario_vehiculos,base.group_user,1,1,1,1
+access_concesionario_clientes,concesionario.concesionario,model_dhm_concesionario_clientes,base.group_user,1,1,1,1
+access_concesionario_facturas,concesionario.concesionario,model_dhm_concesionario_facturas,base.group_user,1,1,1,1
