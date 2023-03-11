@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fr_cocina_plato,Acceso cocina plato,model_fr_cocina_plato,base.group_user,1,1,1,1
+access_fr_cocina_partida,Acceso cocina partida,model_fr_cocina_partida,base.group_user,1,1,1,1
+access_fr_cocina_jefe,Acceso cocina jefe,model_fr_cocina_jefe,base.group_user,1,1,1,1
+access_fr_cocina_cliente,Acceso cocina cliente,model_fr_cocina_cliente,base.group_user,1,1,1,1
